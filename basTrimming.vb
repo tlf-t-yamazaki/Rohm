@@ -12396,4 +12396,14 @@ PLATE_CHECK_RETRY:
 
     End Sub
 
+    ''' <summary>
+    ''' テスト用関数
+    ''' </summary>
+    Public Sub Test()
+        Dim a As Integer
+
+        a = a
+
+    End Sub
+
 End Module
