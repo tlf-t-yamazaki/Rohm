@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CmdCircuitTeach.Text" xml:space="preserve">
+    <value>CIRCUIT</value>
+  </data>
+  <data name="CmdTx.Text" xml:space="preserve">
+    <value>BP Pos Adjust</value>
+  </data>
+  <data name="CmdTy.Text" xml:space="preserve">
+    <value>Stage Pos Adjust</value>
+  </data>
+  <data name="CmdExCam.Text" xml:space="preserve">
+    <value>R1</value>
+  </data>
+  <data name="CmdExCam1.Text" xml:space="preserve">
+    <value>ALL</value>
+  </data>
+  <data name="CmdCutPosCorrect.Text" xml:space="preserve">
+    <value>CORRECT</value>
+  </data>
+  <data name="CmdCalibration.Text" xml:space="preserve">
+    <value>CORRECT</value>
+  </data>
+  <data name="CmdPtnCalibration.Text" xml:space="preserve">
+    <value>RECOG</value>
+  </data>
+  <data name="CmdPtnCutPosCorrect.Text" xml:space="preserve">
+    <value>RECOG</value>
+  </data>
+  <data name="CmdEnd.Text" xml:space="preserve">
+    <value>END</value>
+  </data>
+  <data name="CmdPattern.Text" xml:space="preserve">
+    <value>RECOG</value>
+  </data>
+  <data name="CmdTeach.Text" xml:space="preserve">
+    <value>TEACH</value>
+  </data>
+  <data name="CmdProbe.Text" xml:space="preserve">
+    <value>PROBE</value>
+  </data>
+  <data name="CmdLoging.Text" xml:space="preserve">
+    <value>LOGGING</value>
+  </data>
+  <data name="CmdLaser.Text" xml:space="preserve">
+    <value>LASER</value>
+  </data>
+  <data name="CmdLoad.Text" xml:space="preserve">
+    <value>LOAD</value>
+  </data>
+  <data name="lblDeviation.Text" xml:space="preserve">
+    <value>Std Dev</value>
+  </data>
+  <data name="lblAverage.Text" xml:space="preserve">
+    <value>AVG %</value>
+  </data>
+  <data name="lblMaxTitle.Text" xml:space="preserve">
+    <value>MAX %</value>
+  </data>
+  <data name="lblMinTitle.Text" xml:space="preserve">
+    <value>MIN %</value>
+  </data>
+  <data name="lblNgTitle.Text" xml:space="preserve">
+    <value>NG</value>
+  </data>
+  <data name="lblGoodTitle.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lblRegistTitle.Text" xml:space="preserve">
+    <value>Res Num</value>
+  </data>
+  <data name="CmdTy2.Text" xml:space="preserve">
+    <value>TY2 TEACH</value>
+  </data>
+  <data name="CmdT_Theta.Text" xml:space="preserve">
+    <value>T THETA</value>
+  </data>
+  <data name="CmdCutPos.Text" xml:space="preserve">
+    <value>CUT POS RECOG</value>
+  </data>
+  <data name="LblPlate.Text" xml:space="preserve">
+    <value>PLATE =</value>
+  </data>
+  <data name="LblcNGPER.Text" xml:space="preserve">
+    <value>NG(%)=</value>
+  </data>
+  <data name="LblcITHINGP.Text" xml:space="preserve">
+    <value>IT H NG(%)=</value>
+  </data>
+  <data name="LblcITLONGP.Text" xml:space="preserve">
+    <value>IT L NG(%)=</value>
+  </data>
+  <data name="LblcFTHINGP.Text" xml:space="preserve">
+    <value>FT H NG(%)=</value>
+  </data>
+  <data name="LblcFTLONGP.Text" xml:space="preserve">
+    <value>FT L NG(%)=</value>
+  </data>
+  <data name="LblcOVERP.Text" xml:space="preserve">
+    <value>OVER NG(%)=</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cmdFinal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 395</value>
+  </data>
+  <data name="cmdFinal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 35</value>
+  </data>
+  <data name="cmdFinal.Text" xml:space="preserve">
+    <value>FINAL TEST DISTRIBUTION MAP</value>
+  </data>
+  <data name="cmdGraphSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 396</value>
+  </data>
+  <data name="cmdGraphSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 34</value>
+  </data>
+  <data name="cmdGraphSave.Text" xml:space="preserve">
+    <value>DISTRO.
+MAP SAVE</value>
+  </data>
+  <data name="cmdInitial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 395</value>
+  </data>
+  <data name="cmdInitial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 35</value>
+  </data>
+  <data name="cmdInitial.Text" xml:space="preserve">
+    <value>INITIAL TEST DISTRIBUTION MAP</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>NG</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>MIN %</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>MAX %</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>AVG %</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Std Dev</value>
+  </data>
+  <data name="Label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 15</value>
+  </data>
+  <data name="Label18.Text" xml:space="preserve">
+    <value>Res Num</value>
+  </data>
+  <data name="CmdSave.Text" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="CmdEdit.Text" xml:space="preserve">
+    <value>EDIT/New Data</value>
+  </data>
+  <data name="CmdLoaderInit.Text" xml:space="preserve">
+    <value>LOADER ORGIN</value>
+  </data>
+  <data name="CmdAutoOperation.Text" xml:space="preserve">
+    <value>AUTO</value>
+  </data>
+  <data name="CmdIntegrated.Text" xml:space="preserve">
+    <value>INTEGRATED</value>
+  </data>
+  <data name="lblExCamera.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 19</value>
+  </data>
+  <data name="lblExCamera.Text" xml:space="preserve">
+    <value>ExCameraTeaching</value>
+  </data>
+  <data name="lblCalibration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 19</value>
+  </data>
+  <data name="lblCalibration.Text" xml:space="preserve">
+    <value>Calibration</value>
+  </data>
+  <data name="lblCutPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 19</value>
+  </data>
+  <data name="lblCutPos.Text" xml:space="preserve">
+    <value>ExCamCutPosition</value>
+  </data>
+  <data name="CmdMap.Text" xml:space="preserve">
+    <value>MAP</value>
+  </data>
+  <data name="CmdSinsyukuPtn.Text" xml:space="preserve">
+    <value>RECOG</value>
+  </data>
+  <data name="CmdAotoProbeCorrect.Text" xml:space="preserve">
+    <value>EXECUTE</value>
+  </data>
+  <data name="CmdAotoProbePtn.Text" xml:space="preserve">
+    <value>RECOG</value>
+  </data>
+  <data name="CmdIDTeach.Text" xml:space="preserve">
+    <value>ID TEACH</value>
+  </data>
+  <data name="lblSinsyuku.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 19</value>
+  </data>
+  <data name="lblSinsyuku.Text" xml:space="preserve">
+    <value>Elastic Compensation</value>
+  </data>
+  <data name="lblAutoProbe.Text" xml:space="preserve">
+    <value>Auto Probe</value>
+  </data>
+  <data name="CmdT_ProbeCleaning.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 30</value>
+  </data>
+  <data name="CmdT_ProbeCleaning.Text" xml:space="preserve">
+    <value>PROBE CLEANING</value>
+  </data>
+  <data name="CbDigSwL.Items" xml:space="preserve">
+    <value>0 : Initial+Trimming+FinalTest</value>
+  </data>
+  <data name="CbDigSwL.Items1" xml:space="preserve">
+    <value>1 : Trimming+FinalTest</value>
+  </data>
+  <data name="CbDigSwL.Items2" xml:space="preserve">
+    <value>2 : FinalTest</value>
+  </data>
+  <data name="CbDigSwL.Items3" xml:space="preserve">
+    <value>3 : Measure</value>
+  </data>
+  <data name="CbDigSwL.Items4" xml:space="preserve">
+    <value>4 : PositionCheck</value>
+  </data>
+  <data name="CbDigSwL.Items5" xml:space="preserve">
+    <value>5 : FullCut</value>
+  </data>
+  <data name="CbDigSwL.Items6" xml:space="preserve">
+    <value>6 : Step&amp;Repeat</value>
+  </data>
+  <data name="CbDigSwH.Items" xml:space="preserve">
+    <value>0 : No Display</value>
+  </data>
+  <data name="CbDigSwH.Items1" xml:space="preserve">
+    <value>1 : Display only NG Logs</value>
+  </data>
+  <data name="CbDigSwH.Items2" xml:space="preserve">
+    <value>2 : Display All Logs</value>
+  </data>
+  <data name="chkDistributeOnOff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 26</value>
+  </data>
+  <data name="chkDistributeOnOff.Text" xml:space="preserve">
+    <value>Distribute ON</value>
+  </data>
+  <data name="lblDoorOpen.Text" xml:space="preserve">
+    <value>Open:</value>
+  </data>
+  <data name="chkContinue.Text" xml:space="preserve">
+    <value>Cont.</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAQeQAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA
+        AAAAAAAAAAAAAADgAP//AP//8P8AAAD/AAAAgA/wD/D///D/AAAA/wAAAOAP8A/w/wAA/wAAAP8AAACA
+        D/AP8P8AAP8AAAD/AAAA4A/wD/D/AAD/AAAA/wAAAIAP8A/w/wAA///wAP8AAADgD/AP8P8AAP//8AD/
+        AAAAgA/wD/D/AAD/AAAA/wAAAOAP8A/w/wAA/wAAAP8AAACAD/AP8P8AAP8AAAD/AAAA4A/wD/D/AAD/
+        //////8AAIAA//8A/wAA////////AADgAAAAAAAAAAAAAAAAAAAAjo6Ojo6Ojo6Ojo6OAAAAAOjo6Ojo
+        6Ojo6Ojo6AAAAACOjo6Ojo6Ojo6Ojo4AAAAA6Ojo6Ojo6Ojo6OjoAAAAAI6Ojo6Ojo6Ojo6OjgAAAADo
+        6Ojo6Ojo6Ojo6OgAAAAAjo6Ojo6Ojo6Ojo6OAAAAAOjo6Ojo6Ojo6Ojo6AAAAACOjo6Ojo6Ojo6Ojo4A
+        AAAA6Ojo6Ojo6Ojo6OjoAAAAAI6Ojo6Ojo6Ojo6OjgAAAADo6Ojo6Ojo6Ojo6OgAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////////////////AAAABwAAAAcAA
+        AAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAD/AAAA/wAAAP8AA
+        AD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////////////////w==
+</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
+</root>

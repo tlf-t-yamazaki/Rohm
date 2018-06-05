@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;LblReadBit0E.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit02.Name" xml:space="preserve">
+    <value>LblReadBit02</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LblWriteBit0A.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit09.Name" xml:space="preserve">
+    <value>LblWriteBit09</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LblB0E.TabIndex" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="LblB08.Text" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit06.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0F.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit00.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="LblWriteBit05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 41</value>
+  </data>
+  <data name="LblB02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 5</value>
+  </data>
+  <data name="LblB07.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0B.Name" xml:space="preserve">
+    <value>LblReadBit0B</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit05.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0F.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit00.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="LblReadBit0E.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblB03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 5</value>
+  </data>
+  <data name="&gt;&gt;LblB01.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0F.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblReadBit0E.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;LblB00.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit05.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblWriteBit06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 41</value>
+  </data>
+  <data name="LblReadBit00.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="LblWriteBit02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblReadBit0B.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB0F.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB07.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblWriteBit0A.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit00.Name" xml:space="preserve">
+    <value>LblReadBit00</value>
+  </data>
+  <data name="LblReadBit0F.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblB0A.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblReadBit09.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="LblB0C.Text" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit01.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="LblB00.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LblWriteBit0D.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit06.Name" xml:space="preserve">
+    <value>LblWriteBit06</value>
+  </data>
+  <data name="LblRead.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LblB06.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB00.Name" xml:space="preserve">
+    <value>LblB00</value>
+  </data>
+  <data name="LblB0F.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="&gt;&gt;LblWrite.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="LblB02.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="LblReadBit03.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit06.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0C.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRead.Text" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="LblB05.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LblB0A.TabIndex" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="LblWriteBit0B.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="LblReadBit02.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit00.Name" xml:space="preserve">
+    <value>LblWriteBit00</value>
+  </data>
+  <data name="LblB0D.TabIndex" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="LblWriteBit01.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="LblReadBit0C.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;LblB05.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit04.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="LblRead.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 21</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit03.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;LblRead.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit06.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0E.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblB0C.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit00.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB03.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LblB04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 5</value>
+  </data>
+  <data name="LblWriteBit0F.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 41</value>
+  </data>
+  <data name="LblReadBit07.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;LblB0B.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;LblB0C.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB0E.Name" xml:space="preserve">
+    <value>LblB0E</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0A.Name" xml:space="preserve">
+    <value>LblWriteBit0A</value>
+  </data>
+  <data name="LblReadBit0F.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 23</value>
+  </data>
+  <data name="&gt;&gt;LblB0C.Name" xml:space="preserve">
+    <value>LblB0C</value>
+  </data>
+  <data name="LblB09.Text" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="LblReadBit09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 23</value>
+  </data>
+  <data name="LblReadBit02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB09.Name" xml:space="preserve">
+    <value>LblB09</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit09.Name" xml:space="preserve">
+    <value>LblReadBit09</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWrite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 39</value>
+  </data>
+  <data name="LblWriteBit0D.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="LblReadBit03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB03.Name" xml:space="preserve">
+    <value>LblB03</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0A.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LblWriteBit09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB0B.Name" xml:space="preserve">
+    <value>LblB0B</value>
+  </data>
+  <data name="LblReadBit08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 23</value>
+  </data>
+  <data name="LblB0C.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit07.Name" xml:space="preserve">
+    <value>LblReadBit07</value>
+  </data>
+  <data name="LblWriteBit0C.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit09.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;LblB02.Name" xml:space="preserve">
+    <value>LblB02</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0C.Name" xml:space="preserve">
+    <value>LblWriteBit0C</value>
+  </data>
+  <data name="LblWriteBit07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 41</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0E.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="LblRead.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit08.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit02.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit01.Name" xml:space="preserve">
+    <value>LblWriteBit01</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit08.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0D.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 5</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRead.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;LblWrite.Name" xml:space="preserve">
+    <value>LblWrite</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0C.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB0E.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblB05.Name" xml:space="preserve">
+    <value>LblB05</value>
+  </data>
+  <data name="&gt;&gt;LblB0D.Name" xml:space="preserve">
+    <value>LblB0D</value>
+  </data>
+  <data name="LblB04.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit07.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit06.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB0E.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 5</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit09.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB04.Name" xml:space="preserve">
+    <value>LblB04</value>
+  </data>
+  <data name="&gt;&gt;LblB0D.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0F.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB00.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0E.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblRead.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 12</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit00.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LblB03.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB01.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;LblB02.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="LblWrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 12</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0A.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit0E.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;LblB0D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB06.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="LblWriteBit02.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="LblWriteBit05.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="LblB0B.Text" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="LblB05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblB07.Text" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LblWriteBit0F.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="LblB09.TabIndex" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="LblWriteBit00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 41</value>
+  </data>
+  <data name="LblReadBit04.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0E.Name" xml:space="preserve">
+    <value>LblWriteBit0E</value>
+  </data>
+  <data name="LblWriteBit09.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0B.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit03.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB0F.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0B.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit05.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit01.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB03.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="&gt;&gt;LblB05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB0C.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 5</value>
+  </data>
+  <data name="LblB01.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LblReadBit02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 23</value>
+  </data>
+  <data name="&gt;&gt;LblB07.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="LblReadBit0A.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 23</value>
+  </data>
+  <data name="LblReadBit07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB06.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="LblWriteBit0C.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblB00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblWriteBit03.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit05.Name" xml:space="preserve">
+    <value>LblReadBit05</value>
+  </data>
+  <data name="LblReadBit06.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0C.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 23</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit05.Name" xml:space="preserve">
+    <value>LblWriteBit05</value>
+  </data>
+  <data name="LblReadBit08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit02.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWrite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblReadBit00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 23</value>
+  </data>
+  <data name="&gt;&gt;LblB0A.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblReadBit00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB0A.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 5</value>
+  </data>
+  <data name="&gt;&gt;LblB0C.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblWriteBit04.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="LblReadBit0D.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB00.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="LblB06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 5</value>
+  </data>
+  <data name="LblB05.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="LblB03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblB08.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="LblB0B.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblB07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0E.Name" xml:space="preserve">
+    <value>LblReadBit0E</value>
+  </data>
+  <data name="LblB0D.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 5</value>
+  </data>
+  <data name="LblB0E.Text" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit07.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0F.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit00.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB0C.TabIndex" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0D.Name" xml:space="preserve">
+    <value>LblWriteBit0D</value>
+  </data>
+  <data name="&gt;&gt;LblB04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit05.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit0B.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit07.Name" xml:space="preserve">
+    <value>LblWriteBit07</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit03.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;LblB09.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit06.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0D.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LblWriteBit07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblB0D.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblB0F.Text" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit08.Name" xml:space="preserve">
+    <value>LblWriteBit08</value>
+  </data>
+  <data name="LblB09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit03.Name" xml:space="preserve">
+    <value>LblReadBit03</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit02.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWrite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB0E.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit08.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB0B.TabIndex" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmIOMon</value>
+  </data>
+  <data name="LblReadBit01.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;LblB0D.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit06.Name" xml:space="preserve">
+    <value>LblReadBit06</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit06.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblWriteBit06.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="LblB0A.Text" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 5</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit08.Name" xml:space="preserve">
+    <value>LblReadBit08</value>
+  </data>
+  <data name="LblReadBit0A.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="LblWriteBit08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 41</value>
+  </data>
+  <data name="LblB01.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0F.Name" xml:space="preserve">
+    <value>LblWriteBit0F</value>
+  </data>
+  <data name="LblB04.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit01.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit03.Name" xml:space="preserve">
+    <value>LblWriteBit03</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0A.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0C.Name" xml:space="preserve">
+    <value>LblReadBit0C</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0D.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit04.Name" xml:space="preserve">
+    <value>LblWriteBit04</value>
+  </data>
+  <data name="&gt;&gt;LblB04.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;LblB00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0C.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="LblWriteBit0E.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 41</value>
+  </data>
+  <data name="LblB04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblB06.Text" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LblB07.Name" xml:space="preserve">
+    <value>LblB07</value>
+  </data>
+  <data name="LblWriteBit09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 41</value>
+  </data>
+  <data name="&gt;&gt;LblB0F.Name" xml:space="preserve">
+    <value>LblB0F</value>
+  </data>
+  <data name="LblB0D.Text" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit04.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblWriteBit01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 41</value>
+  </data>
+  <data name="&gt;&gt;LblB0B.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblReadBit0D.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0F.Name" xml:space="preserve">
+    <value>LblReadBit0F</value>
+  </data>
+  <data name="LblWrite.Text" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit03.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB06.Name" xml:space="preserve">
+    <value>LblB06</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0A.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0C.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblReadBit08.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="LblWriteBit0B.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblWrite.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit01.Name" xml:space="preserve">
+    <value>LblReadBit01</value>
+  </data>
+  <data name="&gt;&gt;LblRead.Name" xml:space="preserve">
+    <value>LblRead</value>
+  </data>
+  <data name="LblWriteBit0B.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 41</value>
+  </data>
+  <data name="LblWriteBit02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 41</value>
+  </data>
+  <data name="LblB0F.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblWriteBit04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0B.Name" xml:space="preserve">
+    <value>LblWriteBit0B</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0A.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit07.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB0A.Name" xml:space="preserve">
+    <value>LblB0A</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0B.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit08.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit04.Name" xml:space="preserve">
+    <value>LblReadBit04</value>
+  </data>
+  <data name="LblB0E.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 5</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0F.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit02.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit09.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LblReadBit0C.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="&gt;&gt;LblB01.Name" xml:space="preserve">
+    <value>LblB01</value>
+  </data>
+  <data name="LblWriteBit0C.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 41</value>
+  </data>
+  <data name="&gt;&gt;LblB08.Name" xml:space="preserve">
+    <value>LblB08</value>
+  </data>
+  <data name="LblWriteBit05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB05.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0D.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit09.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="LblB0F.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 5</value>
+  </data>
+  <data name="LblReadBit0E.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 23</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0E.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 23</value>
+  </data>
+  <data name="LblWriteBit0E.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblReadBit09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblReadBit0B.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 23</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0A.Name" xml:space="preserve">
+    <value>LblReadBit0A</value>
+  </data>
+  <data name="&gt;&gt;LblB06.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0B.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;LblB0A.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="LblWriteBit06.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB0B.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>312, 53</value>
+  </data>
+  <data name="LblReadBit05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 23</value>
+  </data>
+  <data name="LblWriteBit0D.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 41</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit01.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0D.Name" xml:space="preserve">
+    <value>LblReadBit0D</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit02.Name" xml:space="preserve">
+    <value>LblWriteBit02</value>
+  </data>
+  <data name="LblReadBit04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 23</value>
+  </data>
+  <data name="LblReadBit07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 23</value>
+  </data>
+  <data name="LblReadBit01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblB07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 5</value>
+  </data>
+  <data name="LblWriteBit0F.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblB06.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0E.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LblB0E.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB08.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblB02.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0B.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit04.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit05.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit07.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWrite.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB03.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblReadBit0D.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="LblWriteBit03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 41</value>
+  </data>
+  <data name="&gt;&gt;LblB02.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 5</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit08.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="LblReadBit0C.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblReadBit05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit04.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="LblWriteBit00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblWriteBit04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 41</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblB09.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;LblWriteBit0D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblB0A.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 5</value>
+  </data>
+  <data name="LblB08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="LblWriteBit0A.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 41</value>
+  </data>
+  <data name="&gt;&gt;LblB08.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0A.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="LblReadBit0A.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblWriteBit01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="LblReadBit0F.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0C.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit07.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LblB0B.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 5</value>
+  </data>
+  <data name="LblReadBit06.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="&gt;&gt;LblB0F.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;LblReadBit0B.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LblB04.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>zh-Hans</value>
+  </metadata>
+</root>

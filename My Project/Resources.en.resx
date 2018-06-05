@@ -1,0 +1,1784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Form1_001" xml:space="preserve">
+    <value>Laser Power ---- W</value>
+  </data>
+  <data name="Form1_002" xml:space="preserve">
+    <value>CurrentVal </value>
+  </data>
+  <data name="Form1_003" xml:space="preserve">
+    <value>Quits the program.</value>
+  </data>
+  <data name="Form1_004" xml:space="preserve">
+    <value>Do you store trimming data?</value>
+  </data>
+  <data name="Form1_005" xml:space="preserve">
+    <value>A save of data was completed.</value>
+  </data>
+  <data name="Form1_006" xml:space="preserve">
+    <value>File name </value>
+  </data>
+  <data name="Form1_007" xml:space="preserve">
+    <value>Laser Power </value>
+  </data>
+  <data name="Form1_008" xml:space="preserve">
+    <value>(Thresh)</value>
+  </data>
+  <data name="Form1_009" xml:space="preserve">
+    <value>Theta = </value>
+  </data>
+  <data name="Form1_010" xml:space="preserve">
+    <value>Trim PositionXY=</value>
+  </data>
+  <data name="Form1_011" xml:space="preserve">
+    <value>Distance=</value>
+  </data>
+  <data name="Form1_012" xml:space="preserve">
+    <value>Correct position1=</value>
+  </data>
+  <data name="Form1_013" xml:space="preserve">
+    <value>Distance1=</value>
+  </data>
+  <data name="Form1_014" xml:space="preserve">
+    <value>Correct position2=</value>
+  </data>
+  <data name="Form1_015" xml:space="preserve">
+    <value>Distance2=</value>
+  </data>
+  <data name="Form1_016" xml:space="preserve">
+    <value>Correlation coefficient1=</value>
+  </data>
+  <data name="Form1_017" xml:space="preserve">
+    <value>Correlation coefficient2=</value>
+  </data>
+  <data name="Form1_018" xml:space="preserve">
+    <value>degree</value>
+  </data>
+  <data name="Form1_019" xml:space="preserve">
+    <value>Distribute OFF</value>
+  </data>
+  <data name="Form1_020" xml:space="preserve">
+    <value>Distribute ON</value>
+  </data>
+  <data name="Form1_021" xml:space="preserve">
+    <value>Save completion.</value>
+  </data>
+  <data name="Form1_022" xml:space="preserve">
+    <value>I was not able to save it.</value>
+  </data>
+  <data name="MSG_TOTAL_CIRCUIT" xml:space="preserve">
+    <value>The unit of the circuit.</value>
+  </data>
+  <data name="MSG_TOTAL_REGISTOR" xml:space="preserve">
+    <value>The unit of the resistor.</value>
+  </data>
+  <data name="CMD_CANCEL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CIRTEACH_MSG01" xml:space="preserve">
+    <value>Please push the START key after uniting the circuit standard point.</value>
+  </data>
+  <data name="ERR_PROB_EXE" xml:space="preserve">
+    <value>Can't execute this command since there is no resistance data(1-999).</value>
+  </data>
+  <data name="ERR_TEACH_EXE" xml:space="preserve">
+    <value>Can't execute this command since there is no resistance data(1-999) or marking resistance data.</value>
+  </data>
+  <data name="ERR_TXNUM_B" xml:space="preserve">
+    <value>Can't execute this command since the block number is 1.</value>
+  </data>
+  <data name="ERR_TXNUM_C" xml:space="preserve">
+    <value>Can't execute this command since the Circuit number is 1.</value>
+  </data>
+  <data name="ERR_TXNUM_S" xml:space="preserve">
+    <value>Can't execute this command since the Step number is 0.</value>
+  </data>
+  <data name="INFO_MSG10" xml:space="preserve">
+    <value>Please push the [START] key. It can return to the data in front of one by the [HALT] key.</value>
+  </data>
+  <data name="INFO_MSG13" xml:space="preserve">
+    <value>CHIP SIZE TEACHING</value>
+  </data>
+  <data name="INFO_MSG14" xml:space="preserve">
+    <value>STAGE INTERVAL TEACHING</value>
+  </data>
+  <data name="INFO_MSG15" xml:space="preserve">
+    <value>STEP OFFSET TEACHING</value>
+  </data>
+  <data name="INFO_MSG16" xml:space="preserve">
+    <value>    Please unite a standard position.</value>
+  </data>
+  <data name="INFO_MSG17" xml:space="preserve">
+    <value>    MOVE:[Arrow]  OK:[START]  CANCEL:[RESET]
+    It returns to the processing before one by the HALT key.</value>
+  </data>
+  <data name="INFO_MSG19" xml:space="preserve">
+    <value>&lt;Group No.</value>
+  </data>
+  <data name="INFO_MSG23" xml:space="preserve">
+    <value>BP GROUP INTERVAL TEACHING</value>
+  </data>
+  <data name="INFO_MSG24" xml:space="preserve">
+    <value>&lt;Block No.</value>
+  </data>
+  <data name="INFO_MSG25" xml:space="preserve">
+    <value>&gt; The resistance standard position.</value>
+  </data>
+  <data name="INFO_MSG26" xml:space="preserve">
+    <value>&lt;End Block</value>
+  </data>
+  <data name="INFO_MSG30" xml:space="preserve">
+    <value>CIRCUIT INTERVAL TEACHING</value>
+  </data>
+  <data name="INFO_MSG31" xml:space="preserve">
+    <value>STEP OFFSET TEACHING</value>
+  </data>
+  <data name="INFO_MSG32" xml:space="preserve">
+    <value> (TX)</value>
+  </data>
+  <data name="INFO_MSG33" xml:space="preserve">
+    <value> (TY)</value>
+  </data>
+  <data name="INFO_REC" xml:space="preserve">
+    <value>REGISTER:[START]   CANCEL:[RESET]</value>
+  </data>
+  <data name="LBL_ATT" xml:space="preserve">
+    <value>ATT.</value>
+  </data>
+  <data name="LBL_CALIBRATION_001" xml:space="preserve">
+    <value>[Cross Cut Mode(Position1)]</value>
+  </data>
+  <data name="LBL_CALIBRATION_002" xml:space="preserve">
+    <value>[Cross Cut Mode(Position2)]</value>
+  </data>
+  <data name="LBL_CALIBRATION_003" xml:space="preserve">
+    <value>[Pic.Recog Mode(Position1)]</value>
+  </data>
+  <data name="LBL_CALIBRATION_004" xml:space="preserve">
+    <value>[Pic.Recog Mode(Position2)]</value>
+  </data>
+  <data name="LBL_CUT_POS_CORRECT_BLOCK_NO_X" xml:space="preserve">
+    <value>Block Number X Axis</value>
+  </data>
+  <data name="LBL_CUT_POS_CORRECT_BLOCK_NO_Y" xml:space="preserve">
+    <value>Block Number Y Axis</value>
+  </data>
+  <data name="LBL_IDREADER_TEACH_01" xml:space="preserve">
+    <value>ID READER TEACHING</value>
+  </data>
+  <data name="LBL_IDREADER_TEACH_04" xml:space="preserve">
+    <value>ID READER</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_07" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_08" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_09" xml:space="preserve">
+    <value>Group interval(mm)</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_11" xml:space="preserve">
+    <value>Step interval</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_14" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="MSG_102" xml:space="preserve">
+    <value>Are you sure quit program?</value>
+  </data>
+  <data name="MSG_105" xml:space="preserve">
+    <value>This screen returns to the before screen.Are you sure?</value>
+  </data>
+  <data name="MSG_106" xml:space="preserve">
+    <value>This data is saved and this screen returns to the before screen.Are you sure?</value>
+  </data>
+  <data name="MSG_108" xml:space="preserve">
+    <value>Do you clear the sum total?</value>
+  </data>
+  <data name="MSG_115" xml:space="preserve">
+    <value>There are data editing. Do you load it?</value>
+  </data>
+  <data name="MSG_116" xml:space="preserve">
+    <value>Data load confirmation</value>
+  </data>
+  <data name="MSG_117" xml:space="preserve">
+    <value>There are data editing.</value>
+  </data>
+  <data name="MSG_118" xml:space="preserve">
+    <value>When a revision mode is set by nothing, i cannot carry it out.</value>
+  </data>
+  <data name="MSG_127" xml:space="preserve">
+    <value>Pattern match error.</value>
+  </data>
+  <data name="MSG_130" xml:space="preserve">
+    <value>Trimming Data File Read Error.</value>
+  </data>
+  <data name="MSG_132" xml:space="preserve">
+    <value>It Failed In The Transmission Of The Condition Data.
+Please Load Data Or Set Condition From Edit Function.</value>
+  </data>
+  <data name="MSG_133" xml:space="preserve">
+    <value>It Failed In Reading The Intermediate File.</value>
+  </data>
+  <data name="MSG_134" xml:space="preserve">
+    <value>It Failed In Writting The Intermediate File.</value>
+  </data>
+  <data name="MSG_135" xml:space="preserve">
+    <value>Data Edit Error. Do The Reload Of Data.</value>
+  </data>
+  <data name="MSG_136" xml:space="preserve">
+    <value>Serial Port Open Error.</value>
+  </data>
+  <data name="MSG_138" xml:space="preserve">
+    <value>Serial Port Transmission Error.</value>
+  </data>
+  <data name="MSG_139" xml:space="preserve">
+    <value>Serial Port Reception Error.</value>
+  </data>
+  <data name="MSG_14" xml:space="preserve">
+    <value>Trimming parameter data is not loaded.</value>
+  </data>
+  <data name="MSG_141" xml:space="preserve">
+    <value>Condition Reading Error On The FL Side.</value>
+  </data>
+  <data name="MSG_142" xml:space="preserve">
+    <value>Condition File Was Made.</value>
+  </data>
+  <data name="MSG_143" xml:space="preserve">
+    <value>DATA LOAD OK</value>
+  </data>
+  <data name="MSG_144" xml:space="preserve">
+    <value>DATA LOAD NG</value>
+  </data>
+  <data name="MSG_145" xml:space="preserve">
+    <value>DATA SAVE OK</value>
+  </data>
+  <data name="MSG_146" xml:space="preserve">
+    <value>DATA SAVE NG</value>
+  </data>
+  <data name="MSG_147" xml:space="preserve">
+    <value>DATA SEND TO FL</value>
+  </data>
+  <data name="MSG_148" xml:space="preserve">
+    <value>Data sending to FL......</value>
+  </data>
+  <data name="MSG_149" xml:space="preserve">
+    <value>FiberLaser conditions are editing. Do you load it?</value>
+  </data>
+  <data name="MSG_15" xml:space="preserve">
+    <value>Not found the selected file.</value>
+  </data>
+  <data name="MSG_150" xml:space="preserve">
+    <value>Connection error for FiberLaser.
+Please confirm the connection.</value>
+  </data>
+  <data name="MSG_151" xml:space="preserve">
+    <value>It Failed In The Setting Of Processing Conditions.</value>
+  </data>
+  <data name="MSG_152" xml:space="preserve">
+    <value>Initial Processing Of Printing Failed.</value>
+  </data>
+  <data name="MSG_153" xml:space="preserve">
+    <value>The Printing Job Failed.</value>
+  </data>
+  <data name="MSG_155" xml:space="preserve">
+    <value>The number of substrates is initialized.
+Is it all right ?</value>
+  </data>
+  <data name="MSG_157" xml:space="preserve">
+    <value>Bar Code Does Not Exist.</value>
+  </data>
+  <data name="MSG_158" xml:space="preserve">
+    <value>Condition File Read Error.</value>
+  </data>
+  <data name="MSG_159" xml:space="preserve">
+    <value>A File Exists. Is It Overwritten ?</value>
+  </data>
+  <data name="MSG_16" xml:space="preserve">
+    <value>The selected file is not the data of this program.</value>
+  </data>
+  <data name="MSG_160" xml:space="preserve">
+    <value>Please adjust the probe cleaning position.(XY TABLE)</value>
+  </data>
+  <data name="MSG_161" xml:space="preserve">
+    <value>MOVE:[Arrow]  OK:[START]  CANCEL:[RESET]</value>
+  </data>
+  <data name="MSG_162" xml:space="preserve">
+    <value>Please adjust the probe cleaning position.(PROBE)</value>
+  </data>
+  <data name="MSG_25" xml:space="preserve">
+    <value>Prease set the setting of MovementMode(DigiSwitch) in from x0 to x6 </value>
+  </data>
+  <data name="MSG_39" xml:space="preserve">
+    <value>No resistor to correct cutting position.</value>
+  </data>
+  <data name="MSG_AUTO_15" xml:space="preserve">
+    <value>All Lists Are Deleted</value>
+  </data>
+  <data name="MSG_AUTO_16" xml:space="preserve">
+    <value>OK ?</value>
+  </data>
+  <data name="MSG_AUTO_17" xml:space="preserve">
+    <value>Two Or More Data Files Cannot Be Chosen At The Endless Mode.</value>
+  </data>
+  <data name="MSG_AUTO_18" xml:space="preserve">
+    <value>Please Choose A Data File.</value>
+  </data>
+  <data name="MSG_AUTO_19" xml:space="preserve">
+    <value>Is Updating Data Saved ?</value>
+  </data>
+  <data name="MSG_AUTO_20" xml:space="preserve">
+    <value>A Condition File Does Not Exist.</value>
+  </data>
+  <data name="MSG_AUTOPOWER_01" xml:space="preserve">
+    <value>Start Power Adjustment</value>
+  </data>
+  <data name="MSG_AUTOPOWER_02" xml:space="preserve">
+    <value>Condition No.</value>
+  </data>
+  <data name="MSG_AUTOPOWER_03" xml:space="preserve">
+    <value>Laser Power</value>
+  </data>
+  <data name="MSG_AUTOPOWER_04" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="MSG_AUTOPOWER_05" xml:space="preserve">
+    <value>Power Adjustment Failed.</value>
+  </data>
+  <data name="MSG_AUTOPOWER_06" xml:space="preserve">
+    <value>Power Adjustment Normal End</value>
+  </data>
+  <data name="MSG_AXIS_T_SERVO_ALM" xml:space="preserve">
+    <value>Theta Axis Servo Alarm.</value>
+  </data>
+  <data name="MSG_AXIS_X_SERVO_ALM" xml:space="preserve">
+    <value>X Axis Servo Alarm.</value>
+  </data>
+  <data name="MSG_AXIS_Y_SERVO_ALM" xml:space="preserve">
+    <value>Y Axis Servo Alarm.</value>
+  </data>
+  <data name="MSG_AXIS_Z_SERVO_ALM" xml:space="preserve">
+    <value>Z Axis Servo Alarm.</value>
+  </data>
+  <data name="MSG_AXS_LIM_ATT" xml:space="preserve">
+    <value>ATT-axis limit detection.</value>
+  </data>
+  <data name="MSG_AXS_LIM_T" xml:space="preserve">
+    <value>Theta-axis limit detection.</value>
+  </data>
+  <data name="MSG_AXS_LIM_X" xml:space="preserve">
+    <value>X-axis limit detection.</value>
+  </data>
+  <data name="MSG_AXS_LIM_Y" xml:space="preserve">
+    <value>Y-axis limit detection.</value>
+  </data>
+  <data name="MSG_AXS_LIM_Z" xml:space="preserve">
+    <value>Z-axis limit detection.</value>
+  </data>
+  <data name="MSG_AXS_LIM_Z2" xml:space="preserve">
+    <value>Z2-axis limit detection.</value>
+  </data>
+  <data name="MSG_BP_BSIZE_OVER" xml:space="preserve">
+    <value>Exaggerated Setting Of Block Size.</value>
+  </data>
+  <data name="MSG_BP_GRV_ALARM_X" xml:space="preserve">
+    <value>Galvano Alarm X.</value>
+  </data>
+  <data name="MSG_BP_GRV_ALARM_Y" xml:space="preserve">
+    <value>Galvano Alarm Y.</value>
+  </data>
+  <data name="MSG_BP_HARD_LIMITOVER_HI" xml:space="preserve">
+    <value>BP Limit Over.(Maximum)</value>
+  </data>
+  <data name="MSG_BP_HARD_LIMITOVER_LO" xml:space="preserve">
+    <value>BP Limit Over.(Minimum)</value>
+  </data>
+  <data name="MSG_BP_LIMITOVER" xml:space="preserve">
+    <value>BP Moved Distance Setting Limit Exaggerated.</value>
+  </data>
+  <data name="MSG_BP_MOVE_TIMEOUT" xml:space="preserve">
+    <value>BP Time Out.</value>
+  </data>
+  <data name="MSG_BP_SOFT_LIMITOVER" xml:space="preserve">
+    <value>Moveble BP Soft Range Exaggerated.</value>
+  </data>
+  <data name="MSG_CALIBRATION_001" xml:space="preserve">
+    <value>Execution Calibration
+Push [START]
+[RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CALIBRATION_002" xml:space="preserve">
+    <value>Detection Gap with External Camera
+Push [START]
+[RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CALIBRATION_003" xml:space="preserve">
+    <value>[START]:A Picture Recognition Execution, [RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CALIBRATION_004" xml:space="preserve">
+    <value>Detection Gap with External Camera.(Position1)
+[START]:Determination, [RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CALIBRATION_005" xml:space="preserve">
+    <value>Detection Gap with External Camera.(Position2)
+[START]:Determination, [RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CALIBRATION_006" xml:space="preserve">
+    <value>The calibration is ended.
+Please push ""OK"" when you maintain data and push ""Cancel"" when you do not maintain data.</value>
+  </data>
+  <data name="MSG_CALIBRATION_007" xml:space="preserve">
+    <value>Picture Matching Error.
+Please push ""OK"" when you continue processing and push ""Cancel"" when you stop.</value>
+  </data>
+  <data name="MSG_CALIBRATION_008" xml:space="preserve">
+    <value>Exeute Reset [Start]:Reset , [Reset]:Cancel of Reset</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_001" xml:space="preserve">
+    <value>Input Block Number Range 1-99</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_004" xml:space="preserve">
+    <value>WARNING!! [START]:Cross Cut Execution, [RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_005" xml:space="preserve">
+    <value>Cross Cut Executing
+[HALT]:Stop</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_007" xml:space="preserve">
+    <value>[START]A Picture Recognition Execution
+[RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_010" xml:space="preserve">
+    <value>Correct Renewal Error
+Renewal Result Overflow
+Value is Correct with Maximum Value or Minimum Value</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_011" xml:space="preserve">
+    <value>Cross Cut End
+[START]:Picture Recognition
+[RESET]:Cancel</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_012" xml:space="preserve">
+    <value>Picture Recognition End</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_013" xml:space="preserve">
+    <value>Picture Matching Error</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_014" xml:space="preserve">
+    <value>Push [START]Button After Input Block Number</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_015" xml:space="preserve">
+    <value>Block Number Input Error</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_016" xml:space="preserve">
+    <value>Picture Recognition Execution</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_017" xml:space="preserve">
+    <value>ARROW SW:Position Ajustment, [START]:NEXT, [HALT]:PREV</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_018" xml:space="preserve">
+    <value>Correlation=</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_019" xml:space="preserve">
+    <value>A Picture Is Not Found.</value>
+  </data>
+  <data name="MSG_F_CAR" xml:space="preserve">
+    <value>Calibration(CORRECT)</value>
+  </data>
+  <data name="MSG_F_CARREC" xml:space="preserve">
+    <value>Calibration(RECOG)</value>
+  </data>
+  <data name="MSG_F_CUTREC" xml:space="preserve">
+    <value>ExCamCutPosition(RECOG)</value>
+  </data>
+  <data name="MSG_F_CUTREV" xml:space="preserve">
+    <value>ExCamCutPosition(CORRECT)</value>
+  </data>
+  <data name="MSG_F_EXR1" xml:space="preserve">
+    <value>ExCamera Teaching(R1)</value>
+  </data>
+  <data name="MSG_F_EXTEACH" xml:space="preserve">
+    <value>ExCamera Teaching(ALL)</value>
+  </data>
+  <data name="MSG_frmLimit_01" xml:space="preserve">
+    <value>BEAM POSITION LIMIT</value>
+  </data>
+  <data name="MSG_frmLimit_03" xml:space="preserve">
+    <value>X AXIS LIMIT</value>
+  </data>
+  <data name="MSG_frmLimit_04" xml:space="preserve">
+    <value>Y AXIS LIMIT</value>
+  </data>
+  <data name="MSG_frmLimit_05" xml:space="preserve">
+    <value>Z AXIS LIMIT</value>
+  </data>
+  <data name="MSG_frmLimit_06" xml:space="preserve">
+    <value>Z2 AXIS LIMIT</value>
+  </data>
+  <data name="MSG_frmLimit_07" xml:space="preserve">
+    <value>PUSH START SW or OK BUTTON</value>
+  </data>
+  <data name="MSG_INTIME_ERROR" xml:space="preserve">
+    <value>INTRIM Error</value>
+  </data>
+  <data name="MSG_LDALARM_00" xml:space="preserve">
+    <value>Emergency Stop.</value>
+  </data>
+  <data name="MSG_LDALARM_01" xml:space="preserve">
+    <value>Magazine Compatibility Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_02" xml:space="preserve">
+    <value>Breaking miss article outbreak.</value>
+  </data>
+  <data name="MSG_LDALARM_03" xml:space="preserve">
+    <value>Hand1 Absorption Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_04" xml:space="preserve">
+    <value>Hand2 Absorption Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_05" xml:space="preserve">
+    <value>Table Absorption Sensor Error.</value>
+  </data>
+  <data name="MSG_LDALARM_06" xml:space="preserve">
+    <value>Table Absorption Error.</value>
+  </data>
+  <data name="MSG_LDALARM_07" xml:space="preserve">
+    <value>Robot Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_08" xml:space="preserve">
+    <value>Process Surveillance Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_09" xml:space="preserve">
+    <value>Elevator Abnormalities.</value>
+  </data>
+  <data name="MSG_LDALARM_10" xml:space="preserve">
+    <value>No Magazine Or No Substrate.</value>
+  </data>
+  <data name="MSG_LDALARM_11" xml:space="preserve">
+    <value>Origin Return Timeout.</value>
+  </data>
+  <data name="MSG_LDALARM_12" xml:space="preserve">
+    <value>Clamp Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_13" xml:space="preserve">
+    <value>the air pressure fall was detected.</value>
+  </data>
+  <data name="MSG_LDALARM_14" xml:space="preserve">
+    <value>Supply Magazine Is Full.</value>
+  </data>
+  <data name="MSG_LDALARM_15" xml:space="preserve">
+    <value>Store Magazine Is Full.</value>
+  </data>
+  <data name="MSG_LDALARM_16" xml:space="preserve">
+    <value>Circles Cylinder Timeout.</value>
+  </data>
+  <data name="MSG_LDALARM_17" xml:space="preserve">
+    <value>Hand1 Cylinder Timeout.</value>
+  </data>
+  <data name="MSG_LDALARM_18" xml:space="preserve">
+    <value>Hand2 Cylinder Timeout.</value>
+  </data>
+  <data name="MSG_LDALARM_19" xml:space="preserve">
+    <value>Supply Hand Absorption Error.</value>
+  </data>
+  <data name="MSG_LDALARM_20" xml:space="preserve">
+    <value>Storing Hand Absorption Error.</value>
+  </data>
+  <data name="MSG_LDALARM_21" xml:space="preserve">
+    <value>NG Discharge Is Full.</value>
+  </data>
+  <data name="MSG_LDALARM_22" xml:space="preserve">
+    <value>Under Stop.</value>
+  </data>
+  <data name="MSG_LDALARM_23" xml:space="preserve">
+    <value>The Door Is Opening.</value>
+  </data>
+  <data name="MSG_LDALARM_24" xml:space="preserve">
+    <value>Two-Sheet Picking Detection.</value>
+  </data>
+  <data name="MSG_LDALARM_25" xml:space="preserve">
+    <value>Conveyance Top And Bottom Alarm.</value>
+  </data>
+  <data name="MSG_LDALARM_26" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDALARM_27" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDALARM_28" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDALARM_29" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDALARM_30" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDALARM_31" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDALARM_UD" xml:space="preserve">
+    <value>Undefined alarm No.</value>
+  </data>
+  <data name="MSG_LDGUID_00" xml:space="preserve">
+    <value>The Emergency Stop SW Was Pushed.</value>
+  </data>
+  <data name="MSG_LDGUID_01" xml:space="preserve">
+    <value>Please Check The Normal Position Of Magazine.</value>
+  </data>
+  <data name="MSG_LDGUID_02" xml:space="preserve">
+    <value>The Broken Or Missing Product Was Outbreak.
+Please Remove A Substrate.</value>
+  </data>
+  <data name="MSG_LDGUID_03" xml:space="preserve">
+    <value>Please Check The Adsorption Sensor. 
+</value>
+  </data>
+  <data name="MSG_LDGUID_04" xml:space="preserve">
+    <value>Please Check The Adsorption Sensor.  
+If Substrate exist ,Please Remove A Substrate.</value>
+  </data>
+  <data name="MSG_LDGUID_05" xml:space="preserve">
+    <value>Please Check The Adsorption Sensor. 
+</value>
+  </data>
+  <data name="MSG_LDGUID_06" xml:space="preserve">
+    <value>Please Check The Adsorption Sensor.
+Please Confirm Whether A Top Plate Does Not Have A Wound And A Fragment Of A Board.</value>
+  </data>
+  <data name="MSG_LDGUID_07" xml:space="preserve">
+    <value>Robot Alarm Occurred.</value>
+  </data>
+  <data name="MSG_LDGUID_08" xml:space="preserve">
+    <value>Timeout Occurred Under Process Surveillance.</value>
+  </data>
+  <data name="MSG_LDGUID_09" xml:space="preserve">
+    <value>Please Check The Sensor Of An Elevator.</value>
+  </data>
+  <data name="MSG_LDGUID_11" xml:space="preserve">
+    <value>Timeout Occurred At The Origin Return.</value>
+  </data>
+  <data name="MSG_LDGUID_12" xml:space="preserve">
+    <value>The Abnormalities In A Clamp. Please remove Substrate from table.</value>
+  </data>
+  <data name="MSG_LDGUID_13" xml:space="preserve">
+    <value>Please check whether air is supplied correctly.
+</value>
+  </data>
+  <data name="MSG_LDGUID_14" xml:space="preserve">
+    <value>Supply Magazine Is Full.
+Please Remove A Substrate.</value>
+  </data>
+  <data name="MSG_LDGUID_15" xml:space="preserve">
+    <value>Store Magazine Is Full.
+Please Remove A Substrate.</value>
+  </data>
+  <data name="MSG_LDGUID_16" xml:space="preserve">
+    <value>Please Check A Cylinder Sensor.</value>
+  </data>
+  <data name="MSG_LDGUID_17" xml:space="preserve">
+    <value>Please Check A Cylinder Sensor.</value>
+  </data>
+  <data name="MSG_LDGUID_18" xml:space="preserve">
+    <value>Please Check A Cylinder Sensor.</value>
+  </data>
+  <data name="MSG_LDGUID_19" xml:space="preserve">
+    <value>Timeout Occurred At The Substrate Adsorption.</value>
+  </data>
+  <data name="MSG_LDGUID_20" xml:space="preserve">
+    <value>Timeout Occurred At The Substrate Adsorption.</value>
+  </data>
+  <data name="MSG_LDGUID_21" xml:space="preserve">
+    <value>NG Discharge Box Is Full.
+Please Remove A Substrate.</value>
+  </data>
+  <data name="MSG_LDGUID_22" xml:space="preserve">
+    <value>Under Stop.</value>
+  </data>
+  <data name="MSG_LDGUID_23" xml:space="preserve">
+    <value>Plese Close The Door.</value>
+  </data>
+  <data name="MSG_LDGUID_24" xml:space="preserve">
+    <value>Please Remove The Substrate Of A Supply Hand. Then Rerun.</value>
+  </data>
+  <data name="MSG_LDGUID_25" xml:space="preserve">
+    <value>Please Check The Limit Sensor Of Conveyance Top And Bottom.</value>
+  </data>
+  <data name="MSG_LDGUID_26" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDGUID_27" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDGUID_28" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDGUID_29" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDGUID_30" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDGUID_31" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDGUID_UD" xml:space="preserve">
+    <value>Please Refer To A Maker For An Alarm Number.</value>
+  </data>
+  <data name="MSG_LDINFO_UD" xml:space="preserve">
+    <value>Alarm Out Of Assumption.</value>
+  </data>
+  <data name="MSG_LOADER_05" xml:space="preserve">
+    <value>Loader error.</value>
+  </data>
+  <data name="MSG_LOADER_07" xml:space="preserve">
+    <value>A pattern matching error.</value>
+  </data>
+  <data name="MSG_LOADER_15" xml:space="preserve">
+    <value>The automatic driving end.</value>
+  </data>
+  <data name="MSG_LOADER_16" xml:space="preserve">
+    <value>Loader Alarm List</value>
+  </data>
+  <data name="MSG_LOADER_17" xml:space="preserve">
+    <value>When A Board Is Left On The Work Table,</value>
+  </data>
+  <data name="MSG_LOADER_18" xml:space="preserve">
+    <value>Please Remove It.</value>
+  </data>
+  <data name="MSG_LOADER_19" xml:space="preserve">
+    <value>The Substrate Kind Changed.</value>
+  </data>
+  <data name="MSG_LOADER_20" xml:space="preserve">
+    <value>Remove Substrate From NG Discharge Box</value>
+  </data>
+  <data name="MSG_LOADER_21" xml:space="preserve">
+    <value>NG Discharge Box Is Full.</value>
+  </data>
+  <data name="MSG_LOADER_22" xml:space="preserve">
+    <value>PUSH START SW(OK BUTTON) Then Origin Return</value>
+  </data>
+  <data name="MSG_LOADER_23" xml:space="preserve">
+    <value>Automatic Driving Is Stopped</value>
+  </data>
+  <data name="MSG_LOADER_29" xml:space="preserve">
+    <value>When A Substrate Is Left In The Equipment,</value>
+  </data>
+  <data name="MSG_LOADER_30" xml:space="preserve">
+    <value>Under Automatic Driving Stop</value>
+  </data>
+  <data name="MSG_LOADER_31" xml:space="preserve">
+    <value>PUSH START SW(OK BUTTON) Then Quits the program.</value>
+  </data>
+  <data name="MSG_LOADER_32" xml:space="preserve">
+    <value>Please Perform Automatic Driving</value>
+  </data>
+  <data name="MSG_LOADER_33" xml:space="preserve">
+    <value>After Removing Substrate.</value>
+  </data>
+  <data name="MSG_LOADER_34" xml:space="preserve">
+    <value>Please Lower A Magazine To A Substrate Detection</value>
+  </data>
+  <data name="MSG_LOADER_35" xml:space="preserve">
+    <value>Sensor-Off Position.</value>
+  </data>
+  <data name="MSG_LOADER_36" xml:space="preserve">
+    <value>Please Remove Substrate.</value>
+  </data>
+  <data name="MSG_LOADER_37" xml:space="preserve">
+    <value>A Substrate Is Left On The XY Table</value>
+  </data>
+  <data name="MSG_LOADER_38" xml:space="preserve">
+    <value>Push START SW(OK BUTTON) Then Origin Return</value>
+  </data>
+  <data name="MSG_LOADER_39" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="MSG_LOADER_40" xml:space="preserve">
+    <value>Please Remove NG Substrate</value>
+  </data>
+  <data name="MSG_LOADER_41" xml:space="preserve">
+    <value>After Removing Substrate</value>
+  </data>
+  <data name="MSG_LOADER_42" xml:space="preserve">
+    <value>A Substrate Is Not Shown On The XY Table</value>
+  </data>
+  <data name="MSG_LOADER_43" xml:space="preserve">
+    <value>Please Perform Again</value>
+  </data>
+  <data name="MSG_LOADER_44" xml:space="preserve">
+    <value>Magazine End</value>
+  </data>
+  <data name="MSG_LOADER_45" xml:space="preserve">
+    <value>Processing Is Continued By START Button,</value>
+  </data>
+  <data name="MSG_LOADER_46" xml:space="preserve">
+    <value>Or Ended By CANCEL Button.(move Stage.)</value>
+  </data>
+  <data name="MSG_LOADER_47" xml:space="preserve">
+    <value>Probe Check Error</value>
+  </data>
+  <data name="MSG_LOADER_48" xml:space="preserve">
+    <value>During A Cycle Stop.</value>
+  </data>
+  <data name="MSG_LOADER_49" xml:space="preserve">
+    <value>Breaking Was Detected.</value>
+  </data>
+  <data name="MSG_LOGERROR" xml:space="preserve">
+    <value>An error occurred in writing for the log file.</value>
+  </data>
+  <data name="MSG_OPLOG_APROBEEXE" xml:space="preserve">
+    <value>AUTO PROBE EXECUTE</value>
+  </data>
+  <data name="MSG_OPLOG_APROBEREC" xml:space="preserve">
+    <value>AUTO PROBE RECOG</value>
+  </data>
+  <data name="MSG_OPLOG_AUTO" xml:space="preserve">
+    <value>AUTO</value>
+  </data>
+  <data name="MSG_OPLOG_CLRTOTAL" xml:space="preserve">
+    <value>COUNTER CLEARED</value>
+  </data>
+  <data name="MSG_OPLOG_CMD" xml:space="preserve">
+    <value> COMMAND</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC01" xml:space="preserve">
+    <value>LOAD</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC02" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC03" xml:space="preserve">
+    <value>EDIT</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC05" xml:space="preserve">
+    <value>LASER</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC06" xml:space="preserve">
+    <value>LOG</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC07" xml:space="preserve">
+    <value>PROBE</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC08" xml:space="preserve">
+    <value>TEACH</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC08S" xml:space="preserve">
+    <value>CUTTING POSITION CORRECTION TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC09" xml:space="preserve">
+    <value>RECOG</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC10" xml:space="preserve">
+    <value>TRIMMER SHUTDOWN</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC30" xml:space="preserve">
+    <value>Circuit Teaching</value>
+  </data>
+  <data name="MSG_OPLOG_CALIBRATION_RECOG_START" xml:space="preserve">
+    <value>Calibration Recog</value>
+  </data>
+  <data name="MSG_OPLOG_CALIBRATION_START" xml:space="preserve">
+    <value>Calibration</value>
+  </data>
+  <data name="MSG_OPLOG_CUT_POS_CORRECT_RECOG_START" xml:space="preserve">
+    <value>CUT Position Correct Recog</value>
+  </data>
+  <data name="MSG_OPLOG_CUT_POS_CORRECT_START" xml:space="preserve">
+    <value>CUT Position Correct</value>
+  </data>
+  <data name="MSG_OPLOG_ExCam1_START" xml:space="preserve">
+    <value>TEACHING WITH AN EXTERNAL CAMERA</value>
+  </data>
+  <data name="MSG_OPLOG_ExCam_START" xml:space="preserve">
+    <value>THE 1ST RESISTANCE TEACHING WITH AN EXTERNAL CAMERA</value>
+  </data>
+  <data name="MSG_OPLOG_HCMD_TRMCMD" xml:space="preserve">
+    <value>HOST TRM CMD</value>
+  </data>
+  <data name="MSG_OPLOG_IDTEACH" xml:space="preserve">
+    <value>ID TEACH</value>
+  </data>
+  <data name="MSG_OPLOG_LOADERINIT" xml:space="preserve">
+    <value>LOADER INIT</value>
+  </data>
+  <data name="MSG_OPLOG_MAP" xml:space="preserve">
+    <value>MAP Select</value>
+  </data>
+  <data name="MSG_OPLOG_SINSYUKU" xml:space="preserve">
+    <value>ELASTIC COMPENSATION(RECOG)</value>
+  </data>
+  <data name="MSG_OPLOG_TRIMRES" xml:space="preserve">
+    <value>Stopped by RESET SW during the trimming.</value>
+  </data>
+  <data name="MSG_OPLOG_TRIMST" xml:space="preserve">
+    <value>TRIMMING</value>
+  </data>
+  <data name="MSG_OPLOG_T_THETA_START" xml:space="preserve">
+    <value>T_THETA TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_WAKEUP" xml:space="preserve">
+    <value>TRIMMER WAKEUP</value>
+  </data>
+  <data name="MSG_OPN_CVR" xml:space="preserve">
+    <value>Cover open detection.</value>
+  </data>
+  <data name="MSG_OPN_CVRLTC" xml:space="preserve">
+    <value>Coveropen latch detection.</value>
+  </data>
+  <data name="MSG_OPN_SCVR" xml:space="preserve">
+    <value>Slidecover open detection.</value>
+  </data>
+  <data name="MSG_SPRASH0" xml:space="preserve">
+    <value>INITIALIZING</value>
+  </data>
+  <data name="MSG_SPRASH12" xml:space="preserve">
+    <value>Fail the air pressure</value>
+  </data>
+  <data name="MSG_SPRASH13" xml:space="preserve">
+    <value>Consecutive NG-HI Errors.</value>
+  </data>
+  <data name="MSG_SPRASH14" xml:space="preserve">
+    <value>Re Probing NG</value>
+  </data>
+  <data name="MSG_SPRASH16" xml:space="preserve">
+    <value>PUSH RESET SW TO QUIT PROGRAM</value>
+  </data>
+  <data name="MSG_SPRASH17" xml:space="preserve">
+    <value>If The Cancel Button Is Pressed, The Program Is Ended.</value>
+  </data>
+  <data name="MSG_SPRASH18" xml:space="preserve">
+    <value>Loader Communication Timeout Error.</value>
+  </data>
+  <data name="MSG_SPRASH19" xml:space="preserve">
+    <value>In Abnormal All Stops, Occurring.</value>
+  </data>
+  <data name="MSG_SPRASH20" xml:space="preserve">
+    <value>In Abnormal A Cycle Stop, Occurring.</value>
+  </data>
+  <data name="MSG_SPRASH21" xml:space="preserve">
+    <value>In Light Trouble Outbreak.</value>
+  </data>
+  <data name="MSG_SPRASH22" xml:space="preserve">
+    <value>Push START SW To Start The Automatic Operation.</value>
+  </data>
+  <data name="MSG_SPRASH23" xml:space="preserve">
+    <value>The Error Occurred In Trimming.</value>
+  </data>
+  <data name="MSG_SPRASH24" xml:space="preserve">
+    <value>Loader Initializing</value>
+  </data>
+  <data name="MSG_SPRASH25" xml:space="preserve">
+    <value>Under Interlock Release</value>
+  </data>
+  <data name="MSG_SPRASH26" xml:space="preserve">
+    <value>Under Interlock Part Release</value>
+  </data>
+  <data name="MSG_SPRASH27" xml:space="preserve">
+    <value>SAFETY COVER OPENED</value>
+  </data>
+  <data name="MSG_SPRASH28" xml:space="preserve">
+    <value>SLIDE COVER OPENED</value>
+  </data>
+  <data name="MSG_SPRASH30" xml:space="preserve">
+    <value>PLC status error.</value>
+  </data>
+  <data name="MSG_SPRASH31" xml:space="preserve">
+    <value>Cautions !!!</value>
+  </data>
+  <data name="MSG_SPRASH32" xml:space="preserve">
+    <value>Slide Cover Closes Automatically.</value>
+  </data>
+  <data name="MSG_OPLOG_TX_START" xml:space="preserve">
+    <value>TX TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_TY2_START" xml:space="preserve">
+    <value>TY2 TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_TY_START" xml:space="preserve">
+    <value>TY TEACHING</value>
+  </data>
+  <data name="MSG_SPRASH33" xml:space="preserve">
+    <value>PUSH RESET SW TO QUIT PROCESS</value>
+  </data>
+  <data name="MSG_SPRASH34" xml:space="preserve">
+    <value>SAFETY COVER or SLIDE COVER OPENED</value>
+  </data>
+  <data name="MSG_SPRASH35" xml:space="preserve">
+    <value>[START]:Continue, [RESET]:End</value>
+  </data>
+  <data name="MSG_SPRASH36" xml:space="preserve">
+    <value>Please Close The Cover</value>
+  </data>
+  <data name="MSG_SPRASH37" xml:space="preserve">
+    <value>Loader Initializing Uncompleted.</value>
+  </data>
+  <data name="MSG_SPRASH38" xml:space="preserve">
+    <value>It Is Moving To XY Origin Position</value>
+  </data>
+  <data name="MSG_SPRASH39" xml:space="preserve">
+    <value>Under Stop.</value>
+  </data>
+  <data name="MSG_SPRASH4" xml:space="preserve">
+    <value>PUSH START SW</value>
+  </data>
+  <data name="MSG_SPRASH40" xml:space="preserve">
+    <value>CV Error Detection.</value>
+  </data>
+  <data name="MSG_SPRASH41" xml:space="preserve">
+    <value>Over Load Detection.</value>
+  </data>
+  <data name="MSG_SPRASH42" xml:space="preserve">
+    <value>ReProbing Error.</value>
+  </data>
+  <data name="MSG_SPRASH43" xml:space="preserve">
+    <value>Front Door Lock Time Out</value>
+  </data>
+  <data name="MSG_SPRASH44" xml:space="preserve">
+    <value>Front Door Unlock Time Out</value>
+  </data>
+  <data name="MSG_SPRASH45" xml:space="preserve">
+    <value>Please remove substrate in EQ</value>
+  </data>
+  <data name="MSG_SPRASH46" xml:space="preserve">
+    <value>Equipment Initializing</value>
+  </data>
+  <data name="MSG_SPRASH47" xml:space="preserve">
+    <value>Moving to Home Position</value>
+  </data>
+  <data name="MSG_SPRASH48" xml:space="preserve">
+    <value>Trimming data is not exist read from QR Code Reader.</value>
+  </data>
+  <data name="MSG_SPRASH49" xml:space="preserve">
+    <value>Please confirm trimming data file.</value>
+  </data>
+  <data name="MSG_SPRASH50" xml:space="preserve">
+    <value>PLC Low Battery Detect</value>
+  </data>
+  <data name="MSG_SPRASH51" xml:space="preserve">
+    <value>Please Change Battery</value>
+  </data>
+  <data name="MSG_SPRASH6" xml:space="preserve">
+    <value>EMERGENCY</value>
+  </data>
+  <data name="MSG_SRV_ALM" xml:space="preserve">
+    <value>Servo Alarm.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS" xml:space="preserve">
+    <value>Axis -Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_T" xml:space="preserve">
+    <value>Theta Axis -Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_X" xml:space="preserve">
+    <value>X Axis -Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_Y" xml:space="preserve">
+    <value>Y Axis -Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_Z" xml:space="preserve">
+    <value>Z Axis -Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_Z2" xml:space="preserve">
+    <value>Z2 Axis -Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS" xml:space="preserve">
+    <value>Axis +Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_T" xml:space="preserve">
+    <value>Theta Axis +Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_X" xml:space="preserve">
+    <value>X Axis +Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_Y" xml:space="preserve">
+    <value>Y Axis +Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_Z" xml:space="preserve">
+    <value>Z Axis +Limit Over.</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_Z2" xml:space="preserve">
+    <value>Z2 Axis +Limit Over.</value>
+  </data>
+  <data name="MSG_TIMEOUT_ATT" xml:space="preserve">
+    <value>Rotary Attenuater Error(Time Out)</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_T" xml:space="preserve">
+    <value>Theta Axis Error(Time Out)</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_X" xml:space="preserve">
+    <value>X Axis Error(Time Out)</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_XY" xml:space="preserve">
+    <value>XY Axis Error(Time Out)</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_Y" xml:space="preserve">
+    <value>Y Axis Error(Time Out)</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_Z" xml:space="preserve">
+    <value>Z Axis Error(Time Out)</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_Z2" xml:space="preserve">
+    <value>Z2 Axis Error(Time Out)</value>
+  </data>
+  <data name="MSGERR_SEND_TRIMDATA" xml:space="preserve">
+    <value>Failure to set the trimming data.
+Please confirm the trimming data.</value>
+  </data>
+  <data name="TITLE_4" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="TITLE_LOGGING" xml:space="preserve">
+    <value>Logging process</value>
+  </data>
+  <data name="TITLE_TX" xml:space="preserve">
+    <value>Chip size (TX) Teaching</value>
+  </data>
+  <data name="TITLE_TY" xml:space="preserve">
+    <value>Step size (TY) Teaching</value>
+  </data>
+  <data name="MSG_TRIM_01" xml:space="preserve">
+    <value>are out of a processing range.</value>
+  </data>
+  <data name="MSG_TRIM_02" xml:space="preserve">
+    <value>I was not able to do start of loader automatic driving,</value>
+  </data>
+  <data name="MSG_TRIM_03" xml:space="preserve">
+    <value>Do you continue processing?</value>
+  </data>
+  <data name="MSG_TRIM_04" xml:space="preserve">
+    <value>INITIAL TEST DISTRIBUTION MAP</value>
+  </data>
+  <data name="MSG_TRIM_05" xml:space="preserve">
+    <value>FINAL TEST DISTRIBUTION MAP</value>
+  </data>
+  <data name="ERR_TXNUM_E_CHIP" xml:space="preserve">
+    <value>Can't execute this command since the resistor number is 1.</value>
+  </data>
+  <data name="ERR_TXNUM_E_NET" xml:space="preserve">
+    <value>Can't execute this command since the Circuit number is 1.</value>
+  </data>
+  <data name="INFO_MSG18_CHIP" xml:space="preserve">
+    <value>&lt;Group No.1&gt; The 1st resistance standard position.</value>
+  </data>
+  <data name="INFO_MSG18_NET" xml:space="preserve">
+    <value>&lt;Group No.1&gt; The 1st circuit standard position.</value>
+  </data>
+  <data name="INFO_MSG20_CHIP" xml:space="preserve">
+    <value>&gt; The last resistance standard position.</value>
+  </data>
+  <data name="INFO_MSG20_NET" xml:space="preserve">
+    <value>&gt; The last circuit standard position.</value>
+  </data>
+  <data name="INFO_MSG28" xml:space="preserve">
+    <value>&gt; The Final Edge Positionlast.</value>
+  </data>
+  <data name="INFO_MSG29" xml:space="preserve">
+    <value>&gt; The State-Of-The-Art Position.</value>
+  </data>
+  <data name="MSG_OPLOG_MAINT" xml:space="preserve">
+    <value>PROBE CLEANING</value>
+  </data>
+  <data name="BarCode_Data_001" xml:space="preserve">
+    <value>[BAR CODE INFORMATION]</value>
+  </data>
+  <data name="BarCode_Data_002" xml:space="preserve">
+    <value>Bar Code  : </value>
+  </data>
+  <data name="BarCode_Data_003" xml:space="preserve">
+    <value>Type      : </value>
+  </data>
+  <data name="BarCode_Data_004" xml:space="preserve">
+    <value>Option A  : </value>
+  </data>
+  <data name="BarCode_Data_005" xml:space="preserve">
+    <value>Option B  : </value>
+  </data>
+  <data name="BarCode_Data_006" xml:space="preserve">
+    <value>Res Value : </value>
+  </data>
+  <data name="basMatrix_001" xml:space="preserve">
+    <value>Auto Prob Execute. X=</value>
+  </data>
+  <data name="basMatrix_002" xml:space="preserve">
+    <value>, Y=</value>
+  </data>
+  <data name="basTrimming_001" xml:space="preserve">
+    <value>Window handle does not get.</value>
+  </data>
+  <data name="DataAccess_001" xml:space="preserve">
+    <value>Data read error !</value>
+  </data>
+  <data name="DataAccess_002" xml:space="preserve">
+    <value>R No.=</value>
+  </data>
+  <data name="DataAccess_003" xml:space="preserve">
+    <value>C No.=</value>
+  </data>
+  <data name="DataAccess_004" xml:space="preserve">
+    <value>ErrCode:</value>
+  </data>
+  <data name="DataAccess_005" xml:space="preserve">
+    <value>ErrDesc:</value>
+  </data>
+  <data name="File_001" xml:space="preserve">
+    <value>ERROR INFO</value>
+  </data>
+  <data name="File_002" xml:space="preserve">
+    <value>Err No.</value>
+  </data>
+  <data name="File_003" xml:space="preserve">
+    <value>ERROR DESCRIPTION</value>
+  </data>
+  <data name="File_004" xml:space="preserve">
+    <value>ERROR NUMBER     </value>
+  </data>
+  <data name="File_005" xml:space="preserve">
+    <value>File constitution is changed.</value>
+  </data>
+  <data name="File_006" xml:space="preserve">
+    <value>Please do SAVE after confirmation in an item to show as follows.</value>
+  </data>
+  <data name="File_007" xml:space="preserve">
+    <value>[PLATE DATA]</value>
+  </data>
+  <data name="File_008" xml:space="preserve">
+    <value>* THETA</value>
+  </data>
+  <data name="File_009" xml:space="preserve">
+    <value>* LED Control</value>
+  </data>
+  <data name="File_010" xml:space="preserve">
+    <value>* GP-IB</value>
+  </data>
+  <data name="File_011" xml:space="preserve">
+    <value>[GROUP DATA]</value>
+  </data>
+  <data name="File_012" xml:space="preserve">
+    <value>* Resistor Number</value>
+  </data>
+  <data name="File_013" xml:space="preserve">
+    <value>* Group Interval</value>
+  </data>
+  <data name="File_014" xml:space="preserve">
+    <value>* T_THETA OFFSET</value>
+  </data>
+  <data name="File_015" xml:space="preserve">
+    <value>* T_THETA ADJUST POINT1XY</value>
+  </data>
+  <data name="File_016" xml:space="preserve">
+    <value>* T_THETA ADJUST POINT2XY</value>
+  </data>
+  <data name="File_017" xml:space="preserve">
+    <value>* POWER ADJUSTMENT MODE</value>
+  </data>
+  <data name="File_018" xml:space="preserve">
+    <value>* ADJUSTMENT POWER</value>
+  </data>
+  <data name="File_019" xml:space="preserve">
+    <value>* POWER ADJUSTMENT QRATE</value>
+  </data>
+  <data name="File_020" xml:space="preserve">
+    <value>* ADJUSTMENT TOLERANCE</value>
+  </data>
+  <data name="File_021" xml:space="preserve">
+    <value>[CUT DATA]</value>
+  </data>
+  <data name="File_022" xml:space="preserve">
+    <value>* CUTOFF OFFSET</value>
+  </data>
+  <data name="File_023" xml:space="preserve">
+    <value>[PLATE DATA 2]</value>
+  </data>
+  <data name="File_024" xml:space="preserve">
+    <value>* GroupNo. for revise pattern.</value>
+  </data>
+  <data name="File_025" xml:space="preserve">
+    <value>Please do SAVE after confirmation.</value>
+  </data>
+  <data name="File_026" xml:space="preserve">
+    <value>* GROUP NUMBER XY</value>
+  </data>
+  <data name="FrmCutPosCorrect_001" xml:space="preserve">
+    <value>Teaching X</value>
+  </data>
+  <data name="FrmCutPosCorrect_002" xml:space="preserve">
+    <value>Teaching Y</value>
+  </data>
+  <data name="FrmCutPosCorrect_003" xml:space="preserve">
+    <value> Gap X  </value>
+  </data>
+  <data name="FrmCutPosCorrect_004" xml:space="preserve">
+    <value> Gap Y  </value>
+  </data>
+  <data name="frmDistribution_001" xml:space="preserve">
+    <value>Save completion.</value>
+  </data>
+  <data name="frmDistribution_002" xml:space="preserve">
+    <value>I was not able to save it.</value>
+  </data>
+  <data name="frmDistribution_003" xml:space="preserve">
+    <value>Distribute ON</value>
+  </data>
+  <data name="frmDistribution_004" xml:space="preserve">
+    <value>Distribute OFF</value>
+  </data>
+  <data name="frmDistribution_005" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="frmLotNoInput_001" xml:space="preserve">
+    <value>Lot number input</value>
+  </data>
+  <data name="frmProbeCleaning_001" xml:space="preserve">
+    <value>Please specify a value within the limits of {0} and {1} ({2})</value>
+  </data>
+  <data name="Globals_Renamed_001" xml:space="preserve">
+    <value>The Registration Number Of Conditions Exceeded The Maximum. Please Check A Current Value, Frequency, And A Number Of STEG.</value>
+  </data>
+  <data name="Globals_Renamed_002" xml:space="preserve">
+    <value>Pattern recognition success</value>
+  </data>
+  <data name="Globals_Renamed_003" xml:space="preserve">
+    <value>Pattern recognition error (threshold)</value>
+  </data>
+  <data name="Globals_Renamed_004" xml:space="preserve">
+    <value>Correlation coefficient</value>
+  </data>
+  <data name="Globals_Renamed_005" xml:space="preserve">
+    <value>Deviation amount (X)</value>
+  </data>
+  <data name="Globals_Renamed_006" xml:space="preserve">
+    <value>Deviation amount (Y)</value>
+  </data>
+  <data name="Globals_Renamed_007" xml:space="preserve">
+    <value>Pattern recognition error (not find)</value>
+  </data>
+  <data name="Globals_Renamed_008" xml:space="preserve">
+    <value>Z AXIS Software LIMIT </value>
+  </data>
+  <data name="gwModule_001" xml:space="preserve">
+    <value> and </value>
+  </data>
+  <data name="QR_Data_001" xml:space="preserve">
+    <value> Type               :</value>
+  </data>
+  <data name="QR_Data_002" xml:space="preserve">
+    <value> Allowance          :</value>
+  </data>
+  <data name="QR_Data_003" xml:space="preserve">
+    <value> Res Value(IEC)     :</value>
+  </data>
+  <data name="QR_Data_004" xml:space="preserve">
+    <value> Res Value(True Res):</value>
+  </data>
+  <data name="QR_Data_005" xml:space="preserve">
+    <value> Lot No.            :</value>
+  </data>
+  <data name="QR_Print_001" xml:space="preserve">
+    <value>MS Gothic</value>
+  </data>
+  <data name="SimpleTrimmer_001" xml:space="preserve">
+    <value>Save completion.</value>
+  </data>
+  <data name="SimpleTrimmer_002" xml:space="preserve">
+    <value>BLOCK DATA</value>
+  </data>
+  <data name="SimpleTrimmer_003" xml:space="preserve">
+    <value>MS Gothic</value>
+  </data>
+  <data name="SimpleTrimmer_004" xml:space="preserve">
+    <value>YIELD</value>
+  </data>
+  <data name="SimpleTrimmer_005" xml:space="preserve">
+    <value>LOT NO</value>
+  </data>
+  <data name="SimpleTrimmer_006" xml:space="preserve">
+    <value>START TIME</value>
+  </data>
+  <data name="SimpleTrimmer_007" xml:space="preserve">
+    <value>ELAPSED TIME</value>
+  </data>
+  <data name="SimpleTrimmer_008" xml:space="preserve">
+    <value>Substrates</value>
+  </data>
+  <data name="SimpleTrimmer_009" xml:space="preserve">
+    <value>Resistors</value>
+  </data>
+  <data name="SimpleTrimmer_010" xml:space="preserve">
+    <value>Laser Power</value>
+  </data>
+  <data name="SimpleTrimmer_011" xml:space="preserve">
+    <value>Nominal</value>
+  </data>
+  <data name="SimpleTrimmer_012" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="SimpleTrimmer_013" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="SimpleTrimmer_014" xml:space="preserve">
+    <value>Initial Test</value>
+  </data>
+  <data name="SimpleTrimmer_015" xml:space="preserve">
+    <value>Final Test</value>
+  </data>
+  <data name="SimpleTrimmer_016" xml:space="preserve">
+    <value>Substrate</value>
+  </data>
+  <data name="SimpleTrimmer_017" xml:space="preserve">
+    <value>Lot</value>
+  </data>
+  <data name="SimpleTrimmer_018" xml:space="preserve">
+    <value>Resistors</value>
+  </data>
+  <data name="SimpleTrimmer_019" xml:space="preserve">
+    <value>OK(%)</value>
+  </data>
+  <data name="SimpleTrimmer_020" xml:space="preserve">
+    <value>Low NG(%)</value>
+  </data>
+  <data name="SimpleTrimmer_021" xml:space="preserve">
+    <value>High NG(%)</value>
+  </data>
+  <data name="SimpleTrimmer_022" xml:space="preserve">
+    <value>Range Over(%)</value>
+  </data>
+  <data name="SimpleTrimmer_023" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="SimpleTrimmer_024" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="SimpleTrimmer_025" xml:space="preserve">
+    <value>Average</value>
+  </data>
+  <data name="SimpleTrimmer_026" xml:space="preserve">
+    <value>3σ</value>
+  </data>
+  <data name="SimpleTrimmer_027" xml:space="preserve">
+    <value>CpK</value>
+  </data>
+  <data name="SimpleTrimmer_028" xml:space="preserve">
+    <value>DATA CLR</value>
+  </data>
+  <data name="SimpleTrimmer_029" xml:space="preserve">
+    <value>DATA SAVE</value>
+  </data>
+  <data name="SimpleTrimmer_030" xml:space="preserve">
+    <value>BP ADJUST</value>
+  </data>
+  <data name="SimpleTrimmer_031" xml:space="preserve">
+    <value>DATA EDIT</value>
+  </data>
+  <data name="SimpleTrimmer_032" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="SimpleTrimmer_033" xml:space="preserve">
+    <value>Res No</value>
+  </data>
+  <data name="SimpleTrimmer_034" xml:space="preserve">
+    <value>Initial Test (DEV%) </value>
+  </data>
+  <data name="SimpleTrimmer_035" xml:space="preserve">
+    <value>Final Test (DEV%) </value>
+  </data>
+  <data name="SimpleTrimmer_036" xml:space="preserve">
+    <value>LOT NO</value>
+  </data>
+  <data name="SimpleTrimmer_037" xml:space="preserve">
+    <value>IO CHECK</value>
+  </data>
+  <data name="SimpleTrimmer_038" xml:space="preserve">
+    <value>PROBE Cleaning</value>
+  </data>
+  <data name="SimpleTrimmer_039" xml:space="preserve">
+    <value>Please turn on the Laser</value>
+  </data>
+  <data name="SimpleTrimmer_040" xml:space="preserve">
+    <value>M-ohm</value>
+  </data>
+  <data name="SimpleTrimmer_041" xml:space="preserve">
+    <value>K-ohm</value>
+  </data>
+  <data name="SimpleTrimmer_042" xml:space="preserve">
+    <value>ohm</value>
+  </data>
+  <data name="SimpleTrimmer_043" xml:space="preserve">
+    <value>m-ohm</value>
+  </data>
+  <data name="iTKY_001" xml:space="preserve">
+    <value>Run the [ {0} ]</value>
+  </data>
+  <data name="MSG_SPRASH52" xml:space="preserve">
+    <value>Please check the condition of the substrate.</value>
+  </data>
+  <data name="MSG_SPRASH53" xml:space="preserve">
+    <value>Re-run in the [START], it will end with [Cancel].</value>
+  </data>
+  <data name="MSG_SPRASH54" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="MSG_SPRASH55" xml:space="preserve">
+    <value>Not Clear</value>
+  </data>
+  <data name="LBL_BTN_SUBSTRAT" xml:space="preserve">
+    <value>Set Substrate</value>
+  </data>
+  <data name="MSG_LOADER_50" xml:space="preserve">
+    <value>Please Open The Cover And Set Substrate.</value>
+  </data>
+  <data name="MSG_LOADER_51" xml:space="preserve">
+    <value>Push START Button.</value>
+  </data>
+  <data name="MSG_SPRASH56" xml:space="preserve">
+    <value>Please select button .</value>
+  </data>
+  <data name="MSG_SPRASH57" xml:space="preserve">
+    <value>then continue lot process.</value>
+  </data>
+  <data name="MSG_SPRASH58" xml:space="preserve">
+    <value>Please put the substrate.</value>
+  </data>
+  <data name="MSG_SPRASH59" xml:space="preserve">
+    <value>START</value>
+  </data>
+  <data name="MSG_SPRASH60" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="MSG_SPRASH61" xml:space="preserve">
+    <value>CONTINUE</value>
+  </data>
+  <data name="MSG_frmLimit_08" xml:space="preserve">
+    <value>PUSH  OK BUTTON</value>
+  </data>
+  <data name="MSG_LOADER_52" xml:space="preserve">
+    <value>ADJ-ON:After OK pushed , Main window START/RESET
+button push and stage move.
+ADJ-OFF:After OK pshed , stage move.</value>
+  </data>
+  <data name="MSG_LOADER_53" xml:space="preserve">
+    <value>Push Cancel button then push OK button , stage move to home position.</value>
+  </data>
+  <data name="MSG_SPRASH62" xml:space="preserve">
+    <value>Slide Cover is closed.
+Trimming will be started.</value>
+  </data>
+  <data name="MSG_SPRASH63" xml:space="preserve">
+    <value>Plate Unload Position Setting error(SETLOADPOS)</value>
+  </data>
+  <data name="MSG_SPRASH64" xml:space="preserve">
+    <value>Stage Moving error to Plate Load Position</value>
+  </data>
+  <data name="MSG_SPRASH65" xml:space="preserve">
+    <value>Slide Cover Check Setting error（EX_SLIDECOVERCHK(0)）</value>
+  </data>
+  <data name="Form1_023" xml:space="preserve">
+    <value>Alignment: </value>
+  </data>
+  <data name="Form1_024" xml:space="preserve">
+    <value>Rough Alignment: </value>
+  </data>
+  <data name="BarCode_Data_007" xml:space="preserve">
+    <value>Bar Code1 : </value>
+  </data>
+  <data name="BarCode_Data_008" xml:space="preserve">
+    <value>Bar Code2 : </value>
+  </data>
+  <data name="MSG_163" xml:space="preserve">
+    <value>Clear the Barcode information？</value>
+  </data>
+  <data name="BarCode_Data_009" xml:space="preserve">
+    <value>The specified key is not found</value>
+  </data>
+  <data name="BarCode_Data_010" xml:space="preserve">
+    <value>Key designation exceeds number of characters ({0})</value>
+  </data>
+  <data name="BarCode_Data_011" xml:space="preserve">
+    <value>Search key : </value>
+  </data>
+  <data name="BarCode_Data_012" xml:space="preserve">
+    <value>Barcode    : </value>
+  </data>
+  <data name="MSG_109" xml:space="preserve">
+    <value>Create new</value>
+  </data>
+  <data name="MSG_110" xml:space="preserve">
+    <value>There are data editing. Do you want to create new data?</value>
+  </data>
+  <data name="MSG_111" xml:space="preserve">
+    <value>FiberLaser conditions are editing. Do you want to create new data?</value>
+  </data>
+  <data name="Form1_025" xml:space="preserve">
+    <value>"Default Printer" is offline.</value>
+  </data>
+  <data name="Form1_026" xml:space="preserve">
+    <value>Created PDF.
+{0}</value>
+  </data>
+  <data name="MSG_SPRASH66" xml:space="preserve">
+    <value>Over NG count :Setting=</value>
+  </data>
+  <data name="MSG_SPRASH67" xml:space="preserve">
+    <value>NG count ＝</value>
+  </data>
+  <data name="MSG_SPRASH70" xml:space="preserve">
+    <value>CutOff turning Error</value>
+  </data>
+  <data name="MSG_SPRASH71" xml:space="preserve">
+    <value>START:Retry RESET:Lot Abort</value>
+  </data>
+  <data name="MSG_SPRASH72" xml:space="preserve">
+    <value>Number of Lot Input is not a Number</value>
+  </data>
+  <data name="MSG_SPRASH73" xml:space="preserve">
+    <value>Process it as 0</value>
+  </data>
+  <data name="MSG_SPRASH74" xml:space="preserve">
+    <value>NEW：START 、CONTINUE：RESET</value>
+  </data>
+  <data name="MSG_SPRASH75" xml:space="preserve">
+    <value>NEW</value>
+  </data>
+  <data name="MSG_SPRASH76" xml:space="preserve">
+    <value>CONTINUE</value>
+  </data>
+  <data name="QR_Data_006" xml:space="preserve">
+    <value> Lot Input          :</value>
+  </data>
+  <data name="MSG_LDGUID_10" xml:space="preserve">
+    <value>Please Set A Magazine Or A Substrate Whether Magazine Search DOGU Falls Down.</value>
+  </data>
+  <data name="MSG_SPRASH77" xml:space="preserve">
+    <value>Trimming End</value>
+  </data>
+  <data name="MSG_SPRASH79" xml:space="preserve">
+    <value>Plate NG Rate is Over setting value:Setting=</value>
+  </data>
+  <data name="MSG_SPRASH80" xml:space="preserve">
+    <value>NG Rate =</value>
+  </data>
+  <data name="MSG_SPRASH81" xml:space="preserve">
+    <value>pcs</value>
+  </data>
+  <data name="MSG_SPRASH82" xml:space="preserve">
+    <value>OK(START):Continue,Cancel(RESET):Cancel</value>
+  </data>
+</root>

@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CmdCircuitTeach.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdCircuitTeach.Text" xml:space="preserve">
+    <value>CIRCUIT</value>
+  </data>
+  <data name="cmdEsLog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="CmdCnd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="CmdCnd.Text" xml:space="preserve">
+    <value>编辑锁</value>
+  </data>
+  <data name="CMdIX2Log.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="btnTrimming.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="btnTrimming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 39</value>
+  </data>
+  <data name="btnTrimming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 29</value>
+  </data>
+  <data name="CmdTx.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdTx.Text" xml:space="preserve">
+    <value>BP位置调整</value>
+  </data>
+  <data name="CmdTy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdTy.Text" xml:space="preserve">
+    <value>STAGE位置调整</value>
+  </data>
+  <data name="CmdExCam.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdExCam1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdCutPosCorrect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdCutPosCorrect.Text" xml:space="preserve">
+    <value>补正</value>
+  </data>
+  <data name="CmdCalibration.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdCalibration.Text" xml:space="preserve">
+    <value>补正</value>
+  </data>
+  <data name="CmdPtnCalibration.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdPtnCalibration.Text" xml:space="preserve">
+    <value>画面登录</value>
+  </data>
+  <data name="CmdPtnCutPosCorrect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdPtnCutPosCorrect.Text" xml:space="preserve">
+    <value>画面登录</value>
+  </data>
+  <data name="mnuHelpAbout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="CmdEnd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdEnd.Text" xml:space="preserve">
+    <value>结束</value>
+  </data>
+  <data name="CmdPattern.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdPattern.Text" xml:space="preserve">
+    <value>图像配准</value>
+  </data>
+  <data name="CmdTeach.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdTeach.Text" xml:space="preserve">
+    <value>TEACHING</value>
+  </data>
+  <data name="CmdProbe.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdProbe.Text" xml:space="preserve">
+    <value>探针</value>
+  </data>
+  <data name="CmdLoging.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdLoging.Text" xml:space="preserve">
+    <value>记录</value>
+  </data>
+  <data name="CmdLaser.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdLaser.Text" xml:space="preserve">
+    <value>激光</value>
+  </data>
+  <data name="CmdLoad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdLoad.Text" xml:space="preserve">
+    <value>装载</value>
+  </data>
+  <data name="picGraphAccumulation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 770</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 17</value>
+  </data>
+  <data name="lblDeviation.Text" xml:space="preserve">
+    <value>标准偏差</value>
+  </data>
+  <data name="lblRegistTitle.Text" xml:space="preserve">
+    <value>阻抗数</value>
+  </data>
+  <data name="lblInterLockMSG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdTy2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdTy2.Text" xml:space="preserve">
+    <value>TY2 TEACHING</value>
+  </data>
+  <data name="CmdT_Theta.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdT_Theta.Text" xml:space="preserve">
+    <value>Tθ TEACHING</value>
+  </data>
+  <data name="LblMes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="LblCur.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="LblCur.Text" xml:space="preserve">
+    <value>电流值 0.25A</value>
+  </data>
+  <data name="lblLoginResult.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="lblLoginResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 19</value>
+  </data>
+  <data name="LblDataFileName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblDataFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 21</value>
+  </data>
+  <data name="lblLogging.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="lblLogging.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 17</value>
+  </data>
+  <data name="LblRotAtt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="LblRotAtt.Text" xml:space="preserve">
+    <value>衰减率 99.9%</value>
+  </data>
+  <data name="CmdCutPos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdCutPos.Text" xml:space="preserve">
+    <value>切割位置校正</value>
+  </data>
+  <data name="btnCounterClear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LblGO.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblTNG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblUnit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 19</value>
+  </data>
+  <data name="LblPlate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblPlate.Text" xml:space="preserve">
+    <value>基板数=</value>
+  </data>
+  <data name="LblPLTNUM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblITHING.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblITLONG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblOVER.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblREGNUM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblFTHING.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblFTLONG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblNGPER.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblFTHINGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblFTLONGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblOVERP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcOK.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcITHING.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcFTHING.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcOVER.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcREGNUM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcREGNUM.Text" xml:space="preserve">
+    <value>阻值=</value>
+  </data>
+  <data name="LblcNG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcITLONG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcFTLONG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcNGPER.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcITHINGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcITLONGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcFTHINGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcFTLONGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblITLONGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblITHINGP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcOVERP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="PanelGraph.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 820</value>
+  </data>
+  <data name="cmdFinal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="cmdFinal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 389</value>
+  </data>
+  <data name="cmdFinal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 42</value>
+  </data>
+  <data name="cmdFinal.Text" xml:space="preserve">
+    <value>最后测试
+DISTRIBUTION图</value>
+  </data>
+  <data name="LblGrpPer_00.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_00.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="cmdGraphSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="cmdGraphSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 390</value>
+  </data>
+  <data name="cmdGraphSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 42</value>
+  </data>
+  <data name="cmdGraphSave.Text" xml:space="preserve">
+    <value>DISTRIBUTION图
+保存</value>
+  </data>
+  <data name="cmdInitial.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt</value>
+  </data>
+  <data name="cmdInitial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 389</value>
+  </data>
+  <data name="cmdInitial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 42</value>
+  </data>
+  <data name="cmdInitial.Text" xml:space="preserve">
+    <value>初始化测试
+DISTRIBUTION图</value>
+  </data>
+  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="Label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="Label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="Label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>标准偏差</value>
+  </data>
+  <data name="lblGoodChip2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="lblNgChip2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="lblDeviationValue2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="lblAverageValue2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="lblMaxValue2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="lblMinValue2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt</value>
+  </data>
+  <data name="LblGrpPer_11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_09.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_08.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_07.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_06.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_05.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_04.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_03.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_02.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblGrpPer_01.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_09.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_08.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_07.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_06.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_05.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_04.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_03.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_02.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="LblRegN_01.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="Label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="Label18.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt</value>
+  </data>
+  <data name="Label18.Text" xml:space="preserve">
+    <value>阻抗号</value>
+  </data>
+  <data name="lblRegistUnit2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 9.75pt</value>
+  </data>
+  <data name="lblGraphAccumulationTitle2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 12pt</value>
+  </data>
+  <data name="GrpQrCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblQRData.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblQRData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 24</value>
+  </data>
+  <data name="lblQRData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 15</value>
+  </data>
+  <data name="CmdSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdSave.Text" xml:space="preserve">
+    <value>数据保存</value>
+  </data>
+  <data name="CmdEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdEdit.Text" xml:space="preserve">
+    <value>数据编辑</value>
+  </data>
+  <data name="CmdLoaderInit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdLoaderInit.Text" xml:space="preserve">
+    <value>装载机初始归位</value>
+  </data>
+  <data name="CmdAutoOperation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdAutoOperation.Text" xml:space="preserve">
+    <value>自动操作</value>
+  </data>
+  <data name="tabCmd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdIntegrated.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdIntegrated.Text" xml:space="preserve">
+    <value>综合定位调整</value>
+  </data>
+  <data name="lblExCamera.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="lblExCamera.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="lblExCamera.Text" xml:space="preserve">
+    <value>外部摄像机TEACHING</value>
+  </data>
+  <data name="lblCalibration.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="lblCalibration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 22</value>
+  </data>
+  <data name="lblCalibration.Text" xml:space="preserve">
+    <value>矫正</value>
+  </data>
+  <data name="lblCutPos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="lblCutPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="lblCutPos.Text" xml:space="preserve">
+    <value>外部摄像机CUT位置</value>
+  </data>
+  <data name="CmdMap.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdMap.Text" xml:space="preserve">
+    <value>MAP</value>
+  </data>
+  <data name="CmdSinsyukuPtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdSinsyukuPtn.Text" xml:space="preserve">
+    <value>画面登录</value>
+  </data>
+  <data name="CmdAotoProbeCorrect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdAotoProbeCorrect.Text" xml:space="preserve">
+    <value>执行</value>
+  </data>
+  <data name="CmdAotoProbePtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdAotoProbePtn.Text" xml:space="preserve">
+    <value>画面登录</value>
+  </data>
+  <data name="CmdIDTeach.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CmdIDTeach.Text" xml:space="preserve">
+    <value>ID TEACHING</value>
+  </data>
+  <data name="lblSinsyuku.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="lblSinsyuku.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 22</value>
+  </data>
+  <data name="lblSinsyuku.Text" xml:space="preserve">
+    <value>伸缩补正</value>
+  </data>
+  <data name="lblAutoProbe.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="lblAutoProbe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 22</value>
+  </data>
+  <data name="lblAutoProbe.Text" xml:space="preserve">
+    <value>自动探针</value>
+  </data>
+  <data name="CmdT_ProbeCleaning.Text" xml:space="preserve">
+    <value>Probe清洁</value>
+  </data>
+  <data name="cmdStop.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="cmdStop.Text" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="cmdTestRun.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="BtnADJ.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="BtnADJ.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 10</value>
+  </data>
+  <data name="BtnADJ.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 29</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LblDIGSW_HI.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblDIGSW_HI.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblDIGSW_HI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 16</value>
+  </data>
+  <data name="LblDIGSW_HI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 19</value>
+  </data>
+  <data name="LblDIGSW_HI.Text" xml:space="preserve">
+    <value>显示模式</value>
+  </data>
+  <data name="LblDIGSW.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblDIGSW.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblDIGSW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 44</value>
+  </data>
+  <data name="LblDIGSW.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 19</value>
+  </data>
+  <data name="LblDIGSW.Text" xml:space="preserve">
+    <value>移动模式</value>
+  </data>
+  <data name="CbDigSwL.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CbDigSwL.Items" xml:space="preserve">
+    <value>0：初始化+TRIM+最后测试</value>
+  </data>
+  <data name="CbDigSwL.Items1" xml:space="preserve">
+    <value>1：TRIM+最后测试</value>
+  </data>
+  <data name="CbDigSwL.Items2" xml:space="preserve">
+    <value>2：最后测试</value>
+  </data>
+  <data name="CbDigSwL.Items3" xml:space="preserve">
+    <value>3：测量</value>
+  </data>
+  <data name="CbDigSwL.Items4" xml:space="preserve">
+    <value>4：位置检查</value>
+  </data>
+  <data name="CbDigSwL.Items5" xml:space="preserve">
+    <value>5：全部切割</value>
+  </data>
+  <data name="CbDigSwL.Items6" xml:space="preserve">
+    <value>6：STEP &amp; REPEAT</value>
+  </data>
+  <data name="CbDigSwL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 41</value>
+  </data>
+  <data name="CbDigSwH.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="CbDigSwH.Items" xml:space="preserve">
+    <value>0：无显示</value>
+  </data>
+  <data name="CbDigSwH.Items1" xml:space="preserve">
+    <value>1：只显示NG LOG</value>
+  </data>
+  <data name="CbDigSwH.Items2" xml:space="preserve">
+    <value>2：显示全部LOG</value>
+  </data>
+  <data name="CbDigSwH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 11</value>
+  </data>
+  <data name="txtLog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 9pt</value>
+  </data>
+  <data name="btnGoClipboard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="chkDistributeOnOff.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="chkDistributeOnOff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 29</value>
+  </data>
+  <data name="chkDistributeOnOff.Text" xml:space="preserve">
+    <value>DISTRIBUTE 进行中</value>
+  </data>
+  <data name="lblTwoCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblTwoCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 19</value>
+  </data>
+  <data name="lblBreakCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblBreakCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 19</value>
+  </data>
+  <data name="lblNgCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblNgCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 19</value>
+  </data>
+  <data name="GroupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>777, 959</value>
+  </data>
+  <data name="Button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 14</value>
+  </data>
+  <data name="Button2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 14</value>
+  </data>
+  <data name="CheckBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CheckBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="CheckBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 26</value>
+  </data>
+  <data name="CheckBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="CheckBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 18</value>
+  </data>
+  <data name="CheckBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 26</value>
+  </data>
+  <data name="TxtBoxPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 25</value>
+  </data>
+  <data name="BtnPrint.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt, style=Bold</value>
+  </data>
+  <data name="BtnPrintOnOff.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GrpStrageBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="GrpStrageBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 911</value>
+  </data>
+  <data name="BtnStrageClr.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="BtnStrageClr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 25</value>
+  </data>
+  <data name="LblStrageBoxCount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 12pt, style=Bold</value>
+  </data>
+  <data name="LblStrageBoxTtl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 12pt, style=Bold</value>
+  </data>
+  <data name="LblStrageBoxTtl.Text" xml:space="preserve">
+    <value>储存MAGAZINE计数=</value>
+  </data>
+  <data name="BtnPowerOnOff.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
+  </data>
+  <data name="LblComandName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 14.25pt, style=Bold</value>
+  </data>
+  <data name="HelpVersion1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>812, 54</value>
+  </data>
+  <data name="btnUserLogon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt</value>
+  </data>
+  <data name="grpIntegrated.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 12pt, style=Bold</value>
+  </data>
+  <data name="flpIntegrated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 25</value>
+  </data>
+  <data name="flpIntegrated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 205</value>
+  </data>
+  <data name="lblDoorOpen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblDoorOpen.Text" xml:space="preserve">
+    <value>开门</value>
+  </data>
+  <data name="GrpStartBlk.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 8.25pt, style=Bold</value>
+  </data>
+  <data name="GrpStartBlk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 48</value>
+  </data>
+  <data name="tlpStartBlk.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 8.25pt, style=Bold</value>
+  </data>
+  <data name="tlpStartBlk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 15</value>
+  </data>
+  <data name="tlpStartBlk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 30</value>
+  </data>
+  <data name="CbStartBlkY.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 9pt, style=Bold</value>
+  </data>
+  <data name="CbStartBlkY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 5</value>
+  </data>
+  <data name="CbStartBlkY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="lblStartBlkY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 3</value>
+  </data>
+  <data name="lblStartBlkY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 24</value>
+  </data>
+  <data name="CbStartBlkX.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 9pt, style=Bold</value>
+  </data>
+  <data name="CbStartBlkX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 5</value>
+  </data>
+  <data name="CbStartBlkX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="lblStartBlkX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 24</value>
+  </data>
+  <data name="chkContinue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>SimHei, 9.75pt, style=Bold</value>
+  </data>
+  <data name="chkContinue.Text" xml:space="preserve">
+    <value>延续</value>
+  </data>
+  <data name="btnPREV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 1</value>
+  </data>
+  <data name="btnNEXT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 1</value>
+  </data>
+  <data name="VideoLibrary1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>640, 480</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9.75pt</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAQeQAAAADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA
+        AAAAAAAAAAAAAADgAP//AP//8P8AAAD/AAAAgA/wD/D///D/AAAA/wAAAOAP8A/w/wAA/wAAAP8AAACA
+        D/AP8P8AAP8AAAD/AAAA4A/wD/D/AAD/AAAA/wAAAIAP8A/w/wAA///wAP8AAADgD/AP8P8AAP//8AD/
+        AAAAgA/wD/D/AAD/AAAA/wAAAOAP8A/w/wAA/wAAAP8AAACAD/AP8P8AAP8AAAD/AAAA4A/wD/D/AAD/
+        //////8AAIAA//8A/wAA////////AADgAAAAAAAAAAAAAAAAAAAAjo6Ojo6Ojo6Ojo6OAAAAAOjo6Ojo
+        6Ojo6Ojo6AAAAACOjo6Ojo6Ojo6Ojo4AAAAA6Ojo6Ojo6Ojo6OjoAAAAAI6Ojo6Ojo6Ojo6OjgAAAADo
+        6Ojo6Ojo6Ojo6OgAAAAAjo6Ojo6Ojo6Ojo6OAAAAAOjo6Ojo6Ojo6Ojo6AAAAACOjo6Ojo6Ojo6Ojo4A
+        AAAA6Ojo6Ojo6Ojo6OjoAAAAAI6Ojo6Ojo6Ojo6OjgAAAADo6Ojo6Ojo6Ojo6OgAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD////////////////AAAABwAAAAcAA
+        AAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAAHAAAABwAAAAcAAAD/AAAA/wAAAP8AA
+        AD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////////////////w==
+</value>
+  </data>
+</root>

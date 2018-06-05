@@ -1,0 +1,189 @@
+'===============================================================================
+'   備考
+'===============================================================================
+'   ※コンパイルオプションについて
+'     1. cOFFLINEcDEBUG → オフラインデバッグ用
+'         cOFFLINEcDEBUG = 0 オフラインデバッグモードOFF
+'         cOFFLINEcDEBUG = 1 オフラインデバッグモードON
+
+'     2. cIOcMONITORcENABLED → I/Oモニタ表示(デバッグ用)
+'         cIOcMONITORcENABLED = 0 I/Oモニタ表示OFF
+'         cIOcMONITORcENABLED = 1 I/Oモニタ表示ON
+
+'     3. cDBGRdraw → Video.ocxのDbgOn/Offﾎﾞﾀﾝの有効/無効指定(デバッグ用)
+'        cDBGRdraw = 1 Video.ocxのDbgOn/Offﾎﾞﾀﾝ有効
+'        cDBGRdraw = 0 Video.ocxのDbgOn/Offﾎﾞﾀﾝ無効
+'
+
+'===============================================================================
+'   修正履歴
+'===============================================================================
+'2012/xx/xx V1.0.0.0 TKY,TKY-CHIP,TKY-NETを統合して新規作成。
+
+↓これ以降は削除可
+'===============================================================================
+'   メモ
+'===============================================================================
+'(メモ　修正情報) 
+'2011/09/15　1.FL側エラー発生時処理追加
+
+'2011/09/13 (ローダIO/自動運転対応)
+'  1.LoaderIOFor436.vb/FormLoaderAlarm.vb追加  済み
+'  2.ConstMessage.vbにローダアラームメッセージ追加　済み
+'2011/10/11 (ローダIO/自動運転対応)
+'  1.FrmReset.vb追加　済み
+'  2.DefTrimFnc_V800.vbにORG_INTERLOCK_CHECK()/ORG_STARTRESET_SWWAIT()を追加
+'  3.(OcxSystemに原点復帰処理中フラグ設定関数(SetOrgFlg())を追加)
+'  4.(OcxSystemにGetMsgDispMode()関数を追加)
+'  5.自動運転用にFormDataSelect.vb追加
+'  6.TKY.iniのDEVICE_CONSTセクションにAUTOMODE(自動運転モード初期値(0=マガジンモード, 1=ロットモード, 2=エンドレスモード))追加
+'  7.機能定義ファイル変更/追加 (DefFunc_TkyChip_436.ini/DefFunc_TkyNet_436.ini)
+'  8.自動運転用にファイルロード処理を関数化(Sub_FileLoad())
+'  9.自動運転用にgmode追加(SL436R用)
+'    Public Const cGMODE_ERR_REPROBE As Short = 43           ' 43 : 再プロービング失敗(STARTｷｰ押下待ち) 
+'    Public Const cGMODE_LDR_ALARM As Short = 44             ' 44 : ローダアラーム発生   
+'    Public Const cGMODE_LDR_START As Short = 45             ' 45 : 自動運転開始(STARTｷｰ押下待ち)   
+'    Public Const cGMODE_LDR_TMOUT As Short = 46             ' 46 : ローダ通信タイムアウト  
+'    Public Const cGMODE_LDR_END As Short = 47               ' 47 : 自動運転終了(STARTｷｰ押下待ち) 
+'2011/10/13 (ローダIO/自動運転対応)
+'  1.SysmacCompolet.dllをインストールして組み込んだ。(SL436R PLC Serial通信用)
+'2011/10/18 
+'  1.ＩＯモニタ(FrmIOMon.vb)追加(コンパイルオプションのcIOMONITOR = 1の時表示) 
+'  2.サーキット最大値を256に変更。
+'2011/10/24
+'  1.TX/TY画面からコンソールSWが入力できない等修正。
+'   ・テンキー入力処理追加
+'   ・Z On/Z Off表示に変更
+'2011/10/28
+'  1.TYコマンドでステップオフセットが設定されない。
+'  2.TYコマンドで「ステップオフセットティーチング」でCancelして「チップサイズティーチング」に戻ると
+'    第二基準点が画面に表示されない。(既存バグ 現行機でも発生する?)
+'2011/10/31
+'  1.TYコマンド終了時にTY2を選択してもTY2画面に移行しない。
+'  2.TYコマンドを実行するとTY2ボタンが非活性化して押下できなくなる。
+'  3.FrmArrow.vb削除
+'  4.TX/TYコマンド実行時、JOGのピッチスライダーが毎回初期化されるためJogEzInit()を追加。
+'  5.TY2コマンド実装。JOG関連関数を共通関数化とするためTX/TYコマンドJOG関連関数をglobals.vbに移動。
+'2011/11/1
+'  1.NET時サーキットティーチボタンが表示されない。("BP位置調整(TX)"ボタンの後ろに隠れている)
+'   ・"BP位置調整(TX)","ステージ位置調整(TY)"←(TX),(TY)は削除
+'  2.NET時サーキット数が1の時「サーキット数が１のためこのコマンドは実行できません！」のエラー
+'    になるがサーキットティーチ画面が表示される。
+'  3.サーキットティーチ画面実装
+'2011/11/2
+'  1.Zスイッチ状態チェック追加(DefTrimFnc_V800.vbにZ_SWCHECK()とCONSOLE_SWCHECK()を追加)
+'2011/11/8
+'  1.VSSより一号機修正分をマージ
+'2011/11/9
+'  1."外部ｶﾒﾗR1ﾃｨｰﾁﾝｸﾞ""ｷｬﾘﾌﾞﾚｰｼｮﾝ補正登録"ボタンの文字が切れて表示される。
+'2011/11/10
+'  1.シスパラで外部カメラありの設定にするとDispGazou.exeがカメラ番号1で実行されるため、
+'    各コマンド実行時に画像表示されなくなる。
+'2011/11/11
+'  1.カット補正登録(外部カメラ)実装。
+'    Video.OCX使用のためfrmPtnCutPosCorrect.vbは削除
+'    PatternTeach()の引数にAPP_MODEを追加して下記の処理を追加。
+'      APP_MODE_RECOG         = θ補正の為のパターン登録モード
+'      APP_MODE_CARIB_REC     = キャリブレーション補正(外部カメラ)の為のパターン登録モード(CHIP/NET用)
+'      APP_MODE_CUTREVISE_REC = カット補正登録(外部カメラ)の為のパターン登録モード(CHIP/NET用)
+'  2.キャリブレーション補正用画像登録(外部カメラ)実装。
+'    Video.OCX使用のためfrmPtnCalibration.vbは削除、他は1と同様
+'2011/11/22
+'  1.外部カメラR1ティーチング/外部カメラティーチング実装。(Teach.OCX使用)
+'     Teach.OCX使用のためFrmExCamTeach.vbは削除
+'2011/11/25,11/30-12/2
+'  1.キャリブレーション機能実装。(Calibrationt.vb→FrmCalibration.vb)
+'  2.十字カット用加工条件入力画面(FrmFlCond.vb)追加
+'  3.DefTrimFnc_V800.vbのカット情報構造体にdblRADI2(R2部回転半径)を追加
+'  4.キャリブレーション機能とカット位置補正で使用する以下の共通関数をglobals.vbに追加
+' 　　Sub_FlCond(加工条件入力), CrossCutExec(十字カット実行), Sub_CrossCut(十字カットのX軸またはY軸をカットする), 
+'     InitCutParam(カットパラメータ初期化)
+'  5.globals.vbのJogEzMove()に「キー入力待ちモード」を追加
+'  6.globals.vbのXTTableMoveExt()はキャリブレーション実行用なのでFrmCalibration.vbのprivate関数とする。
+'2011/11/28-29
+'  1.Public Const LOUT_STP_ONCE As UShort = &H1000 →  Public Const LOUT_STS_RUN As UShort = &H1000' B12: 運転中(0:一時停止, 1:運転中)
+'  2.自動運転時、ローダ基板
+'  3.Timer1の「STARTキー」押下,「スライドカバークローズ」,「RESET キー」押下時はアイドルモード時にチェックする
+'2011/12/2-12/13
+'  1.カット位置補正(外部カメラ)実装。(CutPosCorrect.vb→FrmCutPosCorrect.vb)
+'    i-TKY.vbのcmdCutPosTeach()/ DeleteTemplate.vbは未使用のため削除
+'  2.デバッグモード時はDefTrimFncからINtimeGWInitialize()とINtimeGWTerminate()の定義を削除。
+'  3.frmTy2Teach.vbのXYTableMoveBlock()を共通関数としてGlobals.vbへ移動
+'    (frmCircuitTeach.vbとFrmCutPosCorrect.vbのXYTableMoveBlock()は削除)
+'  4.Exec_GazouProc()にパラメータとしてカメラ番号を追加。
+'  5.Logging修正(湊口さん)
+'2011/12/15
+'  1.プレートデータのキャリブレーションとカット位置補正に加工条件番号追加。(Set_typPlateInfo()/Put_PLT04_Data()/Structure PlateInfo)
+'    (※今までのデータはリードできなくなります。下記2行を追加すればリードできます)
+'[PLATE04]
+'0.00000,0.00000
+'0.00000,0.00000
+'0.00000,0.00000
+'1,2
+'3,3
+'0.00000
+'0.1
+'0.1　　　　　←　この次に0を指定
+'0.000,0.000
+'1
+'0.00000
+'0.1
+'0.1
+'4　　　　　　←　この次に0を指定
+
+'2011/12/16
+'  1.トリミングデータリードエラー時セクション名を表示するように修正。(File_Read/Set_typPlateInfo/FileVerCheck_NET/FileVerCheck_CHIP/File_Read_Ver)
+'  2.キャリブレーションとカット位置補正登録時Video.OCXに加工条件番号を渡すように修正。(SetPosiRevisForVideo/SetCalibInfoForVideo)
+'11/12/19
+' 1.プレートデータに1ブロック内抵抗数(intResistCntInBlock)を追加。
+'12/1/11(マージ及び不具合修正)
+' 1.データファイル出力にプレートデータにプレートサイズX,Yとステージグループ間隔X,Yを追加。
+' 2.File.vbにGetCutLTurnDir()とGetStepDir()を追加。
+' 3.TXTYフォームの表示位置を「LoggingON/OFF」表示とかぶらないように修正。
+' 4.TY2ボタンはメイン画面のTY2ボタンが有効時に表示するように修正。
+'===== 以下２号機からマージ 2012.1.23 
+'12/1/12(不具合修正)
+' 1.TX/TY機能 
+' ①終了確認メッセージ表示でCancel指定時は処理を継続させるように修正。(今は先頭処理に戻る)
+' 1.TX/TY機能 
+' ①終了確認メッセージ表示でCancel指定時は処理を継続させるように修正。(今は先頭処理に戻る)
+' ②HALTキーで１つ前の項目に戻るように修正。
+'12/1/13
+' 1.TrimErrNo.vbにERR_HARD_FAILURE定義を追加。
+' 2.INTrimが起動していない状態でTKYを起動すると
+'   (1)SL436R時はメッセージの表示なしでアプリケーション終了となる。
+'   (2)SL432R時は「筐体カバーが開きましたSTARTを押してください。」表示して終了できなくなる。
+' →「INTRIM(Code=307)RESETキーを押すとプログラムを終了します。」を表示して終了するように修正。
+'   ・SL436R用 FrmReset.Sub_OriginBack()/Sub_ErrAxis()/Sub_ErrSoftLimit()
+     　ObjSys.GetMsgDispMode()→ ObjSys.GetMsgDispMode(bMsgDspMode)
+'   ・SL432R用 OcxSystem.Sub_OriginBack()
+' 2.TX/TY機能 
+' ①終了確認メッセージ表示でCancel指定時は処理を継続させるように修正。(今は先頭処理に戻る)
+'12/1/16
+' ①複数グループ処理修正(TXティーチング)
+'   ・CalcBlockSize()処理全面修正
+'   ・見出し変更(ＢＰグループ間隔ティーチングをNET時はサーキット間隔ティーチングと表示)
+'12/1/18
+' 1.データファイルのプレートデータにステージグループ内ブロック数XYを追加
+'12/1/20
+' 1.複数グループ処理修(TYティーチング)
+
+'12/1/31
+' 1.自動運転処理修正
+'①ローダＩ／Ｏビット定義追加
+'   トリマ  → ローダ  B11: 基板排出要求(0=排出要求無, 1=排出要求)
+'   ローダ  → トリマ  B13: 基板排出完了(0=排出完了でない, 1=排出完了)
+'②基板排出要求追加(Loader_WaitDischarge())
+' 2.プローブティーチング修正
+' 1.自動運転のデータ選択画面のドライブ指定でDドライブ(CD)を指定すると他のドライブの選択ができなくなる。(FrmDataSelect.vb)
+'12/2/7
+' 1.カット補正登録(外部カメラ)用にPatternTeach()にVideoLibrary1.SetMainObject()追加
+'12/3/2
+' 1.スライドカバー閉時とコンソールのSTART SW押下時にトリミング開始とするように修正(SL432R時)
+'12/3/6
+' 1.ローダインタフェース変更に伴う修正。
+'12/3/8(※データ編集と同期すること 「★12/3/1★」を有効にする(4箇所))
+' 1.プレートデータにFL用加工条件番号追加
+'12/3/9
+' 1.FL用オートパワー調整追加。
+

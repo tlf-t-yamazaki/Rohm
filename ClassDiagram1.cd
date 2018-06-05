@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TKY_ALL_SL432HW.Temporary" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAAAAAAAAAEAAAAACAAAAAAIAAAAAABAAAAAAAgA=</HashCode>
+      <FileName>DataAccess.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FormDataSelect" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAhwKEAEECEBNAEINACNAgGCAATAAAECgFDFAMAAAQA=</HashCode>
+      <FileName>FormDataSelect.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FormLoaderAlarm" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AghAAAAAgDBAIEAIAgCBAEGDIACiABMwAAhwAEQAAUA=</HashCode>
+      <FileName>FormLoaderAlarm.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FormMapSelect" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAIACAACAAAAAAAACAAIACAAAAEEAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormMapSelect.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmWait" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAEAAaAA=</HashCode>
+      <FileName>FormWait\FrmWait.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmCalibration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>eRAKAEm9QPSAFCUYU1CBMASGSiHADhFwYkkCBhVCrMo=</HashCode>
+      <FileName>FrmCalibration.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmCircuitTeach" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YBAIRsi9UORAli0QUkCAIQDCEmG5DBEQSkmCElhBqII=</HashCode>
+      <FileName>frmCircuitTeach.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmCutPosCorrect" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YXCKgMm9de4AVKUQUkqQMTaCiiG5DhFSQlkEAx5g6KI=</HashCode>
+      <FileName>FrmCutPosCorrect.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmDistribution" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEUUIBBACTgzJAAEAaQAJgDHBAM/wpgAKBAQIYAAAA=</HashCode>
+      <FileName>frmDistribution.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmFineAdjust" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YDA6AEm90eYIFSUSWkKEuEuTAjGATD8SQslCKiFBqYM=</HashCode>
+      <FileName>frmFineAdjust.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmFlCond" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAFRAAQAACAAAKAQAAKAAAGLAACgAAIAAEBAGEAAAQA=</HashCode>
+      <FileName>FrmFlCond.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmIDReaderTeach" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aBoMQGi9UORgNG0QUmyAIQiCJyGADBERSmsjIh1lqII=</HashCode>
+      <FileName>frmIdReaderTeach.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmIOMon" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAQAACBACAAAAAKEQPDPAAAAAEAACABwDgAAAAg=</HashCode>
+      <FileName>FrmIOMon.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmLotNoInput" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAECAAAAEAAACAAMACAAAAAEAAAAABEAAAAAA=</HashCode>
+      <FileName>FrmLotNoInput.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmMaintenance" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACAAAQQAAACAAAgCBAAAQAEAAEAEAEAAAAA=</HashCode>
+      <FileName>frmMaintenance.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmProbeCleaning" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YZlIcfy9eOUWNOVaW0DCIRiDBiGSqT0Qh9s0JwhMuKI=</HashCode>
+      <FileName>frmProbeCleaning.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmReset" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iJlBCGChkuHGQgAAICCJgGGLGyqgCpMgBQnDE04VJUA=</HashCode>
+      <FileName>FrmReset.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmStopCond" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAAFCAAAJAwAICQAAACAAAAYYAAAIICGASAIAg=</HashCode>
+      <FileName>frmStopCond.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmTThetaTeach" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEEQAgQACBgAEwAAOiAIWISAACAAFEAAEAAABwFQoI=</HashCode>
+      <FileName>frmTThetaTeach.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmTxTyMsgbox" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhEAECAAQAAAAACABQCCAAAAAAAAEAAEABgAAAA=</HashCode>
+      <FileName>frmTxTyMsgbox.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmTxTyTeach" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aJGsQWi9QORgdG0yWmyEIY6GBiGwLFEcQksQIhBF6Io=</HashCode>
+      <FileName>frmTxTyTeach.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.frmTy2Teach" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YBGcYEi9QeYoVC0QUuCwIQKSEqG5DREQwksAAhhI66I=</HashCode>
+      <FileName>frmTy2Teach.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.Form1" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>5y3/8/v3/7/5//f33r7+7fnS/fv//4t//+3v//fv//8=</HashCode>
+      <FileName>i-TKY.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.Logging" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMCAkIkAQCBgkGAADACYBgFCEAAOK4AAAAABAAAAAAE=</HashCode>
+      <FileName>Logging.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.MainModules" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAggAwAMBAoDAIEABATAgBEIAAECAAAAkAGARAEAABQ=</HashCode>
+      <FileName>MainModules.vb</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.CustomTkyLabel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgQAAAAAAAAAAAAAAACAEBAAAAAAAAAQAAAAIA=</HashCode>
+      <FileName>SimpleTrimmer\CustomTkyLabel.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.FrmBlockDisp" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAICCAAAAAAAACAABAaAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleTrimmer\FrmBlockDisp.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.My.MyApplication" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TKY_ALL_SL432HW.My.MySettings" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAABAAIAAABAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TKY_ALL_SL432HW.ICommonMethods" Collapsed="true">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAQAAAAAAAAAAAAAAAEAAEAAAAAAAAA=</HashCode>
+      <FileName>i-TKY.vb</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Module Name="TKY_ALL_SL432HW.BarCode_Data" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAGgACCAEAAQQAAAkBRBQAADgoAAEBUAQQioABAAAAA=</HashCode>
+      <FileName>BarCode_Data.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.basMatrix" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YSAMSgaAQAAADCAEAgAAABABCDQAAAACAJZAAAAAAFA=</HashCode>
+      <FileName>basMatrix.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.basTrimming" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aZ2jrPo5MY9/HdCFXG2Kyq0Z2tNhBQVnNSuO2aeIeHM=</HashCode>
+      <FileName>basTrimming.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.DataAccess" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4IBkMQJEKAoAKFUACAAE3AAFMICAEoANwJIEAUAGOMA=</HashCode>
+      <FileName>DataAccess.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.File" Collapsed="true">
+    <Position X="9.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAQAAAhACKAQEiGNoaQ4OQgGCKIQAAEIAAQATAAQQ=</HashCode>
+      <FileName>File.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.Globals_Renamed" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>7/0///3/3/3//+77////////f/a/96///z/7/uf/f38=</HashCode>
+      <FileName>globals.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.gwModule" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>N+wJH/Rml6B+H3+JvDOnvlOingRH7S3XqfqJ6rVLrNw=</HashCode>
+      <FileName>gwModule.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.LoaderIOFor436" Collapsed="true">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>mWP33zjR81Yujvv24fczS7z78lU/7n6/L/n975/znf8=</HashCode>
+      <FileName>LoaderIOFor436.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.mPrint" Collapsed="true">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgQAABIECFAAAAAAQEAAAAAAAAgIAgAABKAAAACAoUA=</HashCode>
+      <FileName>mPrint.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.QR_Data" Collapsed="true">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQACAAABABAAABAAAAJCQACAIAAIYAQAAAAIIAgA=</HashCode>
+      <FileName>QR_Data.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.QR_Print" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAQIJgAACIABEAAI8jKAAACAAAAAgAgAxQBAAAg=</HashCode>
+      <FileName>QR_Print.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.basResistorGraph" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ResistorGraph.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.Rs232c" Collapsed="true">
+    <Position X="4" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MCKAQACAoAAAgCgAACAIAQIBAAACAQAVAAAEAgMFIAA=</HashCode>
+      <FileName>Rs232c.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.ShinsyukuHosei" Collapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAgAEAAFABAAAAgAACAAAAAAAAACAgAAAA=</HashCode>
+      <FileName>ShinsyukuHosei.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.SimpleTrimmer" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>tEKYKsxRBQARLOHNKDUogYJQCs1E4IHAQxACLBYDRHY=</HashCode>
+      <FileName>SimpleTrimmer\SimpleTrimmer.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.TrimErrNo" Collapsed="true">
+    <Position X="9.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>7vD3McnNt/v20PvMX/Rt36exW7/P8X2jef9enHOYM+E=</HashCode>
+      <FileName>TrimErrNo.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.UnderProbe" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIAAA=</HashCode>
+      <FileName>UnderProbe.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.My.MySettingsProperty" Collapsed="true">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="TKY_ALL_SL432HW.My.Resources.Resources" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/+fZ//fzNZnPR20K2f690Pv+/f//7/kfzv8//1v/5v8=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="メイリオ" Size="9" />
+</ClassDiagram>

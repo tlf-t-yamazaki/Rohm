@@ -1,0 +1,1875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LblShpGrp_07.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LblGrpPer_11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblShpGrp_03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_11.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblAverage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMinTitle.Text" xml:space="preserve">
+    <value>最小%</value>
+  </data>
+  <data name="&gt;&gt;lblRegistTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_05.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="LblRegN_09.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblGrpPer_06.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_11.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_08.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="LblGrpPer_04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 146</value>
+  </data>
+  <data name="&gt;&gt;lblNgChip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMinValue.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="LblRegN_10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMaxTitle.Name" xml:space="preserve">
+    <value>lblMaxTitle</value>
+  </data>
+  <data name="LblShpGrp_02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 98</value>
+  </data>
+  <data name="&gt;&gt;lblMinTitle.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LblRegN_01.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblAverage.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_09.Name" xml:space="preserve">
+    <value>LblShpGrp_09</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_11.Name" xml:space="preserve">
+    <value>LblRegN_11</value>
+  </data>
+  <data name="LblGrpPer_00.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="lblRegistUnit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;lblGraphAccumulationTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMaxTitle.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblGrpPer_03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 122</value>
+  </data>
+  <data name="&gt;&gt;Line2.ZOrder" xml:space="preserve">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;lblNgChip.Name" xml:space="preserve">
+    <value>lblNgChip</value>
+  </data>
+  <data name="&gt;&gt;lblGoodTitle.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LblRegN_07.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_02.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblShpGrp_03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 122</value>
+  </data>
+  <data name="LblShpGrp_10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;lblDeviationValue.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cmdInitial.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_03.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="lblGoodChip.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="cmdInitial.Text" xml:space="preserve">
+    <value>イニシャルテスト分布図表示</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblShpGrp_10.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_08.Name" xml:space="preserve">
+    <value>LblGrpPer_08</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_05.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="Line1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 281</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_03.Name" xml:space="preserve">
+    <value>LblGrpPer_03</value>
+  </data>
+  <data name="lblAverage.Text" xml:space="preserve">
+    <value>平均%</value>
+  </data>
+  <data name="&gt;&gt;lblMaxTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMinTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNgTitle.Name" xml:space="preserve">
+    <value>lblNgTitle</value>
+  </data>
+  <data name="LblShpGrp_01.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_02.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblMaxTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="LblRegN_01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 74</value>
+  </data>
+  <data name="&gt;&gt;lblDeviationValue.Name" xml:space="preserve">
+    <value>lblDeviationValue</value>
+  </data>
+  <data name="LblRegN_10.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblGrpPer_11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 314</value>
+  </data>
+  <data name="LblGrpPer_02.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="cmdInitial.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblGraphUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_04.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_08.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="LblGrpPer_07.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_08.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="LblRegN_11.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblShpGrp_03.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblNgTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblGoodChip.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;Line1.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblShpGrp_11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;picGraphAccumulation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblMaxTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblAverage.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_04.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;lblDeviation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRegistUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 15</value>
+  </data>
+  <data name="LblRegN_00.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblGrpPer_01.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblGoodChip.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_04.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_04.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 50</value>
+  </data>
+  <data name="LblRegN_02.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_10.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_10.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="LblRegN_05.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_01.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblGrpPer_04.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_06.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="LblGrpPer_11.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="LblShpGrp_08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 243</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cmdFinal.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_01.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_00.Name" xml:space="preserve">
+    <value>LblShpGrp_00</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_07.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_09.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="LblShpGrp_06.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="LblRegN_11.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="&gt;&gt;lblRegistUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_02.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_11.Name" xml:space="preserve">
+    <value>LblGrpPer_11</value>
+  </data>
+  <data name="&gt;&gt;cmdInitial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblGrpPer_08.Text" xml:space="preserve">
+    <value>-0.60～</value>
+  </data>
+  <data name="&gt;&gt;lblDeviationValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNgChip.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="&gt;&gt;picGraphAccumulation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRegN_10.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="LblGrpPer_10.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="LblShpGrp_08.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_06.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="cmdFinal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 25</value>
+  </data>
+  <data name="&gt;&gt;lblGoodTitle.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_10.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="LblRegN_03.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblShpGrp_07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="lblAverageValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 16</value>
+  </data>
+  <data name="LblRegN_01.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_01.Name" xml:space="preserve">
+    <value>LblGrpPer_01</value>
+  </data>
+  <data name="LblRegN_08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="&gt;&gt;lblGraphAccumulationTitle.ZOrder" xml:space="preserve">
+    <value>57</value>
+  </data>
+  <data name="LblRegN_05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 170</value>
+  </data>
+  <data name="LblGrpPer_05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 170</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_09.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;Line1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblShpGrp_01.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="lblRegistUnit.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="LblGrpPer_09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 266</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_08.Name" xml:space="preserve">
+    <value>LblRegN_08</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_00.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblGrpPer_05.Text" xml:space="preserve">
+    <value>0.30～</value>
+  </data>
+  <data name="lblDeviationValue.Text" xml:space="preserve">
+    <value>-0.000000</value>
+  </data>
+  <data name="LblGrpPer_06.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblRegN_02.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblRegN_06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 195</value>
+  </data>
+  <data name="&gt;&gt;lblGoodChip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMaxValue.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblGrpPer_07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 218</value>
+  </data>
+  <data name="LblGrpPer_00.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_02.Name" xml:space="preserve">
+    <value>LblShpGrp_02</value>
+  </data>
+  <data name="LblShpGrp_07.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="picGraphAccumulation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 2</value>
+  </data>
+  <data name="lblNgChip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LblGrpPer_05.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="LblGrpPer_11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_07.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblGrpPer_02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblGrpPer_03.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblMaxValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMaxValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 388</value>
+  </data>
+  <data name="lblMaxTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblGoodTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblRegN_04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 146</value>
+  </data>
+  <data name="&gt;&gt;lblRegistTitle.ZOrder" xml:space="preserve">
+    <value>55</value>
+  </data>
+  <data name="LblRegN_08.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblGrpPer_08.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_06.Text" xml:space="preserve">
+    <value>0.00～</value>
+  </data>
+  <data name="LblGrpPer_11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblGrpPer_07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_06.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_01.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_03.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 122</value>
+  </data>
+  <data name="LblShpGrp_05.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_00.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LblRegN_11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="LblGrpPer_01.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_02.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;lblDeviation.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cmdGraphSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGraphUnit.ZOrder" xml:space="preserve">
+    <value>54</value>
+  </data>
+  <data name="LblRegN_02.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_02.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_04.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="lblAverageValue.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_07.Name" xml:space="preserve">
+    <value>LblRegN_07</value>
+  </data>
+  <data name="lblGraphUnit.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblShpGrp_10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblGrpPer_06.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_08.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="Line3.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblGrpPer_05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblGrpPer_07.Text" xml:space="preserve">
+    <value>-0.30～</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_10.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="LblRegN_07.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_07.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="cmdGraphSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 408</value>
+  </data>
+  <data name="lblGoodChip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="&gt;&gt;cmdFinal.Name" xml:space="preserve">
+    <value>cmdFinal</value>
+  </data>
+  <data name="lblDeviation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblShpGrp_04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_01.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;cmdFinal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_07.Name" xml:space="preserve">
+    <value>LblGrpPer_07</value>
+  </data>
+  <data name="LblGrpPer_02.Text" xml:space="preserve">
+    <value>1.20～</value>
+  </data>
+  <data name="LblGrpPer_03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblAverageValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblRegN_08.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblGrpPer_00.Text" xml:space="preserve">
+    <value>～1.50</value>
+  </data>
+  <data name="lblDeviationValue.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LblShpGrp_08.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="lblRegistUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 338</value>
+  </data>
+  <data name="lblDeviation.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblMinValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="lblAverageValue.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_00.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cmdGraphSave.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="lblRegistTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>552, 34</value>
+  </data>
+  <data name="LblShpGrp_03.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblGrpPer_00.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblRegistUnit.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_06.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_05.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblMaxTitle.Text" xml:space="preserve">
+    <value>最大%</value>
+  </data>
+  <data name="LblShpGrp_01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 74</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_07.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_09.Name" xml:space="preserve">
+    <value>LblRegN_09</value>
+  </data>
+  <data name="lblDeviationValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_01.Name" xml:space="preserve">
+    <value>LblRegN_01</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Text" xml:space="preserve">
+    <value>ファイナル･テスト　分布図</value>
+  </data>
+  <data name="lblNgChip.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="picGraphAccumulation.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblGrpPer_03.Text" xml:space="preserve">
+    <value>0.90～</value>
+  </data>
+  <data name="lblMinValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 16</value>
+  </data>
+  <data name="&gt;&gt;lblNgTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Line1.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_02.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblDeviationValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblRegN_10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 291</value>
+  </data>
+  <data name="LblGrpPer_05.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;Line3.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblGrpPer_09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblShpGrp_07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 218</value>
+  </data>
+  <data name="LblRegN_06.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_04.Name" xml:space="preserve">
+    <value>LblGrpPer_04</value>
+  </data>
+  <data name="lblMinValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 388</value>
+  </data>
+  <data name="lblGoodChip.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_06.Name" xml:space="preserve">
+    <value>LblRegN_06</value>
+  </data>
+  <data name="cmdInitial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 408</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_01.Name" xml:space="preserve">
+    <value>LblShpGrp_01</value>
+  </data>
+  <data name="LblRegN_02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="&gt;&gt;lblNgChip.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_02.Name" xml:space="preserve">
+    <value>LblGrpPer_02</value>
+  </data>
+  <data name="lblRegistUnit.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblGoodChip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 388</value>
+  </data>
+  <data name="lblMaxValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="lblNgChip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="LblGrpPer_01.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 74</value>
+  </data>
+  <data name="lblNgChip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblGoodChip.Name" xml:space="preserve">
+    <value>lblGoodChip</value>
+  </data>
+  <data name="LblGrpPer_00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblShpGrp_05.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 170</value>
+  </data>
+  <data name="LblShpGrp_03.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="lblGraphUnit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblRegN_09.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="cmdGraphSave.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_10.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="Line1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 50</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_11.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="LblShpGrp_00.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_06.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblGrpPer_05.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblDeviation.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;Line2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_01.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRegN_00.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="cmdGraphSave.Text" xml:space="preserve">
+    <value>分布図保存</value>
+  </data>
+  <data name="LblShpGrp_04.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_06.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_00.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRegN_07.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblAverageValue.Text" xml:space="preserve">
+    <value>-000.000</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_10.Name" xml:space="preserve">
+    <value>LblGrpPer_10</value>
+  </data>
+  <data name="lblNgChip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;cmdGraphSave.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_09.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_02.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;lblRegistTitle.Name" xml:space="preserve">
+    <value>lblRegistTitle</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 6</value>
+  </data>
+  <data name="LblRegN_03.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="Line2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 331</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_11.Name" xml:space="preserve">
+    <value>LblShpGrp_11</value>
+  </data>
+  <data name="lblGraphUnit.Text" xml:space="preserve">
+    <value>(%)</value>
+  </data>
+  <data name="LblRegN_11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblRegistTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdInitial.Name" xml:space="preserve">
+    <value>cmdInitial</value>
+  </data>
+  <data name="lblGoodChip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_00.Name" xml:space="preserve">
+    <value>LblGrpPer_00</value>
+  </data>
+  <data name="LblShpGrp_06.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblShpGrp_11.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="cmdGraphSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 25</value>
+  </data>
+  <data name="LblShpGrp_02.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="&gt;&gt;lblGoodTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_05.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_04.Name" xml:space="preserve">
+    <value>LblShpGrp_04</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_06.Name" xml:space="preserve">
+    <value>LblShpGrp_06</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_10.Name" xml:space="preserve">
+    <value>LblShpGrp_10</value>
+  </data>
+  <data name="lblMaxValue.Text" xml:space="preserve">
+    <value>-000.000</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_11.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="lblRegistUnit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;Line3.Name" xml:space="preserve">
+    <value>Line3</value>
+  </data>
+  <data name="cmdFinal.Text" xml:space="preserve">
+    <value>ファイナルテスト分布図表示</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_03.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblShpGrp_11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblAverageValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="cmdFinal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>421, 408</value>
+  </data>
+  <data name="lblMinValue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMinValue.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_03.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblShpGrp_05.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 50</value>
+  </data>
+  <data name="&gt;&gt;lblMinValue.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;Line3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAverageValue.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblShpGrp_04.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="LblGrpPer_06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 195</value>
+  </data>
+  <data name="LblRegN_07.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="picGraphAccumulation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>632, 437</value>
+  </data>
+  <data name="&gt;&gt;lblGoodTitle.Name" xml:space="preserve">
+    <value>lblGoodTitle</value>
+  </data>
+  <data name="LblShpGrp_00.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblRegN_00.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblDeviation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 16</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_06.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNgTitle.Text" xml:space="preserve">
+    <value>不良品</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_09.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="cmdFinal.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;lblGraphUnit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRegN_04.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblGrpPer_04.Text" xml:space="preserve">
+    <value>0.60～</value>
+  </data>
+  <data name="LblShpGrp_04.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_07.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_07.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="LblShpGrp_00.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 50</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_09.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_03.Name" xml:space="preserve">
+    <value>LblShpGrp_03</value>
+  </data>
+  <data name="cmdInitial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 25</value>
+  </data>
+  <data name="lblRegistTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="LblGrpPer_09.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;lblMaxTitle.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_11.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_03.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_09.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="Line3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 331</value>
+  </data>
+  <data name="LblRegN_06.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;lblGraphAccumulationTitle.Name" xml:space="preserve">
+    <value>lblGraphAccumulationTitle</value>
+  </data>
+  <data name="LblGrpPer_08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 243</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmDistribution</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>629, 18</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_03.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_08.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblGrpPer_02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 98</value>
+  </data>
+  <data name="&gt;&gt;Line1.Name" xml:space="preserve">
+    <value>Line1</value>
+  </data>
+  <data name="lblNgChip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 388</value>
+  </data>
+  <data name="lblDeviation.Text" xml:space="preserve">
+    <value>標準偏差</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_05.Name" xml:space="preserve">
+    <value>LblGrpPer_05</value>
+  </data>
+  <data name="&gt;&gt;lblRegistUnit.Name" xml:space="preserve">
+    <value>lblRegistUnit</value>
+  </data>
+  <data name="lblRegistUnit.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="LblRegN_03.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="LblShpGrp_10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 290</value>
+  </data>
+  <data name="LblShpGrp_01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="LblGrpPer_04.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="LblGrpPer_08.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblMinTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 16</value>
+  </data>
+  <data name="LblShpGrp_00.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_05.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="LblGrpPer_06.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_11.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_06.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblShpGrp_09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="lblGoodTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;lblNgTitle.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblRegistTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_08.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblShpGrp_06.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_07.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="LblShpGrp_04.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 146</value>
+  </data>
+  <data name="lblAverage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_05.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_02.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblGrpPer_10.Text" xml:space="preserve">
+    <value>-1.20～</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_00.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdFinal.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;lblGoodChip.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_08.Name" xml:space="preserve">
+    <value>LblShpGrp_08</value>
+  </data>
+  <data name="lblDeviationValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 388</value>
+  </data>
+  <data name="lblDeviationValue.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="LblGrpPer_10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 290</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_07.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;Line2.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;cmdInitial.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_11.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_05.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_06.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblGraphUnit.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="LblGrpPer_11.Text" xml:space="preserve">
+    <value>-1.50～</value>
+  </data>
+  <data name="&gt;&gt;Line2.Name" xml:space="preserve">
+    <value>Line2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
+  </data>
+  <data name="lblMaxTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 16</value>
+  </data>
+  <data name="Line2.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="lblAverageValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>474, 388</value>
+  </data>
+  <data name="&gt;&gt;lblAverage.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;Line1.ZOrder" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_04.Name" xml:space="preserve">
+    <value>LblRegN_04</value>
+  </data>
+  <data name="LblRegN_01.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_05.Name" xml:space="preserve">
+    <value>LblShpGrp_05</value>
+  </data>
+  <data name="LblRegN_04.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_09.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblRegN_07.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 218</value>
+  </data>
+  <data name="&gt;&gt;lblMaxValue.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="LblRegN_08.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblGraphUnit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 34</value>
+  </data>
+  <data name="lblMaxValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 16</value>
+  </data>
+  <data name="&gt;&gt;lblMinTitle.Name" xml:space="preserve">
+    <value>lblMinTitle</value>
+  </data>
+  <data name="lblMinTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 372</value>
+  </data>
+  <data name="LblShpGrp_11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 314</value>
+  </data>
+  <data name="LblRegN_11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 314</value>
+  </data>
+  <data name="&gt;&gt;lblNgChip.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_09.Name" xml:space="preserve">
+    <value>LblGrpPer_09</value>
+  </data>
+  <data name="LblGrpPer_01.Text" xml:space="preserve">
+    <value>1.50～</value>
+  </data>
+  <data name="&gt;&gt;cmdFinal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_03.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_08.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="lblRegistTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="LblShpGrp_06.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="LblGrpPer_04.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblAverage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 16</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_10.Name" xml:space="preserve">
+    <value>LblRegN_10</value>
+  </data>
+  <data name="LblRegN_04.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="LblShpGrp_09.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblAverage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>474, 372</value>
+  </data>
+  <data name="lblMaxTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 372</value>
+  </data>
+  <data name="LblRegN_09.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_05.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRegN_02.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 98</value>
+  </data>
+  <data name="&gt;&gt;cmdGraphSave.Name" xml:space="preserve">
+    <value>cmdGraphSave</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMaxValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;lblAverage.Name" xml:space="preserve">
+    <value>lblAverage</value>
+  </data>
+  <data name="&gt;&gt;lblMinValue.Name" xml:space="preserve">
+    <value>lblMinValue</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_01.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="lblNgTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblShpGrp_06.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 195</value>
+  </data>
+  <data name="&gt;&gt;lblDeviation.Name" xml:space="preserve">
+    <value>lblDeviation</value>
+  </data>
+  <data name="lblRegistTitle.Text" xml:space="preserve">
+    <value>抵抗数</value>
+  </data>
+  <data name="LblGrpPer_02.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblMinValue.Text" xml:space="preserve">
+    <value>-000.000</value>
+  </data>
+  <data name="LblGrpPer_01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_03.Name" xml:space="preserve">
+    <value>LblRegN_03</value>
+  </data>
+  <data name="LblRegN_07.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="LblShpGrp_09.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;cmdGraphSave.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="&gt;&gt;lblGraphUnit.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="LblRegN_09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 266</value>
+  </data>
+  <data name="&gt;&gt;lblRegistTitle.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="&gt;&gt;lblMinValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LblRegN_05.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblRegistTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblGoodChip.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="lblGoodTitle.Text" xml:space="preserve">
+    <value>良品</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_00.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblMinTitle.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_05.Name" xml:space="preserve">
+    <value>LblRegN_05</value>
+  </data>
+  <data name="LblGrpPer_08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblAverage.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="lblMaxValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblDeviationValue.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;lblMaxValue.Name" xml:space="preserve">
+    <value>lblMaxValue</value>
+  </data>
+  <data name="lblMinTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LblGrpPer_10.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="picGraphAccumulation.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LblGrpPer_03.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="lblGoodTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_05.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_04.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblNgTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>638, 441</value>
+  </data>
+  <data name="LblRegN_08.Location" type="System.Drawing.Point, System.Drawing">
+    <value>551, 243</value>
+  </data>
+  <data name="lblGoodTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 16</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_02.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="LblRegN_06.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_02.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="lblMinTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_09.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;lblAverageValue.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;picGraphAccumulation.Name" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblDeviation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>544, 372</value>
+  </data>
+  <data name="lblGraphAccumulationTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_08.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblMinTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblShpGrp_08.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="LblRegN_09.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="lblGoodTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 372</value>
+  </data>
+  <data name="LblGrpPer_10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblGrpPer_09.Text" xml:space="preserve">
+    <value>-0.90～</value>
+  </data>
+  <data name="LblRegN_00.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 16</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_07.Name" xml:space="preserve">
+    <value>LblShpGrp_07</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_01.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblGraphUnit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 16</value>
+  </data>
+  <data name="&gt;&gt;lblGraphAccumulationTitle.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="lblGraphUnit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="lblNgTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="LblGrpPer_04.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="lblMaxValue.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_01.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblGrpPer_03.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="lblDeviationValue.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_02.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_07.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGraphUnit.Name" xml:space="preserve">
+    <value>lblGraphUnit</value>
+  </data>
+  <data name="LblGrpPer_09.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="Line3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 7</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_02.Name" xml:space="preserve">
+    <value>LblRegN_02</value>
+  </data>
+  <data name="&gt;&gt;Line3.ZOrder" xml:space="preserve">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_00.Name" xml:space="preserve">
+    <value>LblRegN_00</value>
+  </data>
+  <data name="LblGrpPer_10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="&gt;&gt;picGraphAccumulation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblNgTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 372</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_06.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="LblRegN_05.Text" xml:space="preserve">
+    <value>000000000</value>
+  </data>
+  <data name="&gt;&gt;lblNgTitle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LblRegN_03.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblGrpPer_07.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;lblAverageValue.Name" xml:space="preserve">
+    <value>lblAverageValue</value>
+  </data>
+  <data name="LblShpGrp_09.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 266</value>
+  </data>
+  <data name="&gt;&gt;lblRegistUnit.ZOrder" xml:space="preserve">
+    <value>56</value>
+  </data>
+  <data name="lblMinValue.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="LblRegN_09.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="LblRegN_04.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_10.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="LblGrpPer_01.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="LblShpGrp_10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="LblRegN_00.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_05.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_08.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 12pt</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_01.ZOrder" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_00.Parent" xml:space="preserve">
+    <value>picGraphAccumulation</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_04.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="LblShpGrp_09.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="&gt;&gt;LblRegN_03.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;LblShpGrp_08.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_06.Name" xml:space="preserve">
+    <value>LblGrpPer_06</value>
+  </data>
+  <data name="lblDeviation.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LblShpGrp_11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 16</value>
+  </data>
+  <data name="LblRegN_06.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="Line2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 1</value>
+  </data>
+  <data name="&gt;&gt;lblAverageValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_03.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmdInitial.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LblGrpPer_02.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>53</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
+  </metadata>
+</root>

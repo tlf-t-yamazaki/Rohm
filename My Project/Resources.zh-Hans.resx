@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QR_Print_001" xml:space="preserve">
+    <value>SimHei</value>
+  </data>
+  <data name="SimpleTrimmer_003" xml:space="preserve">
+    <value>SimHei</value>
+  </data>
+  <data name="CMD_CANCEL" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CIRTEACH_MSG01" xml:space="preserve">
+    <value>在CIRCUIT基准点合并后请按下START键</value>
+  </data>
+  <data name="ERR_PROB_EXE" xml:space="preserve">
+    <value>因无阻抗数据（1-999）而无法执行该命令！</value>
+  </data>
+  <data name="ERR_TEACH_EXE" xml:space="preserve">
+    <value>因无阻抗数据（1-999）而无法执行该命令！</value>
+  </data>
+  <data name="ERR_TXNUM_B" xml:space="preserve">
+    <value>因BLOCK数为1而无法执行该命令！</value>
+  </data>
+  <data name="ERR_TXNUM_C" xml:space="preserve">
+    <value>因CIRCUITK数为1而无法执行该命令！</value>
+  </data>
+  <data name="ERR_TXNUM_S" xml:space="preserve">
+    <value>因STEP数为1而无法执行该命令！</value>
+  </data>
+  <data name="ERR_TXNUM_E_CHIP" xml:space="preserve">
+    <value>因RIESISTOR数为1而无法执行该命令！</value>
+  </data>
+  <data name="ERR_TXNUM_E_NET" xml:space="preserve">
+    <value>因CIRCUIT数为1而无法执行该命令！</value>
+  </data>
+  <data name="BarCode_Data_001" xml:space="preserve">
+    <value>[BAR CODE 信息]</value>
+  </data>
+  <data name="BarCode_Data_002" xml:space="preserve">
+    <value>Bar Code   :</value>
+  </data>
+  <data name="BarCode_Data_003" xml:space="preserve">
+    <value>品种    ：</value>
+  </data>
+  <data name="BarCode_Data_004" xml:space="preserve">
+    <value>选项A   ：</value>
+  </data>
+  <data name="BarCode_Data_005" xml:space="preserve">
+    <value>选项B   ：</value>
+  </data>
+  <data name="BarCode_Data_006" xml:space="preserve">
+    <value>阻抗值  ：</value>
+  </data>
+  <data name="basMatrix_001" xml:space="preserve">
+    <value>自动探针执行补正值X=</value>
+  </data>
+  <data name="basMatrix_002" xml:space="preserve">
+    <value>, 补正值Y=</value>
+  </data>
+  <data name="basTrimming_001" xml:space="preserve">
+    <value>WINDOW HANDLE未取得</value>
+  </data>
+  <data name="DataAccess_001" xml:space="preserve">
+    <value>数据读取错误！</value>
+  </data>
+  <data name="DataAccess_002" xml:space="preserve">
+    <value>阻抗号=</value>
+  </data>
+  <data name="DataAccess_003" xml:space="preserve">
+    <value>切割号=</value>
+  </data>
+  <data name="DataAccess_004" xml:space="preserve">
+    <value>错误代码：</value>
+  </data>
+  <data name="DataAccess_005" xml:space="preserve">
+    <value>错误说明：</value>
+  </data>
+  <data name="File_001" xml:space="preserve">
+    <value>报警信息</value>
+  </data>
+  <data name="File_002" xml:space="preserve">
+    <value>报警号</value>
+  </data>
+  <data name="File_003" xml:space="preserve">
+    <value>报警内容</value>
+  </data>
+  <data name="File_004" xml:space="preserve">
+    <value>报警号</value>
+  </data>
+  <data name="File_005" xml:space="preserve">
+    <value>文件构成已变更</value>
+  </data>
+  <data name="File_006" xml:space="preserve">
+    <value>请在确认以下信息后保存。</value>
+  </data>
+  <data name="File_007" xml:space="preserve">
+    <value>[基板数据]</value>
+  </data>
+  <data name="File_008" xml:space="preserve">
+    <value>*θ轴</value>
+  </data>
+  <data name="File_009" xml:space="preserve">
+    <value>*LED控制</value>
+  </data>
+  <data name="File_010" xml:space="preserve">
+    <value>*GP-IB控制</value>
+  </data>
+  <data name="File_012" xml:space="preserve">
+    <value>*抵抗数</value>
+  </data>
+  <data name="File_013" xml:space="preserve">
+    <value>*GROUP间隔</value>
+  </data>
+  <data name="File_014" xml:space="preserve">
+    <value>*T_θ OFFSET
+</value>
+  </data>
+  <data name="File_015" xml:space="preserve">
+    <value>*T_θ 调整 点1XY</value>
+  </data>
+  <data name="File_016" xml:space="preserve">
+    <value>*T_θ 调整 点2XY</value>
+  </data>
+  <data name="File_017" xml:space="preserve">
+    <value>*POWER调整模式</value>
+  </data>
+  <data name="File_018" xml:space="preserve">
+    <value>*调整目标POWER</value>
+  </data>
+  <data name="File_019" xml:space="preserve">
+    <value>*POWER调整Q率</value>
+  </data>
+  <data name="File_020" xml:space="preserve">
+    <value>*调整容许范围</value>
+  </data>
+  <data name="File_011" xml:space="preserve">
+    <value>[GROUP数据]</value>
+  </data>
+  <data name="File_021" xml:space="preserve">
+    <value>[CUT 数据]</value>
+  </data>
+  <data name="File_022" xml:space="preserve">
+    <value>*CUTOFF OFFSET</value>
+  </data>
+  <data name="File_023" xml:space="preserve">
+    <value>[基板数据 2]</value>
+  </data>
+  <data name="Form1_001" xml:space="preserve">
+    <value>激光能量值 --- W</value>
+  </data>
+  <data name="Form1_002" xml:space="preserve">
+    <value>设定电流值</value>
+  </data>
+  <data name="Form1_003" xml:space="preserve">
+    <value>结束程序.</value>
+  </data>
+  <data name="Form1_004" xml:space="preserve">
+    <value>需要储存TRIMMING数据吗?</value>
+  </data>
+  <data name="Form1_005" xml:space="preserve">
+    <value>数据保存完成.</value>
+  </data>
+  <data name="Form1_006" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="Form1_007" xml:space="preserve">
+    <value>激光能量</value>
+  </data>
+  <data name="Form1_009" xml:space="preserve">
+    <value>θ角度 = </value>
+  </data>
+  <data name="Form1_010" xml:space="preserve">
+    <value>TRIM 位置XY=</value>
+  </data>
+  <data name="Form1_011" xml:space="preserve">
+    <value>距离=</value>
+  </data>
+  <data name="Form1_012" xml:space="preserve">
+    <value>补正位置1=</value>
+  </data>
+  <data name="Form1_013" xml:space="preserve">
+    <value>距离1=</value>
+  </data>
+  <data name="Form1_014" xml:space="preserve">
+    <value>补正位置2=</value>
+  </data>
+  <data name="Form1_015" xml:space="preserve">
+    <value>距离2=</value>
+  </data>
+  <data name="Form1_016" xml:space="preserve">
+    <value>一致度位置1=</value>
+  </data>
+  <data name="Form1_017" xml:space="preserve">
+    <value>一致度位置2=</value>
+  </data>
+  <data name="Form1_018" xml:space="preserve">
+    <value>度</value>
+  </data>
+  <data name="Form1_019" xml:space="preserve">
+    <value>DISTRIBUTE 未进行</value>
+  </data>
+  <data name="Form1_020" xml:space="preserve">
+    <value>DISTRIBUTE 进行中</value>
+  </data>
+  <data name="Form1_021" xml:space="preserve">
+    <value>保存成功!</value>
+  </data>
+  <data name="Form1_022" xml:space="preserve">
+    <value>无法保存.</value>
+  </data>
+  <data name="File_024" xml:space="preserve">
+    <value>*修正图形的GROUP号</value>
+  </data>
+  <data name="File_025" xml:space="preserve">
+    <value>请确认后保存</value>
+  </data>
+  <data name="File_026" xml:space="preserve">
+    <value>*GROUP 号XY</value>
+  </data>
+  <data name="FrmCutPosCorrect_001" xml:space="preserve">
+    <value>TEACHING X</value>
+  </data>
+  <data name="FrmCutPosCorrect_002" xml:space="preserve">
+    <value>TEACHING Y</value>
+  </data>
+  <data name="FrmCutPosCorrect_003" xml:space="preserve">
+    <value>GAP值 X</value>
+  </data>
+  <data name="FrmCutPosCorrect_004" xml:space="preserve">
+    <value>GAP值 Y</value>
+  </data>
+  <data name="frmDistribution_001" xml:space="preserve">
+    <value>保存成功!</value>
+  </data>
+  <data name="frmDistribution_002" xml:space="preserve">
+    <value>无法保存.</value>
+  </data>
+  <data name="frmDistribution_003" xml:space="preserve">
+    <value>DISTRIBUTE 进行中</value>
+  </data>
+  <data name="frmDistribution_004" xml:space="preserve">
+    <value>DISTRIBUTE 未进行</value>
+  </data>
+  <data name="frmDistribution_005" xml:space="preserve">
+    <value>～</value>
+  </data>
+  <data name="frmLotNoInput_001" xml:space="preserve">
+    <value>LOT数键入</value>
+  </data>
+  <data name="frmProbeCleaning_001" xml:space="preserve">
+    <value>请在{0} 和{1} ({2})范围内选择一个确定的极限值</value>
+  </data>
+  <data name="INFO_MSG10" xml:space="preserve">
+    <value>请按[START]键。通过 [HALT] 键可以回到上一个数据。</value>
+  </data>
+  <data name="INFO_MSG13" xml:space="preserve">
+    <value>CHIP尺寸TEACHING</value>
+  </data>
+  <data name="INFO_MSG14" xml:space="preserve">
+    <value>STAGE间隔TEACHING</value>
+  </data>
+  <data name="INFO_MSG15" xml:space="preserve">
+    <value>STEP补正量TEACHING</value>
+  </data>
+  <data name="INFO_MSG16" xml:space="preserve">
+    <value>请合并至一个标准位置。</value>
+  </data>
+  <data name="INFO_MSG17" xml:space="preserve">
+    <value>移动：[Arrow]  OK：[START]  取消：[RESET]。
+通过 [HALT] 键可以回到上一个。</value>
+  </data>
+  <data name="INFO_MSG19" xml:space="preserve">
+    <value>&lt;第</value>
+  </data>
+  <data name="INFO_MSG23" xml:space="preserve">
+    <value>BP组间隔TEACHING</value>
+  </data>
+  <data name="INFO_MSG24" xml:space="preserve">
+    <value>&lt;BLOCK 第</value>
+  </data>
+  <data name="INFO_MSG25" xml:space="preserve">
+    <value>&gt;RESISITANCE基准位置</value>
+  </data>
+  <data name="INFO_MSG26" xml:space="preserve">
+    <value>&lt;BLOCK结束</value>
+  </data>
+  <data name="INFO_MSG30" xml:space="preserve">
+    <value>CIRCUIT间隔TEACHING</value>
+  </data>
+  <data name="INFO_MSG31" xml:space="preserve">
+    <value>STEP补正量TEACHING</value>
+  </data>
+  <data name="INFO_MSG32" xml:space="preserve">
+    <value>(TX)</value>
+  </data>
+  <data name="INFO_MSG33" xml:space="preserve">
+    <value> (TY)</value>
+  </data>
+  <data name="INFO_MSG18_CHIP" xml:space="preserve">
+    <value>&lt;第1组&gt; 第1RESISTANCE基准位置。</value>
+  </data>
+  <data name="INFO_MSG18_NET" xml:space="preserve">
+    <value>&lt;第1组&gt; 第1CIRCUIT基准位置。</value>
+  </data>
+  <data name="INFO_MSG20_CHIP" xml:space="preserve">
+    <value>&gt; 最后RESISITANCE基准位置</value>
+  </data>
+  <data name="INFO_MSG20_NET" xml:space="preserve">
+    <value>&gt;最后CIRCUIT基准位置</value>
+  </data>
+  <data name="INFO_MSG28" xml:space="preserve">
+    <value>&gt;最末端位置TEACHING</value>
+  </data>
+  <data name="INFO_MSG29" xml:space="preserve">
+    <value>&gt;最前端位置TEACHING</value>
+  </data>
+  <data name="Globals_Renamed_001" xml:space="preserve">
+    <value>加工条件登录件数超过最大值。请检查电流值、频率以及STEG数。</value>
+  </data>
+  <data name="Globals_Renamed_002" xml:space="preserve">
+    <value>图形识别成功</value>
+  </data>
+  <data name="Globals_Renamed_003" xml:space="preserve">
+    <value>图形识别失败（临界）</value>
+  </data>
+  <data name="Globals_Renamed_004" xml:space="preserve">
+    <value>相关系数</value>
+  </data>
+  <data name="Globals_Renamed_005" xml:space="preserve">
+    <value>绝对偏差量（X）</value>
+  </data>
+  <data name="Globals_Renamed_006" xml:space="preserve">
+    <value>绝对偏差量（Y）</value>
+  </data>
+  <data name="Globals_Renamed_007" xml:space="preserve">
+    <value>图形识别失败（未找到）</value>
+  </data>
+  <data name="Globals_Renamed_008" xml:space="preserve">
+    <value>Z轴软件极限</value>
+  </data>
+  <data name="gwModule_001" xml:space="preserve">
+    <value>和</value>
+  </data>
+  <data name="MSG_102" xml:space="preserve">
+    <value>你确定离开程序?</value>
+  </data>
+  <data name="MSG_105" xml:space="preserve">
+    <value>将退回之前的界面,确定吗?</value>
+  </data>
+  <data name="MSG_106" xml:space="preserve">
+    <value>数据保存成功,现在将退回之前的界面,确定吗?</value>
+  </data>
+  <data name="MSG_108" xml:space="preserve">
+    <value>你是否清零了累计数?</value>
+  </data>
+  <data name="MSG_115" xml:space="preserve">
+    <value>有数据正在编辑中, 你需要现在载入?</value>
+  </data>
+  <data name="MSG_116" xml:space="preserve">
+    <value>数据载入确认</value>
+  </data>
+  <data name="MSG_117" xml:space="preserve">
+    <value>有数据正在编辑中</value>
+  </data>
+  <data name="MSG_118" xml:space="preserve">
+    <value>补正模式无设定内容, 我们无法执行实施.</value>
+  </data>
+  <data name="MSG_127" xml:space="preserve">
+    <value>图形比对错误.</value>
+  </data>
+  <data name="MSG_130" xml:space="preserve">
+    <value>TRIMMING数据文件读取错误.</value>
+  </data>
+  <data name="MSG_132" xml:space="preserve">
+    <value>加工条件数据传输失败.
+请载入数据 或 用EDIT功能设置加工条件. </value>
+  </data>
+  <data name="MSG_133" xml:space="preserve">
+    <value>INTERMEDIATE文件读取失败.</value>
+  </data>
+  <data name="MSG_134" xml:space="preserve">
+    <value>INTERMEDIATE文件写入失败.</value>
+  </data>
+  <data name="MSG_135" xml:space="preserve">
+    <value>数据编辑错误. 请重新载入数据.</value>
+  </data>
+  <data name="MSG_136" xml:space="preserve">
+    <value>串行端口OPEN错误.</value>
+  </data>
+  <data name="MSG_138" xml:space="preserve">
+    <value>串行端口传输错误.</value>
+  </data>
+  <data name="MSG_139" xml:space="preserve">
+    <value>串行端口接收错误.</value>
+  </data>
+  <data name="INFO_REC" xml:space="preserve">
+    <value>登录:[START]   取消:[RESET]</value>
+  </data>
+  <data name="LBL_ATT" xml:space="preserve">
+    <value>衰减率</value>
+  </data>
+  <data name="LBL_CALIBRATION_001" xml:space="preserve">
+    <value>[十字CUT模式(基准位置1)]</value>
+  </data>
+  <data name="LBL_CALIBRATION_002" xml:space="preserve">
+    <value>[十字CUT模式(基准位置2)]</value>
+  </data>
+  <data name="LBL_CALIBRATION_003" xml:space="preserve">
+    <value>[画像识别模式(基准位置1)]</value>
+  </data>
+  <data name="LBL_CALIBRATION_004" xml:space="preserve">
+    <value>[画像识别模式(基准位置2)]</value>
+  </data>
+  <data name="LBL_CUT_POS_CORRECT_BLOCK_NO_X" xml:space="preserve">
+    <value>BLOCK数 X轴</value>
+  </data>
+  <data name="LBL_CUT_POS_CORRECT_BLOCK_NO_Y" xml:space="preserve">
+    <value>BLOCK数 Y轴</value>
+  </data>
+  <data name="LBL_IDREADER_TEACH_01" xml:space="preserve">
+    <value>ID读取器TEACHING</value>
+  </data>
+  <data name="LBL_IDREADER_TEACH_04" xml:space="preserve">
+    <value>ID读取器</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_07" xml:space="preserve">
+    <value>补正前</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_08" xml:space="preserve">
+    <value>补正后</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_09" xml:space="preserve">
+    <value>GROUP间隔(mm)</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_11" xml:space="preserve">
+    <value>STEP间隔</value>
+  </data>
+  <data name="LBL_TXTY_TEACH_14" xml:space="preserve">
+    <value>GROUP</value>
+  </data>
+  <data name="MSG_14" xml:space="preserve">
+    <value>TRIMMING参数数据未载入.</value>
+  </data>
+  <data name="MSG_141" xml:space="preserve">
+    <value>FL边加工条件读取错误.</value>
+  </data>
+  <data name="MSG_142" xml:space="preserve">
+    <value>加工条件制成.</value>
+  </data>
+  <data name="MSG_143" xml:space="preserve">
+    <value>数据载入成功.</value>
+  </data>
+  <data name="MSG_144" xml:space="preserve">
+    <value>数据载入失败.</value>
+  </data>
+  <data name="MSG_145" xml:space="preserve">
+    <value>数据保存成功.</value>
+  </data>
+  <data name="MSG_146" xml:space="preserve">
+    <value>数据保存失败.</value>
+  </data>
+  <data name="MSG_147" xml:space="preserve">
+    <value>数据发送至FL.</value>
+  </data>
+  <data name="MSG_148" xml:space="preserve">
+    <value>数据传输至FL中.......</value>
+  </data>
+  <data name="MSG_149" xml:space="preserve">
+    <value>FIBER LASER加工条件正在编辑中. 需要载入?</value>
+  </data>
+  <data name="MSG_15" xml:space="preserve">
+    <value>为找到选中的文件.</value>
+  </data>
+  <data name="MSG_150" xml:space="preserve">
+    <value>FIBER LASER连接错误.
+请确认连接.</value>
+  </data>
+  <data name="MSG_151" xml:space="preserve">
+    <value>加工条件设置失败.</value>
+  </data>
+  <data name="MSG_152" xml:space="preserve">
+    <value>印刷初期处理失败.</value>
+  </data>
+  <data name="MSG_153" xml:space="preserve">
+    <value>印刷处理失败.</value>
+  </data>
+  <data name="MSG_155" xml:space="preserve">
+    <value>基板数量已被初始化.   现在正确吗?</value>
+  </data>
+  <data name="MSG_157" xml:space="preserve">
+    <value>BAR CODE 不存在.</value>
+  </data>
+  <data name="MSG_158" xml:space="preserve">
+    <value>加工条件文件读取错误.</value>
+  </data>
+  <data name="MSG_159" xml:space="preserve">
+    <value>该文件已存在.  是否覆盖?</value>
+  </data>
+  <data name="MSG_16" xml:space="preserve">
+    <value>所选文件不属于该程序数据.</value>
+  </data>
+  <data name="MSG_160" xml:space="preserve">
+    <value>请调整探针清理位置. (XY 工作台)</value>
+  </data>
+  <data name="MSG_161" xml:space="preserve">
+    <value>移动:[Arrow]  OK:[START]  取消:[RESET]</value>
+  </data>
+  <data name="MSG_162" xml:space="preserve">
+    <value>请调整探针清理位置.(探针)</value>
+  </data>
+  <data name="MSG_25" xml:space="preserve">
+    <value>请在x0 ~ x6之间设置动作模式(DigiSwitch)</value>
+  </data>
+  <data name="MSG_39" xml:space="preserve">
+    <value>CUT位置补正对象无RESISTOR</value>
+  </data>
+  <data name="MSG_AUTO_15" xml:space="preserve">
+    <value>所有列表已被删除</value>
+  </data>
+  <data name="MSG_AUTO_16" xml:space="preserve">
+    <value>OK ? </value>
+  </data>
+  <data name="MSG_AUTO_17" xml:space="preserve">
+    <value>在ENDLESS模式下两个或更多的数据文件无法被同时选择.</value>
+  </data>
+  <data name="MSG_AUTO_18" xml:space="preserve">
+    <value>请选择一个数据文件.</value>
+  </data>
+  <data name="MSG_AUTOPOWER_01" xml:space="preserve">
+    <value>开始POWER调整.</value>
+  </data>
+  <data name="MSG_AUTOPOWER_02" xml:space="preserve">
+    <value>加工条件号</value>
+  </data>
+  <data name="MSG_AUTOPOWER_03" xml:space="preserve">
+    <value>LASER POWER</value>
+  </data>
+  <data name="MSG_AUTOPOWER_04" xml:space="preserve">
+    <value>电流值</value>
+  </data>
+  <data name="MSG_AUTOPOWER_05" xml:space="preserve">
+    <value>POWER调整失败.</value>
+  </data>
+  <data name="MSG_AUTOPOWER_06" xml:space="preserve">
+    <value>POWER调整正常结束.</value>
+  </data>
+  <data name="MSG_AXIS_T_SERVO_ALM" xml:space="preserve">
+    <value>THETA轴SERVO报警.</value>
+  </data>
+  <data name="MSG_AXIS_X_SERVO_ALM" xml:space="preserve">
+    <value>X轴SERVO报警.</value>
+  </data>
+  <data name="MSG_AXIS_Y_SERVO_ALM" xml:space="preserve">
+    <value>Y轴SERVO报警.</value>
+  </data>
+  <data name="MSG_AXIS_Z_SERVO_ALM" xml:space="preserve">
+    <value>Z轴SERVO报警.</value>
+  </data>
+  <data name="MSG_AXS_LIM_ATT" xml:space="preserve">
+    <value>ATT轴极限检出.</value>
+  </data>
+  <data name="MSG_AXS_LIM_T" xml:space="preserve">
+    <value>THETA轴极限检出.</value>
+  </data>
+  <data name="MSG_AXS_LIM_X" xml:space="preserve">
+    <value>X轴极限检出.</value>
+  </data>
+  <data name="MSG_AXS_LIM_Y" xml:space="preserve">
+    <value>Y轴极限检出.</value>
+  </data>
+  <data name="MSG_AXS_LIM_Z" xml:space="preserve">
+    <value>Z轴极限检出.</value>
+  </data>
+  <data name="MSG_AXS_LIM_Z2" xml:space="preserve">
+    <value>Z2轴极限检出.</value>
+  </data>
+  <data name="MSG_BP_BSIZE_OVER" xml:space="preserve">
+    <value>BLOCK尺寸设定超范围.</value>
+  </data>
+  <data name="MSG_BP_GRV_ALARM_X" xml:space="preserve">
+    <value>GALVANO 报警 X.</value>
+  </data>
+  <data name="MSG_BP_GRV_ALARM_Y" xml:space="preserve">
+    <value>GALVANO 报警 Y.</value>
+  </data>
+  <data name="MSG_BP_HARD_LIMITOVER_HI" xml:space="preserve">
+    <value>BP极限超范围.(最大)</value>
+  </data>
+  <data name="MSG_BP_HARD_LIMITOVER_LO" xml:space="preserve">
+    <value>BP极限超范围.(最小)</value>
+  </data>
+  <data name="MSG_BP_LIMITOVER" xml:space="preserve">
+    <value>BP移动距离设置超范围.</value>
+  </data>
+  <data name="MSG_BP_MOVE_TIMEOUT" xml:space="preserve">
+    <value>BP超时.</value>
+  </data>
+  <data name="MSG_BP_SOFT_LIMITOVER" xml:space="preserve">
+    <value>可移动BP软件范围超范围.</value>
+  </data>
+  <data name="MSG_AUTO_19" xml:space="preserve">
+    <value>保存更新中的数据?</value>
+  </data>
+  <data name="MSG_AUTO_20" xml:space="preserve">
+    <value>加工条件文件不存在.</value>
+  </data>
+  <data name="MSG_CALIBRATION_001" xml:space="preserve">
+    <value>校正执行.
+按[START]
+[RESET]: 终止</value>
+  </data>
+  <data name="MSG_CALIBRATION_002" xml:space="preserve">
+    <value>用外部CAMERA检测GAP.
+按[START]
+[RESET]: 终止</value>
+  </data>
+  <data name="MSG_CALIBRATION_003" xml:space="preserve">
+    <value>[START]:执行图像识别, [RESET]:取消</value>
+  </data>
+  <data name="MSG_CALIBRATION_004" xml:space="preserve">
+    <value>用外部CAMERA检测GAP.  (基准坐标1)
+[START]:执行, [RESET]:取消</value>
+  </data>
+  <data name="MSG_CALIBRATION_005" xml:space="preserve">
+    <value>用外部CAMERA检测GAP.  (基准坐标2)
+[START]:执行, [RESET]:取消</value>
+  </data>
+  <data name="MSG_CALIBRATION_006" xml:space="preserve">
+    <value>校正结束.
+请按"OK"保持数据, 按"CANCEL"不保持数据变化.</value>
+  </data>
+  <data name="MSG_CALIBRATION_007" xml:space="preserve">
+    <value>图像对比错误.
+请按"OK"继续处理, 按"CANCEL"结束处理.</value>
+  </data>
+  <data name="MSG_CALIBRATION_008" xml:space="preserve">
+    <value>RESET执行. [START]:执行RESET, [RESET]:取消执行RESET.</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_001" xml:space="preserve">
+    <value>键入BLOCK数, 范围1- 99</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_004" xml:space="preserve">
+    <value>警告!! [START]: 十字CUT执行, [RESET]: 取消.</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_005" xml:space="preserve">
+    <value>十字CUT执行
+[HALT]: 停止.</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_007" xml:space="preserve">
+    <value>[START]: 图像识别执行
+[RESET]: 取消.</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_010" xml:space="preserve">
+    <value>补正值更新失败
+更新结果超范围
+数值要在最大值与最小值之间.</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_011" xml:space="preserve">
+    <value>十字CUT结束
+[START]: 图像识别
+[RESET]: 取消</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_012" xml:space="preserve">
+    <value>图像识别结束</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_013" xml:space="preserve">
+    <value>图像比对错误</value>
+  </data>
+  <data name="MSG_frmLimit_01" xml:space="preserve">
+    <value>BP极限</value>
+  </data>
+  <data name="MSG_frmLimit_03" xml:space="preserve">
+    <value>X轴极限</value>
+  </data>
+  <data name="MSG_frmLimit_04" xml:space="preserve">
+    <value>Y轴极限</value>
+  </data>
+  <data name="MSG_frmLimit_05" xml:space="preserve">
+    <value>Z轴极限</value>
+  </data>
+  <data name="MSG_frmLimit_06" xml:space="preserve">
+    <value>Z2轴极限</value>
+  </data>
+  <data name="MSG_frmLimit_07" xml:space="preserve">
+    <value>按START键或OK键</value>
+  </data>
+  <data name="MSG_F_CAR" xml:space="preserve">
+    <value>校正(补正实行)</value>
+  </data>
+  <data name="MSG_F_CARREC" xml:space="preserve">
+    <value>校正(画面登录)</value>
+  </data>
+  <data name="MSG_F_CUTREC" xml:space="preserve">
+    <value>外部CAMERA位置(画面登录)</value>
+  </data>
+  <data name="MSG_F_CUTREV" xml:space="preserve">
+    <value>外部CAMERA位置(补正实行)</value>
+  </data>
+  <data name="MSG_F_EXR1" xml:space="preserve">
+    <value>外部CAMERA TEACHING(R1)</value>
+  </data>
+  <data name="MSG_F_EXTEACH" xml:space="preserve">
+    <value>外部CAMERA TEACHING(ALL)</value>
+  </data>
+  <data name="MSG_INTIME_ERROR" xml:space="preserve">
+    <value>INTRIM 错误</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_014" xml:space="preserve">
+    <value>键入BLOCK数后按[START]</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_015" xml:space="preserve">
+    <value>BLOCK数键入错误</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_016" xml:space="preserve">
+    <value>图像识别执行</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_017" xml:space="preserve">
+    <value>ARROW SW: 位置调整, [START]:下一个, [HALT]:前一个</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_018" xml:space="preserve">
+    <value>相关系数=</value>
+  </data>
+  <data name="MSG_CUT_POS_CORRECT_019" xml:space="preserve">
+    <value>图像未找到.</value>
+  </data>
+  <data name="MSG_LDALARM_00" xml:space="preserve">
+    <value>非常规停止</value>
+  </data>
+  <data name="MSG_LDALARM_01" xml:space="preserve">
+    <value>MAGAZINE整合性报警</value>
+  </data>
+  <data name="MSG_LDALARM_02" xml:space="preserve">
+    <value>破缺品发生</value>
+  </data>
+  <data name="MSG_LDALARM_03" xml:space="preserve">
+    <value>HAND1吸附报警</value>
+  </data>
+  <data name="MSG_LDALARM_04" xml:space="preserve">
+    <value>HAND2吸附报警</value>
+  </data>
+  <data name="MSG_LDALARM_05" xml:space="preserve">
+    <value>载物台吸附SENSOR错误</value>
+  </data>
+  <data name="MSG_LDALARM_06" xml:space="preserve">
+    <value>载物台吸附错误</value>
+  </data>
+  <data name="MSG_LDALARM_07" xml:space="preserve">
+    <value>ROBOT报警</value>
+  </data>
+  <data name="MSG_LDALARM_08" xml:space="preserve">
+    <value>加工中监视报警</value>
+  </data>
+  <data name="MSG_LDALARM_09" xml:space="preserve">
+    <value>ELEVATOR 异常</value>
+  </data>
+  <data name="MSG_LDALARM_10" xml:space="preserve">
+    <value>无MAGAZINE 或 无基板</value>
+  </data>
+  <data name="MSG_LDALARM_11" xml:space="preserve">
+    <value>原点复位超时</value>
+  </data>
+  <data name="MSG_LDALARM_12" xml:space="preserve">
+    <value>CLAMP报警</value>
+  </data>
+  <data name="MSG_LDALARM_13" xml:space="preserve">
+    <value>空气压力下降检出</value>
+  </data>
+  <data name="MSG_LDALARM_14" xml:space="preserve">
+    <value>TAK MAG已满</value>
+  </data>
+  <data name="MSG_LDALARM_15" xml:space="preserve">
+    <value>STO MAG已满</value>
+  </data>
+  <data name="MSG_LDALARM_16" xml:space="preserve">
+    <value>回旋 CYLINDER 超时.</value>
+  </data>
+  <data name="MSG_LDALARM_17" xml:space="preserve">
+    <value>HAND1 CYNLINGER 超时</value>
+  </data>
+  <data name="MSG_LDALARM_18" xml:space="preserve">
+    <value>HAND2 CYNLINGER 超时</value>
+  </data>
+  <data name="MSG_LDALARM_19" xml:space="preserve">
+    <value>供给HAND 吸附错误</value>
+  </data>
+  <data name="MSG_LDALARM_20" xml:space="preserve">
+    <value>回收HAND 吸附错误</value>
+  </data>
+  <data name="MSG_LDALARM_21" xml:space="preserve">
+    <value>NG排出已满</value>
+  </data>
+  <data name="MSG_LDALARM_22" xml:space="preserve">
+    <value>在停止中.</value>
+  </data>
+  <data name="MSG_LDALARM_23" xml:space="preserve">
+    <value>门开着.</value>
+  </data>
+  <data name="MSG_LDALARM_24" xml:space="preserve">
+    <value>两张提取检出</value>
+  </data>
+  <data name="MSG_LDALARM_25" xml:space="preserve">
+    <value>搬送上下报警</value>
+  </data>
+  <data name="MSG_LDALARM_26" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDALARM_27" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDALARM_28" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDALARM_29" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDALARM_30" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDALARM_31" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDALARM_UD" xml:space="preserve">
+    <value>未定义报警号</value>
+  </data>
+  <data name="MSG_LDGUID_00" xml:space="preserve">
+    <value>EMO按钮已按下.
+</value>
+  </data>
+  <data name="MSG_LDGUID_01" xml:space="preserve">
+    <value>请检查MAGZINE位置.
+</value>
+  </data>
+  <data name="MSG_LDGUID_02" xml:space="preserve">
+    <value>发生损坏或丢失.  请将基板移走.
+</value>
+  </data>
+  <data name="MSG_LDGUID_03" xml:space="preserve">
+    <value>请检查吸附SENSOR.
+</value>
+  </data>
+  <data name="MSG_LDGUID_04" xml:space="preserve">
+    <value>请检查吸附SENSOR.
+请将基板移走.
+</value>
+  </data>
+  <data name="MSG_LDGUID_05" xml:space="preserve">
+    <value>请检查吸附SENSOR.
+</value>
+  </data>
+  <data name="MSG_LDGUID_06" xml:space="preserve">
+    <value>请检查吸附SENSOR.
+请检查是否有上层板划痕或者碎片.
+</value>
+  </data>
+  <data name="MSG_LDGUID_07" xml:space="preserve">
+    <value>ROBOT报警发生.
+</value>
+  </data>
+  <data name="MSG_LDGUID_08" xml:space="preserve">
+    <value>在加工监视中发生超时.
+</value>
+  </data>
+  <data name="MSG_LDGUID_09" xml:space="preserve">
+    <value>请检查ELEVATOR的SENSOR
+</value>
+  </data>
+  <data name="MSG_LDGUID_11" xml:space="preserve">
+    <value>原点复位中发生超时.
+</value>
+  </data>
+  <data name="MSG_LDGUID_12" xml:space="preserve">
+    <value>CLAMP异常
+请检查是否有上层板划痕或者碎片. 
+</value>
+  </data>
+  <data name="MSG_LDGUID_13" xml:space="preserve">
+    <value>请检查空气供给
+</value>
+  </data>
+  <data name="MSG_LDGUID_14" xml:space="preserve">
+    <value>TAK MAG已满</value>
+  </data>
+  <data name="MSG_LDGUID_15" xml:space="preserve">
+    <value>STO MAG已满</value>
+  </data>
+  <data name="MSG_LDGUID_16" xml:space="preserve">
+    <value>请检查CYLINDER的SENSOR
+</value>
+  </data>
+  <data name="MSG_LDGUID_17" xml:space="preserve">
+    <value>请检查CYLINDER的SENSOR
+</value>
+  </data>
+  <data name="MSG_LDGUID_18" xml:space="preserve">
+    <value>请检查CYLINDER的SENSOR
+</value>
+  </data>
+  <data name="MSG_LDGUID_19" xml:space="preserve">
+    <value>基板吸附超时
+</value>
+  </data>
+  <data name="MSG_LDGUID_20" xml:space="preserve">
+    <value>基板吸附超时
+</value>
+  </data>
+  <data name="MSG_LDGUID_21" xml:space="preserve">
+    <value>NG盒已满.  请将基板取出.
+</value>
+  </data>
+  <data name="MSG_LDGUID_22" xml:space="preserve">
+    <value>在停止中.
+</value>
+  </data>
+  <data name="MSG_LDGUID_23" xml:space="preserve">
+    <value>请关门
+</value>
+  </data>
+  <data name="MSG_LDGUID_24" xml:space="preserve">
+    <value>将供给HAND上的基板取出, 然后实行回位.
+</value>
+  </data>
+  <data name="MSG_LDGUID_25" xml:space="preserve">
+    <value>检查传送机上下的极限SENSOR
+</value>
+  </data>
+  <data name="MSG_LDGUID_26" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDGUID_27" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDGUID_28" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDGUID_29" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDGUID_30" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDGUID_31" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDGUID_UD" xml:space="preserve">
+    <value>请查询报警号
+</value>
+  </data>
+  <data name="MSG_LDINFO_UD" xml:space="preserve">
+    <value>意外报警</value>
+  </data>
+  <data name="MSG_LOADER_05" xml:space="preserve">
+    <value>装载错误</value>
+  </data>
+  <data name="MSG_LOADER_07" xml:space="preserve">
+    <value>图形比对错误</value>
+  </data>
+  <data name="MSG_LOADER_15" xml:space="preserve">
+    <value>自动运转结束</value>
+  </data>
+  <data name="MSG_LOADER_16" xml:space="preserve">
+    <value>装载器报警表</value>
+  </data>
+  <data name="MSG_LOADER_17" xml:space="preserve">
+    <value>载物台上残留有基板</value>
+  </data>
+  <data name="MSG_LOADER_18" xml:space="preserve">
+    <value>请取出它.</value>
+  </data>
+  <data name="MSG_LOADER_19" xml:space="preserve">
+    <value>基板类型变化</value>
+  </data>
+  <data name="MSG_LOADER_20" xml:space="preserve">
+    <value>将NG盒中的基板取出</value>
+  </data>
+  <data name="MSG_LOADER_21" xml:space="preserve">
+    <value>NG盒已满</value>
+  </data>
+  <data name="MSG_LOADER_22" xml:space="preserve">
+    <value>按OK 进行原点归位</value>
+  </data>
+  <data name="MSG_LOADER_23" xml:space="preserve">
+    <value>自动运转停止</value>
+  </data>
+  <data name="MSG_LOADER_29" xml:space="preserve">
+    <value>EQ内残留有基板</value>
+  </data>
+  <data name="MSG_LOADER_30" xml:space="preserve">
+    <value>在自动运转停止中</value>
+  </data>
+  <data name="MSG_LOADER_31" xml:space="preserve">
+    <value>按START 和OK 退出程序.</value>
+  </data>
+  <data name="MSG_LOADER_32" xml:space="preserve">
+    <value>请继续自动运转</value>
+  </data>
+  <data name="MSG_LOADER_33" xml:space="preserve">
+    <value>在将基板取走后</value>
+  </data>
+  <data name="MSG_LOADER_34" xml:space="preserve">
+    <value>将MAGAZINE降低至基板检出</value>
+  </data>
+  <data name="MSG_LOADER_35" xml:space="preserve">
+    <value>SENSOR-OFF位置</value>
+  </data>
+  <data name="MSG_LOADER_36" xml:space="preserve">
+    <value>请取走基板</value>
+  </data>
+  <data name="MSG_LOADER_37" xml:space="preserve">
+    <value>XY台上有基板</value>
+  </data>
+  <data name="MSG_LOADER_38" xml:space="preserve">
+    <value>按START(OK) 进行原点归位</value>
+  </data>
+  <data name="MSG_LOADER_40" xml:space="preserve">
+    <value>取出NG基板</value>
+  </data>
+  <data name="MSG_LOADER_41" xml:space="preserve">
+    <value>在基板取出后</value>
+  </data>
+  <data name="MSG_LOGERROR" xml:space="preserve">
+    <value>LOG文件书写错误发生.</value>
+  </data>
+  <data name="MSG_OPLOG_APROBEEXE" xml:space="preserve">
+    <value>自动探查执行</value>
+  </data>
+  <data name="MSG_OPLOG_APROBEREC" xml:space="preserve">
+    <value>自动探查登录</value>
+  </data>
+  <data name="MSG_OPLOG_AUTO" xml:space="preserve">
+    <value>自动运转</value>
+  </data>
+  <data name="MSG_OPLOG_CLRTOTAL" xml:space="preserve">
+    <value>计数清零</value>
+  </data>
+  <data name="MSG_OPLOG_CMD" xml:space="preserve">
+    <value>指令</value>
+  </data>
+  <data name="MSG_LOADER_42" xml:space="preserve">
+    <value>XY台上无基板</value>
+  </data>
+  <data name="MSG_LOADER_43" xml:space="preserve">
+    <value>请再次执行</value>
+  </data>
+  <data name="MSG_LOADER_44" xml:space="preserve">
+    <value>MAGAZINE终止</value>
+  </data>
+  <data name="MSG_LOADER_45" xml:space="preserve">
+    <value>按START 将加工继续,</value>
+  </data>
+  <data name="MSG_LOADER_46" xml:space="preserve">
+    <value>或者 按CANCEL终止.(移动STAGE.)</value>
+  </data>
+  <data name="MSG_LOADER_47" xml:space="preserve">
+    <value>探针检查错误</value>
+  </data>
+  <data name="MSG_LOADER_48" xml:space="preserve">
+    <value>在CYCLE停止中.</value>
+  </data>
+  <data name="MSG_LOADER_49" xml:space="preserve">
+    <value>破片发生.</value>
+  </data>
+  <data name="MSG_OPLOG_CALIBRATION_RECOG_START" xml:space="preserve">
+    <value>校正图像登录</value>
+  </data>
+  <data name="MSG_OPLOG_CALIBRATION_START" xml:space="preserve">
+    <value>校正</value>
+  </data>
+  <data name="MSG_OPLOG_CUT_POS_CORRECT_RECOG_START" xml:space="preserve">
+    <value>CUT位置补正画面登录</value>
+  </data>
+  <data name="MSG_OPLOG_CUT_POS_CORRECT_START" xml:space="preserve">
+    <value>CUT位置补正</value>
+  </data>
+  <data name="MSG_OPLOG_ExCam1_START" xml:space="preserve">
+    <value>外部CAMERA TEACHING (All)</value>
+  </data>
+  <data name="MSG_OPLOG_ExCam_START" xml:space="preserve">
+    <value>外部CAMERA TEACHING (1st)</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC01" xml:space="preserve">
+    <value>装载</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC02" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC03" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC05" xml:space="preserve">
+    <value>LASER</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC06" xml:space="preserve">
+    <value>LOG</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC07" xml:space="preserve">
+    <value>探查</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC08" xml:space="preserve">
+    <value>TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC08S" xml:space="preserve">
+    <value>CUTTING位置补正TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC09" xml:space="preserve">
+    <value>画面登录</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC10" xml:space="preserve">
+    <value>TRIMMER停止</value>
+  </data>
+  <data name="MSG_OPLOG_FUNC30" xml:space="preserve">
+    <value>CIRCUIT TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_LOADERINIT" xml:space="preserve">
+    <value>装载器初始化</value>
+  </data>
+  <data name="MSG_OPLOG_MAP" xml:space="preserve">
+    <value>MAP选择</value>
+  </data>
+  <data name="MSG_OPLOG_SINSYUKU" xml:space="preserve">
+    <value>伸缩补正(画面登录)</value>
+  </data>
+  <data name="MSG_OPLOG_TRIMRES" xml:space="preserve">
+    <value>因在TRIMMING过程中按RESET键而停止.</value>
+  </data>
+  <data name="MSG_OPLOG_WAKEUP" xml:space="preserve">
+    <value>TIMMER启动</value>
+  </data>
+  <data name="MSG_OPN_CVR" xml:space="preserve">
+    <value>盖板打开检出</value>
+  </data>
+  <data name="MSG_OPN_CVRLTC" xml:space="preserve">
+    <value>盖板弹簧锁打开检出</value>
+  </data>
+  <data name="MSG_OPN_SCVR" xml:space="preserve">
+    <value>边盖板打开检出</value>
+  </data>
+  <data name="MSG_SPRASH0" xml:space="preserve">
+    <value>初始化中</value>
+  </data>
+  <data name="MSG_SPRASH12" xml:space="preserve">
+    <value>空气压力降低检出</value>
+  </data>
+  <data name="MSG_SPRASH13" xml:space="preserve">
+    <value>连续NG-HI错误</value>
+  </data>
+  <data name="MSG_SPRASH14" xml:space="preserve">
+    <value>再探查失败</value>
+  </data>
+  <data name="MSG_SPRASH16" xml:space="preserve">
+    <value>按RESET退出程序</value>
+  </data>
+  <data name="MSG_SPRASH17" xml:space="preserve">
+    <value>如果按下CANCEL, 程序终止.</value>
+  </data>
+  <data name="MSG_OPLOG_T_THETA_START" xml:space="preserve">
+    <value>THETA TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_MAINT" xml:space="preserve">
+    <value>探针清洁</value>
+  </data>
+  <data name="MSG_SPRASH18" xml:space="preserve">
+    <value>装载器通讯超时错误</value>
+  </data>
+  <data name="MSG_SPRASH19" xml:space="preserve">
+    <value>非正常全部停止发生</value>
+  </data>
+  <data name="MSG_SPRASH20" xml:space="preserve">
+    <value>非正常CYCLE停止发生</value>
+  </data>
+  <data name="MSG_SPRASH21" xml:space="preserve">
+    <value>轻故障发生</value>
+  </data>
+  <data name="MSG_SPRASH22" xml:space="preserve">
+    <value>按START开始自动运转</value>
+  </data>
+  <data name="MSG_SPRASH23" xml:space="preserve">
+    <value>TRIMMING中错误发生</value>
+  </data>
+  <data name="MSG_SPRASH24" xml:space="preserve">
+    <value>装载器初始化中</value>
+  </data>
+  <data name="MSG_SPRASH25" xml:space="preserve">
+    <value>INTERLOCK全部解除中</value>
+  </data>
+  <data name="MSG_SPRASH26" xml:space="preserve">
+    <value>INTERLOCK部分解除中</value>
+  </data>
+  <data name="MSG_SPRASH27" xml:space="preserve">
+    <value>盖板打开中</value>
+  </data>
+  <data name="MSG_SPRASH28" xml:space="preserve">
+    <value>侧盖板打开中</value>
+  </data>
+  <data name="MSG_SPRASH30" xml:space="preserve">
+    <value>PLC异常</value>
+  </data>
+  <data name="MSG_SPRASH31" xml:space="preserve">
+    <value>注意 !!!</value>
+  </data>
+  <data name="MSG_SPRASH32" xml:space="preserve">
+    <value>侧盖板自动关闭</value>
+  </data>
+  <data name="MSG_SPRASH33" xml:space="preserve">
+    <value>按RESET退出加工</value>
+  </data>
+  <data name="MSG_SPRASH34" xml:space="preserve">
+    <value>安全盖板 或 侧盖板 打开中</value>
+  </data>
+  <data name="MSG_SPRASH35" xml:space="preserve">
+    <value>[START]: 继续. [RESET]: 结束.</value>
+  </data>
+  <data name="MSG_SPRASH36" xml:space="preserve">
+    <value>请关盖板</value>
+  </data>
+  <data name="MSG_SPRASH37" xml:space="preserve">
+    <value>装载器初始化未完成</value>
+  </data>
+  <data name="MSG_SPRASH38" xml:space="preserve">
+    <value>XY原点位置归位中</value>
+  </data>
+  <data name="MSG_SPRASH39" xml:space="preserve">
+    <value>在停止中</value>
+  </data>
+  <data name="MSG_SPRASH4" xml:space="preserve">
+    <value>按START</value>
+  </data>
+  <data name="MSG_SPRASH40" xml:space="preserve">
+    <value>CV错误检出</value>
+  </data>
+  <data name="MSG_SPRASH41" xml:space="preserve">
+    <value>过载检出</value>
+  </data>
+  <data name="MSG_SPRASH42" xml:space="preserve">
+    <value>ReProbing错误</value>
+  </data>
+  <data name="MSG_SPRASH43" xml:space="preserve">
+    <value>前门锁超时</value>
+  </data>
+  <data name="MSG_SPRASH44" xml:space="preserve">
+    <value>前门解锁超时</value>
+  </data>
+  <data name="MSG_SPRASH45" xml:space="preserve">
+    <value>将EQ内基板取出</value>
+  </data>
+  <data name="MSG_SPRASH46" xml:space="preserve">
+    <value>EQ初始化中</value>
+  </data>
+  <data name="MSG_SPRASH47" xml:space="preserve">
+    <value>HOME位置移动中</value>
+  </data>
+  <data name="MSG_SPRASH48" xml:space="preserve">
+    <value>TRIMMING数据未在QR CODE读取器中被读取</value>
+  </data>
+  <data name="MSG_SPRASH49" xml:space="preserve">
+    <value>请确认TRIMMING数据文件</value>
+  </data>
+  <data name="MSG_SPRASH50" xml:space="preserve">
+    <value>PLC低电量检出</value>
+  </data>
+  <data name="MSG_SPRASH51" xml:space="preserve">
+    <value>请换电池</value>
+  </data>
+  <data name="MSG_SPRASH6" xml:space="preserve">
+    <value>EMERGENCY</value>
+  </data>
+  <data name="MSG_SRV_ALM" xml:space="preserve">
+    <value>SERVO报警</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS" xml:space="preserve">
+    <value>轴 - 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_T" xml:space="preserve">
+    <value>THETA轴 - 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_X" xml:space="preserve">
+    <value>X轴 - 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_Y" xml:space="preserve">
+    <value>Y轴 - 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_Z" xml:space="preserve">
+    <value>Z轴 - 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_MINUS_AXIS_Z2" xml:space="preserve">
+    <value>Z2轴 - 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS" xml:space="preserve">
+    <value>轴 + 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_T" xml:space="preserve">
+    <value>THETA轴 + 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_X" xml:space="preserve">
+    <value>X轴 + 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_Y" xml:space="preserve">
+    <value>Y轴 + 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_Z" xml:space="preserve">
+    <value>Z轴 + 极限超过</value>
+  </data>
+  <data name="MSG_STG_SOFTLMT_PLUS_AXIS_Z2" xml:space="preserve">
+    <value>Z2轴 + 极限超过</value>
+  </data>
+  <data name="MSG_TIMEOUT_ATT" xml:space="preserve">
+    <value>旋转ATT错误  超时</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_T" xml:space="preserve">
+    <value>THETA轴错误  超时</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_X" xml:space="preserve">
+    <value>X轴错误  超时</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_XY" xml:space="preserve">
+    <value>XY轴错误  超时</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_Y" xml:space="preserve">
+    <value>Y轴错误  超时</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_Z" xml:space="preserve">
+    <value>Z轴错误  超时</value>
+  </data>
+  <data name="MSG_TIMEOUT_AXIS_Z2" xml:space="preserve">
+    <value>Z2轴错误  超时</value>
+  </data>
+  <data name="MSG_TOTAL_CIRCUIT" xml:space="preserve">
+    <value>CIRCUIT单位</value>
+  </data>
+  <data name="MSG_TOTAL_REGISTOR" xml:space="preserve">
+    <value>RISISTOR 单位</value>
+  </data>
+  <data name="MSG_TRIM_01" xml:space="preserve">
+    <value>加工范围外</value>
+  </data>
+  <data name="MSG_TRIM_02" xml:space="preserve">
+    <value>自动装载无法开始</value>
+  </data>
+  <data name="MSG_TRIM_03" xml:space="preserve">
+    <value>继续加工?</value>
+  </data>
+  <data name="MSG_TRIM_04" xml:space="preserve">
+    <value>初始测试分布图</value>
+  </data>
+  <data name="MSG_TRIM_05" xml:space="preserve">
+    <value>最终测试分布图</value>
+  </data>
+  <data name="MSGERR_SEND_TRIMDATA" xml:space="preserve">
+    <value>设置TRIMMING数据失败.
+请确认TRIMMING数据.</value>
+  </data>
+  <data name="QR_Data_001" xml:space="preserve">
+    <value>种类:</value>
+  </data>
+  <data name="QR_Data_002" xml:space="preserve">
+    <value>容差值:</value>
+  </data>
+  <data name="QR_Data_003" xml:space="preserve">
+    <value>阻抗值(IEC):</value>
+  </data>
+  <data name="QR_Data_004" xml:space="preserve">
+    <value>阻抗值(真实抗值):</value>
+  </data>
+  <data name="QR_Data_005" xml:space="preserve">
+    <value>LOT号:</value>
+  </data>
+  <data name="TITLE_4" xml:space="preserve">
+    <value>中止</value>
+  </data>
+  <data name="TITLE_LOGGING" xml:space="preserve">
+    <value>记录加工</value>
+  </data>
+  <data name="TITLE_TX" xml:space="preserve">
+    <value>CHIP尺寸(TX)TEACHING</value>
+  </data>
+  <data name="SimpleTrimmer_001" xml:space="preserve">
+    <value>保存完成!</value>
+  </data>
+  <data name="SimpleTrimmer_002" xml:space="preserve">
+    <value>BLK数据</value>
+  </data>
+  <data name="SimpleTrimmer_004" xml:space="preserve">
+    <value>YIELD</value>
+  </data>
+  <data name="SimpleTrimmer_005" xml:space="preserve">
+    <value>LOT号</value>
+  </data>
+  <data name="SimpleTrimmer_006" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="SimpleTrimmer_007" xml:space="preserve">
+    <value>经过时间</value>
+  </data>
+  <data name="SimpleTrimmer_008" xml:space="preserve">
+    <value>处理基板数</value>
+  </data>
+  <data name="SimpleTrimmer_009" xml:space="preserve">
+    <value>处理阻抗数</value>
+  </data>
+  <data name="SimpleTrimmer_010" xml:space="preserve">
+    <value>LASER POWER</value>
+  </data>
+  <data name="SimpleTrimmer_011" xml:space="preserve">
+    <value>目标值</value>
+  </data>
+  <data name="SimpleTrimmer_012" xml:space="preserve">
+    <value>下限</value>
+  </data>
+  <data name="SimpleTrimmer_013" xml:space="preserve">
+    <value>上限</value>
+  </data>
+  <data name="SimpleTrimmer_014" xml:space="preserve">
+    <value>初始测定</value>
+  </data>
+  <data name="SimpleTrimmer_015" xml:space="preserve">
+    <value>最终测定</value>
+  </data>
+  <data name="SimpleTrimmer_016" xml:space="preserve">
+    <value>基板</value>
+  </data>
+  <data name="SimpleTrimmer_017" xml:space="preserve">
+    <value>LOT</value>
+  </data>
+  <data name="SimpleTrimmer_018" xml:space="preserve">
+    <value>处理数</value>
+  </data>
+  <data name="SimpleTrimmer_019" xml:space="preserve">
+    <value>OK(%)</value>
+  </data>
+  <data name="SimpleTrimmer_020" xml:space="preserve">
+    <value>Low NG(%)</value>
+  </data>
+  <data name="SimpleTrimmer_021" xml:space="preserve">
+    <value>High NG(%)</value>
+  </data>
+  <data name="SimpleTrimmer_022" xml:space="preserve">
+    <value>Range Over(%)</value>
+  </data>
+  <data name="SimpleTrimmer_023" xml:space="preserve">
+    <value>最小值</value>
+  </data>
+  <data name="SimpleTrimmer_024" xml:space="preserve">
+    <value>最大值</value>
+  </data>
+  <data name="SimpleTrimmer_025" xml:space="preserve">
+    <value>均值</value>
+  </data>
+  <data name="SimpleTrimmer_026" xml:space="preserve">
+    <value>3σ</value>
+  </data>
+  <data name="SimpleTrimmer_027" xml:space="preserve">
+    <value>CpK</value>
+  </data>
+  <data name="SimpleTrimmer_028" xml:space="preserve">
+    <value>数据清理</value>
+  </data>
+  <data name="SimpleTrimmer_029" xml:space="preserve">
+    <value>数据保存</value>
+  </data>
+  <data name="SimpleTrimmer_030" xml:space="preserve">
+    <value>BP调整</value>
+  </data>
+  <data name="SimpleTrimmer_031" xml:space="preserve">
+    <value>数据编辑</value>
+  </data>
+  <data name="SimpleTrimmer_032" xml:space="preserve">
+    <value>主要</value>
+  </data>
+  <data name="SimpleTrimmer_033" xml:space="preserve">
+    <value>阻抗号</value>
+  </data>
+  <data name="SimpleTrimmer_034" xml:space="preserve">
+    <value>初始测定(误差%)</value>
+  </data>
+  <data name="SimpleTrimmer_035" xml:space="preserve">
+    <value>最终测定(误差%)</value>
+  </data>
+  <data name="SimpleTrimmer_036" xml:space="preserve">
+    <value>LOT号</value>
+  </data>
+  <data name="SimpleTrimmer_037" xml:space="preserve">
+    <value>维护</value>
+  </data>
+  <data name="SimpleTrimmer_038" xml:space="preserve">
+    <value>探针清洁</value>
+  </data>
+  <data name="SimpleTrimmer_039" xml:space="preserve">
+    <value>请打开LASER</value>
+  </data>
+  <data name="SimpleTrimmer_040" xml:space="preserve">
+    <value>MΩ</value>
+  </data>
+  <data name="SimpleTrimmer_041" xml:space="preserve">
+    <value>KΩ</value>
+  </data>
+  <data name="SimpleTrimmer_042" xml:space="preserve">
+    <value>Ω</value>
+  </data>
+  <data name="SimpleTrimmer_043" xml:space="preserve">
+    <value>mΩ</value>
+  </data>
+  <data name="TITLE_TY" xml:space="preserve">
+    <value>STEP尺寸(TX)TEACHING</value>
+  </data>
+  <data name="Form1_008" xml:space="preserve">
+    <value>(Thresh)</value>
+  </data>
+  <data name="MSG_LOADER_39" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="MSG_OPLOG_HCMD_TRMCMD" xml:space="preserve">
+    <value>HOST CMD: TRM CMD</value>
+  </data>
+  <data name="MSG_OPLOG_IDTEACH" xml:space="preserve">
+    <value>ID TEACH</value>
+  </data>
+  <data name="MSG_OPLOG_TRIMST" xml:space="preserve">
+    <value>TRIMMING</value>
+  </data>
+  <data name="MSG_OPLOG_TX_START" xml:space="preserve">
+    <value>TX TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_TY2_START" xml:space="preserve">
+    <value>TY2 TEACHING</value>
+  </data>
+  <data name="MSG_OPLOG_TY_START" xml:space="preserve">
+    <value>TY TEACHING</value>
+  </data>
+  <data name="iTKY_001" xml:space="preserve">
+    <value>运行 [ {0} ]</value>
+  </data>
+  <data name="MSG_SPRASH52" xml:space="preserve">
+    <value>请检查载物台上的板状态.</value>
+  </data>
+  <data name="MSG_SPRASH53" xml:space="preserve">
+    <value>在重新运行[开始]，将结束与[取消].</value>
+  </data>
+  <data name="LBL_BTN_SUBSTRAT" xml:space="preserve">
+    <value>Set Substrate</value>
+  </data>
+  <data name="MSG_LOADER_50" xml:space="preserve">
+    <value>Please Open The Cover And Set Substrate.</value>
+  </data>
+  <data name="MSG_LOADER_51" xml:space="preserve">
+    <value>Push START Button.</value>
+  </data>
+  <data name="MSG_SPRASH56" xml:space="preserve">
+    <value>Please select button .</value>
+  </data>
+  <data name="MSG_SPRASH57" xml:space="preserve">
+    <value>then continue lot process.</value>
+  </data>
+  <data name="MSG_SPRASH54" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="MSG_SPRASH55" xml:space="preserve">
+    <value>Not Clear</value>
+  </data>
+  <data name="MSG_SPRASH58" xml:space="preserve">
+    <value>请把基材</value>
+  </data>
+  <data name="MSG_SPRASH59" xml:space="preserve">
+    <value>START</value>
+  </data>
+  <data name="MSG_SPRASH60" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="MSG_SPRASH61" xml:space="preserve">
+    <value>CONTINUE</value>
+  </data>
+  <data name="MSG_frmLimit_08" xml:space="preserve">
+    <value>按OK键</value>
+  </data>
+  <data name="MSG_LOADER_52" xml:space="preserve">
+    <value>ADJ-ON: 按OK之後,
+按Main画面的START/RESET 进行原点归位
+ADJ-OFF:按OK 进行原点归位</value>
+  </data>
+  <data name="MSG_LOADER_53" xml:space="preserve">
+    <value>按CANCEL之後,按OK之後进行原点归位</value>
+  </data>
+  <data name="MSG_SPRASH62" xml:space="preserve">
+    <value>Slide Cover is closed.</value>
+  </data>
+  <data name="MSG_SPRASH63" xml:space="preserve">
+    <value>Plate Unload Position Setting error(SETLOADPOS)</value>
+  </data>
+  <data name="MSG_SPRASH64" xml:space="preserve">
+    <value>Stage Moving error to Plate Load Position</value>
+  </data>
+  <data name="MSG_SPRASH65" xml:space="preserve">
+    <value>Slide Cover Check Setting error（EX_SLIDECOVERCHK(0)）</value>
+  </data>
+  <data name="Form1_023" xml:space="preserve">
+    <value>对准: </value>
+  </data>
+  <data name="Form1_024" xml:space="preserve">
+    <value>粗略对: </value>
+  </data>
+  <data name="BarCode_Data_007" xml:space="preserve">
+    <value>Barcode1：</value>
+  </data>
+  <data name="BarCode_Data_008" xml:space="preserve">
+    <value>Barcode2：</value>
+  </data>
+  <data name="MSG_163" xml:space="preserve">
+    <value>清除条形码信息？</value>
+  </data>
+  <data name="BarCode_Data_009" xml:space="preserve">
+    <value>找不到指定的键</value>
+  </data>
+  <data name="BarCode_Data_010" xml:space="preserve">
+    <value>密钥名称超过字符数 ({0})</value>
+  </data>
+  <data name="BarCode_Data_011" xml:space="preserve">
+    <value>搜索键 ：</value>
+  </data>
+  <data name="BarCode_Data_012" xml:space="preserve">
+    <value>Barcode： </value>
+  </data>
+  <data name="MSG_109" xml:space="preserve">
+    <value>创建新的</value>
+  </data>
+  <data name="MSG_110" xml:space="preserve">
+    <value>有数据正在编辑
+你想创建新的数据吗？</value>
+  </data>
+  <data name="MSG_111" xml:space="preserve">
+    <value>加工条件可能已经改变
+你想创建新的数据吗？</value>
+  </data>
+  <data name="Form1_025" xml:space="preserve">
+    <value>“正常使用的打印机”处于脱机状态</value>
+  </data>
+  <data name="Form1_026" xml:space="preserve">
+    <value>保存在PDF文件
+{0}</value>
+  </data>
+  <data name="MSG_SPRASH66" xml:space="preserve">
+    <value>Over NG count :Setting=</value>
+  </data>
+  <data name="MSG_SPRASH67" xml:space="preserve">
+    <value>NG count ＝</value>
+  </data>
+  <data name="MSG_SPRASH70" xml:space="preserve">
+    <value>CutOff turning Error</value>
+  </data>
+  <data name="MSG_SPRASH71" xml:space="preserve">
+    <value>START:Retry RESET:Lot Abort</value>
+  </data>
+  <data name="MSG_SPRASH72" xml:space="preserve">
+    <value>Number of Lot Input is not a Number</value>
+  </data>
+  <data name="MSG_SPRASH73" xml:space="preserve">
+    <value>Process it as 0</value>
+  </data>
+  <data name="MSG_SPRASH74" xml:space="preserve">
+    <value>NEW：START 、CONTINUE：RESET</value>
+  </data>
+  <data name="MSG_SPRASH75" xml:space="preserve">
+    <value>NEW</value>
+  </data>
+  <data name="MSG_SPRASH76" xml:space="preserve">
+    <value>CONTINUE</value>
+  </data>
+  <data name="QR_Data_006" xml:space="preserve">
+    <value> Lot Input          :</value>
+  </data>
+  <data name="MSG_LDGUID_10" xml:space="preserve">
+    <value>Please Set A Magazine Or A Substrate Whether Magazine Search DOGU Falls Down.</value>
+  </data>
+  <data name="MSG_SPRASH77" xml:space="preserve">
+    <value>Trimming End</value>
+  </data>
+  <data name="MSG_SPRASH79" xml:space="preserve">
+    <value>Plate NG Rate is Over setting value:Setting=</value>
+  </data>
+  <data name="MSG_SPRASH80" xml:space="preserve">
+    <value>NG Rate =</value>
+  </data>
+  <data name="MSG_SPRASH81" xml:space="preserve">
+    <value>pcs</value>
+  </data>
+  <data name="MSG_SPRASH82" xml:space="preserve">
+    <value>OK(START):Continue,Cancel(RESET):Cancel</value>
+  </data>
+</root>
