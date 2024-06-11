@@ -190,7 +190,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmdEsLog.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>42</value>
   </data>
   <data name="CmdCnd.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
@@ -226,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CmdCnd.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>43</value>
   </data>
   <data name="CMdIX2Log.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
@@ -262,7 +262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CMdIX2Log.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>41</value>
   </data>
   <data name="btnTrimming.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -403,7 +403,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdExCam.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="CmdExCam1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -436,7 +436,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdExCam1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="CmdCutPosCorrect.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -469,7 +469,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdCutPosCorrect.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="CmdCalibration.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -502,7 +502,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdCalibration.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="CmdPtnCalibration.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -535,7 +535,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdPtnCalibration.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="CmdPtnCutPosCorrect.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -568,7 +568,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdPtnCutPosCorrect.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="mnuHelpAbout.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
@@ -601,7 +601,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mnuHelpAbout.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>44</value>
   </data>
   <data name="CmdEnd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -637,7 +637,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CmdEnd.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>34</value>
   </data>
   <data name="CmdPattern.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -2371,28 +2371,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;picGraphAccumulation.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
-  <data name="Teaching1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 921</value>
-  </data>
-  <data name="Teaching1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>616, 905</value>
-  </data>
-  <data name="Teaching1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Teaching1.Name" xml:space="preserve">
-    <value>Teaching1</value>
-  </data>
-  <data name="&gt;&gt;Teaching1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllTeach.Teaching, DllTeach, Version=6.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Teaching1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Teaching1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>33</value>
   </data>
   <data name="lblInterLockMSG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 12pt, style=Bold</value>
@@ -2428,7 +2407,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInterLockMSG.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>35</value>
   </data>
   <data name="CmdTy2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -2464,7 +2443,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdTy2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="CmdT_Theta.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -2500,7 +2479,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;CmdT_Theta.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="Text4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2546,7 +2525,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Text4.ZOrder" xml:space="preserve">
-    <value>49</value>
+    <value>52</value>
   </data>
   <data name="LblMes.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
@@ -2585,7 +2564,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblMes.ZOrder" xml:space="preserve">
-    <value>43</value>
+    <value>46</value>
   </data>
   <data name="LblCur.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
@@ -2621,7 +2600,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblCur.ZOrder" xml:space="preserve">
-    <value>44</value>
+    <value>47</value>
   </data>
   <data name="lblLoginResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2663,7 +2642,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblLoginResult.ZOrder" xml:space="preserve">
-    <value>45</value>
+    <value>48</value>
   </data>
   <data name="LblDataFileName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2705,7 +2684,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblDataFileName.ZOrder" xml:space="preserve">
-    <value>46</value>
+    <value>49</value>
   </data>
   <data name="Line1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2729,7 +2708,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Line1.ZOrder" xml:space="preserve">
-    <value>47</value>
+    <value>50</value>
   </data>
   <data name="lblLogging.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2768,7 +2747,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblLogging.ZOrder" xml:space="preserve">
-    <value>48</value>
+    <value>51</value>
   </data>
   <data name="LblRotAtt.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
@@ -2807,7 +2786,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblRotAtt.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>40</value>
   </data>
   <data name="CmdCutPos.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -2867,7 +2846,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;Line2.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="Line3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2891,7 +2870,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;Line3.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>34</value>
   </data>
   <data name="btnCounterClear.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ Ｐゴシック, 11.25pt, style=Bold</value>
@@ -2924,7 +2903,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;btnCounterClear.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>33</value>
   </data>
   <data name="LblGO.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -2957,7 +2936,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblGO.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>32</value>
   </data>
   <data name="LblTNG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -2990,7 +2969,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblTNG.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>31</value>
   </data>
   <data name="LblUnit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3023,7 +3002,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblUnit.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>30</value>
   </data>
   <data name="LblPlate.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3056,7 +3035,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblPlate.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>29</value>
   </data>
   <data name="LblPLTNUM.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3089,7 +3068,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblPLTNUM.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>28</value>
   </data>
   <data name="LblITHING.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3122,7 +3101,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblITHING.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>27</value>
   </data>
   <data name="LblITLONG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3155,7 +3134,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblITLONG.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>26</value>
   </data>
   <data name="LblOVER.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3188,7 +3167,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblOVER.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>25</value>
   </data>
   <data name="LblREGNUM.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3221,7 +3200,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblREGNUM.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>24</value>
   </data>
   <data name="LblFTHING.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3254,7 +3233,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblFTHING.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="LblFTLONG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3287,7 +3266,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblFTLONG.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
   <data name="LblNGPER.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3320,7 +3299,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblNGPER.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="LblFTHINGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3353,7 +3332,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblFTHINGP.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="LblFTLONGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3386,7 +3365,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblFTLONGP.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="LblOVERP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3419,7 +3398,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblOVERP.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="LblcOK.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3452,7 +3431,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcOK.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="LblcITHING.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3485,7 +3464,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcITHING.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="LblcFTHING.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3518,7 +3497,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcFTHING.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="LblcOVER.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3551,7 +3530,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcOVER.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="LblcREGNUM.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3584,7 +3563,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcREGNUM.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="LblcNG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3617,7 +3596,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcNG.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="LblcITLONG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3650,7 +3629,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcITLONG.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="LblcFTLONG.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3683,7 +3662,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcFTLONG.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="LblcNGPER.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3716,7 +3695,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcNGPER.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="LblcITHINGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3749,7 +3728,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcITHINGP.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="LblcITLONGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3782,7 +3761,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcITLONGP.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="LblcFTHINGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3815,7 +3794,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcFTHINGP.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="LblcFTLONGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3848,7 +3827,79 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcFTLONGP.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
+  </data>
+  <data name="LblcRESVALUE.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcRESVALUE.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LblcRESVALUE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>421, 10</value>
+  </data>
+  <data name="LblcRESVALUE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 21</value>
+  </data>
+  <data name="LblcRESVALUE.TabIndex" type="System.Int32, mscorlib">
+    <value>248</value>
+  </data>
+  <data name="LblcRESVALUE.Text" xml:space="preserve">
+    <value>RESVALUE</value>
+  </data>
+  <data name="LblcRESVALUE.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="LblcRESVALUE.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;LblcRESVALUE.Name" xml:space="preserve">
+    <value>LblcRESVALUE</value>
+  </data>
+  <data name="&gt;&gt;LblcRESVALUE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblcRESVALUE.Parent" xml:space="preserve">
+    <value>frmHistoryData</value>
+  </data>
+  <data name="&gt;&gt;LblcRESVALUE.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LblcLOTNUMBER.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="LblcLOTNUMBER.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LblcLOTNUMBER.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 10</value>
+  </data>
+  <data name="LblcLOTNUMBER.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 21</value>
+  </data>
+  <data name="LblcLOTNUMBER.TabIndex" type="System.Int32, mscorlib">
+    <value>247</value>
+  </data>
+  <data name="LblcLOTNUMBER.Text" xml:space="preserve">
+    <value>LOTNO</value>
+  </data>
+  <data name="LblcLOTNUMBER.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="LblcLOTNUMBER.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;LblcLOTNUMBER.Name" xml:space="preserve">
+    <value>LblcLOTNUMBER</value>
+  </data>
+  <data name="&gt;&gt;LblcLOTNUMBER.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblcLOTNUMBER.Parent" xml:space="preserve">
+    <value>frmHistoryData</value>
+  </data>
+  <data name="&gt;&gt;LblcLOTNUMBER.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="LblITLONGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3881,7 +3932,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblITLONGP.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="LblITHINGP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3914,7 +3965,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblITHINGP.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="LblcOVERP.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
@@ -3947,7 +3998,7 @@
     <value>frmHistoryData</value>
   </data>
   <data name="&gt;&gt;LblcOVERP.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="frmHistoryData.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 540</value>
@@ -3971,7 +4022,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;frmHistoryData.ZOrder" xml:space="preserve">
-    <value>42</value>
+    <value>0</value>
   </data>
   <data name="cmdFinal.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 9.75pt</value>
@@ -5879,10 +5930,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelGraph.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="btnRest.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="btnRest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnRest.Location" type="System.Drawing.Point, System.Drawing">
     <value>263, 128</value>
@@ -5972,28 +6026,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpQrCode.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Probe1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 954</value>
-  </data>
-  <data name="Probe1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>623, 949</value>
-  </data>
-  <data name="Probe1.TabIndex" type="System.Int32, mscorlib">
-    <value>365</value>
-  </data>
-  <data name="&gt;&gt;Probe1.Name" xml:space="preserve">
-    <value>Probe1</value>
-  </data>
-  <data name="&gt;&gt;Probe1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllProbeTeach.Probe, DllProbeTeach, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Probe1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Probe1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>10</value>
   </data>
   <data name="CmdSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -6238,6 +6271,72 @@
   <data name="&gt;&gt;tabBaseCmnds.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lblProductionData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblProductionData.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 12pt, style=Bold</value>
+  </data>
+  <data name="lblProductionData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblProductionData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 126</value>
+  </data>
+  <data name="lblProductionData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 19</value>
+  </data>
+  <data name="lblProductionData.TabIndex" type="System.Int32, mscorlib">
+    <value>234</value>
+  </data>
+  <data name="lblProductionData.Text" xml:space="preserve">
+    <value>生産管理データ</value>
+  </data>
+  <data name="&gt;&gt;lblProductionData.Name" xml:space="preserve">
+    <value>lblProductionData</value>
+  </data>
+  <data name="&gt;&gt;lblProductionData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblProductionData.Parent" xml:space="preserve">
+    <value>tabOptCmnds</value>
+  </data>
+  <data name="&gt;&gt;lblProductionData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CmdFolderOpen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 12pt, style=Bold</value>
+  </data>
+  <data name="CmdFolderOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CmdFolderOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 120</value>
+  </data>
+  <data name="CmdFolderOpen.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="CmdFolderOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 30</value>
+  </data>
+  <data name="CmdFolderOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>233</value>
+  </data>
+  <data name="CmdFolderOpen.Text" xml:space="preserve">
+    <value>ﾌｫﾙﾀﾞ表示</value>
+  </data>
+  <data name="&gt;&gt;CmdFolderOpen.Name" xml:space="preserve">
+    <value>CmdFolderOpen</value>
+  </data>
+  <data name="&gt;&gt;CmdFolderOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CmdFolderOpen.Parent" xml:space="preserve">
+    <value>tabOptCmnds</value>
+  </data>
+  <data name="&gt;&gt;CmdFolderOpen.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblExCamera.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6251,13 +6350,13 @@
     <value>3, 18</value>
   </data>
   <data name="lblExCamera.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 19</value>
+    <value>161, 19</value>
   </data>
   <data name="lblExCamera.TabIndex" type="System.Int32, mscorlib">
     <value>230</value>
   </data>
   <data name="lblExCamera.Text" xml:space="preserve">
-    <value>外部カメラティーチング</value>
+    <value>外部カメラティーチング </value>
   </data>
   <data name="&gt;&gt;lblExCamera.Name" xml:space="preserve">
     <value>lblExCamera</value>
@@ -6269,7 +6368,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;lblExCamera.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblCalibration.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6302,7 +6401,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;lblCalibration.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblCutPos.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6335,7 +6434,7 @@
     <value>tabOptCmnds</value>
   </data>
   <data name="&gt;&gt;lblCutPos.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="tabOptCmnds.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 28</value>
@@ -6704,7 +6803,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabCmd.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>25</value>
   </data>
   <data name="txtCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 19</value>
@@ -6881,7 +6980,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;grpDbg.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>36</value>
   </data>
   <data name="btnCycleStop.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 12pt, style=Bold</value>
@@ -7169,7 +7268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpMode.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>37</value>
   </data>
   <data name="txtLog.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt</value>
@@ -7211,7 +7310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtLog.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>45</value>
   </data>
   <data name="btnGoClipboard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
@@ -7247,7 +7346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnGoClipboard.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>39</value>
   </data>
   <data name="chkDistributeOnOff.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
@@ -7286,7 +7385,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chkDistributeOnOff.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>2</value>
   </data>
   <data name="btnDbg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7316,7 +7415,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDbg.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>38</value>
   </data>
   <data name="lblTwoCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7442,7 +7541,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpNgBox.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>32</value>
   </data>
   <data name="Button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 11.25pt, style=Bold</value>
@@ -7661,7 +7760,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>31</value>
   </data>
   <data name="TxtBoxPrint.Location" type="System.Drawing.Point, System.Drawing">
     <value>290, 985</value>
@@ -7685,7 +7784,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TxtBoxPrint.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>30</value>
   </data>
   <data name="BtnPrint.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt, style=Bold</value>
@@ -7721,7 +7820,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnPrint.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>28</value>
   </data>
   <data name="BtnPrintOnOff.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt, style=Bold</value>
@@ -7754,7 +7853,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnPrintOnOff.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>29</value>
   </data>
   <data name="BtnStrageClr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7871,55 +7970,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpStrageBox.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="ManualTeach1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 4</value>
-  </data>
-  <data name="ManualTeach1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 16</value>
-  </data>
-  <data name="ManualTeach1.TabIndex" type="System.Int32, mscorlib">
-    <value>366</value>
-  </data>
-  <data name="ManualTeach1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;ManualTeach1.Name" xml:space="preserve">
-    <value>ManualTeach1</value>
-  </data>
-  <data name="&gt;&gt;ManualTeach1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllManualTeach.ManualTeach, DllManualTeach, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ManualTeach1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ManualTeach1.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="Password1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 8</value>
-  </data>
-  <data name="Password1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 13</value>
-  </data>
-  <data name="Password1.TabIndex" type="System.Int32, mscorlib">
-    <value>368</value>
-  </data>
-  <data name="Password1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Password1.Name" xml:space="preserve">
-    <value>Password1</value>
-  </data>
-  <data name="&gt;&gt;Password1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllPassword.Password, DllPassword, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Password1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Password1.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>27</value>
   </data>
   <data name="pnlDataDisplay.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 54</value>
@@ -7940,7 +7991,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnlDataDisplay.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="BtnPowerOnOff.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt, style=Bold</value>
@@ -7973,7 +8024,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnPowerOnOff.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="LblComandName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8015,7 +8066,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblComandName.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <metadata name="TimerAlarm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>272, 17</value>
@@ -8041,27 +8092,6 @@
   <metadata name="TimerBC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>488, 17</value>
   </metadata>
-  <data name="HelpVersion1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>840, 54</value>
-  </data>
-  <data name="HelpVersion1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 641</value>
-  </data>
-  <data name="HelpVersion1.TabIndex" type="System.Int32, mscorlib">
-    <value>367</value>
-  </data>
-  <data name="&gt;&gt;HelpVersion1.Name" xml:space="preserve">
-    <value>HelpVersion1</value>
-  </data>
-  <data name="&gt;&gt;HelpVersion1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllAbout.HelpVersion, DllAbout, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;HelpVersion1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;HelpVersion1.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
   <data name="btnUserLogon.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -8093,7 +8123,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnUserLogon.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="lblIntegRecog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8315,7 +8345,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;grpIntegrated.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="btnJudge.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
@@ -8345,78 +8375,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnJudge.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="Utility1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 5</value>
-  </data>
-  <data name="Utility1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 15</value>
-  </data>
-  <data name="Utility1.TabIndex" type="System.Int32, mscorlib">
-    <value>362</value>
-  </data>
-  <data name="Utility1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Utility1.Name" xml:space="preserve">
-    <value>Utility1</value>
-  </data>
-  <data name="&gt;&gt;Utility1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllUtility.Utility, DllUtility, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Utility1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Utility1.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="Ctl_LaserTeach2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 9</value>
-  </data>
-  <data name="Ctl_LaserTeach2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 10</value>
-  </data>
-  <data name="Ctl_LaserTeach2.TabIndex" type="System.Int32, mscorlib">
-    <value>369</value>
-  </data>
-  <data name="Ctl_LaserTeach2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Ctl_LaserTeach2.Name" xml:space="preserve">
-    <value>Ctl_LaserTeach2</value>
-  </data>
-  <data name="&gt;&gt;Ctl_LaserTeach2.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllLaserTeach.ctl_LaserTeach, DllLaserTeach, Version=6.0.0.2, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;Ctl_LaserTeach2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Ctl_LaserTeach2.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="System1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 10</value>
-  </data>
-  <data name="System1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 13</value>
-  </data>
-  <data name="System1.TabIndex" type="System.Int32, mscorlib">
-    <value>374</value>
-  </data>
-  <data name="System1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;System1.Name" xml:space="preserve">
-    <value>System1</value>
-  </data>
-  <data name="&gt;&gt;System1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllSystem.SystemNET, DllSystem, Version=6.0.0.3, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;System1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;System1.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
   <data name="lblDoorOpen.Font" type="System.Drawing.Font, System.Drawing">
@@ -8453,7 +8411,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDoorOpen.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="GrpStartBlk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8789,28 +8747,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpStartBlk.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="VideoLibrary1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 49</value>
-  </data>
-  <data name="VideoLibrary1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>640, 480</value>
-  </data>
-  <data name="VideoLibrary1.TabIndex" type="System.Int32, mscorlib">
-    <value>384</value>
-  </data>
-  <data name="&gt;&gt;VideoLibrary1.Name" xml:space="preserve">
-    <value>VideoLibrary1</value>
-  </data>
-  <data name="&gt;&gt;VideoLibrary1.Type" xml:space="preserve">
-    <value>LaserFront.Trimmer.DllVideo.VideoLibrary, DllVideo, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;VideoLibrary1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;VideoLibrary1.ZOrder" xml:space="preserve">
-    <value>50</value>
+    <value>8</value>
   </data>
   <data name="CmdMapOnOff.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -8847,36 +8784,6 @@
   </data>
   <data name="&gt;&gt;CmdMapOnOff.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="TrimMap1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="TrimMap1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 49</value>
-  </data>
-  <data name="TrimMap1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="TrimMap1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>640, 480</value>
-  </data>
-  <data name="TrimMap1.TabIndex" type="System.Int32, mscorlib">
-    <value>394</value>
-  </data>
-  <data name="TrimMap1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;TrimMap1.Name" xml:space="preserve">
-    <value>TrimMap1</value>
-  </data>
-  <data name="&gt;&gt;TrimMap1.Type" xml:space="preserve">
-    <value>TrimControlLibrary.TrimMapPlate, DllTrimControlLibrary, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TrimMap1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TrimMap1.ZOrder" xml:space="preserve">
-    <value>51</value>
   </data>
   <data name="PanelMap.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -8942,10 +8849,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelMap.ZOrder" xml:space="preserve">
-    <value>52</value>
+    <value>55</value>
   </data>
   <data name="btnQRLmit.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9pt, style=Bold</value>
+  </data>
+  <data name="btnQRLmit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnQRLmit.Location" type="System.Drawing.Point, System.Drawing">
     <value>963, 0</value>
@@ -8975,13 +8885,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnQRLmit.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="lblCutOff.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="lblCutOff.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblCutOff.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblCutOff.Location" type="System.Drawing.Point, System.Drawing">
     <value>614, 153</value>
@@ -9008,10 +8921,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCutOff.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="BtnAlarmOnOff.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="BtnAlarmOnOff.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="BtnAlarmOnOff.Location" type="System.Drawing.Point, System.Drawing">
     <value>990, 24</value>
@@ -9038,19 +8954,3631 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnAlarmOnOff.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="CutOffEsEditButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="CutOffEsEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 15</value>
+  </data>
+  <data name="CutOffEsEditButton.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="CutOffEsEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 30</value>
+  </data>
+  <data name="CutOffEsEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CutOffEsEditButton.Text" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.Name" xml:space="preserve">
+    <value>CutOffEsEditButton</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.Parent" xml:space="preserve">
+    <value>pnlFirstResData</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblFrdNomVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 31</value>
+  </data>
+  <data name="lblFrdNomVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 20</value>
+  </data>
+  <data name="lblFrdNomVal.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblFrdNomVal.Text" xml:space="preserve">
+    <value>xxxxx.xxxxx</value>
+  </data>
+  <data name="lblFrdNomVal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNomVal.Name" xml:space="preserve">
+    <value>lblFrdNomVal</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNomVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNomVal.Parent" xml:space="preserve">
+    <value>pnlFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNomVal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblFrdNom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 31</value>
+  </data>
+  <data name="lblFrdNom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="lblFrdNom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblFrdNom.Text" xml:space="preserve">
+    <value>目標値：</value>
+  </data>
+  <data name="lblFrdNom.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNom.Name" xml:space="preserve">
+    <value>lblFrdNom</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNom.Parent" xml:space="preserve">
+    <value>pnlFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdNom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpFirstResData.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblFrdCutOff.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdCutOff.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdCutOff.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 3</value>
+  </data>
+  <data name="lblFrdCutOff.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdCutOff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
+  <data name="lblFrdCutOff.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblFrdCutOff.Text" xml:space="preserve">
+    <value>カットオフ</value>
+  </data>
+  <data name="lblFrdCutOff.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdCutOff.Name" xml:space="preserve">
+    <value>lblFrdCutOff</value>
+  </data>
+  <data name="&gt;&gt;lblFrdCutOff.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdCutOff.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdCutOff.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblFrdESPoint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdESPoint.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdESPoint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 3</value>
+  </data>
+  <data name="lblFrdESPoint.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdESPoint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="lblFrdESPoint.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblFrdESPoint.Text" xml:space="preserve">
+    <value>ＥＳポイント</value>
+  </data>
+  <data name="lblFrdESPoint.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdESPoint.Name" xml:space="preserve">
+    <value>lblFrdESPoint</value>
+  </data>
+  <data name="&gt;&gt;lblFrdESPoint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdESPoint.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdESPoint.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblFrd_1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrd_1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrd_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 31</value>
+  </data>
+  <data name="lblFrd_1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrd_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="lblFrd_1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblFrd_1.Text" xml:space="preserve">
+    <value>１．</value>
+  </data>
+  <data name="lblFrd_1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_1.Name" xml:space="preserve">
+    <value>lblFrd_1</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_1.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblFrdC1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdC1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdC1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 31</value>
+  </data>
+  <data name="lblFrdC1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdC1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 19</value>
+  </data>
+  <data name="lblFrdC1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblFrdC1.Text" xml:space="preserve">
+    <value>lblFrdC1</value>
+  </data>
+  <data name="lblFrdC1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC1.Name" xml:space="preserve">
+    <value>lblFrdC1</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC1.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblFrdE1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdE1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdE1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 31</value>
+  </data>
+  <data name="lblFrdE1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdE1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 19</value>
+  </data>
+  <data name="lblFrdE1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblFrdE1.Text" xml:space="preserve">
+    <value>１．</value>
+  </data>
+  <data name="lblFrdE1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE1.Name" xml:space="preserve">
+    <value>lblFrdE1</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE1.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblFrd_2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrd_2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrd_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 56</value>
+  </data>
+  <data name="lblFrd_2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrd_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="lblFrd_2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblFrd_2.Text" xml:space="preserve">
+    <value>２．</value>
+  </data>
+  <data name="lblFrd_2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_2.Name" xml:space="preserve">
+    <value>lblFrd_2</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_2.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblFrdC2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdC2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdC2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 56</value>
+  </data>
+  <data name="lblFrdC2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdC2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 19</value>
+  </data>
+  <data name="lblFrdC2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblFrdC2.Text" xml:space="preserve">
+    <value>lblFrdC2</value>
+  </data>
+  <data name="lblFrdC2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC2.Name" xml:space="preserve">
+    <value>lblFrdC2</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC2.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblFrdE2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdE2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdE2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 56</value>
+  </data>
+  <data name="lblFrdE2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdE2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 19</value>
+  </data>
+  <data name="lblFrdE2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblFrdE2.Text" xml:space="preserve">
+    <value>２．</value>
+  </data>
+  <data name="lblFrdE2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE2.Name" xml:space="preserve">
+    <value>lblFrdE2</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE2.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblFrd_3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrd_3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrd_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 81</value>
+  </data>
+  <data name="lblFrd_3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrd_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="lblFrd_3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblFrd_3.Text" xml:space="preserve">
+    <value>３．</value>
+  </data>
+  <data name="lblFrd_3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_3.Name" xml:space="preserve">
+    <value>lblFrd_3</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_3.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblFrdC3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdC3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdC3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 81</value>
+  </data>
+  <data name="lblFrdC3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdC3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 19</value>
+  </data>
+  <data name="lblFrdC3.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblFrdC3.Text" xml:space="preserve">
+    <value>lblFrdC3</value>
+  </data>
+  <data name="lblFrdC3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC3.Name" xml:space="preserve">
+    <value>lblFrdC3</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC3.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC3.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lblFrdE3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdE3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdE3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 81</value>
+  </data>
+  <data name="lblFrdE3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdE3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 19</value>
+  </data>
+  <data name="lblFrdE3.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblFrdE3.Text" xml:space="preserve">
+    <value>３．</value>
+  </data>
+  <data name="lblFrdE3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE3.Name" xml:space="preserve">
+    <value>lblFrdE3</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE3.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE3.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblFrd_4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrd_4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrd_4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 106</value>
+  </data>
+  <data name="lblFrd_4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrd_4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="lblFrd_4.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblFrd_4.Text" xml:space="preserve">
+    <value>４．</value>
+  </data>
+  <data name="lblFrd_4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_4.Name" xml:space="preserve">
+    <value>lblFrd_4</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_4.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_4.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblFrdC4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdC4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdC4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 106</value>
+  </data>
+  <data name="lblFrdC4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdC4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 19</value>
+  </data>
+  <data name="lblFrdC4.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblFrdC4.Text" xml:space="preserve">
+    <value>lblFrdC4</value>
+  </data>
+  <data name="lblFrdC4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC4.Name" xml:space="preserve">
+    <value>lblFrdC4</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC4.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC4.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lblFrdE4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdE4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdE4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 106</value>
+  </data>
+  <data name="lblFrdE4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdE4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 19</value>
+  </data>
+  <data name="lblFrdE4.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblFrdE4.Text" xml:space="preserve">
+    <value>４．</value>
+  </data>
+  <data name="lblFrdE4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE4.Name" xml:space="preserve">
+    <value>lblFrdE4</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE4.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE4.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblFrd_5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrd_5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrd_5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 131</value>
+  </data>
+  <data name="lblFrd_5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrd_5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="lblFrd_5.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblFrd_5.Text" xml:space="preserve">
+    <value>５．</value>
+  </data>
+  <data name="lblFrd_5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_5.Name" xml:space="preserve">
+    <value>lblFrd_5</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_5.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_5.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="lblFrdC5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdC5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdC5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 131</value>
+  </data>
+  <data name="lblFrdC5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdC5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 19</value>
+  </data>
+  <data name="lblFrdC5.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblFrdC5.Text" xml:space="preserve">
+    <value>lblFrdC5</value>
+  </data>
+  <data name="lblFrdC5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC5.Name" xml:space="preserve">
+    <value>lblFrdC5</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC5.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC5.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblFrdE5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdE5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdE5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 131</value>
+  </data>
+  <data name="lblFrdE5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdE5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 19</value>
+  </data>
+  <data name="lblFrdE5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblFrdE5.Text" xml:space="preserve">
+    <value>５．</value>
+  </data>
+  <data name="lblFrdE5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE5.Name" xml:space="preserve">
+    <value>lblFrdE5</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE5.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE5.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblFrd_6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrd_6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrd_6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 156</value>
+  </data>
+  <data name="lblFrd_6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrd_6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 21</value>
+  </data>
+  <data name="lblFrd_6.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblFrd_6.Text" xml:space="preserve">
+    <value>６．</value>
+  </data>
+  <data name="lblFrd_6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_6.Name" xml:space="preserve">
+    <value>lblFrd_6</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_6.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrd_6.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="lblFrdC6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdC6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdC6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 156</value>
+  </data>
+  <data name="lblFrdC6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdC6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 21</value>
+  </data>
+  <data name="lblFrdC6.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblFrdC6.Text" xml:space="preserve">
+    <value>lblFrdC6</value>
+  </data>
+  <data name="lblFrdC6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC6.Name" xml:space="preserve">
+    <value>lblFrdC6</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC6.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdC6.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="lblFrdE6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFrdE6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblFrdE6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 156</value>
+  </data>
+  <data name="lblFrdE6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="lblFrdE6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 21</value>
+  </data>
+  <data name="lblFrdE6.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblFrdE6.Text" xml:space="preserve">
+    <value>６．</value>
+  </data>
+  <data name="lblFrdE6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE6.Name" xml:space="preserve">
+    <value>lblFrdE6</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE6.Parent" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;lblFrdE6.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="tlpFirstResData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="tlpFirstResData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 56</value>
+  </data>
+  <data name="tlpFirstResData.RowCount" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="tlpFirstResData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 180</value>
+  </data>
+  <data name="tlpFirstResData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResData.Name" xml:space="preserve">
+    <value>tlpFirstResData</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResData.Parent" xml:space="preserve">
+    <value>pnlFirstResData</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpFirstResData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblFrdCutOff" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdESPoint" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblFrd_1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdC1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdE1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblFrd_2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdC2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdE2" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblFrd_3" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdC3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdE3" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblFrd_4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdC4" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdE4" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblFrd_5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdC5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdE5" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblFrd_6" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdC6" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblFrdE6" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,20,Percent,35,Percent,45" /&gt;&lt;Rows Styles="Percent,16,Percent,14,Percent,14,Percent,14,Percent,14,Percent,14,Percent,14" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="pnlFirstResData.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pnlFirstResData.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="pnlFirstResData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="pnlFirstResData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 770</value>
+  </data>
+  <data name="pnlFirstResData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 236</value>
+  </data>
+  <data name="pnlFirstResData.TabIndex" type="System.Int32, mscorlib">
+    <value>399</value>
+  </data>
+  <data name="pnlFirstResData.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResData.Name" xml:space="preserve">
+    <value>pnlFirstResData</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResData.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelAutoCalibLimit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="LabelAutoCalibLimit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelAutoCalibLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>611, 4</value>
+  </data>
+  <data name="LabelAutoCalibLimit.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="LabelAutoCalibLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>430, 20</value>
+  </data>
+  <data name="LabelAutoCalibLimit.TabIndex" type="System.Int32, mscorlib">
+    <value>402</value>
+  </data>
+  <data name="LabelAutoCalibLimit.Text" xml:space="preserve">
+    <value>オフセット補正量Ｘ=[0.000]が[0.000](mm)を超えました。</value>
+  </data>
+  <data name="LabelAutoCalibLimit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="LabelAutoCalibLimit.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;LabelAutoCalibLimit.Name" xml:space="preserve">
+    <value>LabelAutoCalibLimit</value>
+  </data>
+  <data name="&gt;&gt;LabelAutoCalibLimit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelAutoCalibLimit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelAutoCalibLimit.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 5</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 30</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="CutOffEsEditButtonNET.Text" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButtonNET.Name" xml:space="preserve">
+    <value>CutOffEsEditButtonNET</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButtonNET.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButtonNET.Parent" xml:space="preserve">
+    <value>pnlFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButtonNET.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblNETNomVal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblNETNomVal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNETNomVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 12</value>
+  </data>
+  <data name="lblNETNomVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="lblNETNomVal.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblNETNomVal.Text" xml:space="preserve">
+    <value>xxxxx.xxxxx</value>
+  </data>
+  <data name="lblNETNomVal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lblNETNomVal.Name" xml:space="preserve">
+    <value>lblNETNomVal</value>
+  </data>
+  <data name="&gt;&gt;lblNETNomVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNETNomVal.Parent" xml:space="preserve">
+    <value>pnlFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;lblNETNomVal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblNETNom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblNETNom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNETNom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 12</value>
+  </data>
+  <data name="lblNETNom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="lblNETNom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblNETNom.Text" xml:space="preserve">
+    <value>目標値：</value>
+  </data>
+  <data name="lblNETNom.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblNETNom.Name" xml:space="preserve">
+    <value>lblNETNom</value>
+  </data>
+  <data name="&gt;&gt;lblNETNom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNETNom.Parent" xml:space="preserve">
+    <value>pnlFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;lblNETNom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tlpFirstResDataNET.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
+    <value>Single</value>
+  </data>
+  <data name="tlpFirstResDataNET.ColumnCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 9pt, style=Bold</value>
+  </data>
+  <data name="Label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="Label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 12</value>
+  </data>
+  <data name="Label8.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>カットオフ</value>
+  </data>
+  <data name="Label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label8.Name" xml:space="preserve">
+    <value>Label8</value>
+  </data>
+  <data name="&gt;&gt;Label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label8.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label8.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="Label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label9.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>1.</value>
+  </data>
+  <data name="Label9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label9.Name" xml:space="preserve">
+    <value>Label9</value>
+  </data>
+  <data name="&gt;&gt;Label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label9.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 46</value>
+  </data>
+  <data name="Label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label10.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>2.</value>
+  </data>
+  <data name="Label10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label10.Name" xml:space="preserve">
+    <value>Label10</value>
+  </data>
+  <data name="&gt;&gt;Label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label10.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 67</value>
+  </data>
+  <data name="Label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label11.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>3.</value>
+  </data>
+  <data name="Label11.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
+    <value>Label11</value>
+  </data>
+  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 88</value>
+  </data>
+  <data name="Label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label12.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>4.</value>
+  </data>
+  <data name="Label12.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label12.Name" xml:space="preserve">
+    <value>Label12</value>
+  </data>
+  <data name="&gt;&gt;Label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label12.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 109</value>
+  </data>
+  <data name="Label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label13.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Label13.Text" xml:space="preserve">
+    <value>5.</value>
+  </data>
+  <data name="Label13.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label13.Name" xml:space="preserve">
+    <value>Label13</value>
+  </data>
+  <data name="&gt;&gt;Label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label13.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label13.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label19.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label19.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 130</value>
+  </data>
+  <data name="Label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label19.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Label19.Text" xml:space="preserve">
+    <value>6.</value>
+  </data>
+  <data name="Label19.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label19.Name" xml:space="preserve">
+    <value>Label19</value>
+  </data>
+  <data name="&gt;&gt;Label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label19.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label19.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label20.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label20.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label20.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 151</value>
+  </data>
+  <data name="Label20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label20.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Label20.Text" xml:space="preserve">
+    <value>7.</value>
+  </data>
+  <data name="Label20.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label20.Name" xml:space="preserve">
+    <value>Label20</value>
+  </data>
+  <data name="&gt;&gt;Label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label20.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label20.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Label21.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label21.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label21.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 172</value>
+  </data>
+  <data name="Label21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label21.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Label21.Text" xml:space="preserve">
+    <value>8.</value>
+  </data>
+  <data name="Label21.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label21.Name" xml:space="preserve">
+    <value>Label21</value>
+  </data>
+  <data name="&gt;&gt;Label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label21.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label21.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Label22.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label22.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label22.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 193</value>
+  </data>
+  <data name="Label22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label22.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="Label22.Text" xml:space="preserve">
+    <value>9.</value>
+  </data>
+  <data name="Label22.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label22.Name" xml:space="preserve">
+    <value>Label22</value>
+  </data>
+  <data name="&gt;&gt;Label22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label22.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label22.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="Label23.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label23.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label23.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Label23.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 214</value>
+  </data>
+  <data name="Label23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="Label23.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Label23.Text" xml:space="preserve">
+    <value>10.</value>
+  </data>
+  <data name="Label23.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label23.Name" xml:space="preserve">
+    <value>Label23</value>
+  </data>
+  <data name="&gt;&gt;Label23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label23.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label23.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Label24.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label24.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label24.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 4</value>
+  </data>
+  <data name="Label24.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Label24.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="Label24.Text" xml:space="preserve">
+    <value>抵抗1</value>
+  </data>
+  <data name="Label24.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label24.Name" xml:space="preserve">
+    <value>Label24</value>
+  </data>
+  <data name="&gt;&gt;Label24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label24.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label24.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Label25.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label25.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label25.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 4</value>
+  </data>
+  <data name="Label25.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Label25.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="Label25.Text" xml:space="preserve">
+    <value>抵抗2</value>
+  </data>
+  <data name="Label25.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label25.Name" xml:space="preserve">
+    <value>Label25</value>
+  </data>
+  <data name="&gt;&gt;Label25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label25.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label25.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Label26.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label26.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label26.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label26.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 4</value>
+  </data>
+  <data name="Label26.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Label26.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="Label26.Text" xml:space="preserve">
+    <value>抵抗3</value>
+  </data>
+  <data name="Label26.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label26.Name" xml:space="preserve">
+    <value>Label26</value>
+  </data>
+  <data name="&gt;&gt;Label26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label26.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label26.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="Label27.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label27.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label27.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label27.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 4</value>
+  </data>
+  <data name="Label27.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Label27.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="Label27.Text" xml:space="preserve">
+    <value>抵抗4</value>
+  </data>
+  <data name="Label27.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label27.Name" xml:space="preserve">
+    <value>Label27</value>
+  </data>
+  <data name="&gt;&gt;Label27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label27.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Label27.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Res1Cut1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 25</value>
+  </data>
+  <data name="Res1Cut1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="Res1Cut1.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut1.Name" xml:space="preserve">
+    <value>Res1Cut1</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut1.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="Res1Cut2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 46</value>
+  </data>
+  <data name="Res1Cut2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="Res1Cut2.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut2.Name" xml:space="preserve">
+    <value>Res1Cut2</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut2.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut2.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Res1Cut3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 67</value>
+  </data>
+  <data name="Res1Cut3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="Res1Cut3.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut3.Name" xml:space="preserve">
+    <value>Res1Cut3</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut3.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut3.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="Res1Cut4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 88</value>
+  </data>
+  <data name="Res1Cut4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut4.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="Res1Cut4.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut4.Name" xml:space="preserve">
+    <value>Res1Cut4</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut4.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut4.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="Res1Cut5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 109</value>
+  </data>
+  <data name="Res1Cut5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut5.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="Res1Cut5.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut5.Name" xml:space="preserve">
+    <value>Res1Cut5</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut5.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut5.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="Res1Cut6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 130</value>
+  </data>
+  <data name="Res1Cut6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut6.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Res1Cut6.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut6.Name" xml:space="preserve">
+    <value>Res1Cut6</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut6.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut6.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="Res1Cut7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 151</value>
+  </data>
+  <data name="Res1Cut7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut7.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="Res1Cut7.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut7.Name" xml:space="preserve">
+    <value>Res1Cut7</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut7.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut7.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="Res1Cut8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 172</value>
+  </data>
+  <data name="Res1Cut8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut8.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="Res1Cut8.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut8.Name" xml:space="preserve">
+    <value>Res1Cut8</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut8.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut8.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="Res1Cut9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 193</value>
+  </data>
+  <data name="Res1Cut9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut9.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="Res1Cut9.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut9.Name" xml:space="preserve">
+    <value>Res1Cut9</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut9.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut9.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="Res1Cut10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res1Cut10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res1Cut10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res1Cut10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res1Cut10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 214</value>
+  </data>
+  <data name="Res1Cut10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res1Cut10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res1Cut10.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="Res1Cut10.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res1Cut10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut10.Name" xml:space="preserve">
+    <value>Res1Cut10</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut10.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res1Cut10.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="Res2Cut1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 25</value>
+  </data>
+  <data name="Res2Cut1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut1.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="Res2Cut1.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut1.Name" xml:space="preserve">
+    <value>Res2Cut1</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut1.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut1.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="Res2Cut2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 46</value>
+  </data>
+  <data name="Res2Cut2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut2.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="Res2Cut2.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut2.Name" xml:space="preserve">
+    <value>Res2Cut2</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut2.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut2.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="Res2Cut3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 67</value>
+  </data>
+  <data name="Res2Cut3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut3.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="Res2Cut3.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut3.Name" xml:space="preserve">
+    <value>Res2Cut3</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut3.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut3.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="Res2Cut4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 88</value>
+  </data>
+  <data name="Res2Cut4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut4.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="Res2Cut4.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut4.Name" xml:space="preserve">
+    <value>Res2Cut4</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut4.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut4.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="Res2Cut5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 109</value>
+  </data>
+  <data name="Res2Cut5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut5.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="Res2Cut5.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut5.Name" xml:space="preserve">
+    <value>Res2Cut5</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut5.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut5.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="Res2Cut6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 130</value>
+  </data>
+  <data name="Res2Cut6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut6.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="Res2Cut6.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut6.Name" xml:space="preserve">
+    <value>Res2Cut6</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut6.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut6.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Res2Cut7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 151</value>
+  </data>
+  <data name="Res2Cut7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut7.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="Res2Cut7.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut7.Name" xml:space="preserve">
+    <value>Res2Cut7</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut7.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut7.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="Res2Cut8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 172</value>
+  </data>
+  <data name="Res2Cut8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut8.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="Res2Cut8.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut8.Name" xml:space="preserve">
+    <value>Res2Cut8</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut8.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut8.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="Res2Cut9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 193</value>
+  </data>
+  <data name="Res2Cut9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut9.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="Res2Cut9.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut9.Name" xml:space="preserve">
+    <value>Res2Cut9</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut9.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut9.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="Res2Cut10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res2Cut10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res2Cut10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res2Cut10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res2Cut10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 214</value>
+  </data>
+  <data name="Res2Cut10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res2Cut10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res2Cut10.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="Res2Cut10.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res2Cut10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut10.Name" xml:space="preserve">
+    <value>Res2Cut10</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut10.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res2Cut10.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="Res3Cut1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 25</value>
+  </data>
+  <data name="Res3Cut1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut1.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="Res3Cut1.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut1.Name" xml:space="preserve">
+    <value>Res3Cut1</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut1.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut1.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="Res3Cut2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 46</value>
+  </data>
+  <data name="Res3Cut2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut2.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="Res3Cut2.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut2.Name" xml:space="preserve">
+    <value>Res3Cut2</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut2.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut2.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="Res3Cut3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 67</value>
+  </data>
+  <data name="Res3Cut3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut3.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="Res3Cut3.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut3.Name" xml:space="preserve">
+    <value>Res3Cut3</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut3.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut3.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="Res3Cut4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 88</value>
+  </data>
+  <data name="Res3Cut4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut4.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="Res3Cut4.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut4.Name" xml:space="preserve">
+    <value>Res3Cut4</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut4.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut4.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="Res3Cut5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 109</value>
+  </data>
+  <data name="Res3Cut5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut5.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="Res3Cut5.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut5.Name" xml:space="preserve">
+    <value>Res3Cut5</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut5.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut5.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="Res3Cut6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 130</value>
+  </data>
+  <data name="Res3Cut6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut6.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="Res3Cut6.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut6.Name" xml:space="preserve">
+    <value>Res3Cut6</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut6.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut6.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="Res3Cut7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 151</value>
+  </data>
+  <data name="Res3Cut7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut7.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="Res3Cut7.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut7.Name" xml:space="preserve">
+    <value>Res3Cut7</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut7.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut7.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="Res3Cut8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 172</value>
+  </data>
+  <data name="Res3Cut8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut8.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="Res3Cut8.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut8.Name" xml:space="preserve">
+    <value>Res3Cut8</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut8.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut8.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="Res3Cut9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 193</value>
+  </data>
+  <data name="Res3Cut9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut9.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="Res3Cut9.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut9.Name" xml:space="preserve">
+    <value>Res3Cut9</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut9.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut9.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="Res3Cut10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res3Cut10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res3Cut10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res3Cut10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res3Cut10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 214</value>
+  </data>
+  <data name="Res3Cut10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res3Cut10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res3Cut10.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="Res3Cut10.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res3Cut10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut10.Name" xml:space="preserve">
+    <value>Res3Cut10</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut10.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res3Cut10.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="Res4Cut1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 25</value>
+  </data>
+  <data name="Res4Cut1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut1.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="Res4Cut1.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut1.Name" xml:space="preserve">
+    <value>Res4Cut1</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut1.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut1.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="Res4Cut2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 46</value>
+  </data>
+  <data name="Res4Cut2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut2.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="Res4Cut2.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut2.Name" xml:space="preserve">
+    <value>Res4Cut2</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut2.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut2.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="Res4Cut3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 67</value>
+  </data>
+  <data name="Res4Cut3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut3.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="Res4Cut3.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut3.Name" xml:space="preserve">
+    <value>Res4Cut3</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut3.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut3.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="Res4Cut4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 88</value>
+  </data>
+  <data name="Res4Cut4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut4.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="Res4Cut4.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut4.Name" xml:space="preserve">
+    <value>Res4Cut4</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut4.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut4.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="Res4Cut5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 109</value>
+  </data>
+  <data name="Res4Cut5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut5.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="Res4Cut5.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut5.Name" xml:space="preserve">
+    <value>Res4Cut5</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut5.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut5.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="Res4Cut6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 130</value>
+  </data>
+  <data name="Res4Cut6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut6.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="Res4Cut6.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut6.Name" xml:space="preserve">
+    <value>Res4Cut6</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut6.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut6.ZOrder" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Res4Cut7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 151</value>
+  </data>
+  <data name="Res4Cut7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut7.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="Res4Cut7.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut7.Name" xml:space="preserve">
+    <value>Res4Cut7</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut7.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut7.ZOrder" xml:space="preserve">
+    <value>51</value>
+  </data>
+  <data name="Res4Cut8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 172</value>
+  </data>
+  <data name="Res4Cut8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut8.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="Res4Cut8.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut8.Name" xml:space="preserve">
+    <value>Res4Cut8</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut8.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut8.ZOrder" xml:space="preserve">
+    <value>52</value>
+  </data>
+  <data name="Res4Cut9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 193</value>
+  </data>
+  <data name="Res4Cut9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut9.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="Res4Cut9.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut9.Name" xml:space="preserve">
+    <value>Res4Cut9</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut9.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut9.ZOrder" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="Res4Cut10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Res4Cut10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Res4Cut10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 11.25pt, style=Bold</value>
+  </data>
+  <data name="Res4Cut10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Res4Cut10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 214</value>
+  </data>
+  <data name="Res4Cut10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Res4Cut10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 14</value>
+  </data>
+  <data name="Res4Cut10.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="Res4Cut10.Text" xml:space="preserve">
+    <value>----</value>
+  </data>
+  <data name="Res4Cut10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut10.Name" xml:space="preserve">
+    <value>Res4Cut10</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut10.Parent" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;Res4Cut10.ZOrder" xml:space="preserve">
+    <value>54</value>
+  </data>
+  <data name="tlpFirstResDataNET.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="tlpFirstResDataNET.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 35</value>
+  </data>
+  <data name="tlpFirstResDataNET.RowCount" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="tlpFirstResDataNET.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 230</value>
+  </data>
+  <data name="tlpFirstResDataNET.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResDataNET.Name" xml:space="preserve">
+    <value>tlpFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResDataNET.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResDataNET.Parent" xml:space="preserve">
+    <value>pnlFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;tlpFirstResDataNET.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpFirstResDataNET.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label8" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label9" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label10" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label11" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label12" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label13" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label19" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label20" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label21" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label22" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label23" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label24" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label25" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Label26" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Label27" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut2" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut4" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut6" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut7" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut8" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut9" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res1Cut10" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut2" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut3" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut4" Row="4" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut5" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut6" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut7" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut8" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut9" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res2Cut10" Row="10" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut1" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut2" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut3" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut4" Row="4" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut5" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut6" Row="6" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut7" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut8" Row="8" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut9" Row="9" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res3Cut10" Row="10" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut1" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut2" Row="2" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut3" Row="3" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut4" Row="4" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut5" Row="5" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut6" Row="6" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut7" Row="7" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut8" Row="8" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut9" Row="9" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="Res4Cut10" Row="10" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,60,Absolute,100,Absolute,100,Absolute,100,Absolute,100" /&gt;&lt;Rows Styles="Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="pnlFirstResDataNET.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pnlFirstResDataNET.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 369</value>
+  </data>
+  <data name="pnlFirstResDataNET.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 265</value>
+  </data>
+  <data name="pnlFirstResDataNET.TabIndex" type="System.Int32, mscorlib">
+    <value>403</value>
+  </data>
+  <data name="pnlFirstResDataNET.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResDataNET.Name" xml:space="preserve">
+    <value>pnlFirstResDataNET</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResDataNET.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResDataNET.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlFirstResDataNET.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="System1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 10</value>
+  </data>
+  <data name="System1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 13</value>
+  </data>
+  <data name="System1.TabIndex" type="System.Int32, mscorlib">
+    <value>374</value>
+  </data>
+  <data name="System1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;System1.Name" xml:space="preserve">
+    <value>System1</value>
+  </data>
+  <data name="&gt;&gt;System1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllSystem.SystemNET, DllSystem, Version=6.0.0.12, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;System1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;System1.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Probe1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 954</value>
+  </data>
+  <data name="Probe1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>623, 949</value>
+  </data>
+  <data name="Probe1.TabIndex" type="System.Int32, mscorlib">
+    <value>365</value>
+  </data>
+  <data name="&gt;&gt;Probe1.Name" xml:space="preserve">
+    <value>Probe1</value>
+  </data>
+  <data name="&gt;&gt;Probe1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllProbeTeach.Probe, DllProbeTeach, Version=6.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Probe1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Probe1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="Ctl_LaserTeach2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 9</value>
+  </data>
+  <data name="Ctl_LaserTeach2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 10</value>
+  </data>
+  <data name="Ctl_LaserTeach2.TabIndex" type="System.Int32, mscorlib">
+    <value>369</value>
+  </data>
+  <data name="Ctl_LaserTeach2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Ctl_LaserTeach2.Name" xml:space="preserve">
+    <value>Ctl_LaserTeach2</value>
+  </data>
+  <data name="&gt;&gt;Ctl_LaserTeach2.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllLaserTeach.ctl_LaserTeach, DllLaserTeach, Version=6.0.0.3, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Ctl_LaserTeach2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Ctl_LaserTeach2.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="Password1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 8</value>
+  </data>
+  <data name="Password1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="Password1.TabIndex" type="System.Int32, mscorlib">
+    <value>368</value>
+  </data>
+  <data name="Password1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Password1.Name" xml:space="preserve">
+    <value>Password1</value>
+  </data>
+  <data name="&gt;&gt;Password1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllPassword.Password, DllPassword, Version=5.0.0.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Password1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Password1.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="Teaching1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 921</value>
+  </data>
+  <data name="Teaching1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>616, 905</value>
+  </data>
+  <data name="Teaching1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Teaching1.Name" xml:space="preserve">
+    <value>Teaching1</value>
+  </data>
+  <data name="&gt;&gt;Teaching1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllTeach.Teaching, DllTeach, Version=6.1.0.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Teaching1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Teaching1.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="HelpVersion1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>840, 54</value>
+  </data>
+  <data name="HelpVersion1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 641</value>
+  </data>
+  <data name="HelpVersion1.TabIndex" type="System.Int32, mscorlib">
+    <value>367</value>
+  </data>
+  <data name="&gt;&gt;HelpVersion1.Name" xml:space="preserve">
+    <value>HelpVersion1</value>
+  </data>
+  <data name="&gt;&gt;HelpVersion1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllAbout.HelpVersion, DllAbout, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;HelpVersion1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;HelpVersion1.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="ManualTeach1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 4</value>
+  </data>
+  <data name="ManualTeach1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 16</value>
+  </data>
+  <data name="ManualTeach1.TabIndex" type="System.Int32, mscorlib">
+    <value>366</value>
+  </data>
+  <data name="ManualTeach1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ManualTeach1.Name" xml:space="preserve">
+    <value>ManualTeach1</value>
+  </data>
+  <data name="&gt;&gt;ManualTeach1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllManualTeach.ManualTeach, DllManualTeach, Version=6.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ManualTeach1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ManualTeach1.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="Utility1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>342, 5</value>
+  </data>
+  <data name="Utility1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 15</value>
+  </data>
+  <data name="Utility1.TabIndex" type="System.Int32, mscorlib">
+    <value>362</value>
+  </data>
+  <data name="Utility1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Utility1.Name" xml:space="preserve">
+    <value>Utility1</value>
+  </data>
+  <data name="&gt;&gt;Utility1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllUtility.Utility, DllUtility, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;Utility1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Utility1.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="VideoLibrary1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 49</value>
+  </data>
+  <data name="VideoLibrary1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>640, 480</value>
+  </data>
+  <data name="VideoLibrary1.TabIndex" type="System.Int32, mscorlib">
+    <value>384</value>
+  </data>
+  <data name="&gt;&gt;VideoLibrary1.Name" xml:space="preserve">
+    <value>VideoLibrary1</value>
+  </data>
+  <data name="&gt;&gt;VideoLibrary1.Type" xml:space="preserve">
+    <value>LaserFront.Trimmer.DllVideo.VideoLibrary, DllVideo, Version=6.0.5.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;VideoLibrary1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VideoLibrary1.ZOrder" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="TrimMap1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="TrimMap1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 49</value>
+  </data>
+  <data name="TrimMap1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TrimMap1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>640, 480</value>
+  </data>
+  <data name="TrimMap1.TabIndex" type="System.Int32, mscorlib">
+    <value>394</value>
+  </data>
+  <data name="TrimMap1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;TrimMap1.Name" xml:space="preserve">
+    <value>TrimMap1</value>
+  </data>
+  <data name="&gt;&gt;TrimMap1.Type" xml:space="preserve">
+    <value>TrimControlLibrary.TrimMapPlate, DllTrimControlLibrary, Version=5.1.0.1, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TrimMap1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TrimMap1.ZOrder" xml:space="preserve">
+    <value>54</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>40</value>
+    <value>30</value>
   </metadata>
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1278, 1006</value>
+    <value>1276, 998</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 9.75pt</value>

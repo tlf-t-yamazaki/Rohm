@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblDIGSW_HI.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="CbDigSwL.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CbDigSwL.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="CbDigSwH.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
@@ -241,7 +241,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CbDigSwH.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="LblDIGSW.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 12pt, style=Bold</value>
@@ -274,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LblDIGSW.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="btnTrimming.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -307,7 +307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnTrimming.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -436,7 +436,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;grpBpOff.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -466,7 +466,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="tlpBlockMove.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -730,16 +730,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BlockMove.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <metadata name="NotifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 17</value>
-  </metadata>
-  <data name="NotifyIcon1.Text" xml:space="preserve">
-    <value>NotifyIcon1</value>
-  </data>
-  <data name="NotifyIcon1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>9</value>
   </data>
   <data name="BtnADJ.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 12pt, style=Bold</value>
@@ -766,7 +757,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnADJ.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="BtnJOG_6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3611,7 +3602,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpArrow.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <metadata name="TmKeyCheck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>530, 17</value>
@@ -3641,7 +3632,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnTenKey.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="BtnEdit.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 12pt, style=Bold</value>
@@ -3668,7 +3659,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnEdit.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="chkDistributeOnOff.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
@@ -3752,7 +3743,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GrpDistribute.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="BtnLaser.Font" type="System.Drawing.Font, System.Drawing">
     <value>ＭＳ ゴシック, 12pt, style=Bold</value>
@@ -3779,7 +3770,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnLaser.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnClose.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 14.25pt, style=Bold</value>
@@ -3806,11 +3797,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <metadata name="BackgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>660, 17</value>
-  </metadata>
   <data name="lblBlockNo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3839,6 +3827,39 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblBlockNo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CutOffEsEditButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="CutOffEsEditButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CutOffEsEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>461, 445</value>
+  </data>
+  <data name="CutOffEsEditButton.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="CutOffEsEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 37</value>
+  </data>
+  <data name="CutOffEsEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>336</value>
+  </data>
+  <data name="CutOffEsEditButton.Text" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.Name" xml:space="preserve">
+    <value>CutOffEsEditButton</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CutOffEsEditButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -3862,23 +3883,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>調整</value>
   </data>
-  <data name="&gt;&gt;NotifyIcon1.Name" xml:space="preserve">
-    <value>NotifyIcon1</value>
-  </data>
-  <data name="&gt;&gt;NotifyIcon1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TmKeyCheck.Name" xml:space="preserve">
     <value>TmKeyCheck</value>
   </data>
   <data name="&gt;&gt;TmKeyCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BackgroundWorker1.Name" xml:space="preserve">
-    <value>BackgroundWorker1</value>
-  </data>
-  <data name="&gt;&gt;BackgroundWorker1.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmFineAdjust</value>

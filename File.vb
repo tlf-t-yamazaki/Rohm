@@ -789,8 +789,18 @@ ErrTrap:
                 .intCircuitGrp = 1
             End If
 
-            .intProbHiNo = CInt(mDATA(i)) : i = i + 1       ' プローブ番号（ハイ側）
-            .intProbLoNo = CInt(mDATA(i)) : i = i + 1       ' プローブ番号（ロー側）
+            '----- V6.1.4.0_23↓ -----
+            ' 抵抗番号が1000以降の場合には、目標値はデフォルトの1を設定する
+            '.intProbHiNo = CInt(mDATA(i)) : i = i + 1       ' プローブ番号（ハイ側）
+            '.intProbLoNo = CInt(mDATA(i)) : i = i + 1       ' プローブ番号（ロー側）
+            If .intResNo < 1000 Then
+                .intProbHiNo = CInt(mDATA(i)) : i = i + 1   ' プローブ番号（ハイ側）
+                .intProbLoNo = CInt(mDATA(i)) : i = i + 1   ' プローブ番号（ロー側）
+            Else
+                .intProbHiNo = 1 : i = i + 1                ' プローブ番号（ハイ側）
+                .intProbLoNo = 2 : i = i + 1                ' プローブ番号（ロー側）
+            End If
+            '----- V6.1.4.0_23↑ -----
             .intProbAGNo1 = CInt(mDATA(i)) : i = i + 1      ' プローブ番号（１）
             .intProbAGNo2 = CInt(mDATA(i)) : i = i + 1      ' プローブ番号（２）
             .intProbAGNo3 = CInt(mDATA(i)) : i = i + 1      ' プローブ番号（３）
@@ -800,7 +810,15 @@ ErrTrap:
             .intPauseTime = CInt(mDATA(i)) : i = i + 1      ' ポーズタイム
             .intTargetValType = CInt(mDATA(i)) : i = i + 1  ' トリムモード
             .intBaseResNo = CInt(mDATA(i)) : i = i + 1      ' ベ－ス抵抗番号
-            .dblTrimTargetVal = CDbl(mDATA(i)) : i = i + 1  ' トリミング目標値
+            '----- V6.1.4.0_23↓ -----
+            ' 抵抗番号が1000以降の場合には、目標値はデフォルトの1を設定する
+            '.dblTrimTargetVal = CDbl(mDATA(i)) : i = i + 1  ' トリミング目標値
+            If .intResNo < 1000 Then
+                .dblTrimTargetVal = CDbl(mDATA(i)) : i = i + 1 ' トリミング目標値
+            Else
+                .dblTrimTargetVal = 1.0# : i = i + 1        ' トリミング目標値
+            End If
+            '----- V6.1.4.0_23↑ -----
 
             ' ファイルバージョンによって処理わけ
             Select Case gStrTkyFileVer
@@ -2078,7 +2096,11 @@ ERR_LINE:
             .intDirStepRepeat = CShort(pData(i)) : i = i + 1
             .intBlockCntXDir = CShort(Left(pData(i), InStr(pData(i), ",") - 1))
             .intBlockCntYDir = CShort(Mid(pData(i), InStr(pData(i), ",") + 1)) : i = i + 1
+            '----- V6.1.4.0⑫↓ -----
+            .intBlkCntInStgGrpX = .intBlockCntXDir
+            .intBlkCntInStgGrpY = .intBlockCntYDir
 
+            '----- V6.1.4.0⑫↑ -----
             ' BPｵﾌｾｯﾄの入力ﾁｪｯｸ
             If gSysPrm.stCTM.giBPOffsetInput = 0 Then
                 ' 入力ありの場合
@@ -2159,8 +2181,14 @@ ERR_LINE:
                     .dblChipSizeXDir = .dblCircuitSizeXDir / .intResistCntInGroup              'V4.7.3.1②抵抗並び方向はＸ固定で処理 V6.1.3.0①
                 End If
             End If
-            .dblBlockSizeReviseXDir = CDbl(Left(pData(i), InStr(pData(i), ",") - 1))
-            .dblBlockSizeReviseYDir = CDbl(Mid(pData(i), InStr(pData(i), ",") + 1)) : i = i + 1
+            '----- V6.1.4.0⑫↓ -----
+            '.dblBlockSizeReviseXDir = CDbl(Left(pData(i), InStr(pData(i), ",") - 1))
+            '.dblBlockSizeReviseYDir = CDbl(Mid(pData(i), InStr(pData(i), ",") + 1)) : i = i + 1
+            .dblBlockSizeXDir = CDbl(Left(pData(i), InStr(pData(i), ",") - 1))              'ブロックサイズＸ
+            .dblBlockSizeYDir = CDbl(Mid(pData(i), InStr(pData(i), ",") + 1)) : i = i + 1   'ブロックサイズＹ
+            .dblBlockSizeReviseXDir = .dblBlockSizeXDir
+            .dblBlockSizeReviseYDir = .dblBlockSizeYDir
+            '----- V6.1.4.0⑫↑ -----
             If (gTkyKnd = KND_CHIP) Then
                 .dblBlockItvXDir = CDbl(Left(pData(i), InStr(pData(i), ",") - 1))
                 .dblBlockItvYDir = CDbl(Mid(pData(i), InStr(pData(i), ",") + 1)) : i = i + 1
@@ -2231,6 +2259,10 @@ ERR_LINE:
             If FileIO.FileVersion < 10 Then
                 .intRevisePtnNo1GroupNo = CShort(pData(i))
                 .intRevisePtnNo2GroupNo = CShort(pData(i))
+                '----- V6.1.4.0⑫↓ -----
+                .intCaribPtnNo1GroupNo = CShort(pData(i))                       ' キャリブレーショングループ番号
+                .intCaribPtnNo2GroupNo = CShort(pData(i))
+                '----- V6.1.4.0⑫↑ -----
             End If
             .intCutPosiReviseGroupNo = CShort(pData(i)) : i = i + 1
 
@@ -2350,7 +2382,10 @@ ERR_LINE:
             If (gTkyKnd = KND_NET) Then
                 .intCircuitGrp = CInt(vWork(i)) : i = i + 1     ' 所属ｻｰｷｯﾄ
             End If
-            .intResMeasMode = CShort(vWork(i)) : i = i + 1      ' 高精度測定、判定ﾓｰﾄﾞ
+            '----- V6.1.4.0⑫↓ -----
+            '.intResMeasMode = CShort(vWork(i)) : i = i + 1      ' 高精度測定、判定ﾓｰﾄﾞ
+            .intResMeasType = CShort(vWork(i)) : i = i + 1      ' 高精度測定、判定ﾓｰﾄﾞ
+            '----- V6.1.4.0⑫↑ -----
             .intProbHiNo = CShort(vWork(i)) : i = i + 1         ' ﾌﾟﾛｰﾌﾞ番号(HI)
             .intProbLoNo = CShort(vWork(i)) : i = i + 1         ' ﾌﾟﾛｰﾌﾞ番号(LO)
             .intProbAGNo1 = CShort(vWork(i)) : i = i + 1        ' ﾌﾟﾛｰﾌﾞ番号(AG1)
@@ -2375,7 +2410,7 @@ ERR_LINE:
                     .intBaseResNo = CInt(vWork(i)) : i = i + 1      ' ﾍﾞｰｽ抵抗
                 End If
             End If
-            .dblTrimTargetVal = CDbl(vWork(i)) : i = i + 1      ' ﾄﾘﾐﾝｸﾞ目標値
+            .dblTrimTargetVal = CDbl(vWork(i)) : i = i + 1          ' ﾄﾘﾐﾝｸﾞ目標値
             '----- V1.23.0.0⑧↑ -----
 
             If (gTkyKnd = KND_CHIP) Then
@@ -2383,6 +2418,7 @@ ERR_LINE:
                     .dblDeltaR = CDbl(vWork(i)) : i = i + 1     ' ΔR
                     .dblCutOffRatio = CDbl(vWork(i)) : i = i + 1 ' 切り上げ倍率
                 End If
+                .intSlope = 4                                   ' V6.1.4.0⑫
             ElseIf (gTkyKnd = KND_NET) Then
                 .intSlope = CInt(vWork(i)) : i = i + 1          ' 電圧変化ｽﾛｰﾌﾟ
             End If
@@ -2826,12 +2862,24 @@ STP_EXIT:
 
 STP_ERR:
             If (strSECT = "") Then
-                ' "指定されたファイルはトリミングパラメータのデータではありません"
-                Call Form1.System1.TrmMsgBox(gSysPrm, MSG_16, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, gAppName)
+                If frmAutoObj.gbFgAutoOperation432 = False Then                 'V6.1.4.0⑩
+                    ' "指定されたファイルはトリミングパラメータのデータではありません"
+                    Call Form1.System1.TrmMsgBox(gSysPrm, MSG_16, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, gAppName)
+                    'V6.1.4.0⑩↓
+                Else
+                    Call FormMain.Z_PRINT(MSG_16 & vbCrLf)
+                End If
+                'V6.1.4.0⑩↑
             Else
                 ' "ファイル入力エラー [セクション名]"
                 strMSG = MSG_130 + " " + strSECT
-                Call Form1.System1.TrmMsgBox(gSysPrm, strMSG, vbExclamation Or vbOKOnly, gAppName)
+                If frmAutoObj.gbFgAutoOperation432 = False Then                 'V6.1.4.0⑩
+                    Call Form1.System1.TrmMsgBox(gSysPrm, strMSG, vbExclamation Or vbOKOnly, gAppName)
+                    'V6.1.4.0⑩↓
+                Else
+                    Call FormMain.Z_PRINT(strMSG & vbCrLf)
+                End If
+                'V6.1.4.0⑩↑
             End If
             GoTo STP_EXIT
 
@@ -5693,6 +5741,10 @@ STP_EXT:
         Select Case strFileVer
             Case FILETYPE_CHIP01
                 FileIO.FileVersion = 1
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & Space(2) & "【プレートデータ】" & vbCrLf & Space(4) & "・θ軸" & vbCrLf & Space(4) & "・LED制御" & vbCrLf & Space(4) & "・GP-IB制御" & vbCrLf & Space(2) & "【グループデータ】" & vbCrLf & Space(4) & "・抵抗数" & vbCrLf & Space(4) & "・グループ間インターバル", MsgBoxStyle.OkOnly)
                 'Else
@@ -5702,6 +5754,10 @@ STP_EXT:
 
             Case FILETYPE_CHIP02
                 FileIO.FileVersion = 2
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & Space(2) & "【プレートデータ】" & vbCrLf & Space(4) & "・θ軸" & vbCrLf & Space(4) & "・GP-IB制御" & vbCrLf & Space(2) & "【グループデータ】" & vbCrLf & Space(4) & "・抵抗数" & vbCrLf & Space(4) & "・グループ間インターバル", MsgBoxStyle.OkOnly)
                 'Else
@@ -5711,6 +5767,10 @@ STP_EXT:
 
             Case FILETYPE_CHIP03
                 FileIO.FileVersion = 3
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & Space(2) & "【プレートデータ】" & vbCrLf & Space(4) & "・θ軸" & vbCrLf & Space(4) & "・GP-IB制御", MsgBoxStyle.OkOnly)
                 'Else
@@ -5720,6 +5780,10 @@ STP_EXT:
 
             Case FILETYPE_CHIP04
                 FileIO.FileVersion = 4
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & Space(2) & "【プレートデータ】" & vbCrLf & Space(4) & "・GP-IB制御", MsgBoxStyle.OkOnly)
                 'Else
@@ -5729,6 +5793,10 @@ STP_EXT:
 
             Case FILETYPE_CHIP05
                 FileIO.FileVersion = 5 ' V1.40
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ? V6.1.4.0⑫
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 ' KOA(EW)殿ならﾒｯｾｰｼﾞ表示なし
                 If (gSysPrm.stCTM.giSPECIAL = customKOAEW) Then
                 Else
@@ -5743,6 +5811,10 @@ STP_EXT:
                 ' ﾌｧｲﾙ構成変更Vol.6
             Case FILETYPE_CHIP06
                 FileIO.FileVersion = 6
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & Space(2) & "【プレートデータ 2】" & vbCrLf & Space(4) & "・補正位置パターンのグループ番号", MsgBoxStyle.OkOnly)
                 'Else
@@ -5754,6 +5826,10 @@ STP_EXT:
                 ' ﾌｧｲﾙﾊﾞｰｼﾞｮﾝV7.0.0.2
             Case FILETYPE_CHIP07_02
                 FileIO.FileVersion = 7.02
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "項目確認後、SAVEを行ってください。", MsgBoxStyle.OkOnly)
                 'Else
@@ -5835,6 +5911,10 @@ STP_EXT:
         Select Case strFileVer
             Case FILETYPE_NET01
                 FileIO.FileVersion = 1
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 ' MSG select
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & _
@@ -5850,7 +5930,10 @@ STP_EXT:
 
             Case FILETYPE_NET02
                 FileIO.FileVersion = 2
-
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 ' MSG select
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & _
@@ -5864,6 +5947,10 @@ STP_EXT:
 
             Case FILETYPE_NET03
                 FileIO.FileVersion = 3
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 ' MSG select
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "下記に示す項目を確認後、SAVEを行ってください。" & vbCrLf & vbCrLf & _
@@ -5881,6 +5968,10 @@ STP_EXT:
                 '----- V1.14.0.0⑥↓ -----
             Case FILETYPE_NET07_02
                 FileIO.FileVersion = 7.02
+                '----- V6.1.4.0_44↓(KOA EW殿SL432RD対応) -----
+                ' メッセージ表示なし ?
+                If (giFileMsgNoDsp = 1) Then Return (cFRS_NORMAL)
+                '----- V6.1.4.0_44↑ -----
                 ' MSG select
                 'If gSysPrm.stTMN.giMsgTyp = 0 Then
                 '    MsgBox("ファイル構成が変更されています。" & vbCrLf & "項目を確認後、SAVEを行ってください。", vbOKOnly)
@@ -5990,14 +6081,17 @@ STP_EXT:
                 Case CNS_CUTP_C                                                             ' Cカット(未サポート)  
                     strMSG = "File.GetCutAngle() Not Support Cut Type(C Cut)"
                     MessageBox.Show(strMSG, "", MessageBoxButtons.OK)
-                Case CNS_CUTP_ES                                                            ' 旧ESカット(未サポート)  
-                    strMSG = "File.GetCutAngle() Not Support Cut Type(ES Cut)"
-                    MessageBox.Show(strMSG, "", MessageBoxButtons.OK)
+                '----- V6.1.4.0_49↓ -----
+                'Case CNS_CUTP_ES                                                            ' 旧ESカット(未サポート)  
+                '    strMSG = "File.GetCutAngle() Not Support Cut Type(ES Cut)"
+                '    MessageBox.Show(strMSG, "", MessageBoxButtons.OK)
+                '----- V6.1.4.0_49↑ -----
                 Case CNS_CUTP_NOP                                                           ' NOP(未サポート)  
                     strMSG = "File.GetCutAngle() Not Support Cut Type(Z Cut)"
                     MessageBox.Show(strMSG, "", MessageBoxButtons.OK)
 
-                Case CNS_CUTP_ST, CNS_CUTP_IX, CNS_CUTP_SC, CNS_CUTP_STr, CNS_CUTP_STt, CNS_CUTP_M, CNS_CUTP_ES2, CNS_CUTP_ST2, CNS_CUTP_IX2
+                'Case CNS_CUTP_ST, CNS_CUTP_IX, CNS_CUTP_SC, CNS_CUTP_STr, CNS_CUTP_STt, CNS_CUTP_M, CNS_CUTP_ES2, CNS_CUTP_ST2, CNS_CUTP_IX2               ' V6.1.4.0_49
+                Case CNS_CUTP_ST, CNS_CUTP_IX, CNS_CUTP_SC, CNS_CUTP_STr, CNS_CUTP_STt, CNS_CUTP_M, CNS_CUTP_ES2, CNS_CUTP_ST2, CNS_CUTP_IX2, CNS_CUTP_ES   ' V6.1.4.0_49
                     ' STカット, スキャンカット他
                     ' カット方向から斜めカットの切り出し角度を設定する 
                     Select Case (Dir)

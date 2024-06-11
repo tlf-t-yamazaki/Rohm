@@ -994,4 +994,37 @@ DISTRIBUTION图</value>
         AD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP////////////////w==
 </value>
   </data>
+  <data name="CmdFolderOpen.Text" xml:space="preserve">
+    <value>FOLDER OPEN</value>
+  </data>
+  <data name="lblProductionData.Text" xml:space="preserve">
+    <value>Production Data</value>
+  </data>
+  <data name="lblFrdCutOff.Text" xml:space="preserve">
+    <value>CUT OFF</value>
+  </data>
+  <data name="lblFrdESPoint.Text" xml:space="preserve">
+    <value>ES POINT</value>
+  </data>
+  <data name="lblFrdNom.Text" xml:space="preserve">
+    <value>TARGET VALUE:</value>
+  </data>
+  <data name="lblFrd_1.Text" xml:space="preserve">
+    <value>1.</value>
+  </data>
+  <data name="lblFrd_2.Text" xml:space="preserve">
+    <value>2.</value>
+  </data>
+  <data name="lblFrd_3.Text" xml:space="preserve">
+    <value>3.</value>
+  </data>
+  <data name="lblFrd_4.Text" xml:space="preserve">
+    <value>4.</value>
+  </data>
+  <data name="lblFrd_5.Text" xml:space="preserve">
+    <value>5.</value>
+  </data>
+  <data name="lblFrd_6.Text" xml:space="preserve">
+    <value>6.</value>
+  </data>
 </root>

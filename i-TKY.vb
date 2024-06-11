@@ -120,9 +120,9 @@ Friend Class Form1
     Private Const WORK_DIR_PATH As String = "C:\TRIM"                           ' 作業用ﾌｫﾙﾀﾞｰ
     Private Const DATA_DIR_PATH As String = "C:\TRIMDATA\DATA"                  ' ﾃﾞｰﾀﾌｧｲﾙﾌｫﾙﾀﾞｰ 
     Private Const SYSPARAMPATH As String = "C:\TRIM\tky.ini"                    ' システムパラメータパス名
-    Private Const TKYSYSPARAMPATH As String = "C:\TRIM\TKYSYS.INI"              ' システムパラメータパス名 V2.0.0.0_29
+    Public Const TKYSYSPARAMPATH As String = "C:\TRIM\TKYSYS.INI"              ' システムパラメータパス名 V2.0.0.0_29 'V6.1.4.0_39 Public化
     Public Const LOADER_PARAMPATH As String = "C:\TRIM\LOADER.ini"             ' システムパラメータパス名(ローダメンテナンス用)  ###069 'V5.0.0.6② Private→Public変更
-
+    Public Const ENTRY_PATH As String = "C:\TRIMDATA\ENTRYLOT\"                 'V6.1.4.0_50
     '----- 変数定義 -----
     'V6.0.0.0    Public ObjIOMon As Object = Nothing                    ' ＩＯモニタ表示用
     Public ObjIOMon As FrmIOMon = Nothing                   ' ＩＯモニタ表示用      'V6.0.0.0
@@ -168,14 +168,43 @@ Friend Class Form1
 
     'V3.0.0.0⑤    Private ObjGazou As Process = Nothing                   ' Processオブジェクト
 
+    '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
+#Region "LblDataFileNameのText変更時に第１抵抗のｶｯﾄﾃﾞｰﾀ表示処理をおこなう"
+    '''=========================================================================
+    ''' <summary>LblDataFileNameのText変更時に第１抵抗のｶｯﾄﾃﾞｰﾀ表示処理をおこなう</summary>
+    ''' <value>ﾛｰﾄﾞしたﾃﾞｰﾀﾌｧｲﾙ名</value>
+    ''' <returns>LblDataFileName.Text</returns>
+    ''' <remarks>V6.1.4.0⑦</remarks>
+    '''=========================================================================
+    Public Property LblDataFileNameText() As String
+        Get
+            Return LblDataFileName.Text
+        End Get
+        Set(ByVal value As String)
+            ' 第１抵抗のｶｯﾄﾃﾞｰﾀ表示を変更する
+            If (String.Empty = value) Then
+                SetFirstResData(True)
+            Else
+                SetFirstResData()
+            End If
+            LblDataFileName.Text = value
+        End Set
+    End Property
+#End Region
+    '----- V6.1.4.0⑦↑ -----
+
     Private _jogKeyDown As Action(Of KeyEventArgs) = Nothing
     Private _jogKeyUp As Action(Of KeyEventArgs) = Nothing
+
+#Region "表示中のJOGを制御するKeyDown,KeyUp時の処理をメインフォームに"
+    '''=========================================================================
     ''' <summary><para>表示中のJOGを制御するKeyDown,KeyUp時の処理をメインフォームに、</para>
     ''' <para>カメラ画像MouseClick時の処理をDllVideoに設定する</para></summary>
     ''' <param name="keyDown"></param>
     ''' <param name="keyUp"></param>
     ''' <param name="moveToCenter">カメラ画像クリック位置を画像センターに移動する処理</param>
     ''' <remarks>'V6.0.0.0⑩</remarks>
+    '''=========================================================================
     Friend Sub SetActiveJogMethod(ByVal keyDown As Action(Of KeyEventArgs),
                                   ByVal keyUp As Action(Of KeyEventArgs),
                                   ByVal moveToCenter As Action(Of Decimal, Decimal))
@@ -185,6 +214,7 @@ Friend Class Form1
         'カメラ画像表示PictureBoxクリック位置をJOG経由で画像センターに移動する
         VideoLibrary1.MoveToCenter = moveToCenter
     End Sub
+#End Region
 
     Private mExit_flg As Integer                            ' ボタン押した結果格納用
     Private _readFileVer As Double = FileIO.FILE_VER_10_10  ' ロードしたファイルのバージョンを保持する   V4.0.0.0-28
@@ -265,6 +295,35 @@ Friend Class Form1
                 CmdPrintMap.Enabled = False
                 CmdMapOnOff.Enabled = False
             End If
+
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+            ' 生産管理情報の伝票Ｎｏ.と抵抗値を表示する(【ＱＲコードリード機能】特注)
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                Me.LblcLOTNUMBER.Visible = True                                     ' 生産管理情報(伝票Ｎｏ．) 
+                Me.LblcRESVALUE.Visible = True                                      ' 生産管理情報(抵抗値)
+                If (gTkyKnd = KND_CHIP) Then                                        'V6.1.4.9④
+                    Me.pnlFirstResData.Location = New System.Drawing.Point(75, 757)     'V6.1.4.4①                                                                  'V6.1.4.14①移動
+                    Me.chkDistributeOnOff.Location = New System.Drawing.Point(12, 743)  ' 第１抵抗カットデータ表示域に被るので生産グラフ表示ボタンの位置を上げる     'V6.1.4.14①移動
+                    Me.pnlFirstResData.Visible = True                                   ' 第１抵抗カットデータ表示域
+                    Me.pnlFirstResData.Enabled = True                                   'V6.1.4.14①
+                End If                                                              'V6.1.4.9④
+                'V6.1.4.4①                Me.pnlFirstResData.Location = New System.Drawing.Point(75, 783)
+                'V6.1.4.14①                Me.pnlFirstResData.Location = New System.Drawing.Point(75, 757)     'V6.1.4.4①
+                'V6.1.4.14①                Me.chkDistributeOnOff.Location = New System.Drawing.Point(12, 743)  ' 第１抵抗カットデータ表示域に被るので生産グラフ表示ボタンの位置を上げる
+                'V6.1.4.14①↓
+                If (gTkyKnd = KND_NET) Then
+                    Me.pnlFirstResDataNET.Location = New System.Drawing.Point(75, 750)
+                    Me.chkDistributeOnOff.Location = New System.Drawing.Point(12, 728)  ' 表示ボタンの位置
+                    Me.pnlFirstResDataNET.Visible = True                            ' ＮＥＴ時は抵抗４のカットオフ表示
+                    Me.pnlFirstResDataNET.Enabled = True
+                End If
+                'V6.1.4.14①↑
+            Else
+                Me.LblcLOTNUMBER.Visible = False
+                Me.LblcRESVALUE.Visible = False
+                Me.pnlFirstResData.Visible = False
+            End If
+            '----- V6.1.4.0_22↑ -----
 
             ' トラップエラー発生時 
         Catch ex As Exception
@@ -372,6 +431,16 @@ Friend Class Form1
                 gAppName = APP_TKY
             End If
 
+            'V6.5.5.0①↓
+            Dim CpuNo As Integer = Integer.Parse(GetPrivateProfileString_S("DEVICE_CONST", "PROCESS_AFFINITY", SYSPARAMPATH, "0"))
+            If (1 <= CpuNo) AndAlso (CpuNo <= &H7F) Then 'CPU指定はBIT割り当てでCPU0～CPU6までを有効としてその場合のみ設定する
+                Dim tmpProcess As Process = Process.GetCurrentProcess()
+                Dim vHandle As IntPtr
+                vHandle = tmpProcess.ProcessorAffinity
+                tmpProcess.ProcessorAffinity = CpuNo
+            End If
+            'V6.5.5.0①↑
+
             ' フラグ等初期化
             gbInitialized = False
             pbVideoInit = False
@@ -403,11 +472,22 @@ Friend Class Form1
             Dim dir As String = String.Empty
             Try
                 ' 指定ﾌｫﾙﾀﾞが存在しない場合に作成する
-                dir = DATA_DIR_PATH                             'V5.0.0.8② C:\TRIMDATA\DATA
-                If (False = IO.Directory.Exists(dir)) Then IO.Directory.CreateDirectory(dir)
+                '----- V6.1.4.0⑬↓ -----
+                'dir = DATA_DIR_PATH                             'V5.0.0.8② C:\TRIMDATA\DATA
+                'If (False = IO.Directory.Exists(dir)) Then IO.Directory.CreateDirectory(dir)
+                'dir = gSysPrm.stLOG.gsLoggingDir
+                'If (False = IO.Directory.Exists(dir)) Then IO.Directory.CreateDirectory(dir)
 
-                dir = gSysPrm.stLOG.gsLoggingDir
-                If (False = IO.Directory.Exists(dir)) Then IO.Directory.CreateDirectory(dir)
+                Dim dirs() As String = New String() {
+                    DATA_DIR_PATH,
+                    gSysPrm.stLOG.gsLoggingDir,
+                    gSysPrm.stDIR.gsTrimFilePath
+                }
+
+                For Each dir In dirs
+                    If (False = IO.Directory.Exists(dir)) Then IO.Directory.CreateDirectory(dir)
+                Next
+                '----- V6.1.4.0⑬↑ -----
 
             Catch ex As Exception
                 ' 権限がない場合やﾄﾞﾗｲﾌﾞが存在しない場合など
@@ -712,6 +792,38 @@ Friend Class Form1
             'V5.0.0.9⑯                  ↑
             giSubstrateInvBtn = Val(GetPrivateProfileString_S("SPECIALFUNCTION", "SUBSTRATE_INVEST_BTN", SYSPARAMPATH, "0"))
             '----- V4.11.0.0①↑ -----
+            '----- V6.1.4.0①↓(KOA EW殿SL432RD対応) -----
+            giLotChange = Val(GetPrivateProfileString_S("SPECIALFUNCTION", "LOT_CHANGE", SYSPARAMPATH, "0"))
+            giFileMsgNoDsp = Val(GetPrivateProfileString_S("CUSTOMIZE", "FILE_MSG_NODSP", SYSPARAMPATH, "0"))
+            'V6.1.4.0_22↓
+            ' ＱＲコードリード機能はTKY-CHIPのみ有効
+            If (gTkyKnd = KND_CHIP) And Integer.Parse(GetPrivateProfileString_S("QR_CODE", "QR_CODE_READER_USE", SYSPARAMPATH, "0")) = 1 Then
+                gbQRCodeReaderUse = True
+            Else
+                gbQRCodeReaderUse = False
+            End If
+            'V6.1.4.10②↓
+            ' ＱＲコードリード機能はTKY-CHIPのみ有効
+            If (gTkyKnd = KND_NET) And Integer.Parse(GetPrivateProfileString_S("QR_CODE", "QR_CODE_READER_USE_TKYNET", SYSPARAMPATH, "0")) = 1 Then
+                gbQRCodeReaderUseTKYNET = True
+            Else
+                gbQRCodeReaderUseTKYNET = False
+            End If
+            'V6.1.4.10②↑
+            giQrCodeType = Val(GetPrivateProfileString_S("QR_CODE", "QR_CODE_TYPE", SYSPARAMPATH, "0"))
+            Me.LblcLOTNUMBER.Text = ""                                  ' 生産管理情報(伝票Ｎｏ．) 特注
+            Me.LblcRESVALUE.Text = ""                                   ' 生産管理情報(抵抗値) 　　特注
+            'V6.1.4.0_22↑
+            'V6.1.4.0_35↓レーザーパワーのモニタリング
+            giLaserrPowerMonitoring = Integer.Parse(GetPrivateProfileString_S("ROT_ATT", "FULL_POWER_MONITORING", TKYSYSPARAMPATH, "0"))    '0：無し,1：自動運転開始時,2：エントリーロット毎
+            gdFullPowerLimit = Double.Parse(GetPrivateProfileString_S("ROT_ATT", "FULL_POWER_LIMIT", TKYSYSPARAMPATH, "0.1"))
+            gdFullPowerQrate = Double.Parse(GetPrivateProfileString_S("ROT_ATT", "FULL_POWER_QRATE", TKYSYSPARAMPATH, "10.000"))
+            'V6.1.4.0_35↑
+            '----- V6.1.4.0①↑ -----
+            'V6.1.4.2①↓
+            giAutoCalibration = Integer.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CALIBRATION", SYSPARAMPATH, "0"))          ' 自動キャリブレーション補正実行0:無し、>0：実行
+            gbAutoCalibrationLog = Integer.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CALIBRATION_LOG", SYSPARAMPATH, "0"))   ' カット位置ずれログ出力　0:無し、1：出力
+            'V6.1.4.2①↑
             If Val(GetPrivateProfileString_S("SPECIALFUNCTION", "CPK_DISP_OFF", SYSPARAMPATH, "0")) = 1 Then  'V5.0.0.4④
                 giCpk_Disp_Off = True
             Else
@@ -939,7 +1051,15 @@ Friend Class Form1
             '   画面表示項目を設定する
             '----------------------------------------------------------------------------
             Me.Text = gAppName                              ' ｱﾌﾟﾘｹｰｼｮﾝ名表示 
-            LblDataFileName.Text = ""                       ' ﾄﾘﾐﾝｸﾞﾃﾞｰﾀﾌｧｲﾙ名初期化 
+            '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
+            ' トリミングデータ名表示域クリア
+            ' LblDataFileName.Text = ""                      ' ﾄﾘﾐﾝｸﾞﾃﾞｰﾀﾌｧｲﾙ名初期化 
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                LblDataFileNameText = ""                    ' トリミングデータ名表示域と第１抵抗データ表示域クリア  
+            Else
+                LblDataFileName.Text = ""                   ' ﾄﾘﾐﾝｸﾞﾃﾞｰﾀﾌｧｲﾙ名初期化 
+            End If
+            '----- V6.1.4.0⑦↑ -----
             Call Z_CLS()                                    ' ログ画面クリア 
             '                                               ' ログ画面のﾌｫﾝﾄｻｲｽﾞをｼｽﾊﾟﾗより設定
             txtLog.Font = New Font(txtLog.Font.FontFamily, CSng(gSysPrm.stLOG.gdLogTextFontSize))
@@ -1122,6 +1242,14 @@ Friend Class Form1
             '---------------------------------------------------------------------------
             '   起動後の最初の検出がﾛｰﾀﾞ自動ﾓｰﾄﾞ/動作中の場合は、停止に切替えるよう確認する(SL432R系)
             '---------------------------------------------------------------------------
+            ''----- V6.1.4.0_45↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+            'If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then      ' SL432R系 ?
+            '    If (giLotChange = 1) Then                               ' ロット切替え機能有効 ?
+            '        Call Me.System1.Z_ATLDSET(0, &HFFFF)                ' 全てOFFとする
+            '    End If
+            'End If
+            ''----- V6.1.4.0_45↑ -----
+
             ' ローダ入力
             giHostMode = cHOSTcMODEcMANUAL                  ' ﾛｰﾀﾞﾓｰﾄﾞ = 手動ﾓｰﾄﾞ
             gbHostConnected = False                         ' ホスト接続状態 = 未接続(ﾛｰﾀﾞ無)
@@ -1157,6 +1285,24 @@ Friend Class Form1
                                          _txtLogClearLength)) Then
                 _txtLogClearLength = 5900000                            ' .NET内部文字コードUTF16で11.25MB程度
             End If
+            '----- V6.1.4.0③↓(KOA EW殿SL432RD対応) -----
+            ' ログ表示域のサイズと位置を変更
+            If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                Me.txtLog.Size = New System.Drawing.Size(TXTLOG_SIZEX_KOAEW, TXTLOG_SIZEY_KOAEW)
+                Me.txtLog.Location = New Point(TXTLOG_LOCATIONX_KOAEW, TXTLOG_LOCATIONY_KOAEW)
+                Me.GrpMode.Location = New Point(GRPMODE_LOCATIONX_KOAEW, GRPMODE_LOCATIONY_KOAEW)
+                Me.tabCmd.Location = New Point(TABCMD_LOCATIONX_KOAEW, TABCMD_LOCATIONY_KOAEW)
+                Me.CmdEnd.Location = New Point(CMDEND_LOCATIONX_KOAEW, CMDEND_LOCATIONY_KOAEW)
+            End If
+            '----- V6.1.4.0③↑ -----
+            'V6.1.4.0_50↓
+            ' ENTRYLOT ﾌｫﾙﾀﾞ内のﾌｧｲﾙをすべて削除する
+            If System.IO.Directory.Exists(ENTRY_PATH) Then
+                For Each tmpFile As String In (System.IO.Directory.GetFiles(ENTRY_PATH))
+                    IO.File.Delete(tmpFile)
+                Next
+            End If
+            'V6.1.4.0_50↑
             ''---------------------------------------------------------------------------
             ''装置初期化処理()
             ''---------------------------------------------------------------------------
@@ -1226,6 +1372,9 @@ Friend Class Form1
             '    EXTERNAL_CAMERA = 1
             'End If
             '' V3.0.0.0③ MV10のボードのビデオ端子を変更可能とする。↑
+
+            ' V6.1.4.0⑩ ロット切替え用自動運転フォームオブジェクト生成(File_Read()で使用するので標準版でも生成する)
+            frmAutoObj = New FormDataSelect2(Me)
 
             ' トラップエラー発生時 
         Catch ex As Exception
@@ -1755,6 +1904,7 @@ Friend Class Form1
 
             stFNC(F_INTEGRATED).sCMD = "INTEGRATED"         ' 統合登録調整ボタン 'V4.10.0.0③
             stFNC(F_RECOG_ROUGH).sCMD = "RECOG_ROUGH"       ' ラフアライメント用画像登録ボタン  'V5.0.0.9④
+            stFNC(F_FOLDEROPEN).sCMD = "FOLDEROPEN"         ' フォルダ表示ボタン(生産管理データ) V6.1.4.0⑥
 
             ' ファイル名/セクション名を設定する
             If (gSysPrm.stTMN.gsKeimei = MACHINE_TYPE_SL436) Then        ' SL436R ? 
@@ -2204,10 +2354,10 @@ Friend Class Form1
                 '-----------------------------------------------------------------------
                 ' 監視タイマー開始
                 '-----------------------------------------------------------------------
-                ''V6.0.1.0⑬ ↓              Timer1.Interval = 10                        ' 監視タイマー値(msec)
-                Timer1.Interval = 100                        ' 監視タイマー値(msec)
+                ''V6.0.1.0⑬ ↓ Timer1.Interval = 10                        ' 監視タイマー値(msec)
+                Timer1.Interval = 100                                   ' 監視タイマー値(msec)
                 ''V6.0.1.0⑬↑
-                Timer1.Enabled = True                       ' 監視タイマー開始
+                Timer1.Enabled = True                                   ' 監視タイマー開始
                 '----- V1.18.0.0②↓ -----
                 ' QRコード受信チェックタイマー開始(ローム殿特注)
                 If (gSysPrm.stCTM.giSPECIAL = customROHM) Then
@@ -2215,6 +2365,14 @@ Friend Class Form1
                     TimerQR.Enabled = True
                 End If
                 '----- V1.18.0.0②↑ -----
+                '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+                If (giQrCodeType = QrCodeType.KoaEw) Then
+                    If (gbQRCodeReaderUse = True OrElse gbQRCodeReaderUseTKYNET = True) Then    ' ＱＲコードリード機能はTKY-CHIPのみ有効 'V6.1.4.10② TKY-NET（gbQRCodeReaderUseTKYNET）追加
+                        TimerQR.Interval = 1000                         ' 監視タイマー値(msec)
+                        TimerQR.Enabled = True                          ' 監視タイマー開始
+                    End If
+                End If
+                '----- V6.1.4.0_22↑ -----
 #If False Then                          'V5.0.0.9⑮
                 '----- V1.23.0.0①↓ -----
                 ' バーコード受信チェックタイマー開始(太陽社殿特注)
@@ -2324,6 +2482,13 @@ Friend Class Form1
         'Dim ret As Short
         Dim ret As MsgBoxResult         'V4.10.0.0⑤
 
+        '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+        If (giLotChange = 1) Then                                   ' ロット切替え機能有効 ?
+            ' ローダー出力(ON=トリマ動作中 or トリミング不良信号を連続自動運転中止通知に使用, OFF=トリマレディ)
+            Call SetLoaderIO(COM_STS_TRM_STATE Or COM_STS_TRM_NG, COM_STS_TRM_READY)
+        End If
+        '----- V6.1.4.0⑩↑ -----
+
         ' 編集中のデータあり ?
         If gCmpTrimDataFlg = 1 Then
             'If gSysPrm.stTMN.giMsgTyp = 0 Then
@@ -2415,7 +2580,16 @@ Friend Class Form1
 
             ' オートローダ終了処理
             If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then      ' SL432R系 ?
-                Call SetLoaderIO(COM_STS_TRM_STATE, COM_STS_TRM_READY)  ' ローダー出力(ON=トリマ動作中, OFF=トリマレディ) ###035
+                '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                'Call SetLoaderIO(COM_STS_TRM_STATE, COM_STS_TRM_READY) ' ローダー出力(ON=トリマ動作中, OFF=トリマレディ) ###035
+                If (giLotChange = 1) Then                               ' ロット切替え機能有効 ?
+                    ' トリミング不良信号を連続自動運転中止通知に使用
+                    Call SetLoaderIO(COM_STS_TRM_STATE Or COM_STS_TRM_NG, COM_STS_TRM_READY)
+                Else
+                    ' ローダー出力(ON=トリマ動作中, OFF=トリマレディ)
+                    Call SetLoaderIO(COM_STS_TRM_STATE, COM_STS_TRM_READY)
+                End If
+                '----- V6.1.4.0⑩↑ -----
             Else
                 Call Loader_Term()                                      ' ローダー出力(ON=なし,OFF=トリマ部レディ)
             End If
@@ -2765,10 +2939,10 @@ Friend Class Form1
             lblIntegTeach.Text = strBTN(F_TEACH)                        ' ティーチング
             lblIntegTY.Text = strBTN(F_TY)                              ' ステージ位置調整
             'V4.10.0.0③                  ↑
-
             strBTN(F_PROBE_CLEANING) = CmdT_ProbeCleaning.Text          ' "プローブクリーニング"
-
             strBTN(F_RECOG_ROUGH) = CmdRecogRough.Text                  ' ラフ画像登録        'V5.0.0.9④
+            strBTN(F_FOLDEROPEN) = CmdFolderOpen.Text                   ' ﾌｫﾙﾀﾞ表示 V6.1.4.0⑥
+
             ''-------------------------------------------------------------------
             ''   DIG-SWHを設定する(日本語/英語) ※将来的にはTky_Msg.iniより設定する
             ''-------------------------------------------------------------------
@@ -2899,6 +3073,14 @@ Friend Class Form1
                 End If
                 ' '###246           End If
 
+                '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                If (stFNC(F_AUTO).iDEF = 1) Then            ' AUTOボタン (SL432Rでも有効)
+                    Me.CmdAutoOperation.Enabled = True
+                Else
+                    Me.CmdAutoOperation.Enabled = False
+                End If
+                '----- V6.1.4.0⑩↑ -----
+
                 ' CHIP,NET用
                 If (gTkyKnd = KND_CHIP Or gTkyKnd = KND_NET) Then
                     If gKeiTyp <> KEY_TYPE_RS Then              'V2.0.0.0⑩ シンプルトリマ以外
@@ -3004,7 +3186,6 @@ Friend Class Form1
                 End If
                 '#4.12.3.0④↑
 
-
                 '----- V1.13.0.0③↓ -----
                 ' TKY系オプション
                 If (stFNC(F_APROBEREC).iDEF = 1) Then                   ' ｵｰﾄプローブ登録ﾎﾞﾀﾝ 
@@ -3073,6 +3254,15 @@ Friend Class Form1
                 End If
                 'V4.1.0.0⑥
 
+                'V6.1.4.0⑥         ↓
+                If (1S <= stFNC(F_FOLDEROPEN).iDEF) Then                ' ﾌｫﾙﾀﾞ表示ﾎﾞﾀﾝ
+                    Me.CmdFolderOpen.Enabled = True
+                    isDispOptGrp = True
+                Else
+                    Me.CmdFolderOpen.Enabled = False
+                End If
+                'V6.1.4.0⑥         ↑
+
                 ' 活性化時は表示する
                 mnuHelpAbout.Visible = True
                 btnGoClipboard.Visible = False                          '###036
@@ -3106,6 +3296,24 @@ Friend Class Form1
                     GroupBox1.Visible = True
                 End If
 
+                'V4.7.3.5①↓
+                If (gTkyKnd = KND_CHIP) Then
+                    CutOffEsEditButton.Visible = True
+                    CutOffEsEditButton.Enabled = True
+                Else
+                    CutOffEsEditButton.Visible = False
+                    CutOffEsEditButton.Enabled = False
+                End If
+                'V4.7.3.5①↑
+                'V6.1.4.14①↓
+                If (gTkyKnd = KND_NET) Then
+                    CutOffEsEditButtonNET.Visible = True
+                    CutOffEsEditButtonNET.Enabled = True
+                Else
+                    CutOffEsEditButtonNET.Visible = False
+                    CutOffEsEditButtonNET.Enabled = False
+                End If
+                'V6.1.4.14①↑
 
             ElseIf (Flg = 0) Then
                 '---------------------------------------------------------------------------
@@ -3173,6 +3381,30 @@ Friend Class Form1
                 SetBtnUserLogon(False)
 
                 Me.CmdT_ProbeCleaning.Enabled = False       'V4.10.0.0⑨
+
+                '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+                If (giQrCodeType = QrCodeType.KoaEw) Then
+                    ' ＱＲ読み込み状態の初期化
+                    ObjQRCodeReader.ResetQRReadFlag()                   ' ＱＲコード未読み込み状態にリセット
+                End If
+                '----- V6.1.4.0_22↑ -----
+
+                'V4.7.3.5①↓
+                If (gTkyKnd = KND_CHIP) Then
+                    CutOffEsEditButton.Enabled = False
+                Else
+                    CutOffEsEditButton.Visible = False
+                    CutOffEsEditButton.Enabled = False
+                End If
+                'V4.7.3.5①↑
+                'V6.1.4.14①↓
+                If (gTkyKnd = KND_NET) Then
+                    CutOffEsEditButtonNET.Enabled = False
+                Else
+                    CutOffEsEditButtonNET.Visible = False
+                    CutOffEsEditButtonNET.Enabled = False
+                End If
+                'V6.1.4.14①↑
 
             ElseIf (Flg = 2) Then
                 '---------------------------------------------------------------------------
@@ -3270,6 +3502,13 @@ Friend Class Form1
                     Me.CmdMap.Visible = False
                 End If
                 '----- V1.13.0.0③↑ -----
+                '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                If (stFNC(F_AUTO).iDEF >= 0) Then               ' AUTOボタン (SL432Rでも有効)
+                    Me.CmdAutoOperation.Visible = True
+                Else
+                    Me.CmdAutoOperation.Visible = False
+                End If
+                '----- V6.1.4.0⑩↑ -----
 
                 ' CHIP,NET用
                 If (gTkyKnd = KND_CHIP Or gTkyKnd = KND_NET) Then
@@ -3432,6 +3671,17 @@ Friend Class Form1
                 End If
                 'V4.1.0.0⑥
 
+                'V6.1.4.0⑥         ↓
+                If (1S <= stFNC(F_FOLDEROPEN).iDEF) Then                ' フォルダ表示ボタン
+                    Me.CmdFolderOpen.Visible = True
+                    Me.lblProductionData.Visible = True
+                    isDispOptGrp = True
+                Else
+                    Me.CmdFolderOpen.Visible = False
+                    Me.lblProductionData.Visible = False
+                End If
+                'V6.1.4.0⑥         ↑
+
                 '---------------------------------------------------------------------------
                 '   オプショングループの表示/非表示設定
                 '---------------------------------------------------------------------------
@@ -3452,6 +3702,25 @@ Friend Class Form1
                 End If
                 'V5.0.0.4⑧            End If
                 'V4.10.0.0⑨↑
+
+                'V4.7.3.5①↓
+                If (gTkyKnd = KND_CHIP) Then
+                    CutOffEsEditButton.Visible = True
+                    CutOffEsEditButton.Enabled = True
+                Else
+                    CutOffEsEditButton.Visible = False
+                    CutOffEsEditButton.Enabled = False
+                End If
+                'V4.7.3.5①↑
+                'V6.1.4.14①↓
+                If (gTkyKnd = KND_NET) Then
+                    CutOffEsEditButtonNET.Visible = True
+                    CutOffEsEditButtonNET.Enabled = True
+                Else
+                    CutOffEsEditButtonNET.Visible = False
+                    CutOffEsEditButtonNET.Enabled = False
+                End If
+                'V6.1.4.14①↑
 
             ElseIf (Flg = 3) Then
                 '---------------------------------------------------------------------------
@@ -3635,10 +3904,19 @@ Friend Class Form1
 
         Func_Password = True
         If (stFNC(IntIndexNo).iPAS = 1) Then
+            'V6.1.4.9⑧分布図が表示されていたら非表示にする↓
+            Call RedrawDisplayDistribution(True)    '統計表示処理の状態変更'V6.1.4.9⑧
             r = Password1.ShowDialog((gSysPrm.stTMN.giMsgTyp), (gSysPrm.stSYP.gstrPassword))
             If (r <> 1) Then
                 Func_Password = False                   ' ﾊﾟｽﾜｰﾄﾞ入力ｴﾗｰならEXIT
+                'V4.7.3.5①↓
+                If r <> cFRS_NORMAL And r <> cFRS_ERR_RST Then
+                    Call Me.AppEndDataSave()
+                    Call Me.AplicationForcedEnding()                         ' アプリ強制終了
+                End If
+                'V4.7.3.5①↑
             End If
+            Call RedrawDisplayDistribution(False)   'V6.1.4.9⑧
         End If
 
     End Function
@@ -3777,6 +4055,11 @@ Friend Class Form1
             comDlgOpen.CheckFileExists = True
             comDlgOpen.CheckPathExists = True
             comDlgOpen.InitialDirectory = gSysPrm.stDIR.gsTrimFilePath  ' トリムデータファイル格納位置
+            'V6.1.4.14②↓' ＮＥＴの時のトリムデータファイル格納位置
+            If gTkyKnd = KND_NET Then
+                comDlgOpen.InitialDirectory = GetPrivateProfileString_S("QR_CODE", "TKYNET_TRIMMING_DATA_FOLDER", "C:\TRIM\tky.ini", "C:\TRIMDATA\DATA_NET\")
+            End If
+            'V6.1.4.14②↑
 
             'V6.0.0.0⑤            Call End_GazouProc(ObjGazou)    'V5.0.0.6⑭
             ' 【ﾌｧｲﾙを開く】ﾀﾞｲｱﾛｸﾞを表示する
@@ -3875,6 +4158,12 @@ STP_END:
         Dim doSave As Boolean                                           ' V4.0.0.0-28
 
         Try
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                Me.LblcLOTNUMBER.Text = ""                              ' 生産管理情報(伝票Ｎｏ．)
+                Me.LblcRESVALUE.Text = ""                               ' 生産管理情報(抵抗値) 
+            End If
+            '----- V6.1.4.0_22↑ -----
             '----- V4.0.0.0-34↓ -----
             '-----------------------------------------------------------------------
             '   SL436Sで拡張子が".tdc"なら".tdcs"に変換後のファイルが存在しない事を確認する
@@ -3957,17 +4246,21 @@ STP_END:
                 Call ChkCutTypeEs()                                     ' ESの置き換え
             End If
 
+            '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
             ' ファイルパス名の表示
-            'If (gSysPrm.stTMN.giMsgTyp = 0) Then
-            '    LblDataFileName.Text = "データファイル名 " & sPath
-            'Else
-            '    LblDataFileName.Text = "File name " & sPath
-            'End If
-            LblDataFileName.Text = Form1_006 & sPath
+            'LblDataFileName.Text = Form1_006 & sPath
+            'gStrTrimFileName = sPath                                    ' ﾄﾘﾐﾝｸﾞﾃﾞｰﾀﾌｧｲﾙ名をｸﾞﾛｰﾊﾞﾙ変数に設定する
+            'LblDataFileName.Text = sPath
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                LblDataFileNameText = sPath                             ' トリミングデータ名と第１抵抗データ表示域を設定する 
+            Else
+                LblDataFileName.Text = sPath                            ' トリミングデータ名表示
+            End If
             gStrTrimFileName = sPath                                    ' ﾄﾘﾐﾝｸﾞﾃﾞｰﾀﾌｧｲﾙ名をｸﾞﾛｰﾊﾞﾙ変数に設定する
-            LblDataFileName.Text = sPath
+            '----- V6.1.4.0⑦↑ -----
             gLoadDTFlag = True                                          ' ﾃﾞｰﾀﾛｰﾄﾞ済ﾌﾗｸﾞ(False:ﾃﾞｰﾀ未ﾛｰﾄﾞ, True:ﾃﾞｰﾀﾛｰﾄﾞ済)
             commandtutorial.SetDataLoad()                               'V2.0.0.0⑩ データロード状態設定
+
             '----- オートプローブ用オフセット初期化 -----
             gfStgOfsX = 0.0                                             ' XYテーブルオフセットX(mm) ※オートプローブ実行コマンド(FrmMatrix())で設定
             gfStgOfsY = 0.0                                             ' XYテーブルオフセットY(mm)
@@ -3997,7 +4290,20 @@ STP_END:
 
             ' ログ出力("データロード")
             Call System1.OperationLogging(gSysPrm, MSG_OPLOG_FUNC01, "File='" & sPath & strLDR)
-            Call Z_CLS()                                                ' データロードでログ画面クリア
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+            'Call Z_CLS()                                                ' データロードでログ画面クリア
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                If (QR_Read_Flg = 0) Then                               ' ＱＲコード表示中はクリアしない
+                    Call Z_CLS()                                        ' データロードでログ画面クリア
+                End If
+                ' 生産管理情報の伝票Ｎｏ.と抵抗値を表示する
+                If (typQRDATAInfo.bStatus = True) Then
+                    ObjQRCodeReader.LotNumberDisp()
+                End If
+            Else
+                Call Z_CLS()                                            ' データロードでログ画面クリア(標準版)
+            End If
+            '----- V6.1.4.0_22↑ -----
             gDspCounter = 0                                             ' ログ画面表示基板枚数カウンタクリア ###013
             ' "データをロードしました"
             strMSG = MSG_143 & vbCrLf & " (File Name = " & sPath & ")"
@@ -4132,6 +4438,22 @@ STP_END:
                 End If
             End If
             '----- V1.18.0.0⑦↑ -----
+
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                If (gbQRCodeReaderUse OrElse gbQRCodeReaderUseTKYNET) And (typQRDATAInfo.bStatus) Then ' ＱＲデータ有効 ? 'V6.1.4.14②gbQRCodeReaderUseTKYNETも追加
+                    ' ＱＲデータの減衰率(%)からロータリーアッテネータを設定する
+                    'r = ObjQRCodeReader.SetAttenuater(typQRDATAInfo.dAttenuaterValue)      'V6.1.4.0_22
+                    r = ObjQRCodeReader.SetAttenuater(CDbl(typQRDATAInfo.dAttenuaterValue)) 'V6.1.4.0_22
+                    If (r <> cFRS_NORMAL) Then                          ' エラー ? (メッセージは表示済み)
+                        ' "アッテネータ減衰率=[x.xx(%)]設定異常終了しました。=[xxx]"
+                        'strMSG = MSG_167 + "=[" & typQRDATAInfo.dAttenuaterValue.ToString("0.00") & "(%)]" + MSG_168 + "=[" & r.ToString & "]"         'V6.1.4.0_22
+                        strMSG = MSG_167 + "=[" & CDbl(typQRDATAInfo.dAttenuaterValue).ToString("0.00") & "(%)]" + MSG_168 + "=[" & r.ToString & "]"    'V6.1.4.0_22
+                        Call Me.System1.TrmMsgBox(gSysPrm, strMSG, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, TITLE_4)
+                    End If
+                End If
+            End If
+            '----- V6.1.4.0_22↑ -----
 
             '-----------------------------------------------------------------------
             '   終了処理
@@ -4357,7 +4679,17 @@ ERR_PROC:
             '   【名前を付けて保存】ﾀﾞｲｱﾛｸﾞを表示する
             '-----------------------------------------------------------------------
             ' トリムデータファイル格納位置
-            comDlgSave.InitialDirectory = gSysPrm.stDIR.gsTrimFilePath
+            'V6.1.4.14②↓
+            comDlgSave.InitialDirectory = System.IO.Path.GetDirectoryName(typPlateInfo.strDataName) 'V6.1.4.14②
+            If System.IO.Directory.Exists(comDlgSave.InitialDirectory) = False Then
+                'V6.1.4.14②↑
+                comDlgSave.InitialDirectory = gSysPrm.stDIR.gsTrimFilePath
+                'V6.1.4.14②↓' ＮＥＴの時のトリムデータファイル格納位置
+                If gTkyKnd = KND_NET Then
+                    comDlgSave.InitialDirectory = GetPrivateProfileString_S("QR_CODE", "TKYNET_TRIMMING_DATA_FOLDER", "C:\TRIM\tky.ini", "C:\TRIMDATA\DATA_NET\")
+                End If
+            End If
+            'V6.1.4.14②↑
             '----- V1.14.0.0⑥↓ -----
             ' 例)旧データ(xxxx.WTC)の場合、拡張子がxxx.tdcでなく.WTCのままセーブされるので　拡張子をtdcに変更する
             'comDlgSave.FileName = typPlateInfo.strDataName
@@ -4407,16 +4739,17 @@ ERR_PROC:
             If (r <> cFRS_NORMAL) Then GoTo STP_ERR
 
             '-----------------------------------------------------------------------
-            '   操作ログ等を出力する
+            '   ファイルパス名を表示する
             '-----------------------------------------------------------------------
-            ' ファイルパス名の表示
-            'If (gSysPrm.stTMN.giMsgTyp = 0) Then
-            '    LblDataFileName.Text = "データファイル名 " & sPath
-            'Else
-            '    LblDataFileName.Text = "File name " & sPath
-            'End If
+            '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
             ''V4.0.0.0⑮
-            LblDataFileName.Text = sPath
+            'LblDataFileName.Text = sPath
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                LblDataFileNameText = sPath                     ' トリミングデータ名と第１抵抗データ表示域を設定する 
+            Else
+                LblDataFileName.Text = sPath                    ' トリミングデータ名表示
+            End If
+            '----- V6.1.4.0⑦↑ -----
 
             '-----------------------------------------------------------------------
             '   FL側から現在の加工条件を受信してFL用加工条件ファイルをライトする(FL時)
@@ -4479,7 +4812,9 @@ ERR_PROC:
             'V4.2.0.0③
             gCmpTrimDataFlg = 0                                 ' データ更新フラグ = 0(更新なし)
 
-            ' ログ出力
+            '-----------------------------------------------------------------------
+            '   操作ログを出力する
+            '-----------------------------------------------------------------------
             Call System1.OperationLogging(gSysPrm, MSG_OPLOG_FUNC02, "File='" & sPath & "' MANUAL") 'OK
             ' "データをセーブしました"
             strMSG = MSG_145 & vbCrLf & " (File Name = " & sPath & ")"
@@ -4530,13 +4865,15 @@ STP_ERR:
             '-------------------------------------------------------------------
             '   初期処理
             '-------------------------------------------------------------------
+            ' 統計表示処理の状態変更
+            Call RedrawDisplayDistribution(True)                'V4.7.3.5① パスワード画面表示前（TrimStateOnの中）に統計画面を閉じないとパスワード画面が隠れてしまうのでTrimStateOnの前に移動
             ' トリマ装置状態を動作中に設定する
             '#4.12.2.0⑤            r = TrimStateOn(F_EDIT, APP_MODE_EDIT, MSG_OPLOG_FUNC03, "")
             r = TrimStateOn(F_EDIT, APP_MODE_EDIT, MSG_OPLOG_FUNC03, "", shiftKeyDown)      '#4.12.2.0⑤
             If (r <> cFRS_NORMAL) Then GoTo STP_END
 
             ' 統計表示処理の状態変更
-            Call RedrawDisplayDistribution(True)
+            'V4.7.3.5①            Call RedrawDisplayDistribution(True)
 
             ' コンソールボタンのランプ状態を設定する
             Call LAMP_CTRL(LAMP_START, False)                       ' STARTﾗﾝﾌﾟ消灯 
@@ -5279,6 +5616,14 @@ STP_END:
                     ' ﾄﾘﾑ位置ｵﾌｾｯﾄX,Yを更新する(XYﾃｰﾌﾞﾙ補正分を引く)
                     .dblTableOffsetXDir = .dblTableOffsetXDir - gfCorrectPosX
                     .dblTableOffsetYDir = .dblTableOffsetYDir - gfCorrectPosY
+                    'V4.7.0.0⑮↓
+                    '----- V6.1.4.0⑯↓(KOA EW殿SL432RD対応) -----
+                    ' BP_INPUT=1(テーブルオフセット値の逆数をBPオフセットに設定) ?
+                    If (gSysPrm.stCTM.giBPOffsetInput <> 0) Then
+                        .dblBpOffSetXDir = -1.0 * .dblTableOffsetXDir
+                        .dblBpOffSetYDir = -1.0 * .dblTableOffsetYDir
+                    End If
+                    '----- V6.1.4.0⑯↑ -----
                     ' システム変数設定(プローブON/OFF位置他)
                     Call PROP_SET(.dblZOffSet, .dblZWaitOffset,
                                   gSysPrm.stDEV.gfTrimX, gSysPrm.stDEV.gfTrimY, gSysPrm.stDEV.gfSmaxX, gSysPrm.stDEV.gfSmaxY)
@@ -5398,17 +5743,16 @@ STP_ERR:
         Dim StartPosTbl(,) As Double                                    ' カット開始位置テーブル
         Dim TblOfsX As Double
         Dim TblOfsY As Double
+        Dim dStartPointX As Double, dStartPointY As Double              ' V6.1.4.0⑮
 
         ' 外部カメラティーチング用パラメータ
-        Dim stPLT As TEACH_PLATE_INFO                             ' プレート情報 (※Teach.OCXで定義)
-        Dim stSTP(MaxCntStep) As TEACH_STEP_INFO                  ' ステップ情報
-        Dim stGRP(MaxCntStep) As TEACH_GROP_INFO                  ' グループ情報
-        Dim stTY2(MaxCntTy2) As TEACH_TY2_INFO                    ' ＴＹ２情報
+        Dim stPLT As TEACH_PLATE_INFO                                   ' プレート情報 (※Teach.OCXで定義)
+        Dim stSTP(MaxCntStep) As TEACH_STEP_INFO                        ' ステップ情報
+        Dim stGRP(MaxCntStep) As TEACH_GROP_INFO                        ' グループ情報
+        Dim stTY2(MaxCntTy2) As TEACH_TY2_INFO                          ' ＴＹ２情報
 
-        Dim dX As Double, dY As Double                          'V5.0.0.6⑫
-
+        Dim dX As Double, dY As Double                                  'V5.0.0.6⑫
         Dim arrayCnt As Integer
-
         Dim parModules As MainModules
         parModules = New MainModules
 
@@ -5438,16 +5782,37 @@ STP_ERR:
                         ' 抵抗番号,カット番号テーブル
                         RnCnTbl(idx, 0) = rn                            ' 抵抗番号
                         RnCnTbl(idx, 1) = cn                            ' カット番号
-                        ' カット開始位置X,Yテーブル
+                        ' カット開始位置X,Yテーブル(StartPosTbl)を設定する
                         If (iAppMode = APP_MODE_TEACH) Then
+                            ' ティーチングの場合
                             StartPosTbl(1, idx) = typResistorInfoArray(rn).ArrCut(cn).dblStartPointX
                             StartPosTbl(2, idx) = typResistorInfoArray(rn).ArrCut(cn).dblStartPointY
                         Else
+                            ' 外部カメラR1ティーチング/外部カメラティーチングの場合
+                            '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                            'If gSysPrm.stCTM.giTEACH_P <> 0 Then      ' ティーチングポイント使用の時
+                            If (gSysPrm.stCTM.giTEACH_P = 1) Then      ' ティーチングポイント/スタートポイントの両方変更?
+                                ' dStartPointX,YにティーチングポイントX,Yを退避する
+                                dStartPointX = typResistorInfoArray(rn).ArrCut(cn).dblTeachPointX
+                                dStartPointY = typResistorInfoArray(rn).ArrCut(cn).dblTeachPointY
+                            Else
+                                ' dStartPointX,YにスタートポイントX,Yを退避する
+                                dStartPointX = typResistorInfoArray(rn).ArrCut(cn).dblStartPointX
+                                dStartPointY = typResistorInfoArray(rn).ArrCut(cn).dblStartPointY
+                            End If
+                            '----- V6.1.4.0⑮↑ -----
                             '----- V1.14.0.0④↓ -----
                             ' 外部カメラの時
-                            dX = typResistorInfoArray(rn).ArrCut(cn).dblStartPointX 'V5.0.0.6⑫
-                            dY = typResistorInfoArray(rn).ArrCut(cn).dblStartPointY 'V5.0.0.6⑫
+                            '----- V6.1.4.0⑮↓ -----
+                            ' dX,dY=スタートポイントX,Y又はティーチングポイントX,Y 
+                            'dX = typResistorInfoArray(rn).ArrCut(cn).dblStartPointX 'V5.0.0.6⑫
+                            'dY = typResistorInfoArray(rn).ArrCut(cn).dblStartPointY 'V5.0.0.6⑫
+                            dX = dStartPointX
+                            dY = dStartPointY
+                            '----- V6.1.4.0⑮↑ -----
                             UpdateByCrossLineToExt(dX, dY)                          'V5.0.0.6⑫
+
+                            ' ティーチング画面のティーチング位置X,Yを設定
                             Select Case gSysPrm.stDEV.giBpDirXy
                                 Case 0 ' x←, y↓
                                     StartPosTbl(1, idx) = dX
@@ -5482,7 +5847,7 @@ STP_ERR:
 
                 ' ティーチングＯＣＸにデータを渡す
                 r = Teaching1.Setup(RnCnTbl, .dblBpOffSetXDir, .dblBpOffSetYDir,
-                                  .dblBlockSizeXDir, .dblBlockSizeYDir, sRName, gSysPrm.stDEV.giBpDirXy)
+                                  .dblBlockSizeXDir, .dblBlockSizeYDir, sRName, gSysPrm.stDEV.giBpDirXy, iAppMode)  ' iAppMode追加 V6.1.4.0⑮
                 If (r <> cFRS_NORMAL) Then                              ' エラー ?
                     Teaching = r                                        ' Return値設定
                     strDAT = "Setup() "
@@ -5499,7 +5864,7 @@ STP_ERR:
                     Teaching = r                                        ' Return値設定
                     GoTo STP_ERR
                 End If
-                '----- V1.13.0.0①↓ -----
+                '----- V1.13.0.0①↑ -----
 
                 ' カット毎のカット位置XYデータをコントロールに渡す
                 idx = 0                                                 ' テーブルインデックス
@@ -5519,7 +5884,7 @@ STP_ERR:
                     TblOfsX = 0.0#
                     TblOfsY = 0.0#
                 Else
-                    ' XYテーブルを第一抵抗の第一カット位置へ移動する
+                    ' XYテーブルを第一抵抗の第一カット位置へ移動する(外部カメラティーチング時)
                     '----- ###249↓ -----
                     'TblOfsX = gSysPrm.stDEV.gfExCmX                     ' 外部カメラオフセットX設定 ###075
                     'TblOfsY = gSysPrm.stDEV.gfExCmY                     ' 外部カメラオフセットY設定 ###075
@@ -5527,28 +5892,63 @@ STP_ERR:
                     'TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
                     'TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
 
+                    '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                    'If gSysPrm.stCTM.giTEACH_P <> 0 Then               ' ティーチングポイント使用の時
+                    If (gSysPrm.stCTM.giTEACH_P = 1) Then               ' ティーチングポイント/スタートポイントの両方変更?
+                        ' dStartPointX,Yに第1抵抗の第1カットのティーチングポイントX,Yを退避する
+                        dStartPointX = typResistorInfoArray(1).ArrCut(1).dblTeachPointX
+                        dStartPointY = typResistorInfoArray(1).ArrCut(1).dblTeachPointY
+                    Else
+                        ' dStartPointX,Yに第1抵抗の第1カットのスタートポイントX,Yを退避する
+                        dStartPointX = typResistorInfoArray(1).ArrCut(1).dblStartPointX
+                        dStartPointY = typResistorInfoArray(1).ArrCut(1).dblStartPointY
+                    End If
+                    '----- V6.1.4.0⑮↑ -----
+                    '----- V6.1.4.0⑮↓ -----
                     ' BP基準コーナーを考慮(INtime側Cmd_Start()参照)
                     Select Case gSysPrm.stDEV.giBpDirXy
                         Case 0 ' 右上(x←, y↓)
-                            TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
-                            TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
+                            TblOfsX = gSysPrm.stDEV.gfExCmX + dStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
+                            TblOfsY = gSysPrm.stDEV.gfExCmY + dStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
                             '----- V1.24.0.0①↓ -----
                             If (gSysPrm.stDEV.giBpSize = BPSIZE_6060) Then
-                                TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX + .dblBpOffSetXDir
-                                TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY + .dblBpOffSetYDir
+                                TblOfsX = gSysPrm.stDEV.gfExCmX + dStartPointX + .dblBpOffSetXDir
+                                TblOfsY = gSysPrm.stDEV.gfExCmY + dStartPointY + .dblBpOffSetYDir
                             End If
                             '----- V1.24.0.0①↑ -----
                         Case 1 ' 左上(x→, y↓)
-                            TblOfsX = (gSysPrm.stDEV.gfExCmX - typResistorInfoArray(1).ArrCut(1).dblStartPointX + (.dblBlockSizeXDir / 2) - .dblBpOffSetXDir) * -1
-                            TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
+                            TblOfsX = (gSysPrm.stDEV.gfExCmX - dStartPointX + (.dblBlockSizeXDir / 2) - .dblBpOffSetXDir) * -1
+                            TblOfsY = gSysPrm.stDEV.gfExCmY + dStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
                         Case 2 ' 右下(x←, y↑)
-                            TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
-                            TblOfsY = (gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY + (.dblBlockSizeYDir / 2) - .dblBpOffSetYDir) * -1
+                            TblOfsX = gSysPrm.stDEV.gfExCmX + dStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
+                            TblOfsY = (gSysPrm.stDEV.gfExCmY + dStartPointY + (.dblBlockSizeYDir / 2) - .dblBpOffSetYDir) * -1
                         Case 3 ' 左下(x→, y↑)
-                            TblOfsX = (gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX + (.dblBlockSizeXDir / 2) - .dblBpOffSetXDir) * -1
-                            TblOfsY = (gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY + (.dblBlockSizeYDir / 2) - .dblBpOffSetYDir) * -1
+                            TblOfsX = (gSysPrm.stDEV.gfExCmX + dStartPointX + (.dblBlockSizeXDir / 2) - .dblBpOffSetXDir) * -1
+                            TblOfsY = (gSysPrm.stDEV.gfExCmY + dStartPointY + (.dblBlockSizeYDir / 2) - .dblBpOffSetYDir) * -1
                     End Select
+
+                    'Select Case gSysPrm.stDEV.giBpDirXy
+                    '    Case 0 ' 右上(x←, y↓)
+                    '        TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
+                    '        TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
+                    '        '----- V1.24.0.0①↓ -----
+                    '        If (gSysPrm.stDEV.giBpSize = BPSIZE_6060) Then
+                    '            TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX + .dblBpOffSetXDir
+                    '            TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY + .dblBpOffSetYDir
+                    '        End If
+                    '        '----- V1.24.0.0①↑ -----
+                    '    Case 1 ' 左上(x→, y↓)
+                    '        TblOfsX = (gSysPrm.stDEV.gfExCmX - typResistorInfoArray(1).ArrCut(1).dblStartPointX + (.dblBlockSizeXDir / 2) - .dblBpOffSetXDir) * -1
+                    '        TblOfsY = gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY - (.dblBlockSizeYDir / 2) + .dblBpOffSetYDir
+                    '    Case 2 ' 右下(x←, y↑)
+                    '        TblOfsX = gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX - (.dblBlockSizeXDir / 2) + .dblBpOffSetXDir
+                    '        TblOfsY = (gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY + (.dblBlockSizeYDir / 2) - .dblBpOffSetYDir) * -1
+                    '    Case 3 ' 左下(x→, y↑)
+                    '        TblOfsX = (gSysPrm.stDEV.gfExCmX + typResistorInfoArray(1).ArrCut(1).dblStartPointX + (.dblBlockSizeXDir / 2) - .dblBpOffSetXDir) * -1
+                    '        TblOfsY = (gSysPrm.stDEV.gfExCmY + typResistorInfoArray(1).ArrCut(1).dblStartPointY + (.dblBlockSizeYDir / 2) - .dblBpOffSetYDir) * -1
+                    'End Select
                     '----- ###249↑ -----
+                    '----- V6.1.4.0⑮↑ -----
 
                     ' 外部カメラに切替える
                     Call VideoLibrary1.ChangeCamera(EXTERNAL_CAMERA)
@@ -5573,7 +5973,8 @@ STP_ERR:
                 ' 外部カメラティーチング用パラメータ設定
                 If (iAppMode = APP_MODE_EXCAM_R1TEACH) Or (iAppMode = APP_MODE_EXCAM_TEACH) Then
                     Call VideoLibrary1.ChangeCamera(EXTERNAL_CAMERA)                  ' 外部カメラに切替える'V1.14.0.0①
-                    Call SetExCamTeachParam(iAppMode, pltInfo, stPLT, stSTP, stGRP, stTY2)
+                    'V6.1.4.9①                    Call SetExCamTeachParam(iAppMode, pltInfo, stPLT, stSTP, stGRP, stTY2)
+                    Call SetExCamTeachParam(iAppMode, pltInfo, stPLT, stSTP, stGRP, stTY2, gTkyKnd)  'V6.1.4.9① gTkyKnd追加
                     Call Teaching1.SetupExcamTeach(iAppMode, stPLT, stSTP, stGRP, stTY2)
                 End If
 
@@ -5648,21 +6049,51 @@ STP_ERR:
                                         '----- V1.14.0.0④↓ -----
                                         ' 外部カメラの時
                                         UpdateByCrossLineToIN(StartPosTbl(1, idx), StartPosTbl(2, idx)) 'V5.0.0.6⑫
+                                        '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                                        ' dStartPointX,Y = スタートポイントX,YまたはティーチングポイントX,Y
                                         Select Case gSysPrm.stDEV.giBpDirXy
                                             Case 0 ' x←, y↓
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx)
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx)
+                                                dStartPointX = StartPosTbl(1, idx)
+                                                dStartPointY = StartPosTbl(2, idx)
                                             Case 1 ' x→, y↓(X反転)
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx) * -1
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx)
+                                                dStartPointX = StartPosTbl(1, idx) * -1
+                                                dStartPointY = StartPosTbl(2, idx)
                                             Case 2 ' x←, y↑(Y反転)
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx)
+                                                dStartPointX = StartPosTbl(1, idx)
                                                 typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx) * -1
                                             Case 3 ' x→, y↑(XY反転)
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx) * -1
-                                                typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx) * -1
+                                                dStartPointX = StartPosTbl(1, idx) * -1
+                                                dStartPointY = StartPosTbl(2, idx) * -1
+
+                                                'Case 0 ' x←, y↓
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx)
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx)
+                                                'Case 1 ' x→, y↓(X反転)
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx) * -1
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx)
+                                                'Case 2 ' x←, y↑(Y反転)
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx)
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx) * -1
+                                                'Case 3 ' x→, y↑(XY反転)
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = StartPosTbl(1, idx) * -1
+                                                '    typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = StartPosTbl(2, idx) * -1
                                         End Select
                                         '----- V1.14.0.0④↑ -----
+
+                                        'If gSysPrm.stCTM.giTEACH_P <> 0 Then      ' ティーチングポイント使用の時
+                                        If (gSysPrm.stCTM.giTEACH_P = 1) Then      ' ティーチングポイント/スタートポイントの両方変更?
+                                            ' スタートポイントX,Yを、ティーチングポイントとの差分を加算して更新
+                                            typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = typResistorInfoArray(rn).ArrCut(cn).dblStartPointX + (dStartPointX - typResistorInfoArray(rn).ArrCut(cn).dblTeachPointX)
+                                            typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = typResistorInfoArray(rn).ArrCut(cn).dblStartPointY + (dStartPointY - typResistorInfoArray(rn).ArrCut(cn).dblTeachPointY)
+                                            ' ティーチングポイントX,Y更新
+                                            typResistorInfoArray(rn).ArrCut(cn).dblTeachPointX = dStartPointX
+                                            typResistorInfoArray(rn).ArrCut(cn).dblTeachPointY = dStartPointY
+                                        Else
+                                            ' スタートポイントX,Y更新
+                                            typResistorInfoArray(rn).ArrCut(cn).dblStartPointX = dStartPointX
+                                            typResistorInfoArray(rn).ArrCut(cn).dblStartPointY = dStartPointY
+                                        End If
+                                        '----- V6.1.4.0⑮↑ -----
                                     End If
                                 Next cn
                             Next rn
@@ -5753,76 +6184,191 @@ STP_ERR:
     ''' <summary>外部R1ティーチングの1カット目のパラメータを全抵抗に展開する</summary>
     '''=========================================================================
     Private Sub SetR1Data2AllResistor(ByRef startPosTbl(,) As Double)
+
         Dim strMsg As String
         Dim deltaX(), deltaY() As Double
         Dim maxCutCnt As Integer
         Dim cutCnt As Integer
         Dim rno As Integer
+        Dim dStartPointX As Double, dStartPointY As Double              ' V6.1.4.0⑮
+        Dim iCircuitCnt As Integer                                      'V6.1.4.9①　typResistorInfoArray(1)をtypResistorInfoArray(iCircuitCnt)に置き換え
+        Dim iMaxCircuitCnt As Integer                                   'V6.1.4.9①　サーキット内抵抗数
+        Dim iTotalCutCnt As Integer = 0                                 'V6.1.4.9①　積算カット数（DllTeach内のテーブル配列)
+        Dim iNgMarkNo As Integer = 0                                    'V6.1.4.9①  ＮＧマークは、第１抵抗第１カットで更新する。
+
         Try
-            '現在の先頭データと変更値から差分を換算し、全抵抗に展開する。
-            maxCutCnt = typResistorInfoArray(1).intCutCount
-            ReDim Preserve deltaX(maxCutCnt)
-            ReDim Preserve deltaY(maxCutCnt)
+            'V6.1.4.9①↓
+            If gTkyKnd = KND_CHIP Then
+                iMaxCircuitCnt = 1
+            Else
+                iMaxCircuitCnt = typPlateInfo.intResistCntInGroup
+            End If
+            For iCircuitCnt = 1 To iMaxCircuitCnt
+                'V6.1.4.9①↑
 
-            '先頭抵抗のカット数分差分を求める
-            For cutCnt = 1 To maxCutCnt
-                ' ----- V1.14.0.0④↓ -----
-                'deltaX(cutCnt) = startPosTbl(1, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
-                'deltaY(cutCnt) = startPosTbl(2, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
-                UpdateByCrossLineToIN(startPosTbl(1, cutCnt), startPosTbl(2, cutCnt)) 'V5.0.0.6⑫
-                Select Case gSysPrm.stDEV.giBpDirXy
-                    Case 0 ' x←, y↓
-                        deltaX(cutCnt) = startPosTbl(1, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
-                        deltaY(cutCnt) = startPosTbl(2, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
-                    Case 1 ' x→, y↓(X反転)
-                        deltaX(cutCnt) = (startPosTbl(1, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
-                        deltaY(cutCnt) = startPosTbl(2, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
-                    Case 2 ' x←, y↑(Y反転)
-                        deltaX(cutCnt) = startPosTbl(1, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
-                        deltaY(cutCnt) = (startPosTbl(2, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
-                    Case 3 ' x→, y↑(XY反転)
-                        deltaX(cutCnt) = (startPosTbl(1, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
-                        deltaY(cutCnt) = (startPosTbl(2, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
-                End Select
-                '----- V1.14.0.0④↑ -----
+                '現在の先頭データと変更値から差分を換算し、全抵抗に展開する。
+                maxCutCnt = typResistorInfoArray(iCircuitCnt).intCutCount
+                ReDim Preserve deltaX(maxCutCnt)                            ' 差分格納域X
+                ReDim Preserve deltaY(maxCutCnt)                            ' 差分格納域Y
 
-                '先頭のデータを更新
-                ' ----- V1.14.0.0④↓ -----
-                'typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt)
-                'typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt)
-                Select Case gSysPrm.stDEV.giBpDirXy
-                    Case 0 ' x←, y↓
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt)
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt)
-                    Case 1 ' x→, y↓(X反転)
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt) * -1
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt)
-                    Case 2 ' x←, y↑(Y反転)
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt)
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt) * -1
-                    Case 3 ' x→, y↑(XY反転)
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt) * -1
-                        typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt) * -1
-                End Select
-                '----- V1.14.0.0④↑ -----
-            Next
+                ' 先頭抵抗のカット数分差分を求める
+                For cutCnt = 1 To maxCutCnt                                 ' 先頭抵抗のカット数分繰り返す  
+                    iTotalCutCnt = iTotalCutCnt + 1                         ' 以下startPosTblテーブルのcutCntはiTotalCutCntへ変更 'V6.1.4.9①
+                    '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                    'If gSysPrm.stCTM.giTEACH_P <> 0 Then                   ' ティーチングポイント使用の時
+                    If (gSysPrm.stCTM.giTEACH_P = 1) Then                   ' ティーチングポイント/スタートポイントの両方変更?
+                        ' dStartPointX,YにティーチングポイントX,Yを退避する
+                        dStartPointX = typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblTeachPointX
+                        dStartPointY = typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblTeachPointY
+                    Else
+                        ' dStartPointX,YにスタートポイントX,Yを退避する
+                        dStartPointX = typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointX
+                        dStartPointY = typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointY
+                    End If
+                    '----- V6.1.4.0⑮↑ -----
+                    ' ----- V1.14.0.0④↓ -----
+                    'deltaX(cutCnt) = startPosTbl(1, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
+                    'deltaY(cutCnt) = startPosTbl(2, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
+                    UpdateByCrossLineToIN(startPosTbl(1, iTotalCutCnt), startPosTbl(2, iTotalCutCnt)) 'V5.0.0.6⑫
 
-            '抵抗数分2番目以降のカットに対して、差分を加算していく。
-            For rno = 2 To gRegistorCnt
-                For cutCnt = 1 To typResistorInfoArray(rno).intCutCount
-                    'カット数が先頭より多い場合は抜ける
-                    If (cutCnt > UBound(deltaX)) Then
+                    ' 差分格納域deltaX,YにスタートポイントX,Y(又はティーチングポイントX,Y)の差分を設定する
+                    Select Case gSysPrm.stDEV.giBpDirXy
+                    '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                        Case 0 ' x←, y↓
+                            deltaX(cutCnt) = startPosTbl(1, iTotalCutCnt) - dStartPointX
+                            deltaY(cutCnt) = startPosTbl(2, iTotalCutCnt) - dStartPointY
+                        Case 1 ' x→, y↓(X反転)
+                            deltaX(cutCnt) = (startPosTbl(1, iTotalCutCnt) * -1) - dStartPointX
+                            deltaY(cutCnt) = startPosTbl(2, iTotalCutCnt) - dStartPointY
+                        Case 2 ' x←, y↑(Y反転)
+                            deltaX(cutCnt) = startPosTbl(1, iTotalCutCnt) - dStartPointX
+                            deltaY(cutCnt) = (startPosTbl(2, iTotalCutCnt) * -1) - dStartPointY
+                        Case 3 ' x→, y↑(XY反転)
+                            deltaX(cutCnt) = (startPosTbl(1, iTotalCutCnt) * -1) - dStartPointX
+                            deltaY(cutCnt) = (startPosTbl(2, iTotalCutCnt) * -1) - dStartPointY
+
+                            'Case 0 ' x←, y↓
+                            '    deltaX(cutCnt) = startPosTbl(1, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
+                            '    deltaY(cutCnt) = startPosTbl(2, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
+                            'Case 1 ' x→, y↓(X反転)
+                            '    deltaX(cutCnt) = (startPosTbl(1, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
+                            '    deltaY(cutCnt) = startPosTbl(2, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
+                            'Case 2 ' x←, y↑(Y反転)
+                            '    deltaX(cutCnt) = startPosTbl(1, cutCnt) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
+                            '    deltaY(cutCnt) = (startPosTbl(2, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
+                            'Case 3 ' x→, y↑(XY反転)
+                            '    deltaX(cutCnt) = (startPosTbl(1, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX
+                            '    deltaY(cutCnt) = (startPosTbl(2, cutCnt) * -1) - typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY
+                            '----- V6.1.4.0⑮↑ -----
+                    End Select
+                    '----- V1.14.0.0④↑ -----
+
+                    ' 先頭のデータを更新
+                    ' ----- V1.14.0.0④↓ -----
+                    'typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt)
+                    'typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt)
+
+                    ' dStartPointX,Y = ティーチング画面のティーチング位置X,Y
+                    Select Case gSysPrm.stDEV.giBpDirXy
+                    '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                        Case 0 ' x←, y↓
+                            dStartPointX = startPosTbl(1, iTotalCutCnt)
+                            dStartPointY = startPosTbl(2, iTotalCutCnt)
+                        Case 1 ' x→, y↓(X反転)
+                            dStartPointX = startPosTbl(1, iTotalCutCnt) * -1
+                            dStartPointY = startPosTbl(2, iTotalCutCnt)
+                        Case 2 ' x←, y↑(Y反転)
+                            dStartPointX = startPosTbl(1, iTotalCutCnt)
+                            dStartPointY = startPosTbl(2, iTotalCutCnt) * -1
+                        Case 3 ' x→, y↑(XY反転)
+                            dStartPointX = startPosTbl(1, iTotalCutCnt) * -1
+                            dStartPointY = startPosTbl(2, iTotalCutCnt) * -1
+
+                            'Case 0 ' x←, y↓
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt)
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt)
+                            'Case 1 ' x→, y↓(X反転)
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt) * -1
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt)
+                            'Case 2 ' x←, y↑(Y反転)
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt)
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt) * -1
+                            'Case 3 ' x→, y↑(XY反転)
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointX = startPosTbl(1, cutCnt) * -1
+                            '    typResistorInfoArray(1).ArrCut(cutCnt).dblStartPointY = startPosTbl(2, cutCnt) * -1
+                            '----- V6.1.4.0⑮↑ -----
+                    End Select
+                    '----- V1.14.0.0④↑ -----
+                    '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                    'If gSysPrm.stCTM.giTEACH_P <> 0 Then                   ' ティーチングポイント使用の時
+                    If (gSysPrm.stCTM.giTEACH_P = 1) Then                   ' ティーチングポイント/スタートポイントの両方変更?
+                        ' ティーチングポイントX,Y更新
+                        typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblTeachPointX = dStartPointX
+                        typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblTeachPointY = dStartPointY
+                        ' スタートポイントX,Yを差分を加算して更新
+                        typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointX = typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointX + deltaX(cutCnt)
+                        typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointY = typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointY + deltaY(cutCnt)
+                    Else
+                        'スタートポイントX,Y更新
+                        typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointX = dStartPointX
+                        typResistorInfoArray(iCircuitCnt).ArrCut(cutCnt).dblStartPointY = dStartPointY
+                    End If
+                    '----- V6.1.4.0⑮↑ -----
+                Next
+
+                ' 抵抗数分2番目以降のカットに対して、差分を加算していく。
+                'V6.1.4.9①                For rno = 2 To gRegistorCnt
+                For rno = iCircuitCnt + iMaxCircuitCnt To gRegistorCnt Step iMaxCircuitCnt           'V6.1.4.9①
+                    If typResistorInfoArray(rno).intResNo > 1000 Then
+                        iNgMarkNo = rno
                         Exit For
                     End If
+                    For cutCnt = 1 To typResistorInfoArray(rno).intCutCount
+                        ' カット数が先頭より多い場合は抜ける
+                        If (cutCnt > UBound(deltaX)) Then
+                            Exit For
+                        End If
 
-                    'X座標
-                    typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointX =
-                            typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointX + deltaX(cutCnt)
-                    'Y座標
-                    typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointY =
-                            typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointY + deltaY(cutCnt)
+                        ' X座標
+                        typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointX =
+                                    typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointX + deltaX(cutCnt)
+                        ' Y座標
+                        typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointY =
+                                    typResistorInfoArray(rno).ArrCut(cutCnt).dblStartPointY + deltaY(cutCnt)
+
+                        '----- V6.1.4.0⑮↓(KOA EW殿SL432RD対応) -----
+                        ' ティーチングポイントを差分を加算して更新
+                        'If gSysPrm.stCTM.giTEACH_P <> 0 Then                   ' ティーチングポイント使用の時
+                        If (gSysPrm.stCTM.giTEACH_P = 1) Then                   ' ティーチングポイント/スタートポイントの両方変更?
+                            typResistorInfoArray(rno).ArrCut(cutCnt).dblTeachPointX = typResistorInfoArray(rno).ArrCut(cutCnt).dblTeachPointX + deltaX(cutCnt)
+                            typResistorInfoArray(rno).ArrCut(cutCnt).dblTeachPointY = typResistorInfoArray(rno).ArrCut(cutCnt).dblTeachPointY + deltaY(cutCnt)
+                        End If
+                        '----- V6.1.4.0⑮↑ -----
+                    Next
                 Next
-            Next
+                'V6.1.4.9①↓NGマーク番号有りの時は、マーキング位置に第１抵抗第１カットの情報を反映する。
+                If iNgMarkNo > 0 And iCircuitCnt = 1 Then
+                    'マーキングは、更新しない。
+                    'For rno = iNgMarkNo To gRegistorCnt
+                    '    For cutCnt = 1 To typResistorInfoArray(rno).intCutCount
+                    '        ' X座標
+                    '        typResistorInfoArray(rno).ArrCut(1).dblStartPointX =
+                    '        typResistorInfoArray(rno).ArrCut(1).dblStartPointX + deltaX(1)
+                    '        ' Y座標
+                    '        typResistorInfoArray(rno).ArrCut(1).dblStartPointY =
+                    '        typResistorInfoArray(rno).ArrCut(1).dblStartPointY + deltaY(1)
+
+                    '        ' ティーチングポイントを差分を加算して更新
+                    '        'If gSysPrm.stCTM.giTEACH_P <> 0 Then                   ' ティーチングポイント使用の時
+                    '        If (gSysPrm.stCTM.giTEACH_P = 1) Then                   ' ティーチングポイント/スタートポイントの両方変更?
+                    '            typResistorInfoArray(rno).ArrCut(1).dblTeachPointX = typResistorInfoArray(rno).ArrCut(1).dblTeachPointX + deltaX(1)
+                    '            typResistorInfoArray(rno).ArrCut(1).dblTeachPointY = typResistorInfoArray(rno).ArrCut(1).dblTeachPointY + deltaY(1)
+                    '        End If
+                    '    Next
+                    'Next
+                End If
+                'V6.1.4.9①↑
+            Next                                                        'V6.1.4.9① iCircuitCnt
             Exit Sub
 
         Catch ex As Exception
@@ -5847,16 +6393,18 @@ STP_ERR:
     ''' <param name="stTY2">　 (INP)ＴＹ２情報</param>
     '''=========================================================================
     Private Sub SetExCamTeachParam(ByVal iAppMode As Integer, ByRef pltInfo As PlateInfo, ByRef stPLT As TEACH_PLATE_INFO, ByRef stSTP() As TEACH_STEP_INFO,
-                                   ByRef stGRP() As TEACH_GROP_INFO, ByRef stTY2() As TEACH_TY2_INFO)
+                                   ByRef stGRP() As TEACH_GROP_INFO, ByRef stTY2() As TEACH_TY2_INFO, Optional ByVal iTkyKnd As Short = 1)  'V6.1.4.9① アプリケーション種別iTkyKnd追加
 
         Dim IDX As Integer
         Dim strMSG As String                                                    ' メッセージ編集域
 
         Try
             With pltInfo
+                stPLT.iTkyKnd = iTkyKnd                                         'アプリケーション種別 V6.1.4.9①
                 ' プレート情報
                 stPLT.intResistDir = .intResistDir                              ' 抵抗並び方向
-                stPLT.intResistCntInGroup = .intResistCntInBlock                ' ブロック内抵抗数
+                'V6.1.4.9①                stPLT.intResistCntInGroup = .intResistCntInBlock                ' ブロック内抵抗数
+                stPLT.intResistCntInGroup = .intResistCntInGroup                '  1グループ内(1サーキット内)抵抗数
                 stPLT.intBlockCntXDir = .intBlockCntXDir                        ' ブロック数Ｘ
                 stPLT.intBlockCntYDir = .intBlockCntYDir                        ' ブロック数Ｙ
                 stPLT.intGroupCntInBlockXBp = .intGroupCntInBlockXBp            ' ブロック内BPグループ数(X方向）
@@ -6607,9 +7155,11 @@ STP_START:
             VideoLibrary1.pfBlock_y = typPlateInfo.dblBlockSizeYDir     ' Block Size Y
             VideoLibrary1.zwaitpos = typPlateInfo.dblZWaitOffset        ' Z PROBE OFF OFFSET
             'VideoLibrary1.ThetaRCenterX = gSysPrm.stDEV.gfRot_X1        ' 回転中心座標 X mm
-            VideoLibrary1.ThetaRCenterX = gSysPrm.stDEV.gfRot_X1 + correctTrimPosX + clampLessOffsetX   ' 回転中心座標 X mm  'V5.0.0.9③
+            'V6.1.1.0⑰            VideoLibrary1.ThetaRCenterX = gSysPrm.stDEV.gfRot_X1 + correctTrimPosX + clampLessOffsetX   ' 回転中心座標 X mm  'V5.0.0.9③
+            VideoLibrary1.ThetaRCenterX = gSysPrm.stDEV.gfRot_X1   ' 回転中心座標 X mm  'V5.0.0.9③
             'VideoLibrary1.ThetaRCenterY = gSysPrm.stDEV.gfRot_Y1        ' 回転中心座標 Y mm
-            VideoLibrary1.ThetaRCenterY = gSysPrm.stDEV.gfRot_Y1 + correctTrimPosY + clampLessOffsetY   ' 回転中心座標 Y mm  'V5.0.0.9③
+            ''V6.1.1.0⑰            VideoLibrary1.ThetaRCenterY = gSysPrm.stDEV.gfRot_Y1 + correctTrimPosY + clampLessOffsetY   ' 回転中心座標 Y mm  'V5.0.0.9③
+            VideoLibrary1.ThetaRCenterY = gSysPrm.stDEV.gfRot_Y1   ' 回転中心座標 Y mm  'V5.0.0.9③
             VideoLibrary1.PP18 = 0                                      ' Z待機位置
             VideoLibrary1.pfStgOffX = typPlateInfo.dblTableOffsetXDir   ' Trim Position Offset Y(mm) 'V1.13.0.0③
             VideoLibrary1.pfStgOffY = typPlateInfo.dblTableOffsetYDir   ' Trim Position Offset Y(mm) 'V1.13.0.0③
@@ -6713,14 +7263,18 @@ STP_START:
             r = ThetaCorrection(gfCorrectPosX, gfCorrectPosY, results, doAlign, doRough)  'θ補正実行
             If (r <> cFRS_NORMAL) AndAlso (cFRS_ERR_PT2 <> r) Then      ' ERROR ?       ' 閾値ｴﾗｰではない？ 'V5.0.0.9⑤
                 ' パターン検出できなかった場合
-                If (r <= cFRS_VIDEO_PTN) Then                           ' パターン認識エラー ?
+                'V6.1.4.16①↓
+                If (r <= ((-1) * ERR_TIMEOUT_BASE)) Then                            ' INtime側でステージ敬エラーが発生
+                    'If (r <= cFRS_VIDEO_PTN) Then                           ' パターン認識エラー ?
+                ElseIf (r <= cFRS_VIDEO_PTN) Then                           ' パターン認識エラー ?
+                    'V6.1.4.16①↑
                     r = cFRS_ERR_PTN                                    ' Return値 = パターン認識エラー
                 End If
                 Return (r)
             End If
 
 #If True Then   'V5.0.0.9⑤
-            If (0 < results.Count) Then
+                If (0 < results.Count) Then
 
                 Dim sb As New StringBuilder(256)
 
@@ -7213,6 +7767,35 @@ STP_START:
                     ret = (cFRS_ERR_PT2)                    ' Return値 = パターン認識エラー(閾値エラー)
                 End If
             End If
+
+            'V4.7.3.2①カット位置ずれ解析用↓
+            If gbThetaCorrectionLogOut Then
+                Dim strLogMes As String = ""
+                ' θ補正表示情報設定(日本語)
+                strLogMes = "θ角度=," & tci.fTheta.ToString("0.0000") & ","
+                If (reviseMode = 2) Then                        ' 自動+微調の場合
+                    strLogMes = "θ角度=," & tci.fTheta.ToString("0.0000") & ","
+                    strLogMes = strLogMes & "+," & rotateTheta.ToString("0.0000") & ","
+                End If
+                strLogMes = strLogMes & "トリム位置XY=," & tci.fPosx.ToString("0.0000") & ","
+                strLogMes = strLogMes & tci.fPosy.ToString("0.0000") & ","
+                strLogMes = strLogMes & "ずれ量XY=," & tci.fCorx.ToString("0.0000") & ","
+                strLogMes = strLogMes & tci.fCory.ToString("0.0000") & ","
+                strLogMes = strLogMes & "補正位置1XY=," & tci.fPos1x.ToString("0.0000") & ","
+                strLogMes = strLogMes & tci.fPos1y.ToString("0.0000") & ","
+                strLogMes = strLogMes & "ずれ量1XY=," & tci.fCor1x.ToString("0.0000") & ","
+                strLogMes = strLogMes & tci.fCor1y.ToString("0.0000") & ","
+                strLogMes = strLogMes & "補正位置2XY=," & tci.fPos2x.ToString("0.0000") & ","
+                strLogMes = strLogMes & tci.fPos2y.ToString("0.0000") & ","
+                strLogMes = strLogMes & "ずれ量2XY=," & tci.fCor2x.ToString("0.0000") & ","
+                strLogMes = strLogMes & tci.fCor2y.ToString("0.0000")
+                If (reviseMode <> 1) Then                       ' 自動補正モード ? '###038
+                    strLogMes = strLogMes & ",一致度POS1=," & tci.fCorV1.ToString("0.0000") & ","
+                    strLogMes = strLogMes & "一致度POS2=," & tci.fCorV2.ToString("0.0000")
+                End If
+                Call System1.OperationLogging(gSysPrm, strLogMes, "ANALYSIS")
+            End If
+            'V4.7.3.2①↑
 
         Catch ex As Exception
             Dim strMSG As String = "i-TKY.GetRecogResult() TRAP ERROR = " & ex.Message
@@ -8327,7 +8910,9 @@ STP_END:
     ''' <summary>自動運転ボタン押下時処理</summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    ''' <remarks>SL436R用</remarks>
+    ''' <remarks>SL436R/SL436S用
+    '''          SL432R(特注)--ロット切替え機能有効時
+    ''' </remarks>
     '''=========================================================================
     Private Sub CmdAutoOperation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmdAutoOperation.Click
 
@@ -8339,6 +8924,16 @@ STP_END:
             '-------------------------------------------------------------------
             '   自動運転前処理
             '-------------------------------------------------------------------
+            '----- V6.1.4.0①↓(KOA EW殿SL432RD対応) -----
+            ' 自動運転実行(ロット切替え機能)
+            If (gSysPrm.stTMN.gsKeimei = MACHINE_TYPE_SL432) Then   ' SL432R系 ? 
+                If (giLotChange = 1) Then                           ' ロット切替え機能有効 ?
+                    LotChangeProc()                                 ' 自動運転実行(ロット切替え機能)
+                End If
+                Exit Sub
+            End If
+            '----- V6.1.4.0①↑ -----
+
             '統計表示処理の状態変更
             '###112　Call RedrawDisplayDistribution(True)
 
@@ -8539,7 +9134,7 @@ STP_END:
             gbFgAutoOperation = True                                    ' 自動運転フラグ(True:自動運転中)
             'Call SetSignalTower(0, 0)                                  ' シグナルタワー制御(手動運転OFF)
             Call LAMP_CTRL(LAMP_RESET, False)                           ' RESETランプOFF '###160
-            Timer1.Enabled = True                                       ' 監視タイマー停止
+            Timer1.Enabled = True                                       ' 監視タイマー開始
             stPRT_ROHM.bAutoMode = True                                 ' トリミング結果印刷データに自動運転を設定(ローム殿特注) V1.18.0.0③
             '----- V6.0.3.0_32↓(ローム殿特注) -----
             If (gSysPrm.stCTM.giSPECIAL = customROHM) Then
@@ -8600,7 +9195,97 @@ STP_ERR:
         End Try
     End Sub
 #End Region
+    '----- V6.1.4.0①↓(KOA EW殿SL432RD対応) -----
+#Region "自動運転(ロット切替え機能)処理(特注)"
+    '''=========================================================================
+    ''' <summary>自動運転(ロット切替え機能)処理</summary>
+    ''' <remarks>KOA EW特注版ではCmdAutoOperation_Click()の中でやっていたが
+    '''          本来はSL436系用なので、SL432R用にCmdAutoOperation_Click()から分離した
+    ''' </remarks>
+    '''=========================================================================
+    Private Sub LotChangeProc()
 
+        Dim r As Integer
+        Dim strMSG As String
+
+        Try
+            '-------------------------------------------------------------------
+            '   自動運転前処理
+            '-------------------------------------------------------------------
+            ' トリマ装置状態を動作中に設定する
+            Call Form1Button(0)                                         ' コマンドボタンを無効にする
+            r = TrimStateOn(F_AUTO, APP_MODE_AUTO, MSG_OPLOG_AUTO, "")
+            If (r <> cFRS_NORMAL) Then GoTo STP_END
+
+            ' 編集中のデータを保存する
+            If (gCmpTrimDataFlg = 1) Then                               ' データ更新フラグ = 1(更新あり)
+                '"編集中のデータを保存しますか？"
+                r = MsgBox(MSG_AUTO_19, MsgBoxStyle.OkCancel)
+                If (r = MsgBoxResult.Ok) Then
+                    ' データ保存
+                    Call Me.CmdSave_Click(Me.CmdSave, New System.EventArgs())
+                    giAppMode = APP_MODE_AUTO                           ' APP Modeを自動運転モードに戻す(Saveから帰ると0になるため)
+                    gCmpTrimDataFlg = 0                                 ' データ更新フラグ = 0(更新なし)
+                End If
+            End If
+
+            '-------------------------------------------------------------------
+            '   自動運転のためのデータ選択画面を表示する
+            '-------------------------------------------------------------------
+            Call frmAutoObj.ShowDialog()                                ' データ選択画面表示
+            r = frmAutoObj.sGetReturn()                                 ' Return値取得(連続運転動作ﾓｰﾄﾞ(0:ﾏｶﾞｼﾞﾝﾓｰﾄﾞ 1:ﾛｯﾄﾓｰﾄﾞ 2:ｴﾝﾄﾞﾚｽﾓｰﾄﾞ))
+            Me.Refresh()                                                ' 再描画しないと次のSTARTキー押下待ちでも画面表示が残る 
+            If (r = cFRS_ERR_RST) Then GoTo STP_END '                   ' データ選択画面からCancelボタン押下ならトリマ装置状態をアイドル中に設定する(監視タイマー開始)
+
+            ' ローダ状態チェック(自動運転時),ローダが自動に切り替わるまで待つ
+            ' "ローダ信号が手動です", "ローダを自動に切り替えてください", "Cancelボタン押下で処理を終了します"
+            r = Me.System1.Form_Reset(cGMODE_LDR_CHK_AUTO, gSysPrm, giAppMode, gbInitialized, 0, 0, gLoadDTFlag)
+            If (r <> cFRS_NORMAL And r <> cFRS_ERR_RST) Then            ' エラー
+                '----- V6.1.4.0①↓(Dllsystemでメッセージは表示済) -----
+                'MsgBox("i-TKY::Form_Reset(cGMODE_LDR_MAGAGINE_EXCHG) error." + vbCrLf + " Err Code = " + r.ToString)
+                If (r <= cFRS_ERR_EMG) Then                             ' 異常終了レベルのエラー ? 
+                    GoTo STP_ERR                                        ' アプリケーション強制終了
+                End If
+            ElseIf (r = cFRS_ERR_RST) Then                              ' RESET(Cancelボタン)押下 ? 
+                frmAutoObj.SetAutoOpeCancel()                           ' ローダ出力(ON=トリミングＮＧ, OFF=なし)トリミング不良信号を連続自動運転中止通知に使用
+                frmAutoObj.gbFgAutoOperation432 = False                 ' 自動運転フラグ = 自動運転中でない
+                frmAutoObj.AutoOperationEnd()                           ' 連続自動運転終了処理
+                GoTo STP_END
+            End If
+            m_lTrimNgCount = 0                                          ' 連続トリミングＮＧ枚数カウンター V6.1.4.0⑨
+
+            '-------------------------------------------------------------------
+            '   自動運転開始(ローダからのSTART信号を待つ)
+            '-------------------------------------------------------------------
+            Call LAMP_CTRL(LAMP_START, False)                           ' STARTランプOFF
+            Call LAMP_CTRL(LAMP_RESET, False)                           ' RESETランプOFF
+            Timer1.Enabled = True                                       ' 監視タイマー開始(TrimStateOff()↓でやってるけど元のソースに合わせた)
+STP_END:
+            ' 統計表示処理の状態変更
+            Call RedrawDisplayDistribution(False)
+
+            '-------------------------------------------------------------------
+            '   後処理
+            '-------------------------------------------------------------------
+            giAppMode = APP_MODE_AUTO                                   ' アプリケーションモード再設定 
+            Call TrimStateOff()                                         ' トリマ装置状態をアイドル中に設定する(監視タイマー開始)
+            Call Form1Button(1)                                         ' コマンドボタンを有効にする(TrimStateOff()↑でやってるけど)
+            Exit Sub
+
+STP_ERR:
+            ' アプリケーション強制終了
+            Call AppEndDataSave()
+            Call AplicationForcedEnding()
+
+            ' トラップエラー発生時 
+        Catch ex As Exception
+            strMSG = "i-TKY.LotChangeProc() TRAP ERROR = " + ex.Message
+            MsgBox(strMSG)
+            gbFgAutoOperation = False                                   ' 自動運転フラグOFF
+        End Try
+    End Sub
+#End Region
+    '----- V6.1.4.0①↑ -----
 #Region "ローダ原点復帰ボタン押下時処理"
     '''=========================================================================
     ''' <summary>ローダ原点復帰ボタン押下時処理</summary>
@@ -8962,6 +9647,25 @@ STP_END:
     End Sub
 #End Region
     'V4.10.0.0⑨↑
+    '----- V6.1.4.0⑥↓(KOA EW殿SL432RD対応) -----
+#Region "ﾌｫﾙﾀﾞ表示ボタン押下時処理"
+    '''=========================================================================
+    '''<summary>ﾌｫﾙﾀﾞ表示ボタン押下時処理</summary>
+    '''<remarks></remarks>
+    '''=========================================================================
+    Private Sub btnHistoryData_Click(sender As System.Object, e As System.EventArgs) Handles CmdFolderOpen.Click
+
+        Try
+            ' 生産管理ﾃﾞｰﾀﾛｸﾞ保存ﾌｫﾙﾀﾞをｴｸｽﾌﾟﾛｰﾗで開く
+            Call frmAutoObj.ProductControlFolderOpen()
+
+        Catch ex As Exception
+            Dim strMsg As String = "i-TKY.btnHistoryData_Click() TRAP ERROR = " & ex.Message
+            MessageBox.Show(strMsg)
+        End Try
+    End Sub
+#End Region
+    '----- V6.1.4.0⑥↑ -----
 
     '========================================================================================
     '   各コマンド実行処理
@@ -9556,8 +10260,12 @@ STP_END:
                 GoTo STP_ERR_EXIT                           ' ｿﾌﾄ強制終了
             End If
 
-            ' 各コマンド処理実行時のｽﾗｲﾄﾞｶﾊﾞｰ自動ｸﾛｰｽﾞ又はSTART/RESETキー押下待ち
-            r = System1.Form_Reset(cGMODE_START_RESET, gSysPrm, giAppMode, gbInitialized, typPlateInfo.dblZWaitOffset, typPlateInfo.dblZOffSet, gLoadDTFlag)
+            If gbAutoCalibration Then                                   'V6.1.4.2①[自動キャリブレーション補正実行]
+                r = cFRS_NORMAL                                         'V6.1.4.2①
+            Else                                                        'V6.1.4.2①
+                ' 各コマンド処理実行時のｽﾗｲﾄﾞｶﾊﾞｰ自動ｸﾛｰｽﾞ又はSTART/RESETキー押下待ち
+                r = System1.Form_Reset(cGMODE_START_RESET, gSysPrm, giAppMode, gbInitialized, typPlateInfo.dblZWaitOffset, typPlateInfo.dblZOffSet, gLoadDTFlag)
+            End If
             Me.Refresh()
             If (r <= cFRS_ERR_EMG) Then                     ' ｴﾗｰ(非常停止等)ならｿﾌﾄ強制終了
                 GoTo STP_ERR_EXIT
@@ -9851,17 +10559,20 @@ STP_ERR_EXIT:
                 'End If
                 ''----- V1.13.0.0⑧↑ -----
 
-                'スライドカバー自動オープン
-                If (gSysPrm.stSPF.giWithStartSw = 0) Then       ' スタートSW押下待ち（オプション）でない ?
-                    r = System1.Z_COPEN(gSysPrm, iAppMode, giTrimErr, False)
-                    If (r <= cFRS_ERR_EMG) Then GoTo STP_ERR_EXIT ' エラーならソフト強制終了
-                Else
-                    ' インターロック時ならスライドカバー開待ち
-                    If (System1.InterLockSwRead() And BIT_INTERLOCK_DISABLE) = 0 Then
-                        r = System1.Form_Reset(cGMODE_OPT_END, gSysPrm, iAppMode, gbInitialized, typPlateInfo.dblZWaitOffset, typPlateInfo.dblZOffSet, gLoadDTFlag)
-                        If (r <= cFRS_ERR_EMG) Then GoTo STP_ERR_EXIT ' エラーならﾌﾄ強制終了
+                If gbAutoCalibration Then                                   'V6.1.4.2①[自動キャリブレーション補正実行]
+                Else                                                        'V6.1.4.2①
+                    'スライドカバー自動オープン
+                    If (gSysPrm.stSPF.giWithStartSw = 0) Then       ' スタートSW押下待ち（オプション）でない ?
+                        r = System1.Z_COPEN(gSysPrm, iAppMode, giTrimErr, False)
+                        If (r <= cFRS_ERR_EMG) Then GoTo STP_ERR_EXIT ' エラーならソフト強制終了
+                    Else
+                        ' インターロック時ならスライドカバー開待ち
+                        If (System1.InterLockSwRead() And BIT_INTERLOCK_DISABLE) = 0 Then
+                            r = System1.Form_Reset(cGMODE_OPT_END, gSysPrm, iAppMode, gbInitialized, typPlateInfo.dblZWaitOffset, typPlateInfo.dblZOffSet, gLoadDTFlag)
+                            If (r <= cFRS_ERR_EMG) Then GoTo STP_ERR_EXIT ' エラーならﾌﾄ強制終了
+                        End If
                     End If
-                End If
+                End If                                                      'V6.1.4.2①
 
                 '----- V2.0.0.0⑧↓ -----
             Else
@@ -10083,7 +10794,9 @@ RETRY:
             End If
 
             ' 操作ログ出力 V1.13.0.0③
-            Call System1.OperationLogging(gSysPrm, strLOG, "")
+            If gbAutoCalibration = False Then                          'V6.1.4.2①[自動キャリブレーション補正実行]でない時
+                Call System1.OperationLogging(gSysPrm, strLOG, "")
+            End If                                                      'V6.1.4.2①
 
             '----- V1.18.0.1①↓ -----
             ' 画面にコマンド名を表示する
@@ -10144,6 +10857,26 @@ STP_END:
         Dim r As Short
 
         Try
+            'V6.1.4.2①[自動キャリブレーション補正実行]↓
+            If gbAutoCalibration Then
+                Call SetVisiblePropForVideo(True)
+                'V6.1.4.14④↓
+                If (VideoLibrary1.SetTrackBarVisible(False)) Then
+                    Dim sz As New Size(0, 30)
+                    frmHistoryData.Location = Point.Subtract(frmHistoryData.Location, sz)
+                    grpIntegrated.Location = Point.Subtract(grpIntegrated.Location, sz)
+                End If
+                'V6.1.4.14④↑
+                Return (cFRS_NORMAL)
+            End If
+            'V6.1.4.2①↑
+
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                ' ＱＲ読み込み状態の初期化
+                ObjQRCodeReader.ResetQRReadFlag()                       ' ＱＲコード未読み込み状態にリセット
+            End If
+            '----- V6.1.4.0_22↑ -----
 
             '//'V4.0.0.0-90
             CommandEnableSet(True)
@@ -10384,7 +11117,7 @@ STP_END:
                                My.Application.Info.Version.Build.ToString("0") & "." &
                                My.Application.Info.Version.Revision.ToString("0")
             'V4.0.0.0-77↑
-            pstPRM.strTtl(2) = "(c) OMRON LASERFRONT INC."
+            pstPRM.strTtl(2) = "(c) TOWA LASERFRONT CORP."
 
             '----- V3.0.0.0②↓(Ocx→Dllに名称変更) -----
             pstPRM.iVerNum = 19                                         ' バージョン情報の数 ###266
@@ -10964,7 +11697,7 @@ STP_EXIT:
                 Me.System1.giAlarmBuzzer = 1                            ' アラーム音を鳴らす
                 BtnAlarmOnOff.Text = "Buzzer On"
                 BtnAlarmOnOff.BackColor = Color.Lime
-             End If
+            End If
 
 
             ' トラップエラー発生時 
@@ -11328,14 +12061,14 @@ STP_EXIT:
             End If
 
             ' 新規モード時はデータファイル名 = (例 TKY時)"TkyDatayyyymmddhhmmss.tdt"とする
-            '#4.12.2.0⑤            If (gLoadDTFlag = False) Then                               ' 新規モード ?
+            '#4.12.2.0⑤ If (gLoadDTFlag = False) Then                  ' 新規モード ?
             If (gLoadDTFlag = False) OrElse (shiftKeyDown) Then         ' 新規モード     '#4.12.2.0⑤ shiftキー押下時の新規作成追加
                 If (gLoadDTFlag) Then
                     ' shiftキー押下時の新規作成
                     Temporary.Backup()                                  ' トリミングデータ構造体をバックアップする
                 End If
                 Call Init_AllTrmmingData()                              ' ﾄﾘﾐﾝｸﾞﾊﾟﾗﾒｰﾀの初期化
-                'V5.0.0.8①                Call Init_FileVer_Sub()                                 ' ﾌｧｲﾙﾊﾞｰｼﾞｮﾝ設定(CHIP/NET用)
+                'V5.0.0.8① Call Init_FileVer_Sub()                     ' ﾌｧｲﾙﾊﾞｰｼﾞｮﾝ設定(CHIP/NET用)
                 Replace_Data_Extension(gStrTrimFileName)                ' データファイル名 = (例 TKY時)"TkyDatayyyymmddhhmmss.tdt"
                 '                                                       ' プレートデータにデータファイル名を設定する
                 gStrTrimFileName = DATA_DIR_PATH + "\" + gStrTrimFileName
@@ -11374,7 +12107,6 @@ STP_EXIT:
             ' トリミングデータを中間ファイルに書込む
             r = File_Save(strFilePath)
             If (r <> cFRS_NORMAL) Then GoTo STP_WRITE_ERR
-
 
             ''V4.5.0.0⑤ ↓
             ' 統計表示処理の状態変更
@@ -11575,7 +12307,14 @@ STP_EXIT:
 
             ' データファイル名更新
             gStrTrimFileName = typPlateInfo.strDataName
-            LblDataFileName.Text = typPlateInfo.strDataName
+            '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
+            'LblDataFileName.Text = typPlateInfo.strDataName
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                LblDataFileNameText = typPlateInfo.strDataName          ' トリミングデータ名と第１抵抗データ表示域を設定する 
+            Else
+                LblDataFileName.Text = typPlateInfo.strDataName
+            End If
+            '----- V6.1.4.0⑦↑ -----
             'V4.2.0.0③
             If gKeiTyp = KEY_TYPE_RS Then
                 TrimData.SetTrimmingData(gStrTrimFileName)
@@ -11752,7 +12491,15 @@ STP_ERR_DSP:
             Call MsgBox(strMSG, MsgBoxStyle.OkOnly, "")
             Call Z_PRINT(strMSG)                                        ' メッセージ表示(ログ画面)
             gStrTrimFileName = String.Empty                             ' V4.0.0.0-41
-            LblDataFileName.Text = String.Empty                         ' V4.0.0.0-41
+            '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
+            ' トリミングデータ名表示域クリア
+            'LblDataFileName.Text = String.Empty                         ' V4.0.0.0-41
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                LblDataFileNameText = String.Empty                      ' トリミングデータ名表示域と第１抵抗データ表示域クリア  
+            Else
+                LblDataFileName.Text = String.Empty
+            End If
+            '----- V6.1.4.0⑦↑ -----
             gLoadDTFlag = False                                         ' gLoadDTFlag = データロード済フラグOFF
             GoTo STP_END
 
@@ -12064,20 +12811,96 @@ STP_ERR_DSP:
                 ' ローダ自動時で動作中はボタン非活性化 ###035
                 If (giHostMode = cHOSTcMODEcAUTO) And (gbHostConnected = True) Then
                     Call Form1Button(0)                             ' コマンドボタンを非活性化にする
+                    '----- V6.1.4.0_40↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                    If (giLotChange = 1) Then                       ' ロット切替え機能有効 ?
+                        If frmAutoObj.GetAutoOpeCancelStatus() Then ' 自動運転中止 ?
+                            '' 「トリマ動作中(BIT0)」をOFFしてからでないとcmd_ZAtldGet()でローダ自動(BIT1)のままとなる V6.1.4.0_45
+                            'Call SetLoaderIO(0, COM_STS_TRM_STATE)  ' ローダ出力(ON=なし, OFF=トリマ動作中) V6.1.4.0_45
+                            ' "ローダ信号が自動です", "ローダを手動に切り替えてください", "Cancelボタン押下でプログラムを終了します"
+                            r = Me.System1.Form_Reset(cGMODE_LDR_CHK, gSysPrm, giAppMode, gbInitialized, 0, 0, gLoadDTFlag)
+                            If (r <> cFRS_NORMAL And r <> cFRS_ERR_RST) Then ' 非常停止等のエラー ?
+                                'MsgBox("i-TKY.Form_Initialize()::Form_Reset(cGMODE_LDR_CHK) error." + vbCrLf + " Err Code = " + r.ToString)
+                                'End                                ' アプリ終了
+                                GoTo TimerErr                       ' エラーならアプリ強制終了へ
+                            ElseIf (r = cFRS_ERR_RST) Then          ' RESET(Cancelボタン)押下 ? 
+                                If frmAutoObj.gbFgAutoOperation432 = True Then
+                                    ' 連続自動運転終了処理(自動運転終了強制終了時に生産管理データが出力されなかったので追加)
+                                    Call frmAutoObj.AutoOperationEnd()
+                                End If
+                                GoTo TimerErr                       ' アプリ強制終了へ
+                            End If
+                            ' 正常時
+                            Call SetLoaderIO(0, COM_STS_TRM_STATE)  ' ローダ出力(ON=なし, OFF=トリマ動作中)
+                        End If
+                    End If
+                    '----- V6.1.4.0_40↑ -----
                 Else
                     Call Form1Button(1)                             ' コマンドボタンを有効にする
+                    '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                    If (giLotChange = 1) Then                       ' ロット切替え機能有効 ?
+                        If (frmAutoObj.gbFgAutoOperation432 = True) Then    ' 自動運転中 ?
+                            Call frmAutoObj.AutoOperationEnd()              ' 連続自動運転終了処理
+                            ' ローダ出力(ON=なし, OFF=トリマ動作中, NG, パターンNG)
+                            Call SetLoaderIO(0, COM_STS_TRM_STATE Or COM_STS_TRM_NG Or COM_STS_PTN_NG)
+                        End If
+                    End If
+                    '----- V6.1.4.0⑩↑ -----
                 End If
                 'SimpleTrimmer.CommandButtonTutorial()               ' V2.0.0.0⑩ コマンドボタンのチュートリアル
 
-                ' ローダから受信したデータをチェックする
+                '-----------------------------------------------------------------------
+                '   ローダから受信したデータをチェックする
+                '-----------------------------------------------------------------------
                 If gbHostConnected = True And r >= 0 Then           ' ホスト接続でデータ受信 ?
                     If giHostMode = cHOSTcMODEcAUTO Then            ' ﾛｰﾀﾞ = 自動ﾓｰﾄﾞ ?
                         Select Case r
                             ' ﾄﾘﾏｰｽﾀｰﾄ信号受信時
-                            Case LINP_TRM_START
-                                fStartTrim = True
+                            'Case LINP_TRM_START                            'V6.1.4.0⑩
+                            ' トリマースタート信号またはロット切替え信号(特注)受信時
+                            Case LINP_TRM_START, LINP_TRM_LOTCHANGE_START   'V6.1.4.0⑩
+
+                                ' @@@888 ↓
+                                If (frmAutoObj.gbFgAutoOperation432 = False) Then    ' 自動運転中でないのに、ローダからSTART/Lot切り替え信号を受信した
+
+                                    Exit Select
+                                End If
+                                ' @@@888 ↑
+
+
+                                fStartTrim = True                   ' スタートTRIMフラグ=ON
+                                '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応【ロット切替え機能】) -----
+                                If (giLotChange = 1) Then           ' ロット切替え機能有効 ?
+                                    If (r = LINP_TRM_LOTCHANGE_START) Then                  ' 「ロット切替え信号」受信 ?
+                                        If (frmAutoObj.gbFgAutoOperation432 = True) Then    ' 自動運転中 ?
+                                            If frmAutoObj.LotChangeExecute() Then           ' ロット切替え処理 
+                                                fStartTrim = True                           ' スタートTRIMフラグ=ON
+                                                ' V6.1.4.0_35↓
+                                                ' レーザーパワーのモニタリングフラグ設定(0：無し,1：自動運転開始時,2：エントリーロット毎)
+                                                If (giLaserrPowerMonitoring = 2) Then       ' エントリーロット毎にモニタリング ?
+                                                    gbLaserPowerMonitoring = True           ' モニタリングフラグ ON
+                                                Else
+                                                    gbLaserPowerMonitoring = False          ' モニタリングフラグ OFF
+                                                End If
+                                                ' V6.1.4.0_35↑
+                                                'V6.1.4.2①↓
+                                                If Integer.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CALIBRATION_LOTCHANGE_EXEC", "C:\TRIM\tky.ini", "0")) = 1 Then
+                                                    gbAutoCalibrationExecute = True
+                                                End If
+                                                'V6.1.4.2①↑
+                                            Else
+                                                fStartTrim = False                          ' スタートTRIMフラグ=OFF
+                                                frmAutoObj.SetAutoOpeCancel()               ' ローダ出力(ON=トリミングＮＧ, OFF=なし)トリミングＮＧ信号を連続自動運転中止通知に使用
+                                                ' "ロット切り替え信号を受けましたが、次のロットはエントリーされていません。"
+                                                Call Z_PRINT(MSG_166 & vbCrLf)
+                                            End If
+                                        End If
+                                    End If
+                                End If
+                                '----- V6.1.4.0⑩↑ -----
+
+                                ' 操作ログ出力
                                 Call System1.OperationLogging(gSysPrm, MSG_OPLOG_HCMD_TRMCMD, "HOSTCMD")
-                                '###006                                If (System1.InterLockSwRead() And BIT_INTERLOCK_DISABLE) = 0 Then
+                                '###006 If (System1.InterLockSwRead() And BIT_INTERLOCK_DISABLE) = 0 Then
                                 r = INTERLOCK_CHECK(InterlockSts, Sw)               ' インターロック状態取得
                                 If (InterlockSts <> INTERLOCK_STS_DISABLE_NO) Then  ' インターロック状態(解除なし)でない ? ###108
                                     Call ZSELXYZSPD(1)              ' XYZ Slow speed
@@ -12086,22 +12909,23 @@ STP_ERR_DSP:
                                     Call ZSELXYZSPD(0)              ' XYZ Normal speed
                                     gPrevInterlockSw = 0
                                 End If
+
                                 'V5.0.0.6②↓
-                            Case LINP_HST_MOVESUPPLY                        ' コマンドが供給位置移動指示なら
+                            Case LINP_HST_MOVESUPPLY                ' コマンドが供給位置移動指示なら
                                 If gbLoaderSecondPosition And giAppMode = APP_MODE_IDLE Then
-                                    iRtn = Me.System1.EX_SLIDECOVERCHK(1)                   ' スライドカバーチェックしない
+                                    iRtn = Me.System1.EX_SLIDECOVERCHK(1)   ' スライドカバーチェックしない
                                     If (iRtn = cFRS_NORMAL) Then
                                         iRtn = Me.System1.EX_SMOVE2(gSysPrm, basTrimming.GetLoaderBordTableInPosX(), basTrimming.GetLoaderBordTableInPosY())
                                     End If
                                     If (iRtn = cFRS_NORMAL) Then
                                         Call SetLoaderIO(COM_STS_TRM_COMP_SUPPLY, 0)    ' ローダー出力(ON=供給位置移動完了)
-                                        '                                        Call Sub_ATLDSET(COM_STS_TRM_COMP_SUPPLY, COM_STS_TRM_STATE)    ' ローダー出力(ON=供給位置移動完了,OFF=トリマ動作中)
+                                        ' Call Sub_ATLDSET(COM_STS_TRM_COMP_SUPPLY, COM_STS_TRM_STATE)    ' ローダー出力(ON=供給位置移動完了,OFF=トリマ動作中)
                                     Else
                                         Call SetLoaderIO(COM_STS_TRM_ERR, 0)    ' ローダー出力(ON=トリマエラー)
                                         Call Me.System1.TrmMsgBox(gSysPrm, MSG_SPRASH64, MsgBoxStyle.OkOnly, My.Application.Info.Title)    ' "ステージ供給位置移動エラーが発生しました。"
                                         Call SetLoaderIO(0, COM_STS_TRM_ERR)    ' ローダー出力(OFF=トリマエラー)
                                     End If
-                                    iRtn = Me.System1.EX_SLIDECOVERCHK(0)                          ' スライドカバーチェックする。
+                                    iRtn = Me.System1.EX_SLIDECOVERCHK(0)   ' スライドカバーチェックする。
                                     If (iRtn <> cFRS_NORMAL) Then
                                         Call Me.System1.TrmMsgBox(gSysPrm, MSG_SPRASH65, MsgBoxStyle.OkOnly, My.Application.Info.Title)     ' "スライドカバーチェック（EX_SLIDECOVERCHK(0)）設定エラーが発生しました。"
                                     End If
@@ -12342,6 +13166,13 @@ RETRY_VACUME:           ' V1.16.0.2②
                                     End If
                                 ElseIf (r = cFRS_ERR_RST) Then
                                     ' RESET SW押下なら
+                                    'V6.1.4.0_42↓
+                                    ' "スライドカバーを開けてください"表示後スライドカバー開待ち
+                                    r = Me.System1.Form_Reset(cGMODE_OPT_END, gSysPrm, giAppMode, gbInitialized, typPlateInfo.dblZWaitOffset, typPlateInfo.dblZOffSet, gLoadDTFlag)
+                                    If r <= cFRS_ERR_EMG Then
+                                        GoTo TimerErr
+                                    End If
+                                    'V6.1.4.0_42↑ 
                                     Timer1.Enabled = True                                       ' タイマー再起動
                                     Exit Sub
                                 Else
@@ -12411,7 +13242,7 @@ RETRY_VACUME:           ' V1.16.0.2②
 
                         fStartTrim = True                                       ' スタートTRIMフラグON
                         stPRT_ROHM.bAutoMode = False                            ' トリミング結果印刷データに手動運転を設定(ローム殿特注) V1.18.0.0③
-
+                        gbLaserPowerMonitoring = False                          ' 手動時はフルパワー測定を行わない　V6.1.4.6①
                     Else
                         '---------------------------------------------------------------------------
                         '   スライドカバー状態のチェック(SL432R時)
@@ -12467,6 +13298,7 @@ RETRY_VACUME:           ' V1.16.0.2②
                                 fClamp = False
                                 Call System1.OperationLogging(gSysPrm, MSG_OPLOG_TRIMST, "SLIDE COVER CLOSED")
                                 fStartTrim = True           ' スタートTRIMフラグON
+                                gbLaserPowerMonitoring = False                          ' 手動時はフルパワー測定を行わない　V6.1.4.6①
                             End If
                         End If
                     End If
@@ -12494,10 +13326,14 @@ RETRY_VACUME:           ' V1.16.0.2②
                 End If
                 '----- V6.0.3.0③↑ -----
 
-                'V5.0.0.9⑭ ↓ V6.0.3.0⑧
-                Call Me.System1.SetSignalTowerCtrl(Me.System1.SIGNAL_MANUAL)
-                'V5.0.0.9⑭ ↑ V6.0.3.0⑧
-
+                ' 'V6.1.4.15①↓
+                If (giHostMode = cHOSTcMODEcAUTO) And (gbHostConnected = True) Then
+                Else
+                    'V5.0.0.9⑭ ↓ V6.0.3.0⑧
+                    Call Me.System1.SetSignalTowerCtrl(Me.System1.SIGNAL_MANUAL)
+                    'V5.0.0.9⑭ ↑ V6.0.3.0⑧
+                End If
+                ' 'V6.1.4.15①↑
                 'V5.0.0.9⑯              ↓
                 If (1 < giStartBlkAss) Then
                     If (False = chkContinue.Checked) Then
@@ -12522,9 +13358,14 @@ RETRY_VACUME:           ' V1.16.0.2②
                 End If
                 'V5.0.0.9⑯↑
 
-                'V5.0.0.9⑭ ↓ V6.0.3.0⑧
-                Call Me.System1.SetSignalTowerCtrl(Me.System1.SIGNAL_IDLE)
-                'V5.0.0.9⑭ ↑ V6.0.3.0⑧
+                ' 'V6.1.4.15①↓
+                If (giHostMode = cHOSTcMODEcAUTO) And (gbHostConnected = True) Then
+                Else
+                    'V5.0.0.9⑭ ↓ V6.0.3.0⑧
+                    Call Me.System1.SetSignalTowerCtrl(Me.System1.SIGNAL_IDLE)
+                    'V5.0.0.9⑭ ↑ V6.0.3.0⑧
+                End If
+                ' 'V6.1.4.15①↑
 
                 '----- V6.0.3.0③↓ -----
                 If (gSysPrm.stCTM.giSPECIAL = customROHM) Then
@@ -12539,6 +13380,26 @@ RETRY_VACUME:           ' V1.16.0.2②
                 If (r = cFRS_ERR_EMG) Then
                     GoTo TimerErr
                 End If
+
+                '----- V6.1.4.0⑨↓(KOA EW殿SL432RD対応) -----
+                ' 連続トリミングＮＧ枚数のチェック(自動運転中)
+                If frmAutoObj.gbFgAutoOperation432 = True And typPlateInfo.intTrimNgCount > 0 And m_lTrimNgCount >= typPlateInfo.intTrimNgCount Then
+                    ' シグナルタワー制御(赤点滅+ブザー１)
+                    Call Me.System1.SetSignalTowerCtrl(Me.System1.SIGNAL_ALARM)
+                    Call SetLoaderIO(COM_STS_TRM_STATE, &H0)            ' ローダ出力(ON=トリマ動作中, OFF=なし)
+                    ' メッセージ表示してSTARTキー押下待ち "ＮＧ品が指定された枚数連続して発生","",""
+                    r = Sub_CallFrmMsgDisp(Me.System1, cGMODE_MSG_DSP, cFRS_ERR_START, True,
+                            MSG_LOADER_54, "", "", System.Drawing.Color.Red, System.Drawing.Color.Red, System.Drawing.Color.Red)
+                    If (r < cFRS_NORMAL) Then
+                        GoTo TimerErr
+                    End If
+                    ' シグナルタワー制御初期化(全ﾋﾞｯﾄｵﾌ)
+                    Call Me.System1.SetSignalTowerCtrl(Me.System1.SIGNAL_ALL_OFF)
+                    frmAutoObj.SetAutoOpeCancel()                       ' ローダ出力(連続自動運転中断)
+                    Call Me.Refresh()
+                    GoTo TimerExit
+                End If
+                '----- V6.1.4.0⑨↑ -----
 
                 ' ローダ出力(トリマ停止中)(SL432R時) ###035
                 If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then
@@ -12652,7 +13513,12 @@ TimerErr:
             TimerQR.Enabled = False                                     ' 監視タイマー停止
             r = QR_GetReceiveData(QR_Data)
             If (r <> cFRS_NORMAL) Then
-
+                '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+                ' シリアルポートオープンエラーならタイマー停止のまま抜ける(ｵｰﾌﾟﾝｴﾗｰﾒｯｾｰｼﾞが表示されつづける)
+                If (giQrCodeType = QrCodeType.KoaEw) And (QR_Rs_Flag = 0) Then
+                    Exit Sub
+                End If
+                '----- V6.1.4.0_22↑ -----
             Else
                 ' トリマ装置アイドル中でないならNOP(受信データは捨てる)
                 If (giAppMode <> APP_MODE_IDLE) Then
@@ -12664,8 +13530,39 @@ TimerErr:
                 ' 受信データをログ画面に表示
                 If (QR_Data <> "") Then
                     strMSG = "QR Code Receive=" + QR_Data
-                    Call Z_PRINT(strMSG)
+                    '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+                    Debug.WriteLine(strMSG)
+                    If (giQrCodeType = QrCodeType.KoaEw) Then
+                        Call Me.System1.OperationLogging(gSysPrm, strMSG, "QRCODE")
+                    Else
+                        Call Z_PRINT(strMSG)
+                    End If
+                    '----- V6.1.4.0_22↑ -----
                 End If
+
+                '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+                If (giQrCodeType = QrCodeType.KoaEw) AndAlso (gTkyKnd = KND_CHIP) Then               'V6.1.4.10②　(gTkyKnd = KND_CHIP)　判定追加
+                    ' ＱＲコードリーダから受信したデータを処理する
+                    Timer1.Stop()                                      'V6.1.4.14④
+                    Call ObjQRCodeReader.QRCodeDataExecute(QR_Data)
+                    TimerQR.Enabled = True                              ' 監視タイマー開始
+                    Call ZCONRST()                                      'V6.1.4.14④スタートスイッチラッチクリア
+                    Timer1.Start()                                      'V6.1.4.14④
+                    Exit Sub
+                End If
+                '----- V6.1.4.0_22↑ -----
+
+                'V6.1.4.10②
+                If (giQrCodeType = QrCodeType.KoaEw) AndAlso (gTkyKnd = KND_NET) Then
+                    ' ＱＲコードリーダから受信したデータを処理する
+                    Timer1.Stop()                                      'V6.1.4.14④
+                    Call ObjQRCodeReader.QRCodeDataExecuteForTKYNET(QR_Data)
+                    TimerQR.Enabled = True                              ' 監視タイマー開始
+                    Call ZCONRST()                                      'V6.1.4.14④スタートスイッチラッチクリア
+                    Timer1.Start()                                      'V6.1.4.14④
+                    Exit Sub
+                End If
+                'V6.1.4.10②
 
                 ' QRコード受信データから指定の文字列を編集しファイルパスを作成する
                 strQRLoadFileFullPath = GetQrCodeFileName(QR_Data)
@@ -12674,10 +13571,8 @@ TimerErr:
                 Else
                     ' V6.0.3.0④ トリミングデータバックアップ保存 
                     BackupFile = MakeBackupFile(strQRLoadFileFullPath)
-
                     ' 指定のファイルをロードする(読み込むのはマスターのファイルとする) V6.0.3.0_34
                     Call DataLoadQR(strQRLoadFileFullPath)
-
                     '----- V6.0.3.0④↓ -----
                     typPlateInfo.strDataName = strQRLoadFileFullPath    ' プレートデータのトリミングデータファイル名更新
                     ' データファイルの書込み失敗時
@@ -12686,15 +13581,13 @@ TimerErr:
                         Call Z_PRINT(strMSG)
                     End If
                     '----- V6.0.3.0④↑ -----
-
                     '----- V6.0.3.0⑨↓ -----
                     If (gSysPrm.stCTM.giSPECIAL = customROHM) Then
                         ClearDispData()                                 ' V6.0.3.0_32
                         TrimData.SetLotChange()                         ' ロット情報クリア
                     End If
                     '----- V6.0.3.0⑨↑ -----
-
-                    QR_Read_Flg = 1
+                    QR_Read_Flg = 1                                     ' QRｺｰﾄﾞ読み込み判定(0)NG (1)OK
                 End If
             End If
 
@@ -14906,6 +15799,179 @@ STP_END:
 
     End Sub
 
+    '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+#Region "現在読み込まれているデータの第１抵抗のデータを表示"
+    '''=========================================================================
+    ''' <summary>現在読み込まれているデータの第１抵抗のみ以下のデータを表示します。
+    '''          目標値、カットオフ、エッジセンスポイント、（カット６まで）のデータを表示します。
+    ''' </summary>
+    ''' <param name="init">true=表示を初期化</param>
+    ''' <remarks>V6.1.4.0⑦</remarks>
+    '''=========================================================================
+    Public Sub SetFirstResData(Optional ByVal init As Boolean = False) ' V6.1.4.0_22
+
+        Const BLANK As String = "----"
+
+        Try
+            If gTkyKnd = KND_CHIP Then  'V6.1.4.14①　CHIPの場合は従来通り
+                Me.tlpFirstResData.SuspendLayout()
+
+                ' 表示を初期化する
+                lblFrdNomVal.Text = BLANK
+                With Me.tlpFirstResData
+                    For i As Integer = 1 To 6 Step 1
+                        .Controls("lblFrdC" & i).Text = BLANK
+                        .Controls("lblFrdE" & i).Text = BLANK
+                    Next i
+                End With
+
+                If (False = init) Then
+                    If (typResistorInfoArray Is Nothing) Then Return
+
+                    Dim tmpRes As ResistorInfo = typResistorInfoArray(1)
+                    lblFrdNomVal.Text = String.Format("{0:F5}", tmpRes.dblTrimTargetVal)
+
+                    Dim tmpCut() As CutList = tmpRes.ArrCut
+                    With Me.tlpFirstResData
+                        If (tmpCut IsNot Nothing) AndAlso (tmpRes.intCutCount <= tmpCut.Length) Then
+                            Dim min As Integer = Math.Min(tmpRes.intCutCount, tmpCut.Length)
+                            min = Math.Min(min, 6)
+                            ' 最大6ｶｯﾄまで第1抵抗のｶｯﾄﾃﾞｰﾀを表示する
+                            For i As Integer = 1 To min Step 1
+                                'V6.1.4.0_51                            .Controls("lblFrdC" & i).Text = String.Format("{0:F2}", tmpCut(i).dblCutOff)
+                                .Controls("lblFrdC" & i).Text = String.Format("{0:F3}", tmpCut(i).dblCutOff)        'V6.1.4.0_51
+                                If tmpCut(i).strCutType = CNS_CUTP_ES Or tmpCut(i).strCutType = CNS_CUTP_ES2 Then
+                                    .Controls("lblFrdE" & i).Text = String.Format("{0:F2}", tmpCut(i).dblESPoint)
+                                End If
+                            Next i
+                        End If
+                    End With
+                End If
+                'V6.1.4.14①↓NETの場合を追加
+            Else
+                Me.pnlFirstResDataNET.SuspendLayout()
+
+                ' 表示を初期化する
+                lblNETNomVal.Text = BLANK
+                With Me.tlpFirstResDataNET
+                    For i As Integer = 1 To 4 Step 1
+                        For j As Integer = 1 To 10 Step 1
+                            .Controls("Res" & i & "Cut" & j).Text = BLANK
+                        Next j
+                    Next i
+                End With
+
+                If (False = init) Then
+                    If (typResistorInfoArray Is Nothing) Then Return
+
+                    lblNETNomVal.Text = String.Format("{0:F5}", typResistorInfoArray(1).dblTrimTargetVal)
+
+                    With Me.tlpFirstResDataNET
+                        For i As Integer = 1 To Math.Min(typPlateInfo.intResistCntInGroup, 4) Step 1
+                            For j As Integer = 1 To Math.Min(typResistorInfoArray(i).intCutCount, 10) Step 1
+                                .Controls("Res" & i & "Cut" & j).Text = String.Format("{0:F3}", typResistorInfoArray(i).ArrCut(j).dblCutOff)
+                            Next j
+                        Next i
+                    End With
+                End If
+            End If
+            'V6.1.4.14①↑
+
+        Catch ex As Exception
+            Dim strMsg As String = "i-TKY.SetFirstResData() TRAP ERROR = " & ex.Message
+            MessageBox.Show(strMsg)
+        Finally
+            Me.tlpFirstResData.ResumeLayout()
+        End Try
+    End Sub
+#End Region
+    '----- V6.1.4.0_22↑ -----
+
+    'V4.7.3.5①↓
+    Private Sub CutOffEsEditButton_Click(sender As Object, e As EventArgs) Handles CutOffEsEditButton.Click
+        Try
+
+
+
+            '-------------------------------------------------------------------
+            '   初期処理
+            '-------------------------------------------------------------------
+            Call RedrawDisplayDistribution(True)
+            ' トリマ装置状態を動作中に設定する
+
+            ' ローダへトリマ動作中信号を送信する
+            Call SetLoaderIO(COM_STS_TRM_STATE, &H0)                ' ローダ出力(ON=トリマ動作中, OFF=なし)
+            giAppMode = APP_MODE_EDIT
+
+            If (gLoadDTFlag = False) Then                           ' ﾄﾘﾐﾝｸﾞﾃﾞｰﾀﾌｧｲﾙ未ﾛｰﾄﾞ ?
+                ' "トリミングパラメータデータをロードするか新規作成してください"
+                Call System1.TrmMsgBox(gSysPrm, MSG_14, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, TITLE_4)
+                GoTo STP_END
+            End If
+
+            Call System1.OperationLogging(gSysPrm, "カットオフ値編集", "")
+
+            ' コンソールボタンのランプ状態を設定する
+            Call LAMP_CTRL(LAMP_START, False)                       ' STARTﾗﾝﾌﾟ消灯 
+            Call LAMP_CTRL(LAMP_RESET, False)                       ' RESETﾗﾝﾌﾟ消灯 
+
+            Call Form1Button(0)                                     ' コマンドボタンを無効にする
+
+            If (gTkyKnd = KND_CHIP) Then     'V6.1.4.14①
+                'V6.1.4.14①↓
+                Dim objFormCutOffEsPointEnter As New FormCutOffEsPointEnter()
+                objFormCutOffEsPointEnter.ShowDialog()
+                objFormCutOffEsPointEnter.Dispose()
+            Else
+                Dim objFormCutOffEnter As New FormCutOffEnter()                 'V6.1.4.14①
+                objFormCutOffEnter.ShowDialog()
+                objFormCutOffEnter.Dispose()
+            End If
+            'V6.1.4.14①↑
+
+            '-------------------------------------------------------------------
+            '   終了処理
+            '-------------------------------------------------------------------
+STP_END:
+            '統計表示処理の状態変更
+            Call RedrawDisplayDistribution(False)
+
+            If (gSysPrm.stTMN.gsKeimei = MACHINE_TYPE_SL432) And (gSysPrm.stSPF.giWithStartSw = 0) Then
+                Dim swStatus As Integer
+                Dim interlockStatus As Integer
+                Dim r As Short
+                r = INTERLOCK_CHECK(interlockStatus, swStatus)
+                If r = cFRS_NORMAL And interlockStatus = INTERLOCK_STS_DISABLE_NO Then
+                    ' スライドカバーの状態取得（INTRIMではIO取得のみの為、エラーが返る事はない）
+                    r = SLIDECOVER_GETSTS(swStatus)
+                    If r = cFRS_NORMAL And swStatus = SLIDECOVER_CLOSE Then
+                        ' スライドカバー閉
+                        r = Me.System1.Form_MsgDisp(MSG_SPRASH31, MSG_SPRASH52, &HFF, &HFF0000)
+                    End If
+                End If
+            End If
+
+            ' トリマ装置状態をアイドル中に設定する
+            Call TrimStateOff()
+            Exit Sub
+
+        Catch ex As Exception
+            MessageBox.Show("i-TKY.CutOffEsEditButton_Click() TRAP ERROR = " & ex.Message)
+        End Try
+
+    End Sub
+    'V4.7.3.5①↑
+
+    'V6.1.4.14①↓
+    Private Sub CutOffEsEditButtonNET_Click(sender As Object, e As EventArgs) Handles CutOffEsEditButtonNET.Click
+        Try
+            Call CutOffEsEditButton_Click(sender, e)
+        Catch ex As Exception
+            MessageBox.Show("i-TKY.CutOffEsEditButtonNET_Click() TRAP ERROR = " & ex.Message)
+        End Try
+    End Sub
+    'V6.1.4.14①↑
+
 End Class
 
 #Region "各コマンド実行サブフォーム用共通インターフェース"
@@ -14931,6 +15997,5 @@ Public Interface ICommonMethods
     Sub MoveToCenter(ByVal distanceX As Decimal, ByVal distanceY As Decimal)
 End Interface
 #End Region
-
 
 '=============================== END OF FILE ===============================

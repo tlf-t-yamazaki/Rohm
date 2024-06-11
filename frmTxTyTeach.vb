@@ -642,7 +642,7 @@ STP_RETRY:
                 ' BP移動またはXYﾃｰﾌﾞﾙ移動(第1ｸﾞﾙｰﾌﾟ第1基準位置/第2基準位置)
                 If (giAppMode = APP_MODE_TX) Then                       ' ＴＸティーチング時
                     ' BPを第1基準位置または第2基準位置移動する
-                    r = XYBPMoveSetBlock(iPos, iPos, GrpCnt, RnBn, ChipSize, KJPosX, KJPosY, PosX, PosY)
+                    r = XYBPMoveSetBlock(iPos, iPos, GrpCnt, RnBn, ChipSize, KJPosX, KJPosY, PosX, PosY, GrpNum)     'V6.1.4.9②　サーキット数GrpNum追加
                 Else                                                    ' ＴＹティーチング時
                     ' XYﾃｰﾌﾞﾙを第1基準位置または第2基準位置移動する
                     r = XYTableMoveSetBlock(iPos, iPos, GrpCnt, RnBn, ChipSize, KJPosX, KJPosY, PosX, PosY)
@@ -728,6 +728,7 @@ STP_RETRY:
                         Else
                             r = cFRS_NORMAL                             ' Return値 = グループ間インターバル処理へ 
                         End If
+                        r = cFRS_ERR_START                              'V6.1.4.9②
                         Exit Do
                     Else
                         If (stJOG.Flg = -1) Then
@@ -782,6 +783,11 @@ STP_RETRY:
                 '  ＴＹティーチング時 → チップサイズ = (第2基準点-第1基準点) / (ブロック数-1)) 
                 dblSaveTXChipsizeRelation = CSPoint(1) - CSPoint(0)                ' 補正位置１と２の相対値Ｘ 'V4.5.1.0⑮
                 WkChipSize = System.Math.Abs(CDbl((CSPoint(1) - CSPoint(0)) / (RnBn - 1)))
+                'V6.1.4.9②↓
+                If gTkyKnd = KND_NET And (giAppMode = APP_MODE_TX) Then                       'V4.5.1.1①
+                    WkChipSize = System.Math.Abs(CDbl((CSPoint(1) - CSPoint(0)) / CDbl(RnBn * (GrpNum - 1))))
+                End If                                          'V4.5.1.1①
+                'V6.1.4.9②↑
                 strMSG = WkChipSize.ToString("0.0000")
                 WkChipSize = Double.Parse(strMSG)
                 Call DispChipSize(WkChipSize)                           ' 更新前/更新後のチップサイズを表示する
@@ -934,7 +940,7 @@ STP_RETRY:
                 ' BP移動またはXYテーブル移動(第[GrpCnt]ｸﾞﾙｰﾌﾟ,最終基準位置/第[GrpCnt+1]ｸﾞﾙｰﾌﾟ,先頭基準位置)
                 If (giAppMode = APP_MODE_TX) Then                       ' ＴＸティーチング時
                     ' BPを第[GrpCnt]ｸﾞﾙｰﾌﾟの最終基準位置または第[GrpCnt+1]の先頭基準位置に移動する
-                    r = XYBPMoveSetBlock(iFlg, iPos, GrpCnt, RnBn, ChipSize, KJPosX, KJPosY, PosX, PosY)
+                    r = XYBPMoveSetBlock(iFlg, iPos, GrpCnt, RnBn, ChipSize, KJPosX, KJPosY, PosX, PosY, GrpNum)     'V6.1.4.9②　サーキット数GrpNum追加
                 Else                                                    ' ＴＹティーチング時
                     ' XYテーブルを第[GrpCnt]ｸﾞﾙｰﾌﾟの最終基準位置または第[GrpCnt+1]の先頭基準位置に移動する
                     r = XYTableMoveSetBlock(iFlg, iPos, GrpCnt, RnBn, ChipSize, KJPosX, KJPosY, PosX, PosY)
@@ -992,6 +998,11 @@ STP_RETRY:
                         '                        mdStepInterval(GrpCnt) = CDbl(CSPoint(1) - CSPoint(0))
                         'V4.5.1.0⑬                        mdStepInterval(1) = CDbl(CSPoint(1) - CSPoint(0))
                         mdStepInterval(1) = CDbl(CSPoint(1) - CSPoint(0) - ChipSize)   'V4.5.1.0⑬
+                        'V6.1.4.9②↓
+                        If gTkyKnd = KND_NET Then
+                            mdStepInterval(1) = CDbl(CSPoint(1) - CSPoint(0) - (ChipSize * RnBn))
+                        End If
+                        'V6.1.4.9②↑
                         iFlg = 2                                        ' iFlg = 第nｸﾞﾙｰﾌﾟ、最終基準位置
                         GrpCnt = GrpCnt + 1                             ' グループﾟ数カウンタ更新
                         If (GrpCnt < GrpNum) Then                       ' 最終グループでない ?
@@ -1397,8 +1408,10 @@ STP_RETRY:
     Private Function SetTrimParamToGlobalArea(ByVal BeforChipSize As Double, ByVal ChipSize As Double, ByVal OffSet As Double, ByVal dblBeforeOffSet As Double) As Short 'V4.5.1.0⑬ ADD BeforChipSize ,dblBeforeOffSet
         'Private Function SetTrimParamToGlobalArea(ByVal ChipSize As Double) As Short
 
-        Dim dTeachPos(MaxCntCut) As Double
-        Dim dStartPos(MaxCntCut) As Double
+        'V6.1.4.9②        Dim dTeachPos(MaxCntCut) As Double
+        'V6.1.4.9②        Dim dStartPos(MaxCntCut) As Double
+        Dim dTeachPos(256, MaxCntCut) As Double         'V6.1.4.9②  １サーキット内最大抵抗数は、256個
+        Dim dStartPos(256, MaxCntCut) As Double         'V6.1.4.9②  
         Dim dAddGrpInt As Double
         Dim iChpNum As Short
         Dim iChpCnt As Short
@@ -1416,11 +1429,14 @@ STP_RETRY:
         Dim dDiffChipSize As Double = ChipSize - BeforChipSize          'V4.5.1.0⑬
         Dim iCircuit As Integer                                         'V4.5.1.0⑬
         Dim bCircuit As Boolean                                         'V4.5.1.0⑬
-        Dim iChipInCircuit As Integer                                   'V4.5.1.0⑬
-        Dim dDistance As Double                                         'V4.5.1.0⑬
+        Dim iChipInCircuit As Integer                                   'V4.5.1.0⑬ サーキット内の抵抗番号
+        Dim iCirCuitCnt As Integer                                      'V6.1.4.9② ブロック内のサーキット番号
+        Dim iMarkingNo As Integer = 0                                   'V6.1.4.9②
+        'V6.1.4.9②        Dim dDistance As Double                                         'V4.5.1.0⑬
 
         Try
             ' 初期処理
+            iCirCuitCnt = typPlateInfo.intResistCntInGroup              'V6.1.4.9②
             'V4.5.1.0⑬↓
             ' グループ番号 = 抵抗番号 / 1グループ(1サーキット)内抵抗数
             If (gTkyKnd = KND_NET) And typPlateInfo.intResistCntInGroup > 1 Then
@@ -1432,7 +1448,8 @@ STP_RETRY:
             iChpNum = typPlateInfo.intResistCntInBlock                  ' ブロック内抵抗数(マーキング用抵抗含む)
             'V4.5.1.0⑬↓
             If bCircuit Then
-                r = GetCutPosOffset(OffSet, typPlateInfo.intResistCntInGroup, OffSetReg, cin)        ' BPオフセット量から１抵抗当たりのオフセット量を求める
+                'V6.1.4.9②                r = GetCutPosOffset(OffSet, typPlateInfo.intResistCntInGroup, OffSetReg, cin)        ' BPオフセット量から１抵抗当たりのオフセット量を求める
+                r = GetCutPosOffset(OffSet, typPlateInfo.intGroupCntInBlockXBp, OffSetReg, cin)        ' BPオフセット量から１サーキットサイズ当たりのオフセット量を求める
             Else
                 'V4.5.1.0⑬↑
                 r = GetCutPosOffset(OffSet, iChpNum, OffSetReg, cin)        ' BPオフセット量から１抵抗当たりのオフセット量を求める ###090
@@ -1442,6 +1459,14 @@ STP_RETRY:
 
             ' トリミングパラメータ(カット位置XY)を更新する
             For iChpCnt = 1 To iChpNum                                  ' チップ数(抵抗数)分設定する
+                'V6.1.4.9②↓
+                If bCircuit Then
+                    mPIT = OffSetReg * (typResistorInfoArray(iChpCnt).intCircuitGrp - 1)
+                End If
+                If iMarkingNo = 0 And typResistorInfoArray(iChpCnt).intResNo > 1000 Then
+                    iMarkingNo = iChpCnt                                ' マーキングデータの先頭
+                End If
+                'V6.1.4.9②↑
                 iCutNum = typResistorInfoArray(iChpCnt).intCutCount     ' カット数
                 'V4.5.1.0⑬↓
                 iCircuit = iChpCnt \ typPlateInfo.intResistCntInGroup
@@ -1459,28 +1484,29 @@ STP_RETRY:
                 For iCutCnt = 1 To iCutNum
 
                     ' 第1抵抗の場合
-                    If iChpCnt = 1 Then
+                    'V6.1.4.9②                    If iChpCnt = 1 Then
+                    If iChpCnt = 1 Or (bCircuit And iChpCnt <= iCirCuitCnt) Then             'V6.1.4.9②サーキット内抵抗数も考慮
                         If (typPlateInfo.intResistDir = 0) Then         ' チップ並び方向 = X方向 ?
                             ' ｽﾀｰﾄﾎﾟｲﾝﾄを取得
-                            dStartPos(iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX
+                            dStartPos(iChpCnt, iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX
                             ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄを取得
-                            dTeachPos(iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX
+                            dTeachPos(iChpCnt, iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX
 
                             ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄをｽﾀｰﾄﾎﾟｲﾝﾄにｺﾋﾟｰ    
                             If (gSysPrm.stCTM.giTEACH_P = 2) Then       '  ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄをｽﾀｰﾄﾎﾟｲﾝﾄにｺﾋﾟｰ ?
-                                dStartPos(iCutCnt) = dTeachPos(iCutCnt) '
-                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = dStartPos(iCutCnt)
+                                dStartPos(iChpCnt, iCutCnt) = dTeachPos(iChpCnt, iCutCnt) '
+                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = dStartPos(iChpCnt, iCutCnt)
                             End If
                         Else                                            ' チップ並び方向 = Y方向の場合 
                             ' ｽﾀｰﾄﾎﾟｲﾝﾄを取得
-                            dStartPos(iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY
+                            dStartPos(iChpCnt, iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY
                             ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄを取得
-                            dTeachPos(iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointY
+                            dTeachPos(iChpCnt, iCutCnt) = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointY
 
                             ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄをｽﾀｰﾄﾎﾟｲﾝﾄにｺﾋﾟｰ 
                             If (gSysPrm.stCTM.giTEACH_P = 2) Then       ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄをｽﾀｰﾄﾎﾟｲﾝﾄにｺﾋﾟｰ ?
-                                dStartPos(iCutCnt) = dTeachPos(iCutCnt) '
-                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = dStartPos(iCutCnt)
+                                dStartPos(iChpCnt, iCutCnt) = dTeachPos(iChpCnt, iCutCnt) '
+                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = dStartPos(iChpCnt, iCutCnt)
                             End If
                         End If
 
@@ -1490,23 +1516,64 @@ STP_RETRY:
                             ' ｽﾀｰﾄﾎﾟｲﾝﾄ更新
                             'V4.5.1.0⑬↓
                             If bCircuit Then
-                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX + (dDiffChipSize * (iChpCnt - 1)) + dAddGrpInt - (iCircuit * dblSaveBpGrpItv)
-                                If dblBeforeOffSet <> 0.0 Then
-                                    dDistance = BeforChipSize * (iChpCnt - 1) + (iCircuit * dblSaveBpGrpItv)
-                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY - dblBeforeOffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * BeforChipSize)
+                                If iMarkingNo > 0 Then                  ' マーキング時
+                                    'If iChpCnt > iMarkingNo Then
+                                    '    iCircuit = typResistorInfoArray(iChpCnt).intCircuitGrp - 1
+                                    '    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iMarkingNo).ArrCut(iCutCnt).dblStartPointX + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
+                                    '    ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
+                                    '    If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
+                                    '        ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄ
+                                    '        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX = typResistorInfoArray(iMarkingNo).ArrCut(iCutCnt).dblTeachPointX + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
+                                    '    End If
+                                    '    ' カット位置X,Yにオフセット量を加算する(BP基準コーナーを考慮) ###090
+                                    '    If (bOfsFlg = True) Then
+                                    '        ' 第n抵抗の第nカット位置yにオフセット量を加算する
+                                    '        WkDbl = typResistorInfoArray(iChipInCircuit).ArrCut(iCutCnt).dblStartPointY
+                                    '        Call Form1.Utility1.GetBPmovePitch(cin, DmyX, DmyY, mPIT, typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX, WkDbl, gSysPrm.stDEV.giBpDirXy)
+                                    '        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = WkDbl
+                                    '    End If
+                                    'End If
+                                    Continue For
                                 End If
-                                If OffSet <> 0.0 Then
-                                    dDistance = ChipSize * (iChpCnt - 1) + dAddGrpInt
-                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY + OffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * ChipSize)
-                                End If
-                            Else
-                                'V4.5.1.0⑬↑
-                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = dStartPos(iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = dStartPos(iChipInCircuit, iCutCnt) + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
 
                                 ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
                                 If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
                                     ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄ
-                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX = dTeachPos(iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX = dTeachPos(iChipInCircuit, iCutCnt) + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
+                                End If
+
+                                ' カット位置X,Yにオフセット量を加算する(BP基準コーナーを考慮) ###090
+                                If (bOfsFlg = True) Then
+                                    ' 第n抵抗の第nカット位置yにオフセット量を加算する
+                                    WkDbl = typResistorInfoArray(iChipInCircuit).ArrCut(iCutCnt).dblStartPointY
+                                    Call Form1.Utility1.GetBPmovePitch(cin, DmyX, DmyY, mPIT, typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX, WkDbl, gSysPrm.stDEV.giBpDirXy)
+                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = WkDbl
+                                End If
+
+                                'V6.1.4.9②         typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX + (dDiffChipSize * (iChpCnt - 1)) + dAddGrpInt - (iCircuit * dblSaveBpGrpItv)
+                                'V6.1.4.9②                                If dblBeforeOffSet <> 0.0 Then
+                                'V6.1.4.9②                                    dDistance = BeforChipSize * (iChpCnt - 1) + (iCircuit * dblSaveBpGrpItv)
+                                'V6.1.4.9②                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY - dblBeforeOffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * BeforChipSize)
+                                'V6.1.4.9②                                End If
+                                'V6.1.4.9②                                If OffSet <> 0.0 Then
+                                'V6.1.4.9②                                    dDistance = ChipSize * (iChpCnt - 1) + dAddGrpInt
+                                'V6.1.4.9②                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY + OffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * ChipSize)
+                                'V6.1.4.9②                                End If
+                                'V6.1.4.9②                                '----- V6.1.4.0_48↓ ----- 
+                                'V6.1.4.9②                                ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
+                                'V6.1.4.9②                                If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
+                                'V6.1.4.9②                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX = dTeachPos(iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+                                'V6.1.4.9②                                End If
+                                'V6.1.4.9②                                '----- V6.1.4.0_48↑ ----- 
+                            Else
+                                'V4.5.1.0⑬↑
+                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = dStartPos(1, iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+
+                                ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
+                                If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
+                                    ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄ
+                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointX = dTeachPos(1, iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
                                 End If
 
                                 ' カット位置X,Yにオフセット量を加算する(BP基準コーナーを考慮) ###090
@@ -1531,25 +1598,59 @@ STP_RETRY:
                             ' ｽﾀｰﾄﾎﾟｲﾝﾄ
                             'V4.5.1.0⑬↓
                             If bCircuit Then
-                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY + (dDiffChipSize * (iChpCnt - 1)) + dAddGrpInt - (iCircuit * dblSaveBpGrpItv)
-                                If OffSet <> 0.0 Then
-                                    If dblBeforeOffSet <> 0.0 Then
-                                        dDistance = BeforChipSize * (iChpCnt - 1) + (iCircuit * dblSaveBpGrpItv)
-                                        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX - dblBeforeOffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * BeforChipSize)
-                                    End If
-                                    If OffSet <> 0.0 Then
-                                        dDistance = ChipSize * (iChpCnt - 1) + dAddGrpInt
-                                        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX + OffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * ChipSize)
-                                    End If
+                                If iMarkingNo > 0 Then                  ' マーキング時
+                                    'If iChpCnt > iMarkingNo Then
+                                    '    iCircuit = typResistorInfoArray(iChpCnt).intCircuitGrp - 1
+                                    '    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iMarkingNo).ArrCut(iCutCnt).dblStartPointY + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
+
+                                    '    ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
+                                    '    If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
+                                    '        ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄ
+                                    '        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointY = typResistorInfoArray(iMarkingNo).ArrCut(iCutCnt).dblTeachPointY + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
+                                    '    End If
+
+                                    'End If
+                                    'If (bOfsFlg = True) Then
+                                    '    ' 第n抵抗の第nカット位置xにオフセット量を加算する
+                                    '    WkDbl = typResistorInfoArray(iChipInCircuit).ArrCut(iCutCnt).dblStartPointX
+                                    '    Call Form1.Utility1.GetBPmovePitch(cin, DmyX, DmyY, mPIT, WkDbl, typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY, gSysPrm.stDEV.giBpDirXy)
+                                    '    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = WkDbl
+                                    'End If
+                                    Continue For
                                 End If
-                            Else
-                                'V4.5.1.0⑬↑
-                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = dStartPos(iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = dStartPos(iChipInCircuit, iCutCnt) + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
 
                                 ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
                                 If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
                                     ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄ
-                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointY = dTeachPos(iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointY = dTeachPos(iChipInCircuit, iCutCnt) + (ChipSize * iCirCuitCnt * iCircuit) + dAddGrpInt
+                                End If
+                                If (bOfsFlg = True) Then
+                                    ' 第n抵抗の第nカット位置xにオフセット量を加算する
+                                    WkDbl = typResistorInfoArray(iChipInCircuit).ArrCut(iCutCnt).dblStartPointX
+                                    Call Form1.Utility1.GetBPmovePitch(cin, DmyX, DmyY, mPIT, WkDbl, typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY, gSysPrm.stDEV.giBpDirXy)
+                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = WkDbl
+                                End If
+                                'V6.1.4.9②　CHIPと同じにする。
+                                'V6.1.4.9②   typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY + (dDiffChipSize * (iChpCnt - 1)) + dAddGrpInt - (iCircuit * dblSaveBpGrpItv)
+                                'V6.1.4.9②                                If OffSet <> 0.0 Then
+                                'V6.1.4.9②                                    If dblBeforeOffSet <> 0.0 Then
+                                'V6.1.4.9②                                        dDistance = BeforChipSize * (iChpCnt - 1) + (iCircuit * dblSaveBpGrpItv)
+                                'V6.1.4.9②                                        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX - dblBeforeOffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * BeforChipSize)
+                                'V6.1.4.9②                                    End If
+                                'V6.1.4.9②                                    If OffSet <> 0.0 Then
+                                'V6.1.4.9②                                        dDistance = ChipSize * (iChpCnt - 1) + dAddGrpInt
+                                'V6.1.4.9②                                        typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX = typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointX + OffSet * dDistance / ((typPlateInfo.intResistCntInGroup - 1) * ChipSize)
+                                'V6.1.4.9②                                    End If
+                                'V6.1.4.9②                                End If
+                            Else
+                                'V4.5.1.0⑬↑
+                                typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblStartPointY = dStartPos(1, iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
+
+                                ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄへ反映
+                                If (gSysPrm.stCTM.giTEACH_P = 1) Or (gSysPrm.stCTM.giTEACH_P = 2) Then
+                                    ' ﾃｨｰﾁﾝｸﾞﾎﾟｲﾝﾄ
+                                    typResistorInfoArray(iChpCnt).ArrCut(iCutCnt).dblTeachPointY = dTeachPos(1, iCutCnt) + (ChipSize * (iChpCnt - 1)) + dAddGrpInt
                                 End If
 
                                 If (bOfsFlg = True) Then
@@ -1825,11 +1926,11 @@ STP_RETRY:
 
         Try
             ' グリッドの表示/非表示を設定する
-            If (GrpNum <= 1) Then                                   ' ｸﾞﾙｰﾌﾟ数1以下なら非表示
-                LblDisp_10.Visible = False                          ' ラベル非表示
+            'V6.1.4.9②            If (GrpNum <= 1) Then                                   ' ｸﾞﾙｰﾌﾟ数1以下なら非表示
+            LblDisp_10.Visible = False                          ' ラベル非表示
                 GridView.Visible = False                            ' ﾌﾚｷｼﾌﾞﾙｸﾞﾘｯﾄﾞ非表示
                 Exit Sub
-            End If
+            'V6.1.4.9②            End If
 
             ' Row(行)/Col(列)オブジェクト配列生成
             RowCount = GrpNum - 1                                   ' 最大行数 = ｸﾞﾙｰﾌﾟ数(0 ORG)
@@ -2111,9 +2212,9 @@ STP_RETRY:
     ''' <param name="TBLy">    (OUT)BP位置y</param>
     ''' <returns>0=正常, 0以外=エラー</returns>
     '''=========================================================================
-    Private Function XYBPMoveSetBlock(ByRef MODE As Short, ByRef iPos As Short, ByVal Ino As Short, ByVal ChipNum As Short, _
-                                      ByVal ChipSize As Double, ByVal KJPosX As Double, ByVal KJPosY As Double, _
-                                      ByRef TBLx As Double, ByRef TBLy As Double) As Short
+    Private Function XYBPMoveSetBlock(ByRef MODE As Short, ByRef iPos As Short, ByVal Ino As Short, ByVal ChipNum As Short,
+                                      ByVal ChipSize As Double, ByVal KJPosX As Double, ByVal KJPosY As Double,
+                                      ByRef TBLx As Double, ByRef TBLy As Double, ByRef GrpNum As Short) As Short  'V6.1.4.9②　サーキット数GrpNum追加
 
         'Dim i As Short
         'Dim iBlock As Short
@@ -2141,19 +2242,33 @@ STP_RETRY:
                         TBLx = KJPosX + ZRPosX(1)
                         TBLy = (ChipSize * (ChipNum - 1)) + KJPosY + ZRPosY(1)
                     End If
+                    'V6.1.4.9②↓
                     If gTkyKnd = KND_NET Then                       'V4.5.1.1①
-                        'V4.5.1.0⑮↓
-                        If (typPlateInfo.dblTXChipsizeRelationY <> 0.0 And typPlateInfo.intResistDir = 0) Then         ' ﾁｯﾌﾟ並び X方向 ?
+                        If (typPlateInfo.intResistDir = 0) Then         ' ﾁｯﾌﾟ並び X方向 ?
                             ' ﾁｯﾌﾟｻｲｽﾞ * ﾁｯﾌﾟ数-1 + 第1ﾌﾞﾛｯｸの先頭基準位置X + 第1基準点のずれ量X の位置を求める
-                            TBLx = typPlateInfo.dblTXChipsizeRelationX + KJPosX + ZRPosX(0)
-                            TBLy = typPlateInfo.dblTXChipsizeRelationY + ZRPosY(0)
+                            TBLx = (ChipSize * (ChipNum)) * (GrpNum - 1) + KJPosX + ZRPosX(1)
+                            TBLy = KJPosY + ZRPosY(1)
+                        Else
+                            TBLx = KJPosX + ZRPosX(1)
+                            TBLy = (ChipSize * (ChipNum)) * (GrpNum - 1) + KJPosY + ZRPosY(1)
                         End If
-                        If (typPlateInfo.dblTXChipsizeRelationX <> 0.0 And typPlateInfo.intResistDir <> 0) Then         ' ﾁｯﾌﾟ並び Y方向 ?
-                            TBLx = typPlateInfo.dblTXChipsizeRelationX + ZRPosX(0)
-                            TBLy = typPlateInfo.dblTXChipsizeRelationY + KJPosY + ZRPosY(0)
-                        End If
-                        'V4.5.1.0⑮↑
                     End If                                          'V4.5.1.1①
+                    'V6.1.4.9②↑
+'V6.1.4.9②                   If gTkyKnd = KND_NET Then                       'V4.5.1.1①
+'V6.1.4.9②                        'V4.5.1.0⑮↓
+'V6.1.4.9②                        If (typPlateInfo.dblTXChipsizeRelationY <> 0.0 And typPlateInfo.intResistDir = 0) Then         ' ﾁｯﾌﾟ並び X方向 ?
+'V6.1.4.9②                            ' ﾁｯﾌﾟｻｲｽﾞ * ﾁｯﾌﾟ数-1 + 第1ﾌﾞﾛｯｸの先頭基準位置X + 第1基準点のずれ量X の位置を求める
+'V6.1.4.9②                            TBLx = typPlateInfo.dblTXChipsizeRelationX + KJPosX + ZRPosX(0)
+'V6.1.4.9②                            'V6.1.4.9②                            TBLy = typPlateInfo.dblTXChipsizeRelationY + ZRPosY(0)
+'V6.1.4.9②                            TBLy = typPlateInfo.dblTXChipsizeRelationY + KJPosY + ZRPosY(0)          'V6.1.4.9②
+'V6.1.4.9②                        End If
+'V6.1.4.9②                        If (typPlateInfo.dblTXChipsizeRelationX <> 0.0 And typPlateInfo.intResistDir <> 0) Then         ' ﾁｯﾌﾟ並び Y方向 ?
+'V6.1.4.9②                            'V6.1.4.9②                            TBLx = typPlateInfo.dblTXChipsizeRelationX + ZRPosX(0)
+'V6.1.4.9②                            TBLx = typPlateInfo.dblTXChipsizeRelationX + KJPosX + ZRPosX(0)          'V6.1.4.9②
+'V6.1.4.9②                            TBLy = typPlateInfo.dblTXChipsizeRelationY + KJPosY + ZRPosY(0)
+'V6.1.4.9②                        End If
+'V6.1.4.9②                        'V4.5.1.0⑮↑
+'V6.1.4.9②                    End If                                          'V4.5.1.1①
 
                 Case 2                                              ' 第nｸﾞﾙｰﾌﾟ、最終基準位置
                     If (typPlateInfo.intResistDir = 0) Then         ' ﾁｯﾌﾟ並び X方向 ?
@@ -2183,7 +2298,18 @@ STP_RETRY:
                         TBLx = StepOffSetX(1)               'V4.5.1.0⑬
                         TBLy = StepOffSetY(1) + ChipSize    'V4.5.1.0⑬
                     End If
-
+                    'V6.1.4.9②↓
+                    If gTkyKnd = KND_NET Then                       'V4.5.1.1①
+                        If (typPlateInfo.intResistDir = 0) Then         ' ﾁｯﾌﾟ並び X方向 ?
+                            ' ﾁｯﾌﾟｻｲｽﾞ * ﾁｯﾌﾟ数 + 第1ﾌﾞﾛｯｸの先頭基準位置X + 第1基準点のずれ量X の位置を求める
+                            TBLx = StepOffSetX(1) + (ChipSize * ChipNum)
+                            TBLy = StepOffSetY(1)
+                        Else
+                            TBLx = StepOffSetX(1)
+                            TBLy = StepOffSetY(1) + (ChipSize * ChipNum)
+                        End If
+                    End If                                          'V4.5.1.1①
+                    'V6.1.4.9②↑
             End Select
 
             ' BP移動(絶対値指定)

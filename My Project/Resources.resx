@@ -1782,4 +1782,289 @@ ADJ-OFF：OKを押すとステージが原点に動きます。</value>
   <data name="MSG_SPRASH82" xml:space="preserve">
     <value>OK(START)で続行,Cancel(RESET)で中断します</value>
   </data>
+  <data name="MSG_164" xml:space="preserve">
+    <value>指定したファイルが見つかりません。</value>
+  </data>
+  <data name="MSG_AUTO_05" xml:space="preserve">
+    <value>データファイル</value>
+  </data>
+  <data name="MSG_AUTO_06" xml:space="preserve">
+    <value>登録済みデータファイル</value>
+  </data>
+  <data name="MSG_AUTO_07" xml:space="preserve">
+    <value>リストの1つ上へ</value>
+  </data>
+  <data name="MSG_AUTO_08" xml:space="preserve">
+    <value>リストの1つ下へ</value>
+  </data>
+  <data name="MSG_AUTO_09" xml:space="preserve">
+    <value>リストから削除</value>
+  </data>
+  <data name="MSG_AUTO_10" xml:space="preserve">
+    <value>リストをクリア</value>
+  </data>
+  <data name="MSG_AUTO_11" xml:space="preserve">
+    <value>↓登録↓</value>
+  </data>
+  <data name="MSG_AUTO_12" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MSG_AUTO_13" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="MSG_AUTO_14" xml:space="preserve">
+    <value>データ選択</value>
+  </data>
+  <data name="MSG_AUTO_21" xml:space="preserve">
+    <value>オペレータを選択してください。</value>
+  </data>
+  <data name="MSG_AUTO_22" xml:space="preserve">
+    <value>未選択</value>
+  </data>
+  <data name="MSG_AUTO_23" xml:space="preserve">
+    <value>オペレータエントリーリストを確認してください。</value>
+  </data>
+  <data name="MSG_AUTO_24" xml:space="preserve">
+    <value>QRコードの情報が保存されていません。</value>
+  </data>
+  <data name="MSG_MAIN_LABEL01" xml:space="preserve">
+    <value>基板枚数=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL02" xml:space="preserve">
+    <value>NG率=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL03" xml:space="preserve">
+    <value>IT H NG率=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL04" xml:space="preserve">
+    <value>IT L NG率=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL05" xml:space="preserve">
+    <value>FT H NG率=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL06" xml:space="preserve">
+    <value>FT L NG率=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL07" xml:space="preserve">
+    <value>OVER NG率=</value>
+  </data>
+  <data name="MSG_LOADER_54" xml:space="preserve">
+    <value>ＮＧ品が指定された枚数連続して発生</value>
+  </data>
+  <data name="MSG_165" xml:space="preserve">
+    <value>レーザパワーモニタリング異常終了</value>
+  </data>
+  <data name="MSG_166" xml:space="preserve">
+    <value>ロット切り替え信号を受けましたが、次のロットはエントリーされていません。</value>
+  </data>
+  <data name="MSG_167" xml:space="preserve">
+    <value>アッテネータ減衰率</value>
+  </data>
+  <data name="MSG_168" xml:space="preserve">
+    <value>設定異常終了しました。</value>
+  </data>
+  <data name="MSG_169" xml:space="preserve">
+    <value>製品種類が違います</value>
+  </data>
+  <data name="MSG_170" xml:space="preserve">
+    <value>タイプが違います</value>
+  </data>
+  <data name="MSG_171" xml:space="preserve">
+    <value>トリミングデータ</value>
+  </data>
+  <data name="MSG_172" xml:space="preserve">
+    <value>は存在しません。</value>
+  </data>
+  <data name="MSG_173" xml:space="preserve">
+    <value>データを更新しました。</value>
+  </data>
+  <data name="MSG_174" xml:space="preserve">
+    <value>ＱＲコードの処理が正常終了しました。</value>
+  </data>
+  <data name="MSG_175" xml:space="preserve">
+    <value>ＱＲコードの処理が異常終了しました。</value>
+  </data>
+  <data name="MSG_176" xml:space="preserve">
+    <value>QRコードデータの膜厚の数値変換ができませんでした</value>
+  </data>
+  <data name="MSG_177" xml:space="preserve">
+    <value>加工条件ファイル</value>
+  </data>
+  <data name="MSG_178" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="MSG_179" xml:space="preserve">
+    <value>の</value>
+  </data>
+  <data name="MSG_180" xml:space="preserve">
+    <value>ファイルオープンエラー</value>
+  </data>
+  <data name="MSG_181" xml:space="preserve">
+    <value>ファイルを確認してください。</value>
+  </data>
+  <data name="MSG_182" xml:space="preserve">
+    <value>１行目のデータ</value>
+  </data>
+  <data name="MSG_183" xml:space="preserve">
+    <value>が違います。</value>
+  </data>
+  <data name="MSG_184" xml:space="preserve">
+    <value>膜厚の数値変換ができませんでした</value>
+  </data>
+  <data name="MSG_185" xml:space="preserve">
+    <value>目標値の数値変換ができませんでした</value>
+  </data>
+  <data name="MSG_186" xml:space="preserve">
+    <value>下限の数値変換ができませんでした</value>
+  </data>
+  <data name="MSG_187" xml:space="preserve">
+    <value>下限の単位変換ができませんでした</value>
+  </data>
+  <data name="MSG_188" xml:space="preserve">
+    <value>上限の数値変換ができませんでした</value>
+  </data>
+  <data name="MSG_189" xml:space="preserve">
+    <value>上限の単位変換ができませんでした</value>
+  </data>
+  <data name="MSG_190" xml:space="preserve">
+    <value>アッテネータの数値変換ができませんでした</value>
+  </data>
+  <data name="MSG_191" xml:space="preserve">
+    <value>設定抵抗値</value>
+  </data>
+  <data name="MSG_192" xml:space="preserve">
+    <value>設定減衰率</value>
+  </data>
+  <data name="MSG_193" xml:space="preserve">
+    <value>パターン変更</value>
+  </data>
+  <data name="MSG_194" xml:space="preserve">
+    <value>→</value>
+  </data>
+  <data name="MSG_195" xml:space="preserve">
+    <value>に一致するパターン、膜厚、抵抗値データがありません。</value>
+  </data>
+  <data name="MSG_196" xml:space="preserve">
+    <value>数値変換が出来ませんでした</value>
+  </data>
+  <data name="MSG_197" xml:space="preserve">
+    <value>[伝票ＱＲコード情報]</value>
+  </data>
+  <data name="MSG_198" xml:space="preserve">
+    <value>製品種類    =</value>
+  </data>
+  <data name="MSG_199" xml:space="preserve">
+    <value>タイプ      =</value>
+  </data>
+  <data name="MSG_200" xml:space="preserve">
+    <value>目標値      =</value>
+  </data>
+  <data name="MSG_201" xml:space="preserve">
+    <value>伝票Ｎｏ．  =</value>
+  </data>
+  <data name="MSG_202" xml:space="preserve">
+    <value>加工必要数量=</value>
+  </data>
+  <data name="MSG_203" xml:space="preserve">
+    <value>素材表示紙ＱＲコードのデータ数が足りません。</value>
+  </data>
+  <data name="MSG_204" xml:space="preserve">
+    <value>素材表示紙ＱＲコードの製品種類の文字が足りません。</value>
+  </data>
+  <data name="MSG_205" xml:space="preserve">
+    <value>[素材表示紙ＱＲコード情報]</value>
+  </data>
+  <data name="MSG_206" xml:space="preserve">
+    <value>パターン=</value>
+  </data>
+  <data name="MSG_207" xml:space="preserve">
+    <value>膜厚    =</value>
+  </data>
+  <data name="MSG_208" xml:space="preserve">
+    <value>ランク  =</value>
+  </data>
+  <data name="MSG_209" xml:space="preserve">
+    <value>伝票ＱＲコードのデータがＭＩＴでありません。</value>
+  </data>
+  <data name="MSG_210" xml:space="preserve">
+    <value>伝票ＱＲコードのデータ数が足りません。</value>
+  </data>
+  <data name="MSG_211" xml:space="preserve">
+    <value>伝票ＱＲコードの製品種類・タイプの文字が足りません。</value>
+  </data>
+  <data name="MSG_212" xml:space="preserve">
+    <value>伝票ＱＲコードからタイプを検出出来ません。</value>
+  </data>
+  <data name="MSG_213" xml:space="preserve">
+    <value>タイプ文字置換定義ファイル</value>
+  </data>
+  <data name="MSG_214" xml:space="preserve">
+    <value>が存在しません。</value>
+  </data>
+  <data name="MSG_215" xml:space="preserve">
+    <value>素材表示紙ＱＲコードのデータ数が足りません。</value>
+  </data>
+  <data name="MSG_216" xml:space="preserve">
+    <value>素材表示紙ＱＲコードの製品種類の文字が足りません。</value>
+  </data>
+  <data name="MSG_217" xml:space="preserve">
+    <value>伝票Ｎｏ．=</value>
+  </data>
+  <data name="MSG_218" xml:space="preserve">
+    <value>抵抗値=</value>
+  </data>
+  <data name="MSG_AUTO_25" xml:space="preserve">
+    <value>自動運転時トリミングデータファイルＬＯＡＤエラー</value>
+  </data>
+  <data name="MSG_219" xml:space="preserve">
+    <value>元のファイル名でエントリします。</value>
+  </data>
+  <data name="MSG_220" xml:space="preserve">
+    <value>製品種類=</value>
+  </data>
+  <data name="MSG_221" xml:space="preserve">
+    <value>タイプ  =</value>
+  </data>
+  <data name="MSG_222" xml:space="preserve">
+    <value>素材表示紙</value>
+  </data>
+  <data name="MSG_223" xml:space="preserve">
+    <value>カットデータ</value>
+  </data>
+  <data name="MSG_224" xml:space="preserve">
+    <value>素材表示紙データが一致しません。</value>
+  </data>
+  <data name="MSG_225" xml:space="preserve">
+    <value>フォルダ名</value>
+  </data>
+  <data name="MSG_226" xml:space="preserve">
+    <value>加工条件データの数が足りません。</value>
+  </data>
+  <data name="MSG_227" xml:space="preserve">
+    <value>工程伝票QRコード</value>
+  </data>
+  <data name="MSG_228" xml:space="preserve">
+    <value>に工程伝票QRコード</value>
+  </data>
+  <data name="MSG_229" xml:space="preserve">
+    <value>倍</value>
+  </data>
+  <data name="NSG_230" xml:space="preserve">
+    <value>ベース抵抗番号</value>
+  </data>
+  <data name="MSG_230" xml:space="preserve">
+    <value>減衰率設定が異常です。</value>
+  </data>
+  <data name="MSG_231" xml:space="preserve">
+    <value>がありません。</value>
+  </data>
+  <data name="MSG_230_2" xml:space="preserve">
+    <value>手動モードに切り替えて再設定してください。</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG_230_3" xml:space="preserve">
+    <value>再設定してください。</value>
+  </data>
 </root>

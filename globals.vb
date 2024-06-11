@@ -55,6 +55,7 @@ Module Globals_Renamed
     Public Const KND_TKY As Short = 0
     Public Const KND_CHIP As Short = 1
     Public Const KND_NET As Short = 2
+
     Public Const MACHINE_TYPE_SL432 As String = "SL432R"                 ' 系名
     Public Const MACHINE_TYPE_SL436 As String = "SL436R"                 ' 系名
     Public Const MACHINE_TYPE_SL436S As String = "SL436S"                ' 系名
@@ -202,8 +203,35 @@ Module Globals_Renamed
 
     Public Const F_INTEGRATED As Short = 30                 ' 統合登録調整ボタン 'V4.10.0.0③
     Public Const F_RECOG_ROUGH As Short = 31                ' ラフアライメント用画像登録ボタン  'V5.0.0.9④
+    Public Const F_FOLDEROPEN As Short = 32                ' フォルダ表示ボタン(生産管理データ) V6.1.4.0⑥
 
-    Public Const MAX_FNCNO As Short = 32                    ' 機能選択定義テーブルのデータ数
+    Public Const MAX_FNCNO As Short = 33                    ' 機能選択定義テーブルのデータ数
+
+    '----- V6.1.4.0③↓(KOA EW殿SL432RD対応) -----
+    '' ログ表示域のサイズと位置(標準版)
+    'Public Const TXTLOG_SIZEX_ORG As Integer = 614
+    'Public Const TXTLOG_SIZEY_ORG As Integer = 642
+    'Public Const TXTLOG_LOCATIONX_ORG As Integer = 653
+    'Public Const TXTLOG_LOCATIONY_ORG As Integer = 49
+    'Public Const GRPMODE_LOCATIONX_ORG As Integer = 653
+    'Public Const GRPMODE_LOCATIONY_ORG As Integer = 691
+    'Public Const TABCMD_LOCATIONX_ORG As Integer = 610
+    'Public Const TABCMD_LOCATIONY_ORG As Integer = 184
+    'Public Const CMDEND_LOCATIONX_ORG As Integer = 1114
+    'Public Const CMDEND_LOCATIONY_ORG As Integer = 967
+
+    ' ログ表示域のサイズと位置(KOA EW殿)
+    Public Const TXTLOG_SIZEX_KOAEW As Integer = 628
+    Public Const TXTLOG_SIZEY_KOAEW As Integer = 669
+    Public Const TXTLOG_LOCATIONX_KOAEW As Integer = 650
+    Public Const TXTLOG_LOCATIONY_KOAEW As Integer = 49
+    Public Const GRPMODE_LOCATIONX_KOAEW As Integer = 650
+    Public Const GRPMODE_LOCATIONY_KOAEW As Integer = 718
+    Public Const TABCMD_LOCATIONX_KOAEW As Integer = 650
+    Public Const TABCMD_LOCATIONY_KOAEW As Integer = 791
+    Public Const CMDEND_LOCATIONX_KOAEW As Integer = 1110
+    Public Const CMDEND_LOCATIONY_KOAEW As Integer = 982
+    '----- V6.1.4.0③↑ -----
 
     '---------------------------------------------------------------------------
     '   最大値/最小値
@@ -329,7 +357,42 @@ Module Globals_Renamed
     Public giSubstrateInvBtn As Short = 0                   ' 一時停止画面での「基板投入」ボタンの有効/無効(0=無効, 1=有効)　
     '----- V4.11.0.0①↑ -----
 
-    Public giCpk_Disp_Off As Boolean                        '　ＣＰＫ表示オフ'V5.0.0.4④
+    '----- V6.1.4.0①↓(KOA EW殿SL432RD対応) 【レーザーパワーモニタリング機能】-----
+    Public giLotChange As Short = 0                         ' ロット切替え機能の有無 (０：なし, １：あり)
+    Public giFileMsgNoDsp As Short = 0                      ' ファイルバージョンチェック等のメッセージ表示の有/無(0:あり(標準), 1:なし)
+    Public gbQRCodeReaderUse As Boolean = False             ' ＱＲコードリーダ使用/不使用　V6.1.4.0_22
+    Public gbQRCodeReaderUseTKYNET As Boolean = False       ' TKY-NETのＱＲコードリーダ使用/不使用　'V6.1.4.10②
+    Public giLaserrPowerMonitoring As Integer               ' レーザーパワーのモニタリングフラグ　0：無し,1：自動運転開始時,2：エントリーロット毎,999隠しコマンド手動でも実行 V6.1.4.0_35
+    Public gdFullPowerLimit As Double                       ' レーザーパワーのモニタリングリミット
+    Public gdFullPowerQrate As Double                       ' レーザーパワーのモニタリングQレート10KHz
+    Public gbLaserPowerMonitoring As Boolean = False        ' レーザーパワーのモニタリング実行有無
+    '----- V6.1.4.0①↑ -----
+    'V6.1.4.2①↓トリミングカット位置ズレ暫定ソフト[自動キャリブレーション補正実行]
+    Public giAutoCalibration As Integer = 0                 ' 自動キャリブレーション補正実行0:無し、>0：実行
+    Public giAutoCalibCounter As Integer = 0                ' 自動キャリブレーション補正実行カウンター
+    Public giAutoCalibPlateCounter As Integer = 0           ' 自動キャリブレーション用処理基板カウンター
+    Public gbAutoCalibration As Boolean = False             ' 自動キャリブレーション補正 実行中:True 実行無し:False
+    Public gbAutoCalibrationResult As Boolean = True        ' 自動キャリブレーション補正結果 正常終了:True 異常終了:False
+    Public gbAutoCalibrationExecute As Boolean = False      ' 自動キャリブレーション補正結果 実行:True 無し:False
+    Public gbAutoCalibrationLog As Boolean = False          ' カット位置ずれログ出力
+    'V6.1.4.2①↑
+    '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応)【ＱＲコードリード機能】 -----
+    Public giQrCodeType As Short = 0                        ' QR_CODEタイプ(0=ローム殿, 1=KOA EW殿)
+    Public Enum QrCodeType As Integer
+        Rome = 0
+        KoaEw = 1
+    End Enum
+    '----- V6.1.4.0_22↑ -----
+    '----- V6.1.4.0③↓ -----
+    ' gSysPrm.stLOG.giLoggingType2定義 
+    Public Enum LogType2 As Integer                         ' 特注ﾛｸﾞ出力単位(0:抵抗毎,1:ｶｯﾄ毎 )※林電工殿向け特注←現在未使用?
+        Reg = 0                                             ' 抵抗毎(標準)
+        Cut = 1                                             ' カット毎 
+        Reg_KoaEw = 2                                       ' 抵抗毎(KOA EW特注)
+    End Enum
+    '----- V6.1.4.0③↑ -----
+
+    Public giCpk_Disp_Off As Boolean                        ' ＣＰＫ表示オフ'V5.0.0.4④
     Public gbControllerInterlock As Boolean                 ' 外部機器によるインターロックの有無（真田KOA殿の温度コントローラのインターロックに使用）'V5.0.0.6①
     Public gbLoaderSecondPosition As Boolean                ' ＳＬ４３２Ｒでローダの第２原点を有効にする。'V5.0.0.6②
 
@@ -393,7 +456,7 @@ Module Globals_Renamed
     Public Const MACHINE_KD_RW As Short = 1                 ' SL432RW
     Public Const MACHINE_KD_RS As Short = 2                 ' SL43xRS
     '----- V8.0.0.16②↑ -----
-    'V4.10.0.0⑩↓
+    ' 装置タイプ(gMachineType) V4.10.0.0⑩↓
     Public Const MACHINE_TYPE_432R As Short = 1             ' SL432R
     Public Const MACHINE_TYPE_436R As Short = 2             ' SL436R
     Public Const MACHINE_TYPE_432RW As Short = 3            ' SL432RW
@@ -481,6 +544,7 @@ Module Globals_Renamed
     Public gbCanceled As Boolean ' ←　各画面処理でPrivateで持つ 
 
     Public giSubExistMsgFlag As Boolean                      ' 基板有無を返すときにメッセージを表示しない 'V4.11.0.0⑧
+    Public gDataUpdateFlag As Boolean = False               'V6.1.4.5① カットオフ値、ＥＳポイント値入力画面でデータ更新した時Trueにする。
 
     '-------------------------------------------------------------------------------
     '   オブジェクト定義
@@ -499,7 +563,10 @@ Module Globals_Renamed
     Public gparModules As MainModules                                   ' 親側メソッド呼出しオブジェクト(OcxSystem用) '###061
     Public ObjCrossLine As New TrimClassLibrary.TrimCrossLineClass()    ' 補正クロスライン表示用オブジェクト ###232 
     Public TrimClassCommon As New TrimClassLibrary.Common()             ' 共通関数
-    Public commandtutorial As New TrimClassLibrary.CommandTutorial()    'V2.0.0.0⑩コマンド実施状態管理クラス 
+    Public commandtutorial As New TrimClassLibrary.CommandTutorial()    ' V2.0.0.0⑩コマンド実施状態管理クラス 
+    Public frmAutoObj As FormDataSelect2                                ' V6.1.4.0⑩ 自動運転フォームオブジェクト(ロット切替え機能用)
+    Public ObjQRCodeReader As New QRCodeReader()                        ' V6.1.4.0_22
+    Public Property FormMain As Form1                       ' ﾃﾞﾌｫﾙﾄｲﾝｽﾀﾝｽを使用しないように    V6.1.4.0②
 
     '---------------------------------------------------------------------------
     ' トリミング動作モード
@@ -605,7 +672,8 @@ Module Globals_Renamed
     Public Const cGMODE_LDR_WKREMOVE2 As Short = 65         ' 65 : 残基板取り除きメッセージ(APP終了)  SL436R用 ###175
     Public Const cGMODE_LDR_STAGE_ORG As Short = 66         ' 66 : ステージ原点移動 SL436R用 ###188
     Public Const cGMODE_LDR_MAGAGINE_EXCHG As Short = 67    ' 67 : マガジン交換メッセージ SL436R用 V1.18.0.0⑨
-
+    Public Const cGMODE_LDR_CHK_AUTO As Short = 67          ' 67 : ローダ状態チェック(自動運転時),ローダが自動に切り替わるまで待つ SL432R用 V6.1.4.0①
+    '                                                              ※DllSystemと番号がガッチンコしている←本来ならDllSystemのgModeに合わせるベキ                 
     Public Const cGMODE_ERR_RATE_NG As Short = 68           ' 68 : High,Lowの率が悪くなった場合の停止画面用   'V4.9.0.0①
     Public Const cGMODE_ERR_TOTAL_CLEAR As Short = 69       ' 69 : 集計のトータルをクリアするかの確認         'V4.9.0.0①
 
@@ -827,8 +895,6 @@ Module Globals_Renamed
     '' ''Public strLoaderAlarmExec() As String ' ｱﾗｰﾑ情報2(対策)
     ''''===============================================
 
-
-
     'Public gbInitialized As Boolean
 
     '----- 分布図用 -----
@@ -941,6 +1007,7 @@ Module Globals_Renamed
     '===========================================================================
     '   グローバル変数の定義
     '===========================================================================
+    Public gbThetaCorrectionLogOut As Boolean = False               'V4.7.3.2①
 
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''''' 2009/04/13 minato
@@ -994,6 +1061,7 @@ Module Globals_Renamed
     Public bFgCyclStp As Boolean = False                            ' サイクル停止フラグ V4.0.0.0⑲
     Public iExcamCutBlockNo_X As Integer                            ' 外部カメラカット位置画像登録のブロックNoX軸を千鳥対応の為に１に固定する。'V1.25.0.0⑫
     '----- 連続運転用(SL436R用) -----
+    Public m_lTrimNgCount As Integer = 0                            ' 連続トリミングＮＧ枚数カウンター(自動運転用 KOA EW殿SL432RD対応) V6.1.4.0⑨
 
     Public iInverseStepY As Integer                                 ' Y方向のステップを逆転する 'V4.12.0.0①　'V6.1.2.0②
 
@@ -1680,7 +1748,8 @@ STP_END:
                     End If
 
                     ' START SW押下時
-                ElseIf (cin And CONSOLE_SW_START) Then          ' START SW ?
+                    'V6.1.4.2①                ElseIf (cin And CONSOLE_SW_START) Then          ' START SW ?
+                ElseIf (cin And CONSOLE_SW_START) Or gbAutoCalibration Then          ' START SW ? 'V6.1.4.2①[自動キャリブレーション補正実行]
                     If (stJOG.Opt And CONSOLE_SW_START) Then    ' STARTキー有効 ?
                         'stJOG.PosX = mvx                       ' 位置X,Y更新
                         'stJOG.PosY = mvy
@@ -4684,7 +4753,7 @@ STP_ERR_FL:
             y = 0
             Globals_Renamed.GetBlockPosition(i, x, y)
 
-            If (TrimMap.IS_SELECTED = ProcBlock(x, y)) Then
+            If (TrimControlLibrary.SelectedState.IsSelected = ProcBlock(x, y)) Then
                 ret = i
                 Exit For
             End If
@@ -4712,7 +4781,7 @@ STP_ERR_FL:
             Dim x, y As Integer
             Globals_Renamed.GetBlockPosition(i, x, y)
 
-            If (TrimMap.IS_SELECTED = ProcBlock(x, y)) Then
+            If (TrimControlLibrary.SelectedState.IsSelected = ProcBlock(x, y)) Then
                 ret = i
                 Exit For
             End If
@@ -4736,7 +4805,7 @@ STP_ERR_FL:
 
         For x As Integer = 0 To ProcBlock.GetLength(0) - 1 Step 1
             For y As Integer = 0 To ProcBlock.GetLength(1) - 1 Step 1
-                If (TrimMap.IS_SELECTED = ProcBlock(x, y)) Then
+                If (TrimControlLibrary.SelectedState.IsSelected = ProcBlock(x, y)) Then
                     ret += 1
                 End If
             Next y

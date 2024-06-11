@@ -1806,4 +1806,280 @@ ADJ-OFF:按OK 进行原点归位</value>
   <data name="MSG_SPRASH82" xml:space="preserve">
     <value>OK(START):Continue,Cancel(RESET):Cancel</value>
   </data>
+  <data name="MSG_164" xml:space="preserve">
+    <value>Not found the selected file.</value>
+  </data>
+  <data name="MSG_AUTO_05" xml:space="preserve">
+    <value>Data Files</value>
+  </data>
+  <data name="MSG_AUTO_06" xml:space="preserve">
+    <value>Registered Data Files</value>
+  </data>
+  <data name="MSG_AUTO_07" xml:space="preserve">
+    <value>To The One Of The Lists Top</value>
+  </data>
+  <data name="MSG_AUTO_08" xml:space="preserve">
+    <value>To A One Of The Lists Bottom</value>
+  </data>
+  <data name="MSG_AUTO_09" xml:space="preserve">
+    <value>Delete From The List</value>
+  </data>
+  <data name="MSG_AUTO_10" xml:space="preserve">
+    <value>Clear The List</value>
+  </data>
+  <data name="MSG_AUTO_11" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="MSG_AUTO_12" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MSG_AUTO_13" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="MSG_AUTO_14" xml:space="preserve">
+    <value>Data Select</value>
+  </data>
+  <data name="MSG_AUTO_21" xml:space="preserve">
+    <value>Please Select an Operator.</value>
+  </data>
+  <data name="MSG_AUTO_22" xml:space="preserve">
+    <value>Unselected</value>
+  </data>
+  <data name="MSG_AUTO_23" xml:space="preserve">
+    <value>Please Check The Operator Entry List.</value>
+  </data>
+  <data name="MSG_AUTO_24" xml:space="preserve">
+    <value>QR Code Information Is Not Saved.</value>
+  </data>
+  <data name="MSG_MAIN_LABEL01" xml:space="preserve">
+    <value>PLATE =</value>
+  </data>
+  <data name="MSG_MAIN_LABEL02" xml:space="preserve">
+    <value>NG(%)=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL03" xml:space="preserve">
+    <value>IT H NG(%)=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL04" xml:space="preserve">
+    <value>IT L NG(%)=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL05" xml:space="preserve">
+    <value>FT H NG(%)=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL06" xml:space="preserve">
+    <value>FT L NG(%)=</value>
+  </data>
+  <data name="MSG_MAIN_LABEL07" xml:space="preserve">
+    <value>OVER NG(%)=</value>
+  </data>
+  <data name="MSG_LOADER_54" xml:space="preserve">
+    <value>Specification number of sheets NG</value>
+  </data>
+  <data name="MSG_165" xml:space="preserve">
+    <value>Laser power monitoring error termination</value>
+  </data>
+  <data name="MSG_166" xml:space="preserve">
+    <value>A lot change signal was received, but next lot is not entry.</value>
+  </data>
+  <data name="MSG_167" xml:space="preserve">
+    <value>rotary attenuater damping ratio</value>
+  </data>
+  <data name="MSG_168" xml:space="preserve">
+    <value>Setting has ended abnormally.</value>
+  </data>
+  <data name="MSG_169" xml:space="preserve">
+    <value>The product kind is different.</value>
+  </data>
+  <data name="MSG_170" xml:space="preserve">
+    <value>The type is different.</value>
+  </data>
+  <data name="MSG_171" xml:space="preserve">
+    <value>Trim data</value>
+  </data>
+  <data name="MSG_172" xml:space="preserve">
+    <value>is not exist.</value>
+  </data>
+  <data name="MSG_173" xml:space="preserve">
+    <value>Data was renewed.</value>
+  </data>
+  <data name="MSG_174" xml:space="preserve">
+    <value>Processing of QR Code has normally ended.</value>
+  </data>
+  <data name="MSG_175" xml:space="preserve">
+    <value>Processing of QR Code has ended abnormally.</value>
+  </data>
+  <data name="MSG_176" xml:space="preserve">
+    <value>Value conversion of the film thickness of the QR Code data isn't done.</value>
+  </data>
+  <data name="MSG_177" xml:space="preserve">
+    <value>加工条件文件</value>
+  </data>
+  <data name="MSG_178" xml:space="preserve">
+    <value>file</value>
+  </data>
+  <data name="MSG_179" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="MSG_180" xml:space="preserve">
+    <value>File open error</value>
+  </data>
+  <data name="MSG_181" xml:space="preserve">
+    <value>Please confirm the file.</value>
+  </data>
+  <data name="MSG_182" xml:space="preserve">
+    <value>Data of 1st line</value>
+  </data>
+  <data name="MSG_183" xml:space="preserve">
+    <value>is different.</value>
+  </data>
+  <data name="MSG_184" xml:space="preserve">
+    <value>Value conversion of the film thickness isn't done.</value>
+  </data>
+  <data name="MSG_185" xml:space="preserve">
+    <value>Value conversion of the target value isn't done.</value>
+  </data>
+  <data name="MSG_186" xml:space="preserve">
+    <value>Minimum value conversion isn't done.</value>
+  </data>
+  <data name="MSG_187" xml:space="preserve">
+    <value>Minimum unit conversion isn't done.</value>
+  </data>
+  <data name="MSG_188" xml:space="preserve">
+    <value>Value conversion of the upper limit isn't done.</value>
+  </data>
+  <data name="MSG_189" xml:space="preserve">
+    <value>Upper unit conversion isn't done.</value>
+  </data>
+  <data name="MSG_190" xml:space="preserve">
+    <value>Value conversion of an attenuator isn't done.</value>
+  </data>
+  <data name="MSG_191" xml:space="preserve">
+    <value>setting resistance value</value>
+  </data>
+  <data name="MSG_192" xml:space="preserve">
+    <value>setting damping ratio</value>
+  </data>
+  <data name="MSG_193" xml:space="preserve">
+    <value>Pattern change</value>
+  </data>
+  <data name="MSG_194" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="MSG_195" xml:space="preserve">
+    <value>There are no pattern, film thickness and resistance value data parallel with that.</value>
+  </data>
+  <data name="MSG_196" xml:space="preserve">
+    <value>Value conversion isn't done.</value>
+  </data>
+  <data name="MSG_197" xml:space="preserve">
+    <value>[Check QR Code information]</value>
+  </data>
+  <data name="MSG_198" xml:space="preserve">
+    <value>product kind        =</value>
+  </data>
+  <data name="MSG_199" xml:space="preserve">
+    <value>type                =</value>
+  </data>
+  <data name="MSG_200" xml:space="preserve">
+    <value>target value        =</value>
+  </data>
+  <data name="MSG_201" xml:space="preserve">
+    <value>sales slip number   =</value>
+  </data>
+  <data name="MSG_202" xml:space="preserve">
+    <value>necessary quantity  =</value>
+  </data>
+  <data name="MSG_203" xml:space="preserve">
+    <value>The number of data of the material indication paper QR Code isn't enough.</value>
+  </data>
+  <data name="MSG_204" xml:space="preserve">
+    <value>The character of the product kind of material indication paper QR Code isn't enough.</value>
+  </data>
+  <data name="MSG_205" xml:space="preserve">
+    <value>[Material indication paper QR Code information]</value>
+  </data>
+  <data name="MSG_206" xml:space="preserve">
+    <value>pattern        =</value>
+  </data>
+  <data name="MSG_207" xml:space="preserve">
+    <value>film thickness =</value>
+  </data>
+  <data name="MSG_208" xml:space="preserve">
+    <value>Rank           =</value>
+  </data>
+  <data name="MSG_209" xml:space="preserve">
+    <value>Data of check QR Code isn't MIT.</value>
+  </data>
+  <data name="MSG_210" xml:space="preserve">
+    <value>The number of data of the check QR Code isn't enough.</value>
+  </data>
+  <data name="MSG_211" xml:space="preserve">
+    <value>The product kind of check QR Code and the character of the typewriter aren't enough.</value>
+  </data>
+  <data name="MSG_212" xml:space="preserve">
+    <value>The type can't be detected in check QR Code.</value>
+  </data>
+  <data name="MSG_213" xml:space="preserve">
+    <value>Typewritten character substitution definition file</value>
+  </data>
+  <data name="MSG_214" xml:space="preserve">
+    <value>is not exist.</value>
+  </data>
+  <data name="MSG_215" xml:space="preserve">
+    <value>The number of data of the material indication paper QR Code isn't enough.</value>
+  </data>
+  <data name="MSG_216" xml:space="preserve">
+    <value>The character of the product kind of material indication paper QR Code isn't enough.</value>
+  </data>
+  <data name="MSG_217" xml:space="preserve">
+    <value>sales slip number=</value>
+  </data>
+  <data name="MSG_218" xml:space="preserve">
+    <value>resistance value=</value>
+  </data>
+  <data name="MSG_AUTO_25" xml:space="preserve">
+    <value>At the time of automatic operation, trim data file LOAD error</value>
+  </data>
+  <data name="MSG_219" xml:space="preserve">
+    <value>it's entered by the original file name.</value>
+  </data>
+  <data name="MSG_220" xml:space="preserve">
+    <value>product kind   =</value>
+  </data>
+  <data name="MSG_221" xml:space="preserve">
+    <value>type           =</value>
+  </data>
+  <data name="MSG_224" xml:space="preserve">
+    <value>not same sozai data</value>
+  </data>
+  <data name="MSG_225" xml:space="preserve">
+    <value>Folder Name</value>
+  </data>
+  <data name="MSG_226" xml:space="preserve">
+    <value>There are few numbers of the data.</value>
+  </data>
+  <data name="MSG_227" xml:space="preserve">
+    <value>Process card QR code</value>
+  </data>
+  <data name="MSG_228" xml:space="preserve">
+    <value>流程单二维码</value>
+  </data>
+  <data name="MSG_229" xml:space="preserve">
+    <value>Times</value>
+  </data>
+  <data name="NSG_230" xml:space="preserve">
+    <value>Base Resistance</value>
+  </data>
+  <data name="MSG_230" xml:space="preserve">
+    <value>The attenuation factor setting is abnormal.</value>
+  </data>
+  <data name="MSG_231" xml:space="preserve">
+    <value>那没有。</value>
+  </data>
+  <data name="MSG_230_2" xml:space="preserve">
+    <value>Please switch to manual mode and set again.</value>
+  </data>
+  <data name="MSG_230_3" xml:space="preserve">
+    <value>Please set again.</value>
+  </data>
 </root>

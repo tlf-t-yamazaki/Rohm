@@ -420,6 +420,7 @@ STP_END:
             'r = Exec_GazouProc(ObjProc, DISPGAZOU_PATH, DISPGAZOU_WRK, 0) ' 画像表示プログラムを起動する
             'V6.0.0.0⑤            r = Exec_GazouProc(ObjProc, DISPGAZOU_PATH, DISPGAZOU_WRK, 0, 0) ' 画像表示プログラムを起動する
             ' ↑↑↑ V3.1.0.0② 2014/12/01
+            SendCrossLineMsgToDispGazou()                               ' V6.1.4.18①
 
             StepNum = 0                                                 ' StepNum = 加工条件入力
             stJOG.CurrentNo = 1                                         ' 処理中の行
@@ -1130,7 +1131,7 @@ STP_END:
                         'V5.0.0.6⑩            If (GetCutTeachPoint(intRegNum, 1, dblX, dblY)) Then
                         'V4.7.0.0⑩             If (GetCutStartPoint(intRegNum, 1, dblX, dblY)) Then
                         'V5.0.0.6⑩↓
-                        If giTeachpointUse = 0 Then
+                        If giTeachpointUse = 0 Then                     ' KOA EW時
                             bRtn = GetCutTeachPoint(intRegNum, 1, dblX, dblY)
                         Else
                             bRtn = GetCutStartPoint(intRegNum, 1, dblX, dblY)

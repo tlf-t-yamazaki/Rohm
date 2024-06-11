@@ -11,9 +11,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("TKY")> 
 <Assembly: AssemblyDescription("LASER TRIMMER CONTROL PROGRAM")>
-<Assembly: AssemblyCompany("OMRON LASERFRONT INC.")>
-<Assembly: AssemblyProduct("TKY")> 
-<Assembly: AssemblyCopyright("OMRON LASERFRONT INC.")>
+<Assembly: AssemblyCompany("TOWA LASERFRONT CORPORATION")>
+<Assembly: AssemblyProduct("TKY")>
+<Assembly: AssemblyCopyright("TOWA LASERFRONT CORPORATION")>
 <Assembly: AssemblyTrademark("TKY")> 
 <Assembly: AssemblyCulture("")>
 
@@ -26,10 +26,10 @@ Imports System.Runtime.InteropServices
 
 ' すべての値を指定するか、下のように '*' を使ってリビジョンおよびビルド番号を
 ' 既定値にすることができます:
-<Assembly: AssemblyVersion("6.1.2.0")>
+<Assembly: AssemblyVersion("6.1.4.18")>
 
 
 
 
 <Assembly: ComVisibleAttribute(False)>
-<Assembly: AssemblyFileVersion("6.1.2.0")>
+<Assembly: AssemblyFileVersion("6.1.4.18")>

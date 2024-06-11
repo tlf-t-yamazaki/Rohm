@@ -80,6 +80,7 @@ Partial Class frmFineAdjust
         Me.BtnLaser = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lblBlockNo = New System.Windows.Forms.Label()
+        Me.CutOffEsEditButton = New System.Windows.Forms.Button()
         Me.grpBpOff.SuspendLayout()
         Me.BlockMove.SuspendLayout()
         Me.tlpBlockMove.SuspendLayout()
@@ -541,11 +542,21 @@ Partial Class frmFineAdjust
         resources.ApplyResources(Me.lblBlockNo, "lblBlockNo")
         Me.lblBlockNo.Name = "lblBlockNo"
         '
+        'CutOffEsEditButton
+        '
+        Me.CutOffEsEditButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CutOffEsEditButton.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.CutOffEsEditButton, "CutOffEsEditButton")
+        Me.CutOffEsEditButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.CutOffEsEditButton.Name = "CutOffEsEditButton"
+        Me.CutOffEsEditButton.UseVisualStyleBackColor = False
+        '
         'frmFineAdjust
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         resources.ApplyResources(Me, "$this")
         Me.ControlBox = False
+        Me.Controls.Add(Me.CutOffEsEditButton)
         Me.Controls.Add(Me.lblBlockNo)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.BtnLaser)
@@ -638,4 +649,5 @@ Partial Class frmFineAdjust
     Friend WithEvents cmbBlockMoveY As System.Windows.Forms.ComboBox
     Friend WithEvents lblBlockMoveX As System.Windows.Forms.Label
     Friend WithEvents lblBlockMoveY As System.Windows.Forms.Label
+    Public WithEvents CutOffEsEditButton As Button
 End Class

@@ -10,6 +10,7 @@ Option Explicit On
 Imports LaserFront.Trimmer.DefTrimFnc
 Imports LaserFront.Trimmer.TrimData.DataManager     'V5.0.0.8①
 Imports TKY_ALL_SL432HW.My.Resources    'V4.4.0.0-0
+Imports LaserFront.Trimmer.DefWin32Fnc              'V6.1.4.2①
 
 Friend Class FrmCalibration
     Inherits System.Windows.Forms.Form
@@ -392,6 +393,7 @@ STP_START:
             'If (r <> cFRS_NORMAL) Then
             '    GoTo STP_END
             'End If
+            SendCrossLineMsgToDispGazou()                               ' V6.1.4.18①
 
             ' コンソール入力(START/RESETキー入力待ち)
             Call ZCONRST()                                              ' ラッチ解除
@@ -474,7 +476,11 @@ STP_END:
             '-------------------------------------------------------------------
             ' "前の画面に戻ります。よろしいですか？
             Call Form1.VideoLibrary1.PatternDisp(False)                 ' パターンマッチング時の検索範囲枠(黄色枠と青色枠)を非表示とする　###094
-            rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_105, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
+            If gbAutoCalibration Then                                   'V6.1.4.2①[自動キャリブレーション補正実行]
+                r = cFRS_NORMAL                                         'V6.1.4.2①
+            Else                                                        'V6.1.4.2①
+                rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_105, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
+            End If                                                      'V6.1.4.2①
             If (rtn = cFRS_ERR_RST) Then                                '「いいえ」選択なら処理を継続する
                 If (StpNum = 0) Then GoTo STP_START '                   ' 十字カット処理へ
                 GoTo STP_RETRY                                          ' パターン認識処理へ
@@ -587,7 +593,7 @@ STP_END:
     ''' <returns>0 = 正常, 0以外 = エラー</returns>
     ''' <remarks>十字ｶｯﾄの中央にBPを移動しておくこと</remarks>
     '''=========================================================================
-    Private Function Sub_CalibrationCrossCut(ByVal dblBpPosX As Double, ByVal dblBpPosY As Double, ByVal CondNum As Integer, _
+    Private Function Sub_CalibrationCrossCut(ByVal dblBpPosX As Double, ByVal dblBpPosY As Double, ByVal CondNum As Integer,
                                              ByVal dQrate As Double, ByVal dblCutLength As Double, ByVal dblCutSpeed As Double) As Integer
 
         Dim r As Integer
@@ -664,7 +670,7 @@ STP_END:
         Dim dblOffsetX As Double                                        ' ｵﾌｾｯﾄ補正係数
         Dim dblOffsetY As Double
         Dim fcoeff As Double                                            ' 相関値
-        Dim strMSG As String
+        Dim strMSG As String = Nothing
 
         Try
             '-------------------------------------------------------------------
@@ -809,6 +815,16 @@ STP_RETRY:
                         Else
                             strMSG = MSG_CALIBRATION_007
                         End If
+                        'V6.1.4.2①↓
+                        If gbAutoCalibration Then
+                            strMSG = "自動キャリブレーション補正 パターンマッチングエラー[" & r.ToString & "] Thresh =[" & fcoeff.ToString("0.00") & "]"
+                            Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                            Form1.Z_PRINT(strMSG)
+                            gbAutoCalibrationResult = False
+                            r = cFRS_ERR_RST
+                            GoTo STP_EXIT
+                        End If
+                        'V6.1.4.2①↑
                         rtn = Form1.System1.TrmMsgBox(gSysPrm, strMSG, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
                         'rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_CALIBRATION_007, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
                         '----- V1.14.0.0⑦↑ -----
@@ -879,6 +895,33 @@ STP_RETRY:
             '-------------------------------------------------------------------
             ' ゲインとオフセットを算出する
             Call CalcGainOffset(stPLT, GapX(0), GapY(0), GapX(1), GapY(1), dblGainX, dblGainY, dblOffsetX, dblOffsetY)
+            'V6.1.4.2①↓
+            If gbAutoCalibration Then
+                Dim GapLimit As Double = Double.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CARIBRATION_RECOG_LIMIT", "C:\TRIM\tky.ini", "0"))
+                For i As Integer = 0 To 1
+                    If System.Math.Abs(GapX(i)) > GapLimit Then
+                        strMSG = "自動キャリブレーション補正　リミットエラー X[" & (i + 1).ToString("0") & "] OFFSET LIMIT ERROR=[" & GapX(i).ToString("0.000") & "]>[" & GapLimit.ToString("0.000") & "]"
+                        Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                        Form1.Z_PRINT(strMSG)
+                        gbAutoCalibrationResult = False
+                        r = cFRS_ERR_RST
+                        strMSG = "リミットエラー GapX(0)=[" & GapX(0).ToString("0.000") & "] GapY(0)=[" & GapY(0).ToString("0.000") & "] GapX(1)=[" & GapX(1).ToString("0.000") & "] GapY(1)=[" & GapY(1).ToString("0.000") & "]"
+                        Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                        GoTo STP_EXIT
+                    End If
+                    If System.Math.Abs(GapY(i)) > GapLimit Then
+                        strMSG = "自動キャリブレーション補正　リミットエラー Y[" & (i + 1).ToString("0") & "] OFFSET LIMIT ERROR=[" & GapY(i).ToString("0.000") & "]>[" & GapLimit.ToString("0.000") & "]"
+                        Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                        Form1.Z_PRINT(strMSG)
+                        gbAutoCalibrationResult = False
+                        r = cFRS_ERR_RST
+                        strMSG = "リミットエラー GapX(0)=[" & GapX(0).ToString("0.000") & "] GapY(0)=[" & GapY(0).ToString("0.000") & "] GapX(1)=[" & GapX(1).ToString("0.000") & "] GapY(1)=[" & GapY(1).ToString("0.000") & "]"
+                        Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                        GoTo STP_EXIT
+                    End If
+                Next
+            End If
+            'V6.1.4.2①↑
 
             ' ゲインとオフセットを表示する 
             lblGainX.Text = dblGainX.ToString("0.0000")
@@ -886,8 +929,13 @@ STP_RETRY:
             lblOffsetX.Text = dblOffsetX.ToString("0.0000")
             lblOffsetY.Text = dblOffsetY.ToString("0.0000")
 
-            '"キャリブレーションを終了します。" & "データを保持する場合は[OK]を、データを保持しない場合は[Cancel]を押して下さい。"
-            rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_CALIBRATION_006, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
+            If gbAutoCalibration Then                                   'V6.1.4.2①[自動キャリブレーション補正実行]
+                frmTitle.Refresh()                                      'V6.1.4.2①
+                r = cFRS_NORMAL                                         'V6.1.4.2①
+            Else                                                        'V6.1.4.2①
+                '"キャリブレーションを終了します。" & "データを保持する場合は[OK]を、データを保持しない場合は[Cancel]を押して下さい。"
+                rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_CALIBRATION_006, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
+            End If                                                      'V6.1.4.2①
             If (rtn = cFRS_ERR_RST) Then                                '「いいえ」選択なら処理を終了する
                 GoTo STP_EXIT
             End If
@@ -897,10 +945,42 @@ STP_RETRY:
             dblGainX = dblGainX * dblCalibHoseiX
             'V1.20.0.0⑦↑
             r = BP_CALIBRATION(dblGainX, dblGainY, dblOffsetX, dblOffsetY)
+            'V6.1.4.2①↓
+            If r <> cFRS_NORMAL Then
+                gbAutoCalibrationResult = False
+            Else
+                strMSG = "CalGainX=[" & dblGainX.ToString("0.0000") & "] CalGainY=[" & dblGainY.ToString("0.0000") & "] CalOffX=[" & dblOffsetX.ToString("0.0000") & "] CalOffY=[" & dblOffsetY.ToString("0.0000") & "]"
+                Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                Form1.Z_PRINT(strMSG)
+            End If
+            'V6.1.4.2①↑
             r = Form1.System1.EX_ZGETSRVSIGNAL(gSysPrm, r, 0)
             If (r <> cFRS_NORMAL) Then                                  ' エラーならエラーリターン(メッセージ表示済み)
                 Return (r)
             End If
+            Dim OffsetLimit As Double = Double.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CARIBRATION_OFFSET_LIMIT", "C:\TRIM\tky.ini", "0"))
+            If dblOffsetY > OffsetLimit Or dblOffsetX > OffsetLimit Then
+                ' '' ''If System.Math.Abs(dblOffsetY) > OffsetLimit Then
+                ' '' ''    strMSG = "オフセット補正量Ｙ=[" & dblOffsetY.ToString("0.000") & "]が[" & OffsetLimit.ToString("0.000") & "](mm)を超えました。"
+                ' '' ''    Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                ' '' ''    Form1.Z_PRINT(strMSG)
+                ' '' ''    Form1.LabelAutoCalibLimit.Text = strMSG
+                ' '' ''    Form1.LabelAutoCalibLimit.Visible = True
+                ' '' ''End If
+                If System.Math.Abs(dblOffsetX) > OffsetLimit Then
+                    strMSG = "オフセット補正量Ｘ=[" & dblOffsetX.ToString("0.000") & "]が[" & OffsetLimit.ToString("0.000") & "](mm)を超えました。"
+                    Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                    Form1.Z_PRINT(strMSG)
+                    Form1.LabelAutoCalibLimit.Text = strMSG
+                    Form1.LabelAutoCalibLimit.Visible = True
+                End If
+
+            Else
+                Form1.LabelAutoCalibLimit.Visible = False
+            End If
+
+
+
             GoTo STP_EXIT                                               ' 処理終了へ 
 
 STP_END:
@@ -908,7 +988,11 @@ STP_END:
             '   終了確認メッセージを表示する
             '-------------------------------------------------------------------
             ' "前の画面に戻ります。よろしいですか？　
-            rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_105, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
+            If gbAutoCalibration Then                                   'V6.1.4.2①[自動キャリブレーション補正実行]
+                r = cFRS_NORMAL                                         'V6.1.4.2①
+            Else                                                        'V6.1.4.2①
+                rtn = Form1.System1.TrmMsgBox(gSysPrm, MSG_105, MsgBoxStyle.OkCancel, MSG_OPLOG_CALIBRATION_START)
+            End If                                                      'V6.1.4.2①
             If (rtn = cFRS_ERR_RST) Then                                '「いいえ」選択なら処理を継続する
                 GoTo STP_RETRY
             End If
@@ -1220,10 +1304,10 @@ STP_EXIT:
 
             'オフセット値の補正
             '   オフセットは基準1の外部カメラのズレ量をBPオフセット、キャリブレーションオフセットへ反映 
-            'V4.9.0.0④            dblOffsetX = dblCurCalibOff(0) + (dblGap1X * -1)   'V1.20.0.0⑦ 'V4.7.0.0⑯コメント解除
-            dblOffsetX = 0.0                                    'V1.20.0.0⑦ 'V4.9.0.0④コメント解除
-            'V4.9.0.0④         dblOffsetY = dblCurCalibOff(1) + (dblGap1Y * -1)   'V1.20.0.0⑦ 'V4.7.0.0⑯コメント解除
-            dblOffsetY = 0.0                                    'V1.20.0.0⑦ 'V4.9.0.0④コメント解除
+            dblOffsetX = dblCurCalibOff(0) + (dblGap1X * -1)   'V1.20.0.0⑦ 'V4.7.0.0⑯コメント解除
+            'dblOffsetX = 0.0                                    'V1.20.0.0⑦
+            dblOffsetY = dblCurCalibOff(1) + (dblGap1Y * -1)   'V1.20.0.0⑦ 'V4.7.0.0⑯コメント解除
+            'dblOffsetY = 0.0                                    'V1.20.0.0⑦
 
             ' トラップエラー発生時
         Catch ex As Exception

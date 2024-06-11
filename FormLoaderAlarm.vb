@@ -553,7 +553,7 @@ Public Class FormLoaderAlarm
                              ByRef strLoaderAlarm() As String, ByRef strLoaderAlarmInfo() As String, ByRef strLoaderAlarmExec() As String)
 
         Dim i As Integer
-        Dim strMSG As String
+        Dim strMSG As String = ""
 
         Try
             ' ƒAƒ‰[ƒ€í•Ê‚ğİ’è‚·‚é

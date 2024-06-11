@@ -30,6 +30,42 @@ Module DataAccess
     Public Const TARGET_TYPE_CUSRTO_8 As Short = 8
     Public Const TARGET_TYPE_CUSRTO_9 As Short = 9
 
+    '----- V6.1.4.0_33↓(KOA EW殿SL432RD対応) -----
+#Region "ＱＲデータのファイル保存行オフセット"
+    '''=========================================================================
+    ''' <summary>ＱＲデータのファイル保存行オフセット</summary>
+    ''' <remarks>V6.1.4.0_33</remarks>
+    '''=========================================================================
+    Public Enum QRDATAInfoRowOffset As Integer
+        'Status                              ' ＱＲデータの有効無効
+        ''' <summary>アッテネータ減衰率(%)</summary>
+        AttenuaterValue
+
+        ''' <summary>目標値</summary>
+        TargetValue
+
+        ''' <summary>ロット番号</summary>
+        LotNumber
+
+        ''' <summary>製品種類</summary>
+        SeihinSyurui
+
+        ''' <summary>タイプ</summary>
+        Type
+
+        ''' <summary>パターン</summary>
+        Pattern
+
+        ''' <summary>ランク</summary>
+        Rank
+        ''' <summary>膜厚'V6.1.4.0_32</summary>
+        Makuatsu
+        ''' <summary>加工必要数量'V4.7.3.0⑨</summary>
+        KakouHitsuyoSuuryo
+    End Enum
+#End Region
+    '----- V6.1.4.0_33↑ -----
+
 #Region "LOAD・SAVEの共通化によりTrimDataEditorで定義"
 #If False Then 'V5.0.0.8①
     '---------------------------------------------------------------------------
@@ -924,7 +960,7 @@ Module DataAccess
 
     '----- トリミング結果データ -----
     '    Public Const MAX_RESULT_NUM As Short = 21               ' トリミング結果の最大番号 'V2.0.0.0⑬
-    Public Const MAX_RESULT_NUM As Short = 22               ' トリミング結果の最大番号 'V2.0.0.0⑬
+    Public Const MAX_RESULT_NUM As Short = 23               ' トリミング結果の最大番号 'V2.0.0.0⑬ ' インデックスカット時のラダーかじり 'V6.1.4.10①で23
     Public gwTrimResult(MaxCntResist) As UShort             ' OK/NG結果(0:未実施, 1:OK, 2:ITNG, 3:FTNG, 4:SKIP, ... 13:PATTERN NG)
     Public gfInitialTest(MaxCntResist) As Double            ' IT 抵抗値
     Public gfFinalTest(MaxCntResist) As Double              ' FT 抵抗値
@@ -2442,7 +2478,7 @@ Module DataAccess
         Dim addSubPosY As Double
         ' V4.12.0.0①　↓'V6.1.2.0②
         Dim DispBlkX As Integer
-        Dim DispBlkY As Integer
+        'Dim DispBlkY As Integer
         ' V4.12.0.0①　↑'V6.1.2.0②
 
         Try

@@ -53,6 +53,7 @@ Module LoaderIOFor436
     Public Const LINP_TRM_START As UShort = &H8                         ' B3 : トリミングスタート要求(0=スタート非要求, 1=スタート要求) 
     '###148    Public Const LINP_RSV04 As UShort = &H10                 ' B4 : 予備
     Public Const LINP_NGTRAY_OUT_COMP As UShort = &H10                  ' B4 : NGトレイへの排出完了信号
+    Public Const LINP_TRM_LOTCHANGE_START As UShort = &H10              ' B4 : ロット切替え信号(KOA EW SL432R用) V6.1.4.0⑩
     Public Const LINP_RSV05 As UShort = &H20                            ' B5 : 予備(SL436R用)
     Public Const LIN_CYCL_STOP As UShort = &H20                         ' B5 : サイクル停止応答(0=応答無,1=応答)(SL436S用) V4.0.0.0⑲
     'V5.0.0.6②    Public Const LINP_RSV06 As UShort = &H40                            ' B6 : 予備
@@ -576,7 +577,7 @@ Module LoaderIOFor436
 #End If
             ' 初期処理
             bFgActLink = False                                          ' ローダ有効フラグ初期化
-            If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then                   ' SL436系でなければNOP 
+            If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then      ' SL436系でなければNOP 
                 Return (cFRS_NORMAL)
             End If
 
@@ -4701,6 +4702,12 @@ STP_ERR_LDR:
         Dim strMSG As String
 
         Try
+            '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+            If (gMachineType = MACHINE_TYPE_432R) Then
+                Return
+            End If
+            '----- V6.1.4.0⑩↑ -----
+
             ' アラーム情報退避域を初期化する
             Len = iBefData.Length
             For i = 0 To (Len - 1)

@@ -3,6 +3,7 @@
     <System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
         MyBase.New()
         'この呼び出しは、Windows フォーム デザイナで必要です。
+        Globals_Renamed.FormMain = Me               'V6.1.4.0②
         File.ConvertFileEncoding(SYSPARAMPATH)      'V4.4.0.0-0
         SetCurrentUICulture()                       'V4.4.0.0-0
         InitializeComponent()
@@ -167,7 +168,6 @@
         Me._lblGraphPercent_1 = New System.Windows.Forms.Label()
         Me._lblGraphPercent_0 = New System.Windows.Forms.Label()
         Me.lblGraphUnit = New System.Windows.Forms.Label()
-        Me.Teaching1 = New LaserFront.Trimmer.DllTeach.Teaching()
         Me.lblInterLockMSG = New System.Windows.Forms.Label()
         Me.CmdTy2 = New System.Windows.Forms.Button()
         Me.CmdT_Theta = New System.Windows.Forms.Button()
@@ -212,6 +212,8 @@
         Me.LblcFTHINGP = New System.Windows.Forms.Label()
         Me.LblcFTLONGP = New System.Windows.Forms.Label()
         Me.frmHistoryData = New System.Windows.Forms.GroupBox()
+        Me.LblcRESVALUE = New System.Windows.Forms.Label()
+        Me.LblcLOTNUMBER = New System.Windows.Forms.Label()
         Me.LblITLONGP = New System.Windows.Forms.Label()
         Me.LblITHINGP = New System.Windows.Forms.Label()
         Me.LblcOVERP = New System.Windows.Forms.Label()
@@ -277,7 +279,6 @@
         Me.GrpQrCode = New System.Windows.Forms.GroupBox()
         Me.btnRest = New System.Windows.Forms.Button()
         Me.lblQRData = New System.Windows.Forms.Label()
-        Me.Probe1 = New LaserFront.Trimmer.DllProbeTeach.Probe()
         Me.CmdSave = New System.Windows.Forms.Button()
         Me.CmdEdit = New System.Windows.Forms.Button()
         Me.CmdLoaderInit = New System.Windows.Forms.Button()
@@ -287,6 +288,8 @@
         Me.CmdRecogRough = New System.Windows.Forms.Button()
         Me.CmdIntegrated = New System.Windows.Forms.Button()
         Me.tabOptCmnds = New System.Windows.Forms.TabPage()
+        Me.lblProductionData = New System.Windows.Forms.Label()
+        Me.CmdFolderOpen = New System.Windows.Forms.Button()
         Me.lblExCamera = New System.Windows.Forms.Label()
         Me.lblCalibration = New System.Windows.Forms.Label()
         Me.lblCutPos = New System.Windows.Forms.Label()
@@ -336,8 +339,6 @@
         Me.BtnStrageClr = New System.Windows.Forms.Button()
         Me.LblStrageBoxCount = New System.Windows.Forms.Label()
         Me.LblStrageBoxTtl = New System.Windows.Forms.Label()
-        Me.ManualTeach1 = New LaserFront.Trimmer.DllManualTeach.ManualTeach()
-        Me.Password1 = New LaserFront.Trimmer.DllPassword.Password()
         Me.pnlDataDisplay = New System.Windows.Forms.Panel()
         Me.BtnPowerOnOff = New System.Windows.Forms.Button()
         Me.LblComandName = New System.Windows.Forms.Label()
@@ -349,7 +350,6 @@
         Me.TimerQR = New System.Windows.Forms.Timer(Me.components)
         Me.TimerAdjust = New System.Windows.Forms.Timer(Me.components)
         Me.TimerBC = New System.Windows.Forms.Timer(Me.components)
-        Me.HelpVersion1 = New LaserFront.Trimmer.DllAbout.HelpVersion()
         Me.btnUserLogon = New System.Windows.Forms.Button()
         Me.grpIntegrated = New System.Windows.Forms.GroupBox()
         Me.flpIntegrated = New System.Windows.Forms.FlowLayoutPanel()
@@ -359,9 +359,6 @@
         Me.lblIntegTeach = New System.Windows.Forms.Label()
         Me.lblIntegTY = New System.Windows.Forms.Label()
         Me.btnJudge = New System.Windows.Forms.Button()
-        Me.Utility1 = New LaserFront.Trimmer.DllUtility.Utility()
-        Me.Ctl_LaserTeach2 = New LaserFront.Trimmer.DllLaserTeach.ctl_LaserTeach()
-        Me.System1 = New LaserFront.Trimmer.DllSystem.SystemNET()
         Me.lblDoorOpen = New System.Windows.Forms.Label()
         Me.GrpStartBlk = New System.Windows.Forms.GroupBox()
         Me.tlpStartBlk = New System.Windows.Forms.TableLayoutPanel()
@@ -372,14 +369,108 @@
         Me.chkContinue = New System.Windows.Forms.CheckBox()
         Me.btnPREV = New System.Windows.Forms.Button()
         Me.btnNEXT = New System.Windows.Forms.Button()
-        Me.VideoLibrary1 = New LaserFront.Trimmer.DllVideo.VideoLibrary()
         Me.CmdMapOnOff = New System.Windows.Forms.Button()
-        Me.TrimMap1 = New TrimControlLibrary.TrimMapPlate()
         Me.PanelMap = New System.Windows.Forms.Panel()
         Me.CmdPrintMap = New System.Windows.Forms.Button()
         Me.btnQRLmit = New System.Windows.Forms.Button()
         Me.lblCutOff = New System.Windows.Forms.Label()
         Me.BtnAlarmOnOff = New System.Windows.Forms.Button()
+        Me.pnlFirstResData = New System.Windows.Forms.Panel()
+        Me.CutOffEsEditButton = New System.Windows.Forms.Button()
+        Me.lblFrdNomVal = New System.Windows.Forms.Label()
+        Me.lblFrdNom = New System.Windows.Forms.Label()
+        Me.tlpFirstResData = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblFrdCutOff = New System.Windows.Forms.Label()
+        Me.lblFrdESPoint = New System.Windows.Forms.Label()
+        Me.lblFrd_1 = New System.Windows.Forms.Label()
+        Me.lblFrdC1 = New System.Windows.Forms.Label()
+        Me.lblFrdE1 = New System.Windows.Forms.Label()
+        Me.lblFrd_2 = New System.Windows.Forms.Label()
+        Me.lblFrdC2 = New System.Windows.Forms.Label()
+        Me.lblFrdE2 = New System.Windows.Forms.Label()
+        Me.lblFrd_3 = New System.Windows.Forms.Label()
+        Me.lblFrdC3 = New System.Windows.Forms.Label()
+        Me.lblFrdE3 = New System.Windows.Forms.Label()
+        Me.lblFrd_4 = New System.Windows.Forms.Label()
+        Me.lblFrdC4 = New System.Windows.Forms.Label()
+        Me.lblFrdE4 = New System.Windows.Forms.Label()
+        Me.lblFrd_5 = New System.Windows.Forms.Label()
+        Me.lblFrdC5 = New System.Windows.Forms.Label()
+        Me.lblFrdE5 = New System.Windows.Forms.Label()
+        Me.lblFrd_6 = New System.Windows.Forms.Label()
+        Me.lblFrdC6 = New System.Windows.Forms.Label()
+        Me.lblFrdE6 = New System.Windows.Forms.Label()
+        Me.LabelAutoCalibLimit = New System.Windows.Forms.Label()
+        Me.pnlFirstResDataNET = New System.Windows.Forms.Panel()
+        Me.CutOffEsEditButtonNET = New System.Windows.Forms.Button()
+        Me.lblNETNomVal = New System.Windows.Forms.Label()
+        Me.lblNETNom = New System.Windows.Forms.Label()
+        Me.tlpFirstResDataNET = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Res1Cut1 = New System.Windows.Forms.Label()
+        Me.Res1Cut2 = New System.Windows.Forms.Label()
+        Me.Res1Cut3 = New System.Windows.Forms.Label()
+        Me.Res1Cut4 = New System.Windows.Forms.Label()
+        Me.Res1Cut5 = New System.Windows.Forms.Label()
+        Me.Res1Cut6 = New System.Windows.Forms.Label()
+        Me.Res1Cut7 = New System.Windows.Forms.Label()
+        Me.Res1Cut8 = New System.Windows.Forms.Label()
+        Me.Res1Cut9 = New System.Windows.Forms.Label()
+        Me.Res1Cut10 = New System.Windows.Forms.Label()
+        Me.Res2Cut1 = New System.Windows.Forms.Label()
+        Me.Res2Cut2 = New System.Windows.Forms.Label()
+        Me.Res2Cut3 = New System.Windows.Forms.Label()
+        Me.Res2Cut4 = New System.Windows.Forms.Label()
+        Me.Res2Cut5 = New System.Windows.Forms.Label()
+        Me.Res2Cut6 = New System.Windows.Forms.Label()
+        Me.Res2Cut7 = New System.Windows.Forms.Label()
+        Me.Res2Cut8 = New System.Windows.Forms.Label()
+        Me.Res2Cut9 = New System.Windows.Forms.Label()
+        Me.Res2Cut10 = New System.Windows.Forms.Label()
+        Me.Res3Cut1 = New System.Windows.Forms.Label()
+        Me.Res3Cut2 = New System.Windows.Forms.Label()
+        Me.Res3Cut3 = New System.Windows.Forms.Label()
+        Me.Res3Cut4 = New System.Windows.Forms.Label()
+        Me.Res3Cut5 = New System.Windows.Forms.Label()
+        Me.Res3Cut6 = New System.Windows.Forms.Label()
+        Me.Res3Cut7 = New System.Windows.Forms.Label()
+        Me.Res3Cut8 = New System.Windows.Forms.Label()
+        Me.Res3Cut9 = New System.Windows.Forms.Label()
+        Me.Res3Cut10 = New System.Windows.Forms.Label()
+        Me.Res4Cut1 = New System.Windows.Forms.Label()
+        Me.Res4Cut2 = New System.Windows.Forms.Label()
+        Me.Res4Cut3 = New System.Windows.Forms.Label()
+        Me.Res4Cut4 = New System.Windows.Forms.Label()
+        Me.Res4Cut5 = New System.Windows.Forms.Label()
+        Me.Res4Cut6 = New System.Windows.Forms.Label()
+        Me.Res4Cut7 = New System.Windows.Forms.Label()
+        Me.Res4Cut8 = New System.Windows.Forms.Label()
+        Me.Res4Cut9 = New System.Windows.Forms.Label()
+        Me.Res4Cut10 = New System.Windows.Forms.Label()
+        Me.System1 = New LaserFront.Trimmer.DllSystem.SystemNET()
+        Me.Probe1 = New LaserFront.Trimmer.DllProbeTeach.Probe()
+        Me.Ctl_LaserTeach2 = New LaserFront.Trimmer.DllLaserTeach.ctl_LaserTeach()
+        Me.Password1 = New LaserFront.Trimmer.DllPassword.Password()
+        Me.Teaching1 = New LaserFront.Trimmer.DllTeach.Teaching()
+        Me.HelpVersion1 = New LaserFront.Trimmer.DllAbout.HelpVersion()
+        Me.ManualTeach1 = New LaserFront.Trimmer.DllManualTeach.ManualTeach()
+        Me.Utility1 = New LaserFront.Trimmer.DllUtility.Utility()
+        Me.VideoLibrary1 = New LaserFront.Trimmer.DllVideo.VideoLibrary()
+        Me.TrimMap1 = New TrimControlLibrary.TrimMapPlate()
         Me.picGraphAccumulation.SuspendLayout()
         Me.frmHistoryData.SuspendLayout()
         Me.PanelGraph.SuspendLayout()
@@ -399,6 +490,10 @@
         Me.GrpStartBlk.SuspendLayout()
         Me.tlpStartBlk.SuspendLayout()
         Me.PanelMap.SuspendLayout()
+        Me.pnlFirstResData.SuspendLayout()
+        Me.tlpFirstResData.SuspendLayout()
+        Me.pnlFirstResDataNET.SuspendLayout()
+        Me.tlpFirstResDataNET.SuspendLayout()
         Me.SuspendLayout()
         '
         'CmdCircuitTeach
@@ -977,14 +1072,6 @@
         Me.lblGraphUnit.ForeColor = System.Drawing.Color.Green
         Me.lblGraphUnit.Name = "lblGraphUnit"
         '
-        'Teaching1
-        '
-        Me.Teaching1.cOFFLINEcDEBUG = 0
-        resources.ApplyResources(Me.Teaching1, "Teaching1")
-        Me.Teaching1.Name = "Teaching1"
-        Me.Teaching1.ZOFF = 0R
-        Me.Teaching1.ZON = 0R
-        '
         'lblInterLockMSG
         '
         Me.lblInterLockMSG.BackColor = System.Drawing.Color.Yellow
@@ -1268,6 +1355,8 @@
         'frmHistoryData
         '
         Me.frmHistoryData.BackColor = System.Drawing.SystemColors.Control
+        Me.frmHistoryData.Controls.Add(Me.LblcRESVALUE)
+        Me.frmHistoryData.Controls.Add(Me.LblcLOTNUMBER)
         Me.frmHistoryData.Controls.Add(Me.LblITLONGP)
         Me.frmHistoryData.Controls.Add(Me.LblITHINGP)
         Me.frmHistoryData.Controls.Add(Me.LblcOVERP)
@@ -1306,6 +1395,16 @@
         resources.ApplyResources(Me.frmHistoryData, "frmHistoryData")
         Me.frmHistoryData.Name = "frmHistoryData"
         Me.frmHistoryData.TabStop = False
+        '
+        'LblcRESVALUE
+        '
+        resources.ApplyResources(Me.LblcRESVALUE, "LblcRESVALUE")
+        Me.LblcRESVALUE.Name = "LblcRESVALUE"
+        '
+        'LblcLOTNUMBER
+        '
+        resources.ApplyResources(Me.LblcLOTNUMBER, "LblcLOTNUMBER")
+        Me.LblcLOTNUMBER.Name = "LblcLOTNUMBER"
         '
         'LblITLONGP
         '
@@ -1873,13 +1972,6 @@
         Me.lblQRData.BackColor = System.Drawing.SystemColors.Control
         Me.lblQRData.Name = "lblQRData"
         '
-        'Probe1
-        '
-        Me.Probe1.cOFFLINEcDEBUG = 0
-        resources.ApplyResources(Me.Probe1, "Probe1")
-        Me.Probe1.ModuleInformation = Nothing
-        Me.Probe1.Name = "Probe1"
-        '
         'CmdSave
         '
         Me.CmdSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -1968,6 +2060,8 @@
         '
         'tabOptCmnds
         '
+        Me.tabOptCmnds.Controls.Add(Me.lblProductionData)
+        Me.tabOptCmnds.Controls.Add(Me.CmdFolderOpen)
         Me.tabOptCmnds.Controls.Add(Me.lblExCamera)
         Me.tabOptCmnds.Controls.Add(Me.lblCalibration)
         Me.tabOptCmnds.Controls.Add(Me.lblCutPos)
@@ -1982,6 +2076,20 @@
         resources.ApplyResources(Me.tabOptCmnds, "tabOptCmnds")
         Me.tabOptCmnds.Name = "tabOptCmnds"
         Me.tabOptCmnds.UseVisualStyleBackColor = True
+        '
+        'lblProductionData
+        '
+        resources.ApplyResources(Me.lblProductionData, "lblProductionData")
+        Me.lblProductionData.Name = "lblProductionData"
+        '
+        'CmdFolderOpen
+        '
+        Me.CmdFolderOpen.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.CmdFolderOpen.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.CmdFolderOpen, "CmdFolderOpen")
+        Me.CmdFolderOpen.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.CmdFolderOpen.Name = "CmdFolderOpen"
+        Me.CmdFolderOpen.UseVisualStyleBackColor = False
         '
         'lblExCamera
         '
@@ -2351,18 +2459,6 @@
         resources.ApplyResources(Me.LblStrageBoxTtl, "LblStrageBoxTtl")
         Me.LblStrageBoxTtl.Name = "LblStrageBoxTtl"
         '
-        'ManualTeach1
-        '
-        Me.ManualTeach1.BackColor = System.Drawing.Color.Blue
-        resources.ApplyResources(Me.ManualTeach1, "ManualTeach1")
-        Me.ManualTeach1.Name = "ManualTeach1"
-        '
-        'Password1
-        '
-        Me.Password1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        resources.ApplyResources(Me.Password1, "Password1")
-        Me.Password1.Name = "Password1"
-        '
         'pnlDataDisplay
         '
         resources.ApplyResources(Me.pnlDataDisplay, "pnlDataDisplay")
@@ -2403,11 +2499,6 @@
         '
         'TimerBC
         '
-        '
-        'HelpVersion1
-        '
-        resources.ApplyResources(Me.HelpVersion1, "HelpVersion1")
-        Me.HelpVersion1.Name = "HelpVersion1"
         '
         'btnUserLogon
         '
@@ -2469,26 +2560,6 @@
         resources.ApplyResources(Me.btnJudge, "btnJudge")
         Me.btnJudge.Name = "btnJudge"
         Me.btnJudge.UseVisualStyleBackColor = True
-        '
-        'Utility1
-        '
-        Me.Utility1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        resources.ApplyResources(Me.Utility1, "Utility1")
-        Me.Utility1.Name = "Utility1"
-        '
-        'Ctl_LaserTeach2
-        '
-        Me.Ctl_LaserTeach2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Ctl_LaserTeach2.cOFFLINEcDEBUG = 0
-        resources.ApplyResources(Me.Ctl_LaserTeach2, "Ctl_LaserTeach2")
-        Me.Ctl_LaserTeach2.ModuleInformation = Nothing
-        Me.Ctl_LaserTeach2.Name = "Ctl_LaserTeach2"
-        '
-        'System1
-        '
-        Me.System1.BackColor = System.Drawing.Color.Green
-        resources.ApplyResources(Me.System1, "System1")
-        Me.System1.Name = "System1"
         '
         'lblDoorOpen
         '
@@ -2565,6 +2636,630 @@
         Me.btnNEXT.TabStop = False
         Me.btnNEXT.UseVisualStyleBackColor = True
         '
+        'CmdMapOnOff
+        '
+        Me.CmdMapOnOff.BackColor = System.Drawing.SystemColors.Control
+        Me.CmdMapOnOff.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.CmdMapOnOff, "CmdMapOnOff")
+        Me.CmdMapOnOff.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.CmdMapOnOff.Name = "CmdMapOnOff"
+        Me.CmdMapOnOff.UseVisualStyleBackColor = False
+        '
+        'PanelMap
+        '
+        resources.ApplyResources(Me.PanelMap, "PanelMap")
+        Me.PanelMap.Controls.Add(Me.CmdPrintMap)
+        Me.PanelMap.Controls.Add(Me.CmdMapOnOff)
+        Me.PanelMap.Name = "PanelMap"
+        '
+        'CmdPrintMap
+        '
+        Me.CmdPrintMap.BackColor = System.Drawing.SystemColors.Control
+        Me.CmdPrintMap.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.CmdPrintMap, "CmdPrintMap")
+        Me.CmdPrintMap.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.CmdPrintMap.Name = "CmdPrintMap"
+        Me.CmdPrintMap.UseVisualStyleBackColor = False
+        '
+        'btnQRLmit
+        '
+        Me.btnQRLmit.BackColor = System.Drawing.SystemColors.Control
+        Me.btnQRLmit.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.btnQRLmit, "btnQRLmit")
+        Me.btnQRLmit.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnQRLmit.Name = "btnQRLmit"
+        Me.btnQRLmit.UseVisualStyleBackColor = False
+        '
+        'lblCutOff
+        '
+        resources.ApplyResources(Me.lblCutOff, "lblCutOff")
+        Me.lblCutOff.BackColor = System.Drawing.Color.Lime
+        Me.lblCutOff.Name = "lblCutOff"
+        '
+        'BtnAlarmOnOff
+        '
+        Me.BtnAlarmOnOff.BackColor = System.Drawing.Color.Lime
+        resources.ApplyResources(Me.BtnAlarmOnOff, "BtnAlarmOnOff")
+        Me.BtnAlarmOnOff.Name = "BtnAlarmOnOff"
+        Me.BtnAlarmOnOff.UseVisualStyleBackColor = False
+        '
+        'pnlFirstResData
+        '
+        Me.pnlFirstResData.Controls.Add(Me.CutOffEsEditButton)
+        Me.pnlFirstResData.Controls.Add(Me.lblFrdNomVal)
+        Me.pnlFirstResData.Controls.Add(Me.lblFrdNom)
+        Me.pnlFirstResData.Controls.Add(Me.tlpFirstResData)
+        resources.ApplyResources(Me.pnlFirstResData, "pnlFirstResData")
+        Me.pnlFirstResData.Name = "pnlFirstResData"
+        '
+        'CutOffEsEditButton
+        '
+        Me.CutOffEsEditButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CutOffEsEditButton.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.CutOffEsEditButton, "CutOffEsEditButton")
+        Me.CutOffEsEditButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.CutOffEsEditButton.Name = "CutOffEsEditButton"
+        Me.CutOffEsEditButton.UseVisualStyleBackColor = False
+        '
+        'lblFrdNomVal
+        '
+        resources.ApplyResources(Me.lblFrdNomVal, "lblFrdNomVal")
+        Me.lblFrdNomVal.Name = "lblFrdNomVal"
+        '
+        'lblFrdNom
+        '
+        resources.ApplyResources(Me.lblFrdNom, "lblFrdNom")
+        Me.lblFrdNom.Name = "lblFrdNom"
+        '
+        'tlpFirstResData
+        '
+        resources.ApplyResources(Me.tlpFirstResData, "tlpFirstResData")
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdCutOff, 1, 0)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdESPoint, 2, 0)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrd_1, 0, 1)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdC1, 1, 1)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdE1, 2, 1)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrd_2, 0, 2)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdC2, 1, 2)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdE2, 2, 2)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrd_3, 0, 3)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdC3, 1, 3)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdE3, 2, 3)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrd_4, 0, 4)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdC4, 1, 4)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdE4, 2, 4)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrd_5, 0, 5)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdC5, 1, 5)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdE5, 2, 5)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrd_6, 0, 6)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdC6, 1, 6)
+        Me.tlpFirstResData.Controls.Add(Me.lblFrdE6, 2, 6)
+        Me.tlpFirstResData.Name = "tlpFirstResData"
+        '
+        'lblFrdCutOff
+        '
+        resources.ApplyResources(Me.lblFrdCutOff, "lblFrdCutOff")
+        Me.lblFrdCutOff.Name = "lblFrdCutOff"
+        '
+        'lblFrdESPoint
+        '
+        resources.ApplyResources(Me.lblFrdESPoint, "lblFrdESPoint")
+        Me.lblFrdESPoint.Name = "lblFrdESPoint"
+        '
+        'lblFrd_1
+        '
+        resources.ApplyResources(Me.lblFrd_1, "lblFrd_1")
+        Me.lblFrd_1.Name = "lblFrd_1"
+        '
+        'lblFrdC1
+        '
+        resources.ApplyResources(Me.lblFrdC1, "lblFrdC1")
+        Me.lblFrdC1.Name = "lblFrdC1"
+        '
+        'lblFrdE1
+        '
+        resources.ApplyResources(Me.lblFrdE1, "lblFrdE1")
+        Me.lblFrdE1.Name = "lblFrdE1"
+        '
+        'lblFrd_2
+        '
+        resources.ApplyResources(Me.lblFrd_2, "lblFrd_2")
+        Me.lblFrd_2.Name = "lblFrd_2"
+        '
+        'lblFrdC2
+        '
+        resources.ApplyResources(Me.lblFrdC2, "lblFrdC2")
+        Me.lblFrdC2.Name = "lblFrdC2"
+        '
+        'lblFrdE2
+        '
+        resources.ApplyResources(Me.lblFrdE2, "lblFrdE2")
+        Me.lblFrdE2.Name = "lblFrdE2"
+        '
+        'lblFrd_3
+        '
+        resources.ApplyResources(Me.lblFrd_3, "lblFrd_3")
+        Me.lblFrd_3.Name = "lblFrd_3"
+        '
+        'lblFrdC3
+        '
+        resources.ApplyResources(Me.lblFrdC3, "lblFrdC3")
+        Me.lblFrdC3.Name = "lblFrdC3"
+        '
+        'lblFrdE3
+        '
+        resources.ApplyResources(Me.lblFrdE3, "lblFrdE3")
+        Me.lblFrdE3.Name = "lblFrdE3"
+        '
+        'lblFrd_4
+        '
+        resources.ApplyResources(Me.lblFrd_4, "lblFrd_4")
+        Me.lblFrd_4.Name = "lblFrd_4"
+        '
+        'lblFrdC4
+        '
+        resources.ApplyResources(Me.lblFrdC4, "lblFrdC4")
+        Me.lblFrdC4.Name = "lblFrdC4"
+        '
+        'lblFrdE4
+        '
+        resources.ApplyResources(Me.lblFrdE4, "lblFrdE4")
+        Me.lblFrdE4.Name = "lblFrdE4"
+        '
+        'lblFrd_5
+        '
+        resources.ApplyResources(Me.lblFrd_5, "lblFrd_5")
+        Me.lblFrd_5.Name = "lblFrd_5"
+        '
+        'lblFrdC5
+        '
+        resources.ApplyResources(Me.lblFrdC5, "lblFrdC5")
+        Me.lblFrdC5.Name = "lblFrdC5"
+        '
+        'lblFrdE5
+        '
+        resources.ApplyResources(Me.lblFrdE5, "lblFrdE5")
+        Me.lblFrdE5.Name = "lblFrdE5"
+        '
+        'lblFrd_6
+        '
+        resources.ApplyResources(Me.lblFrd_6, "lblFrd_6")
+        Me.lblFrd_6.Name = "lblFrd_6"
+        '
+        'lblFrdC6
+        '
+        resources.ApplyResources(Me.lblFrdC6, "lblFrdC6")
+        Me.lblFrdC6.Name = "lblFrdC6"
+        '
+        'lblFrdE6
+        '
+        resources.ApplyResources(Me.lblFrdE6, "lblFrdE6")
+        Me.lblFrdE6.Name = "lblFrdE6"
+        '
+        'LabelAutoCalibLimit
+        '
+        Me.LabelAutoCalibLimit.BackColor = System.Drawing.Color.Yellow
+        Me.LabelAutoCalibLimit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LabelAutoCalibLimit.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.LabelAutoCalibLimit, "LabelAutoCalibLimit")
+        Me.LabelAutoCalibLimit.ForeColor = System.Drawing.Color.Red
+        Me.LabelAutoCalibLimit.Name = "LabelAutoCalibLimit"
+        '
+        'pnlFirstResDataNET
+        '
+        Me.pnlFirstResDataNET.Controls.Add(Me.CutOffEsEditButtonNET)
+        Me.pnlFirstResDataNET.Controls.Add(Me.lblNETNomVal)
+        Me.pnlFirstResDataNET.Controls.Add(Me.lblNETNom)
+        Me.pnlFirstResDataNET.Controls.Add(Me.tlpFirstResDataNET)
+        resources.ApplyResources(Me.pnlFirstResDataNET, "pnlFirstResDataNET")
+        Me.pnlFirstResDataNET.Name = "pnlFirstResDataNET"
+        '
+        'CutOffEsEditButtonNET
+        '
+        Me.CutOffEsEditButtonNET.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CutOffEsEditButtonNET.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.CutOffEsEditButtonNET, "CutOffEsEditButtonNET")
+        Me.CutOffEsEditButtonNET.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.CutOffEsEditButtonNET.Name = "CutOffEsEditButtonNET"
+        Me.CutOffEsEditButtonNET.UseVisualStyleBackColor = False
+        '
+        'lblNETNomVal
+        '
+        resources.ApplyResources(Me.lblNETNomVal, "lblNETNomVal")
+        Me.lblNETNomVal.Name = "lblNETNomVal"
+        '
+        'lblNETNom
+        '
+        resources.ApplyResources(Me.lblNETNom, "lblNETNom")
+        Me.lblNETNom.Name = "lblNETNom"
+        '
+        'tlpFirstResDataNET
+        '
+        resources.ApplyResources(Me.tlpFirstResDataNET, "tlpFirstResDataNET")
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label8, 0, 0)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label9, 0, 1)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label10, 0, 2)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label11, 0, 3)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label12, 0, 4)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label13, 0, 5)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label19, 0, 6)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label20, 0, 7)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label21, 0, 8)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label22, 0, 9)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label23, 0, 10)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label24, 1, 0)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label25, 2, 0)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label26, 3, 0)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Label27, 4, 0)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut1, 1, 1)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut2, 1, 2)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut3, 1, 3)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut4, 1, 4)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut5, 1, 5)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut6, 1, 6)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut7, 1, 7)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut8, 1, 8)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut9, 1, 9)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res1Cut10, 1, 10)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut1, 2, 1)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut2, 2, 2)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut3, 2, 3)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut4, 2, 4)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut5, 2, 5)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut6, 2, 6)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut7, 2, 7)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut8, 2, 8)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut9, 2, 9)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res2Cut10, 2, 10)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut1, 3, 1)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut2, 3, 2)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut3, 3, 3)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut4, 3, 4)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut5, 3, 5)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut6, 3, 6)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut7, 3, 7)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut8, 3, 8)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut9, 3, 9)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res3Cut10, 3, 10)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut1, 4, 1)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut2, 4, 2)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut3, 4, 3)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut4, 4, 4)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut5, 4, 5)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut6, 4, 6)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut7, 4, 7)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut8, 4, 8)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut9, 4, 9)
+        Me.tlpFirstResDataNET.Controls.Add(Me.Res4Cut10, 4, 10)
+        Me.tlpFirstResDataNET.Name = "tlpFirstResDataNET"
+        '
+        'Label8
+        '
+        resources.ApplyResources(Me.Label8, "Label8")
+        Me.Label8.Name = "Label8"
+        '
+        'Label9
+        '
+        resources.ApplyResources(Me.Label9, "Label9")
+        Me.Label9.Name = "Label9"
+        '
+        'Label10
+        '
+        resources.ApplyResources(Me.Label10, "Label10")
+        Me.Label10.Name = "Label10"
+        '
+        'Label11
+        '
+        resources.ApplyResources(Me.Label11, "Label11")
+        Me.Label11.Name = "Label11"
+        '
+        'Label12
+        '
+        resources.ApplyResources(Me.Label12, "Label12")
+        Me.Label12.Name = "Label12"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'Label19
+        '
+        resources.ApplyResources(Me.Label19, "Label19")
+        Me.Label19.Name = "Label19"
+        '
+        'Label20
+        '
+        resources.ApplyResources(Me.Label20, "Label20")
+        Me.Label20.Name = "Label20"
+        '
+        'Label21
+        '
+        resources.ApplyResources(Me.Label21, "Label21")
+        Me.Label21.Name = "Label21"
+        '
+        'Label22
+        '
+        resources.ApplyResources(Me.Label22, "Label22")
+        Me.Label22.Name = "Label22"
+        '
+        'Label23
+        '
+        resources.ApplyResources(Me.Label23, "Label23")
+        Me.Label23.Name = "Label23"
+        '
+        'Label24
+        '
+        resources.ApplyResources(Me.Label24, "Label24")
+        Me.Label24.Name = "Label24"
+        '
+        'Label25
+        '
+        resources.ApplyResources(Me.Label25, "Label25")
+        Me.Label25.Name = "Label25"
+        '
+        'Label26
+        '
+        resources.ApplyResources(Me.Label26, "Label26")
+        Me.Label26.Name = "Label26"
+        '
+        'Label27
+        '
+        resources.ApplyResources(Me.Label27, "Label27")
+        Me.Label27.Name = "Label27"
+        '
+        'Res1Cut1
+        '
+        resources.ApplyResources(Me.Res1Cut1, "Res1Cut1")
+        Me.Res1Cut1.Name = "Res1Cut1"
+        '
+        'Res1Cut2
+        '
+        resources.ApplyResources(Me.Res1Cut2, "Res1Cut2")
+        Me.Res1Cut2.Name = "Res1Cut2"
+        '
+        'Res1Cut3
+        '
+        resources.ApplyResources(Me.Res1Cut3, "Res1Cut3")
+        Me.Res1Cut3.Name = "Res1Cut3"
+        '
+        'Res1Cut4
+        '
+        resources.ApplyResources(Me.Res1Cut4, "Res1Cut4")
+        Me.Res1Cut4.Name = "Res1Cut4"
+        '
+        'Res1Cut5
+        '
+        resources.ApplyResources(Me.Res1Cut5, "Res1Cut5")
+        Me.Res1Cut5.Name = "Res1Cut5"
+        '
+        'Res1Cut6
+        '
+        resources.ApplyResources(Me.Res1Cut6, "Res1Cut6")
+        Me.Res1Cut6.Name = "Res1Cut6"
+        '
+        'Res1Cut7
+        '
+        resources.ApplyResources(Me.Res1Cut7, "Res1Cut7")
+        Me.Res1Cut7.Name = "Res1Cut7"
+        '
+        'Res1Cut8
+        '
+        resources.ApplyResources(Me.Res1Cut8, "Res1Cut8")
+        Me.Res1Cut8.Name = "Res1Cut8"
+        '
+        'Res1Cut9
+        '
+        resources.ApplyResources(Me.Res1Cut9, "Res1Cut9")
+        Me.Res1Cut9.Name = "Res1Cut9"
+        '
+        'Res1Cut10
+        '
+        resources.ApplyResources(Me.Res1Cut10, "Res1Cut10")
+        Me.Res1Cut10.Name = "Res1Cut10"
+        '
+        'Res2Cut1
+        '
+        resources.ApplyResources(Me.Res2Cut1, "Res2Cut1")
+        Me.Res2Cut1.Name = "Res2Cut1"
+        '
+        'Res2Cut2
+        '
+        resources.ApplyResources(Me.Res2Cut2, "Res2Cut2")
+        Me.Res2Cut2.Name = "Res2Cut2"
+        '
+        'Res2Cut3
+        '
+        resources.ApplyResources(Me.Res2Cut3, "Res2Cut3")
+        Me.Res2Cut3.Name = "Res2Cut3"
+        '
+        'Res2Cut4
+        '
+        resources.ApplyResources(Me.Res2Cut4, "Res2Cut4")
+        Me.Res2Cut4.Name = "Res2Cut4"
+        '
+        'Res2Cut5
+        '
+        resources.ApplyResources(Me.Res2Cut5, "Res2Cut5")
+        Me.Res2Cut5.Name = "Res2Cut5"
+        '
+        'Res2Cut6
+        '
+        resources.ApplyResources(Me.Res2Cut6, "Res2Cut6")
+        Me.Res2Cut6.Name = "Res2Cut6"
+        '
+        'Res2Cut7
+        '
+        resources.ApplyResources(Me.Res2Cut7, "Res2Cut7")
+        Me.Res2Cut7.Name = "Res2Cut7"
+        '
+        'Res2Cut8
+        '
+        resources.ApplyResources(Me.Res2Cut8, "Res2Cut8")
+        Me.Res2Cut8.Name = "Res2Cut8"
+        '
+        'Res2Cut9
+        '
+        resources.ApplyResources(Me.Res2Cut9, "Res2Cut9")
+        Me.Res2Cut9.Name = "Res2Cut9"
+        '
+        'Res2Cut10
+        '
+        resources.ApplyResources(Me.Res2Cut10, "Res2Cut10")
+        Me.Res2Cut10.Name = "Res2Cut10"
+        '
+        'Res3Cut1
+        '
+        resources.ApplyResources(Me.Res3Cut1, "Res3Cut1")
+        Me.Res3Cut1.Name = "Res3Cut1"
+        '
+        'Res3Cut2
+        '
+        resources.ApplyResources(Me.Res3Cut2, "Res3Cut2")
+        Me.Res3Cut2.Name = "Res3Cut2"
+        '
+        'Res3Cut3
+        '
+        resources.ApplyResources(Me.Res3Cut3, "Res3Cut3")
+        Me.Res3Cut3.Name = "Res3Cut3"
+        '
+        'Res3Cut4
+        '
+        resources.ApplyResources(Me.Res3Cut4, "Res3Cut4")
+        Me.Res3Cut4.Name = "Res3Cut4"
+        '
+        'Res3Cut5
+        '
+        resources.ApplyResources(Me.Res3Cut5, "Res3Cut5")
+        Me.Res3Cut5.Name = "Res3Cut5"
+        '
+        'Res3Cut6
+        '
+        resources.ApplyResources(Me.Res3Cut6, "Res3Cut6")
+        Me.Res3Cut6.Name = "Res3Cut6"
+        '
+        'Res3Cut7
+        '
+        resources.ApplyResources(Me.Res3Cut7, "Res3Cut7")
+        Me.Res3Cut7.Name = "Res3Cut7"
+        '
+        'Res3Cut8
+        '
+        resources.ApplyResources(Me.Res3Cut8, "Res3Cut8")
+        Me.Res3Cut8.Name = "Res3Cut8"
+        '
+        'Res3Cut9
+        '
+        resources.ApplyResources(Me.Res3Cut9, "Res3Cut9")
+        Me.Res3Cut9.Name = "Res3Cut9"
+        '
+        'Res3Cut10
+        '
+        resources.ApplyResources(Me.Res3Cut10, "Res3Cut10")
+        Me.Res3Cut10.Name = "Res3Cut10"
+        '
+        'Res4Cut1
+        '
+        resources.ApplyResources(Me.Res4Cut1, "Res4Cut1")
+        Me.Res4Cut1.Name = "Res4Cut1"
+        '
+        'Res4Cut2
+        '
+        resources.ApplyResources(Me.Res4Cut2, "Res4Cut2")
+        Me.Res4Cut2.Name = "Res4Cut2"
+        '
+        'Res4Cut3
+        '
+        resources.ApplyResources(Me.Res4Cut3, "Res4Cut3")
+        Me.Res4Cut3.Name = "Res4Cut3"
+        '
+        'Res4Cut4
+        '
+        resources.ApplyResources(Me.Res4Cut4, "Res4Cut4")
+        Me.Res4Cut4.Name = "Res4Cut4"
+        '
+        'Res4Cut5
+        '
+        resources.ApplyResources(Me.Res4Cut5, "Res4Cut5")
+        Me.Res4Cut5.Name = "Res4Cut5"
+        '
+        'Res4Cut6
+        '
+        resources.ApplyResources(Me.Res4Cut6, "Res4Cut6")
+        Me.Res4Cut6.Name = "Res4Cut6"
+        '
+        'Res4Cut7
+        '
+        resources.ApplyResources(Me.Res4Cut7, "Res4Cut7")
+        Me.Res4Cut7.Name = "Res4Cut7"
+        '
+        'Res4Cut8
+        '
+        resources.ApplyResources(Me.Res4Cut8, "Res4Cut8")
+        Me.Res4Cut8.Name = "Res4Cut8"
+        '
+        'Res4Cut9
+        '
+        resources.ApplyResources(Me.Res4Cut9, "Res4Cut9")
+        Me.Res4Cut9.Name = "Res4Cut9"
+        '
+        'Res4Cut10
+        '
+        resources.ApplyResources(Me.Res4Cut10, "Res4Cut10")
+        Me.Res4Cut10.Name = "Res4Cut10"
+        '
+        'System1
+        '
+        Me.System1.BackColor = System.Drawing.Color.Green
+        resources.ApplyResources(Me.System1, "System1")
+        Me.System1.Name = "System1"
+        '
+        'Probe1
+        '
+        Me.Probe1.cOFFLINEcDEBUG = 0
+        resources.ApplyResources(Me.Probe1, "Probe1")
+        Me.Probe1.ModuleInformation = Nothing
+        Me.Probe1.Name = "Probe1"
+        '
+        'Ctl_LaserTeach2
+        '
+        Me.Ctl_LaserTeach2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Ctl_LaserTeach2.cOFFLINEcDEBUG = 0
+        resources.ApplyResources(Me.Ctl_LaserTeach2, "Ctl_LaserTeach2")
+        Me.Ctl_LaserTeach2.ModuleInformation = Nothing
+        Me.Ctl_LaserTeach2.Name = "Ctl_LaserTeach2"
+        '
+        'Password1
+        '
+        Me.Password1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        resources.ApplyResources(Me.Password1, "Password1")
+        Me.Password1.Name = "Password1"
+        '
+        'Teaching1
+        '
+        Me.Teaching1.cOFFLINEcDEBUG = 0
+        resources.ApplyResources(Me.Teaching1, "Teaching1")
+        Me.Teaching1.Name = "Teaching1"
+        Me.Teaching1.ZOFF = 0R
+        Me.Teaching1.ZON = 0R
+        '
+        'HelpVersion1
+        '
+        resources.ApplyResources(Me.HelpVersion1, "HelpVersion1")
+        Me.HelpVersion1.Name = "HelpVersion1"
+        '
+        'ManualTeach1
+        '
+        Me.ManualTeach1.BackColor = System.Drawing.Color.Blue
+        resources.ApplyResources(Me.ManualTeach1, "ManualTeach1")
+        Me.ManualTeach1.Name = "ManualTeach1"
+        '
+        'Utility1
+        '
+        Me.Utility1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        resources.ApplyResources(Me.Utility1, "Utility1")
+        Me.Utility1.Name = "Utility1"
+        '
         'VideoLibrary1
         '
         Me.VideoLibrary1.BackColor = System.Drawing.Color.Transparent
@@ -2615,57 +3310,10 @@
         Me.VideoLibrary1.ZON = 0R
         Me.VideoLibrary1.zwaitpos = 0R
         '
-        'CmdMapOnOff
-        '
-        Me.CmdMapOnOff.BackColor = System.Drawing.SystemColors.Control
-        Me.CmdMapOnOff.Cursor = System.Windows.Forms.Cursors.Default
-        resources.ApplyResources(Me.CmdMapOnOff, "CmdMapOnOff")
-        Me.CmdMapOnOff.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.CmdMapOnOff.Name = "CmdMapOnOff"
-        Me.CmdMapOnOff.UseVisualStyleBackColor = False
-        '
         'TrimMap1
         '
         resources.ApplyResources(Me.TrimMap1, "TrimMap1")
         Me.TrimMap1.Name = "TrimMap1"
-        '
-        'PanelMap
-        '
-        resources.ApplyResources(Me.PanelMap, "PanelMap")
-        Me.PanelMap.Controls.Add(Me.CmdPrintMap)
-        Me.PanelMap.Controls.Add(Me.CmdMapOnOff)
-        Me.PanelMap.Name = "PanelMap"
-        '
-        'CmdPrintMap
-        '
-        Me.CmdPrintMap.BackColor = System.Drawing.SystemColors.Control
-        Me.CmdPrintMap.Cursor = System.Windows.Forms.Cursors.Default
-        resources.ApplyResources(Me.CmdPrintMap, "CmdPrintMap")
-        Me.CmdPrintMap.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.CmdPrintMap.Name = "CmdPrintMap"
-        Me.CmdPrintMap.UseVisualStyleBackColor = False
-        '
-        'btnQRLmit
-        '
-        Me.btnQRLmit.BackColor = System.Drawing.SystemColors.Control
-        Me.btnQRLmit.Cursor = System.Windows.Forms.Cursors.Default
-        resources.ApplyResources(Me.btnQRLmit, "btnQRLmit")
-        Me.btnQRLmit.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnQRLmit.Name = "btnQRLmit"
-        Me.btnQRLmit.UseVisualStyleBackColor = False
-        '
-        'lblCutOff
-        '
-        resources.ApplyResources(Me.lblCutOff, "lblCutOff")
-        Me.lblCutOff.BackColor = System.Drawing.Color.Lime
-        Me.lblCutOff.Name = "lblCutOff"
-        '
-        'BtnAlarmOnOff
-        '
-        Me.BtnAlarmOnOff.BackColor = System.Drawing.Color.Lime
-        resources.ApplyResources(Me.BtnAlarmOnOff, "BtnAlarmOnOff")
-        Me.BtnAlarmOnOff.Name = "BtnAlarmOnOff"
-        Me.BtnAlarmOnOff.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -2673,6 +3321,11 @@
         Me.BackColor = System.Drawing.SystemColors.Control
         resources.ApplyResources(Me, "$this")
         Me.ControlBox = False
+        Me.Controls.Add(Me.frmHistoryData)
+        Me.Controls.Add(Me.pnlFirstResDataNET)
+        Me.Controls.Add(Me.chkDistributeOnOff)
+        Me.Controls.Add(Me.LabelAutoCalibLimit)
+        Me.Controls.Add(Me.pnlFirstResData)
         Me.Controls.Add(Me.BtnAlarmOnOff)
         Me.Controls.Add(Me.lblCutOff)
         Me.Controls.Add(Me.btnQRLmit)
@@ -2707,7 +3360,6 @@
         Me.Controls.Add(Me.grpDbg)
         Me.Controls.Add(Me.GrpMode)
         Me.Controls.Add(Me.btnDbg)
-        Me.Controls.Add(Me.chkDistributeOnOff)
         Me.Controls.Add(Me.btnGoClipboard)
         Me.Controls.Add(Me.LblRotAtt)
         Me.Controls.Add(Me.CMdIX2Log)
@@ -2715,7 +3367,6 @@
         Me.Controls.Add(Me.CmdCnd)
         Me.Controls.Add(Me.mnuHelpAbout)
         Me.Controls.Add(Me.txtLog)
-        Me.Controls.Add(Me.frmHistoryData)
         Me.Controls.Add(Me.LblMes)
         Me.Controls.Add(Me.LblCur)
         Me.Controls.Add(Me.lblLoginResult)
@@ -2761,6 +3412,12 @@
         Me.tlpStartBlk.ResumeLayout(False)
         Me.tlpStartBlk.PerformLayout()
         Me.PanelMap.ResumeLayout(False)
+        Me.pnlFirstResData.ResumeLayout(False)
+        Me.tlpFirstResData.ResumeLayout(False)
+        Me.tlpFirstResData.PerformLayout()
+        Me.pnlFirstResDataNET.ResumeLayout(False)
+        Me.tlpFirstResDataNET.ResumeLayout(False)
+        Me.tlpFirstResDataNET.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2967,5 +3624,95 @@
     Friend WithEvents lblCutOff As System.Windows.Forms.Label
     Friend WithEvents BtnAlarmOnOff As System.Windows.Forms.Button
     Public WithEvents CmdRecogRough As Button
+    Friend WithEvents LblcRESVALUE As System.Windows.Forms.Label
+    Friend WithEvents LblcLOTNUMBER As System.Windows.Forms.Label
+    Friend WithEvents lblProductionData As System.Windows.Forms.Label
+    Public WithEvents CmdFolderOpen As System.Windows.Forms.Button
+    Friend WithEvents pnlFirstResData As System.Windows.Forms.Panel
+    Private WithEvents lblFrdNomVal As System.Windows.Forms.Label
+    Private WithEvents lblFrdNom As System.Windows.Forms.Label
+    Private WithEvents tlpFirstResData As System.Windows.Forms.TableLayoutPanel
+    Private WithEvents lblFrdCutOff As System.Windows.Forms.Label
+    Private WithEvents lblFrdESPoint As System.Windows.Forms.Label
+    Private WithEvents lblFrd_1 As System.Windows.Forms.Label
+    Private WithEvents lblFrdC1 As System.Windows.Forms.Label
+    Private WithEvents lblFrdE1 As System.Windows.Forms.Label
+    Private WithEvents lblFrd_2 As System.Windows.Forms.Label
+    Private WithEvents lblFrdC2 As System.Windows.Forms.Label
+    Private WithEvents lblFrdE2 As System.Windows.Forms.Label
+    Private WithEvents lblFrd_3 As System.Windows.Forms.Label
+    Private WithEvents lblFrdC3 As System.Windows.Forms.Label
+    Private WithEvents lblFrdE3 As System.Windows.Forms.Label
+    Private WithEvents lblFrd_4 As System.Windows.Forms.Label
+    Private WithEvents lblFrdC4 As System.Windows.Forms.Label
+    Private WithEvents lblFrdE4 As System.Windows.Forms.Label
+    Private WithEvents lblFrd_5 As System.Windows.Forms.Label
+    Private WithEvents lblFrdC5 As System.Windows.Forms.Label
+    Private WithEvents lblFrdE5 As System.Windows.Forms.Label
+    Private WithEvents lblFrd_6 As System.Windows.Forms.Label
+    Private WithEvents lblFrdC6 As System.Windows.Forms.Label
+    Private WithEvents lblFrdE6 As System.Windows.Forms.Label
+    Public WithEvents LabelAutoCalibLimit As Label
+    Public WithEvents CutOffEsEditButton As Button
+    Friend WithEvents pnlFirstResDataNET As Panel
+    Public WithEvents CutOffEsEditButtonNET As Button
+    Private WithEvents lblNETNomVal As Label
+    Private WithEvents lblNETNom As Label
+    Friend WithEvents tlpFirstResDataNET As TableLayoutPanel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Res1Cut1 As Label
+    Friend WithEvents Res1Cut2 As Label
+    Friend WithEvents Res1Cut3 As Label
+    Friend WithEvents Res1Cut4 As Label
+    Friend WithEvents Res1Cut5 As Label
+    Friend WithEvents Res1Cut6 As Label
+    Friend WithEvents Res1Cut7 As Label
+    Friend WithEvents Res1Cut8 As Label
+    Friend WithEvents Res1Cut9 As Label
+    Friend WithEvents Res1Cut10 As Label
+    Friend WithEvents Res2Cut1 As Label
+    Friend WithEvents Res2Cut2 As Label
+    Friend WithEvents Res2Cut3 As Label
+    Friend WithEvents Res2Cut4 As Label
+    Friend WithEvents Res2Cut5 As Label
+    Friend WithEvents Res2Cut6 As Label
+    Friend WithEvents Res2Cut7 As Label
+    Friend WithEvents Res2Cut8 As Label
+    Friend WithEvents Res2Cut9 As Label
+    Friend WithEvents Res2Cut10 As Label
+    Friend WithEvents Res3Cut1 As Label
+    Friend WithEvents Res3Cut2 As Label
+    Friend WithEvents Res3Cut3 As Label
+    Friend WithEvents Res3Cut4 As Label
+    Friend WithEvents Res3Cut5 As Label
+    Friend WithEvents Res3Cut6 As Label
+    Friend WithEvents Res3Cut7 As Label
+    Friend WithEvents Res3Cut8 As Label
+    Friend WithEvents Res3Cut9 As Label
+    Friend WithEvents Res3Cut10 As Label
+    Friend WithEvents Res4Cut1 As Label
+    Friend WithEvents Res4Cut2 As Label
+    Friend WithEvents Res4Cut3 As Label
+    Friend WithEvents Res4Cut4 As Label
+    Friend WithEvents Res4Cut5 As Label
+    Friend WithEvents Res4Cut6 As Label
+    Friend WithEvents Res4Cut7 As Label
+    Friend WithEvents Res4Cut8 As Label
+    Friend WithEvents Res4Cut9 As Label
+    Friend WithEvents Res4Cut10 As Label
 #End Region
 End Class

@@ -48,7 +48,7 @@
     <DebugSymbols>True</DebugSymbols>
     <DefineDebug>True</DefineDebug>
     <DefineTrace>True</DefineTrace>
-    <DefineConstants>cPLCcOFFLINEcDEBUG=0,START_KEY_SOFT=False,cOFFLINEcDEBUG = 0, VIDEO_CAPTURE = 0, cIOMONITOR = 0, cDBGRdraw = 0, cRESISTORcGRAPH = 0, Win32=True, cSOFTKYBOARDcUSE = 0</DefineConstants>
+    <DefineConstants>cPLCcOFFLINEcDEBUG=1,START_KEY_SOFT=False,cOFFLINEcDEBUG = 1, VIDEO_CAPTURE = 0, cIOMONITOR = 1, cDBGRdraw = 0, cRESISTORcGRAPH = 0, Win32=True, cSOFTKYBOARDcUSE = 0</DefineConstants>
     <PlatformTarget>x86</PlatformTarget>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
@@ -104,6 +104,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DefTrimFnc">
@@ -211,6 +214,24 @@
     <Compile Include="basMatrix.vb" />
     <Compile Include="basTrimming.vb">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormCutOffEnter.Designer.vb">
+      <DependentUpon>FormCutOffEnter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCutOffEnter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCutOffEsPointEnter.Designer.vb">
+      <DependentUpon>FormCutOffEsPointEnter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCutOffEsPointEnter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataSelect2.designer.vb">
+      <DependentUpon>FormDataSelect2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataSelect2.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLotEnd.designer.vb">
       <DependentUpon>FormLotEnd.vb</DependentUpon>
@@ -383,6 +404,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="QRCodeReader.vb" />
     <Compile Include="QR_Data.vb" />
     <Compile Include="QR_Print.vb" />
     <Compile Include="ResistorGraph.vb" />
@@ -414,11 +436,20 @@
     <Compile Include="SimpleTrimmer\SimpleTrimmer.vb" />
     <Compile Include="TrimErrNo.vb" />
     <Compile Include="UnderProbe.vb" />
+    <EmbeddedResource Include="FormCutOffEnter.resx">
+      <DependentUpon>FormCutOffEnter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCutOffEsPointEnter.resx">
+      <DependentUpon>FormCutOffEsPointEnter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDataSelect.en.resx">
       <DependentUpon>FormDataSelect.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDataSelect.zh-Hans.resx">
       <DependentUpon>FormDataSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataSelect2.resx">
+      <DependentUpon>FormDataSelect2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoaderAlarm.en.resx">
       <DependentUpon>FormLoaderAlarm.vb</DependentUpon>

@@ -307,6 +307,17 @@ Friend Class frmFineAdjust
             txtBpOffX.Text = m_bpOffX.ToString
             txtBpOffY.Text = m_bpOffY.ToString
 
+            'V6.1.4.5①↓
+            'V6.1.4.14①            If (gTkyKnd = KND_CHIP) Then
+            If (gTkyKnd = KND_CHIP OrElse gTkyKnd = KND_NET) Then   'V6.1.4.14①NETも追加
+                    CutOffEsEditButton.Visible = True
+                    CutOffEsEditButton.Enabled = True
+            Else
+                CutOffEsEditButton.Visible = False
+                CutOffEsEditButton.Enabled = False
+            End If
+            'V6.1.4.5①↑
+
             ' BlockSizeの現在値取得
             GetBlockSize(m_BlockSizeX, m_BlockSizeY)
 
@@ -1062,6 +1073,17 @@ STP_END:
             GrpArrow.Visible = False                                    ' JOGコントロールを非表示にする 
             Me.Hide()                                                   ' 一時停止画面を非表示とする 
 
+            'V4.7.3.5①↓
+            If (FormMain.Func_Password(F_EDIT) <> True) Then            'パスワード入力ｴﾗｰならEXIT
+                GrpArrow.Visible = True                                 'JOGコントロールを表示する 
+                Call ZCONRST()                                          'コンソールキーラッチ解除
+                TmKeyCheck.Interval = 10                                'タイマー開始
+                TmKeyCheck.Enabled = True                               'タイマー開始
+                Me.Show()                                               ' 一時停止画面を表示する 
+                Return
+            End If
+            'V4.7.3.5①↑
+
             ' データ編集プログラムを起動する(一時停止モード)
             r = Form1.ExecEditProgram(1)                                ' 非常停止等のエラー発生時はAPP終了するので戻ってこない 
             Call ZCONRST()                                              ' コンソールキーラッチ解除 ###226
@@ -1766,4 +1788,61 @@ STP_ERR:
         'V6.0.1.0⑪        Form1.SetMapOnOffButtonEnabled(False)
     End Sub
 
+    'V6.1.4.5①↓
+    Private Sub CutOffEsEditButton_Click(sender As Object, e As EventArgs) Handles CutOffEsEditButton.Click
+        Try
+
+            Call Form1.System1.OperationLogging(gSysPrm, "一時停止中カットオフ値編集", "")
+
+            ' 初期処理
+            GrpArrow.Visible = False                                    ' JOGコントロールを非表示にする 
+            Me.Hide()                                                   ' 一時停止画面を非表示とする 
+
+            'V6.1.4.14①↓
+            If (gTkyKnd = KND_NET) Then
+                Dim objFormCutOffEsPointEnter As New FormCutOffEnter()
+                objFormCutOffEsPointEnter.ShowDialog()
+                objFormCutOffEsPointEnter.Dispose()
+            Else
+                'V6.1.4.14①↑
+                Dim objFormCutOffEsPointEnter As New FormCutOffEsPointEnter()
+                objFormCutOffEsPointEnter.ShowDialog()
+                objFormCutOffEsPointEnter.Dispose()
+            End If　     'V6.1.4.14①
+
+            If gDataUpdateFlag Then                                     ' トリミングデータをINtime側に送信する
+                Call TRIMEND()                                              ' INtime内のメモリ解放
+
+                Dim r As Short = SendTrimData()                                          ' トリミングデータをINtime側に送信する
+                If (r <> cFRS_NORMAL) Then
+                    Call Form1.System1.TrmMsgBox(gSysPrm, MSGERR_SEND_TRIMDATA, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, TITLE_4)
+                    GoTo STP_ERR                                            ' 一時停止画面処理終了へ
+                End If
+            End If
+
+            ' 後処理
+            GrpArrow.Visible = True                                     ' JOGコントロールを表示する 
+
+            Call ZCONRST()
+            TmKeyCheck.Interval = 10
+            TmKeyCheck.Enabled = True
+
+            Me.Show()                                                   ' 一時停止画面を表示する 
+            Return
+
+            ' エラー発生時
+STP_ERR:
+            mExit_flg = cFRS_ERR_RST                                    ' Return値 = Cancel(RESETｷｰ)  
+            gbExitFlg = True                                            ' 終了フラグON
+            gfrmAdjustDisp = 0                                           'V5.0.0.1-29
+            Me.Close()
+
+            Return
+
+        Catch ex As Exception
+            MessageBox.Show("frmFineAdjust.CutOffEsEditButton_Click() TRAP ERROR = " & ex.Message)
+        End Try
+
+    End Sub
+    'V6.1.4.5①↑
 End Class

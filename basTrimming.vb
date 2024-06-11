@@ -8,7 +8,7 @@ Option Strict Off
 Option Explicit On
 
 Imports System.Globalization                        'V4.0.0.0-65
-Imports System.IO                                   'V4.4.0.0-0
+Imports System.IO                                   'V4.4.0.0-0 V6.1.4.0③
 Imports System.Reflection                           'V4.0.0.0-65
 Imports System.Runtime.InteropServices
 'V6.0.0.0②  Imports System.Runtime.Remoting                     'V3.0.0.0⑤
@@ -57,6 +57,8 @@ Module basTrimming
     'V1.20.0.1①
     Public Const TRIM_RESULT_MIDIUM_CUT_NG As Short = 22                ' 途中切り検出エラー 
     'V1.20.0.1①
+    Public Const TRIM_RESULT_RUDDER_BITE_NG As Short = 23               ' インデックスカット時のラダーかじり 'V6.1.4.10①
+
     '----- NG Judge -----
     Public Const CONTINUES_NG_HI As Integer = 1                         ' 連続NG-HIGHｴﾗｰ発生
     Public Const CONTINUES_NG_LO As Integer = 2
@@ -309,12 +311,14 @@ Module basTrimming
     '''                        MD_INI = 初期モード(stPWR(加工条件番号配列)を初期化する)
     '''                        MD_ADJ = 調整モード(stPWR(加工条件番号配列)を初期化しない)
     '''                      </param>
+    '''<param name="bPowerMonitoring">(INP)レーザパワーのモニタリングの有/無(特注) V6.1.4.0_35
+    '''                                    ※モニタリング時はフルパワー測定のみ行う</param>
     '''<remarks>自動レーザパワーの調整処理実行。</remarks>
     '''<returns>cFRS_NORMAL  = 正常
     '''         cFRS_ERR_RST = Cancel(RESETｷｰ)
     '''         上記以外 　　= 非常停止検出等のエラー</returns> 
     '''=========================================================================
-    Public Function AutoLaserPowerADJ(ByVal Mode As Integer) As Short
+    Public Function AutoLaserPowerADJ(ByVal Mode As Integer, Optional ByVal bPowerMonitoring As Boolean = False) As Short
         'Public Function AutoLaserPowerADJ() As Short
 
         Dim strMsg As String
@@ -327,7 +331,10 @@ Module basTrimming
         Dim AdjustLevel As Double                                       ' ###066
         Dim CndNum As Integer                                           ' ###066
         Dim bIniFlg As Boolean = True                                   ' V4.0.0.0-87
-
+        '----- V6.1.4.0_35↓(KOA EW殿SL432RD対応) -----
+        Dim dPowerAdjustQRate As Double = 0.0                           ' Qレート
+        Dim dPowerAdjustToleLevel As Double = 0.0                       ' 許容範囲(±W) 
+        '----- V6.1.4.0_35↑ -----
         Try
             With typPlateInfo
                 stPRT_ROHM.LaserPower = ""                              ' V1.18.0.0③
@@ -351,7 +358,11 @@ Module basTrimming
                 '----- V1.18.0.4①↑ -----
 
                 ' パワー調整を実行しない場合はそのまま抜ける
-                If (.intPowerAdjustMode <> 1) Then                      ' パワー調整実行フラグ = 実行しない ?
+                '----- V6.1.4.0_35↓(KOA EW殿SL432RD対応) -----
+                'If (.intPowerAdjustMode <> 1) Then                      ' パワー調整実行フラグ = 実行しない ?
+                ' レーザパワーのモニタリング有りの時は抜けない
+                If (.intPowerAdjustMode <> 1) And (bPowerMonitoring = False) Then
+                    '----- V6.1.4.0_35↑ -----
                     '----- V1.18.0.0③↓ -----
 STP_NO_EXEC:        ' V1.18.0.4①
                     ' 印刷用加工面出力パワー設定(ローム殿特注)
@@ -463,7 +474,7 @@ STP_EXEC:       ' V1.18.0.4①
                         ' オートパワー調整後の電流値をトリミングデータに反映する(SL436S時)
                         If (giMachineKd = MACHINE_KD_RS) Then
                             r = SetAutoPowerCurrData(stCND)
-                            gCmpTrimDataFlg = 1                            ' データ更新フラグ = 1(更新あり)
+                            gCmpTrimDataFlg = 1                         ' データ更新フラグ = 1(更新あり)
                         End If
                         '----- V4.0.0.0-58↑ -----
                     End If                              'V4.0.0.0-72
@@ -472,11 +483,25 @@ STP_EXEC:       ' V1.18.0.4①
                     '-----------------------------------------------------------
                     '   FL以外の場合
                     '-----------------------------------------------------------
-                    If (gSysPrm.stRMC.giRmCtrl2 >= 2) Then                                  'V5.0.0.6⑧ RMCTRL2対応 ?
-                        Call ATTRESET()                                                     'V1.25.0.0⑭
-                    End If                                                                  'V5.0.0.6⑧
-                    r = Form1.System1.Form_AutoLaser(gSysPrm, .dblPowerAdjustQRate,
-                                        .dblPowerAdjustTarget, .dblPowerAdjustToleLevel)
+                    If (gSysPrm.stRMC.giRmCtrl2 >= 2) Then              'V5.0.0.6⑧ RMCTRL2対応 ?
+                        Call ATTRESET()                                 'V1.25.0.0⑭
+                    End If
+
+                    '----- V6.1.4.0_35↓(KOA EW殿SL432RD対応) -----
+                    ' Qレートと許容範囲を設定する
+                    dPowerAdjustQRate = .dblPowerAdjustQRate            ' 調整用Qレート       (標準版)
+                    dPowerAdjustToleLevel = .dblPowerAdjustToleLevel    ' 調整用許容範囲(±W) (標準版)
+                    If (bPowerMonitoring = True) Then                   ' レーザパワーのモニタリング ?
+                        dPowerAdjustQRate = gdFullPowerQrate            ' モニタリングQレート
+                        dPowerAdjustToleLevel = gdFullPowerLimit        ' モニタリング用許容範囲(±W) 
+                    End If
+                    ' オートパワー調整実行
+                    'V5.0.0.6⑧
+                    'r = Form1.System1.Form_AutoLaser(gSysPrm, .dblPowerAdjustQRate,
+                    '                                .dblPowerAdjustTarget, .dblPowerAdjustToleLevel)
+                    r = Form1.System1.Form_AutoLaser(gSysPrm, dPowerAdjustQRate, _
+                                                     .dblPowerAdjustTarget, dPowerAdjustToleLevel, bPowerMonitoring)
+                    '----- V6.1.4.0_35↑ -----
                     '----- V1.16.0.0⑧↓ -----
                     ' 調整結果をメイン画面に表示する
                     If (r = cFRS_NORMAL) Then                           ' 正常終了 ? 
@@ -496,7 +521,12 @@ STP_EXEC:       ' V1.18.0.4①
                         'V4.4.0.0⑤
                     Else
                         ' メッセージ表示("パワー調整未完了")
-                        strMsg = MSG_AUTOPOWER_05
+                        strMsg = MSG_AUTOPOWER_05                       ' "パワー調整未完了"
+                        '----- V6.1.4.0_35↓(KOA EW殿SL432RD対応) -----
+                        If (bPowerMonitoring = True) Then               ' レーザパワーのモニタリング ?
+                            strMsg = MSG_165                            ' "レーザパワーモニタリング異常終了"
+                        End If
+                        '----- V6.1.4.0_35↑ -----
                         Call Form1.Z_PRINT(strMsg)
                     End If
                     '----- V1.16.0.0⑧↑ -----
@@ -1152,6 +1182,14 @@ STP_END:
                 End If
                 '----- V4.11.0.0②↑ -----
 
+                '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
+                ' 第１抵抗カットデータ表示域を非表示にする
+                If (giQrCodeType = QrCodeType.KoaEw) Then
+                    Form1.pnlFirstResData.Visible = False
+                    Form1.pnlFirstResDataNET.Visible = False                    'V6.1.4.14①
+                End If
+                '----- V6.1.4.0⑦↑ -----
+
                 'メイン画面のスクロールバーは無効になるため、
                 '表示位置を最下層へ設定し消す
                 'Form1.txtLog.ScrollBars = ScrollBars.None                      ' スクロールバーは表示する ###014
@@ -1472,6 +1510,18 @@ STP_END:
                     Form1.SetTrimMapVisible(True)                       'V6.0.1.0⑪
                 End If
                 'V6.0.0.0⑥                  ↑
+
+                '----- V6.1.4.0⑦↓(KOA EW殿SL432RD対応) -----
+                ' 第１抵抗カットデータ表示域を表示する
+                If (giQrCodeType = QrCodeType.KoaEw And (gTkyKnd = KND_CHIP)) Then  'V6.1.4.9④NETでは表示しない。
+                    Form1.pnlFirstResData.Visible = True
+                End If
+                '----- V6.1.4.0⑦↑ -----
+                'V6.1.4.14①↓
+                If (giQrCodeType = QrCodeType.KoaEw And (gTkyKnd = KND_NET)) Then
+                    Form1.pnlFirstResDataNET.Visible = True
+                End If
+                'V6.1.4.14①↑
 
                 '----- V4.11.0.0②↓ (WALSIN殿SL436S対応) -----
                 '----- V1.18.0.0②↓ -----
@@ -2261,6 +2311,8 @@ STP_END:        ' V1.18.0.1⑧
                 '@@@888 test 時間計測用
                 'StopWatch.Restart()
 
+                DbgLogDsp("ブロック移動先座標 X=" + (stgx + nextStagePosX).ToString("0.0000") + " , Y= " + (stgy + nextStagePosY).ToString("0.0000"))   'V6.0.0.1②
+                DbgLogDsp("ベース X=" + stgx.ToString("0.0000") + " , Y= " + stgy.ToString("0.0000"))    'V6.0.0.1②
                 ' ステージの移動
                 r = Form1.System1.EX_START(gSysPrm, stgx + nextStagePosX, stgy + nextStagePosY, 0)
                 If (r <> cFRS_NORMAL) Then                              ' エラー ?(メッセージは表示済み)
@@ -2608,6 +2660,18 @@ STP_END:        ' V1.18.0.1⑧
                     If (digL <> 4) Then
                         ' ブロック単位のトリミング処理(x0,x1,x2,x3,x5モード時)
                         r = TrimBlockExe(digL, gSysPrm.stDEV.giPower_Cyc, m_intDelayBlockIndex, 0) ' V1.23.0.0⑥
+                        'V4.7.3.2①↓
+                        If gbThetaCorrectionLogOut Then
+                            Dim AnalysisData(8) As Double
+                            Call TRIM_RESULT_Double(RES_DATNO_DEBUGDATA, 0, 8, 0, 0, AnalysisData(0))
+                            strLOG = "STGX=," & AnalysisData(0).ToString("0.0000") & ",STGY=," & AnalysisData(1).ToString("0.0000")
+                            strLOG = strLOG & ",BPX=," & AnalysisData(2).ToString("0.0000") & ",BPY=," & AnalysisData(3).ToString("0.0000")
+                            strLOG = strLOG & ",CalGainX=," & AnalysisData(4).ToString("0.0000") & ",CalGainY=," & AnalysisData(5).ToString("0.0000")
+                            strLOG = strLOG & ",CalOffX=," & AnalysisData(6).ToString("0.0000") & ",CalOffY=," & AnalysisData(7).ToString("0.0000")
+                            Call Form1.System1.OperationLogging(gSysPrm, strLOG, "ANALYSIS")      'V4.7.3.2①カット位置ずれ解析用
+                            gbThetaCorrectionLogOut = False                     'V4.7.3.2①　θ補正ログ出力無し
+                        End If
+                        'V4.7.3.2①↑
                     Else
                         ' ポジションチェック処理(x4モード時)
                         r = TrimPositionCheck(digH, digL, bpOffX, bpOffY, blkSizeX, blkSizeY)
@@ -2764,8 +2828,12 @@ STP_LOG_OUT:
 
                 m_intNgCount = ngCount
                 ' 表示ログの更新/出力ログのデータ保存を行なう。
-                Call TrimLogging_Main(digH, digL, r, dispCurPltNoX, dispCurPltNoY, dispCurBlkNoX, dispCurBlkNoY,
-                                   strLogDataBuffer, contNgCountError)
+                'V6.1.4.9⑨                Call TrimLogging_Main(digH, digL, r, dispCurPltNoX, dispCurPltNoY, dispCurBlkNoX, dispCurBlkNoY,
+                'V6.1.4.9⑨                strLogDataBuffer, contNgCountError)
+                r = TrimLogging_Main(digH, digL, r, dispCurPltNoX, dispCurPltNoY, dispCurBlkNoX, dispCurBlkNoY, strLogDataBuffer, contNgCountError) 'V6.1.4.9⑨
+                If (r <= cFRS_ERR_EMG) Then             'V6.1.4.9⑨
+                    Return (r)                          'V6.1.4.9⑨
+                End If                                  'V6.1.4.9⑨
 
 
                 'V2.0.0.0⑩ ADD START 抵抗データの表示
@@ -3333,21 +3401,20 @@ STP_KEY_WAIT:   '                                                       ' ###220
             'V4.1.0.0⑬ 通信エラー以外おきないのに２回も個別に見る必要はない          r2 = Form1.System1.EX_ZGETSRVSIGNAL(gSysPrm, r2, 0)   ' エラーならアプリ強制終了(メッセージ表示済み)
             'V4.1.0.0⑬If (r2 <> cFRS_NORMAL) Then GoTo STP_ERR_EXIT
             r2 = SETAXISPRM2(AXIS_Y, stPclAxisPrm(AXIS_Y, 0).FL, stPclAxisPrm(AXIS_Y, 0).FH, stPclAxisPrm(AXIS_Y, 0).DrvRat, stPclAxisPrm(AXIS_Y, 0).Magnif)
-            r2 = Form1.System1.EX_ZGETSRVSIGNAL(gSysPrm, r2, 0)   ' エラーならアプリ強制終了(メッセージ表示済み)
+            r2 = Form1.System1.EX_ZGETSRVSIGNAL(gSysPrm, r2, 0)         ' エラーならアプリ強制終了(メッセージ表示済み)
             If (r2 <> cFRS_NORMAL) Then GoTo STP_ERR_EXIT
+
             '----- 'V4.9.0.0③ V2.0.0.0_29↑ -----
             'V6.0.1.022
             If (gMachineType = MACHINE_TYPE_436S) Then
-                SimpleTrimmer.BlockNoBtnVisible(False)           'V4.1.0.0⑱
+                SimpleTrimmer.BlockNoBtnVisible(False)                  'V4.1.0.0⑱
                 '----- 'V4.9.0.0③ V2.0.0.0_29↑ -----
-
                 'V4.6.0.0②↓
                 If giTimeLotOnly = 1 Then
                     TrimData.SetLotChange()
                 End If
                 'V4.6.0.0②↑
                 Clear113Bit() 'V4.11.0.0⑧
-
             End If
             '----- V2.0.0.0_29↑ -----
 
@@ -3442,7 +3509,7 @@ STP_CONTINUE:  '                                                        ' V1.18.
             '   シグナルタワー制御(自動運転中)およびローダ自動運転切替え(SL436R時)
             '---------------------------------------------------------------------------
             Call ClearBefAlarm()                                        ' ローダアラーム情報退避域クリア(SL436R 自動運転用)
-            r = Loader_ChangeMode(Form1.System1, bFgAutoMode, MODE_AUTO)
+            r = Loader_ChangeMode(Form1.System1, bFgAutoMode, MODE_AUTO) ' (SL436R系/SL432R系)
             If (r <> cFRS_NORMAL) Then                                  ' エラー ?(※エラーメッセージは表示済み) 
                 rtnCode = r                                             ' Return値設定 
                 If (r = cFRS_ERR_RST) Then                              ' RESETキー(SL436R 自動運転時) ?
@@ -3796,28 +3863,124 @@ COVER_CLOSE_RETRY:  'V4.7.0.0⑰
                 Form1.SetTrimMapVisible(Form1.MapOn)                'V6.0.1.0⑪
                 'V6.0.1.0⑰↑
                 Form1.MoveHistoryDataLocation(True)                     'V6.0.1.0⑪
-                '---------------------------------------------------------------------------
-                '   自動レーザパワー調整実行
-                '---------------------------------------------------------------------------
-                'V5.0.0.4⑦         If (digL < 2) Or (digL = 5) Then                        ' ﾄﾘﾐﾝｸﾞﾓｰﾄﾞ = x0,x1,x5 ?
-                If (digL < 2) Or (digL = 5) Or (digL = 2 And typPlateInfo.intNGMark <> 0) Then     ' ﾄﾘﾐﾝｸﾞﾓｰﾄﾞ = x0,x1,x5 ?
-                    bIniPwrFlg = True                                   ' V4.11.0.0③
-                    r = AutoLaserPowerADJ(MD_INI)                       ' レーザパワー調整実行　V4.11.0.0③
-                    If (r = cFRS_ERR_RST) Then                          ' Cancel(RESETｷｰ) ?
-                        rtnCode = cFRS_ERR_RST                          ' Return値 = Cancel(RESETｷｰ)
-                        GoTo STP_TRIM_END                               ' 終了処理へ 
-                    ElseIf (r <> cFRS_NORMAL) Then                      ' エラー ?(※エラーメッセージは表示済み) 
-                        GoTo STP_ERR_EXIT                               ' 非常停止等のエラーならアプリ強制終了へ
-                    End If
-                End If
-                '----- V4.11.0.0③↓ (WALSIN殿SL436S対応) -----
-                ' 「時間(分)指定」機能ありで時間(分)指定」あり ?
-                If (giPwrChkTime = 1) And (typPlateInfo.intPwrChkTime <> 0) Then
-                    m_TimeSTart = DateTime.Now
-                    m_TimeAss = New TimeSpan(0, typPlateInfo.intPwrChkTime, 0)
-                End If
-                '----- V4.11.0.0③↑ -----
 
+                '----- V6.1.4.0_35↓(KOA EW殿SL432RD対応) -----
+                '---------------------------------------------------------------------------
+                '   レーザパワーのモニタリング実行(特注)
+                '---------------------------------------------------------------------------
+                r = PowerMonitorExec(digL)                              ' モニタリング実行(x0,x1,x5ﾓｰﾄﾞ時)
+                If (r = cFRS_ERR_RST) Then                              ' Cancel(RESETｷｰ) ?
+                    rtnCode = cFRS_ERR_RST                              ' Return値 = Cancel(RESETｷｰ)
+                    GoTo STP_TRIM_END                                   ' 終了処理へ 
+                ElseIf (r <> cFRS_NORMAL) Then                          ' エラー ?(※エラーメッセージは表示済み) 
+                    GoTo STP_ERR_EXIT                                   ' 非常停止等のエラーならアプリ強制終了へ
+                End If
+                '----- V6.1.4.0_35↑ -----
+                'V6.1.4.14③↓減衰率検出
+                r = CheckAttenuater(digL)
+                If (r = cFRS_ERR_RST) Then                              ' Cancel(RESETｷｰ) ?
+                    rtnCode = cFRS_ERR_RST                              ' Return値 = Cancel(RESETｷｰ)
+                    GoTo STP_TRIM_END                                   ' 終了処理へ 
+                ElseIf (r <> cFRS_NORMAL) Then                          ' エラー ?(※エラーメッセージは表示済み) 
+                    GoTo STP_ERR_EXIT                                   ' 非常停止等のエラーならアプリ強制終了へ
+                End If
+                'V6.1.4.14③↑
+                'V6.1.4.6① ＫＯＡ西山工場は、自動レーザパワー調整は行わないので念の為誤動作防止でコメント化する。
+                'V6.1.4.6①'V6.1.4.6①                '---------------------------------------------------------------------------
+                'V6.1.4.6①'V6.1.4.6①                '   自動レーザパワー調整実行
+                'V6.1.4.6①'V6.1.4.6①                '---------------------------------------------------------------------------
+                'V6.1.4.6①'V6.1.4.6①                'V5.0.0.4⑦ If (digL < 2) Or (digL = 5) Then             ' ﾄﾘﾐﾝｸﾞﾓｰﾄﾞ = x0,x1,x5 ?
+                'V6.1.4.6①'V6.1.4.6①                If (digL < 2) Or (digL = 5) Or (digL = 2 And typPlateInfo.intNGMark <> 0) Then     ' ﾄﾘﾐﾝｸﾞﾓｰﾄﾞ = x0,x1,x5 ?
+                'V6.1.4.6①'V6.1.4.6①                    bIniPwrFlg = True                                   ' V4.11.0.0③
+                'V6.1.4.6①'V6.1.4.6①                    r = AutoLaserPowerADJ(MD_INI)                       ' レーザパワー調整実行　V4.11.0.0③
+                'V6.1.4.6①'V6.1.4.6①                    If (r = cFRS_ERR_RST) Then                          ' Cancel(RESETｷｰ) ?
+                'V6.1.4.6①'V6.1.4.6①                        rtnCode = cFRS_ERR_RST                          ' Return値 = Cancel(RESETｷｰ)
+                'V6.1.4.6①'V6.1.4.6①                        GoTo STP_TRIM_END                               ' 終了処理へ 
+                'V6.1.4.6①'V6.1.4.6①                    ElseIf (r <> cFRS_NORMAL) Then                      ' エラー ?(※エラーメッセージは表示済み) 
+                'V6.1.4.6①'V6.1.4.6①                        GoTo STP_ERR_EXIT                               ' 非常停止等のエラーならアプリ強制終了へ
+                'V6.1.4.6①'V6.1.4.6①                    End If
+                'V6.1.4.6①'V6.1.4.6①                End If
+                'V6.1.4.6①'V6.1.4.6①                '----- V4.11.0.0③↓ (WALSIN殿SL436S対応) -----
+                'V6.1.4.6①'V6.1.4.6①                ' 「時間(分)指定」機能ありで時間(分)指定」あり ?
+                'V6.1.4.6①'V6.1.4.6①                If (giPwrChkTime = 1) And (typPlateInfo.intPwrChkTime <> 0) Then
+                'V6.1.4.6①'V6.1.4.6①                    m_TimeSTart = DateTime.Now
+                'V6.1.4.6①'V6.1.4.6①                    m_TimeAss = New TimeSpan(0, typPlateInfo.intPwrChkTime, 0)
+                'V6.1.4.6①'V6.1.4.6①                End If
+                'V6.1.4.6①'V6.1.4.6①                '----- V4.11.0.0③↑ -----
+                'V6.1.4.2①↓トリミングカット位置ズレ暫定ソフト[自動キャリブレーション補正実行]
+                If (frmAutoObj.gbFgAutoOperation432 = True) Then    ' 自動運転中 ?
+                    Dim bAutoLotChangeAutoCalibration As Boolean = False
+                    If Not gbAutoCalibrationExecute Then    ' ロット切り替え時実行ありでスタート時に実行ありの為
+                        If Integer.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CALIBRATION_LOTCHANGE_EXEC", "C:\TRIM\tky.ini", "0")) = 1 Then
+                            bAutoLotChangeAutoCalibration = True
+                        End If
+                    End If
+                    gbAutoCalibration = False
+                    If (digL < 2) And (giAutoCalibration > 0 Or gbAutoCalibrationExecute Or bAutoLotChangeAutoCalibration) Then
+                        strMSG = "自動キャリブレーション補正"
+                        If giAutoCalibCounter = 0 Then   ' 一番最初に実行する。
+                            If Integer.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CALIBRATION_FIRST_EXEC", "C:\TRIM\tky.ini", "0")) = 1 Then
+                                strMSG = "自動キャリブレーション補正初回実行"
+                                gbAutoCalibration = True
+                            End If
+                        End If
+                        If giAutoCalibration > 0 And giAutoCalibPlateCounter > 0 Then            ' 指定枚数毎実施
+                            If (giAutoCalibPlateCounter Mod giAutoCalibration) = 0 Then          ' 指定枚数毎実施
+                                strMSG = "自動キャリブレーション補正実行 枚数指定実行=[" & giAutoCalibration.ToString & "/" & giAutoCalibPlateCounter.ToString & "]"
+                                gbAutoCalibration = True
+                            End If
+                        End If
+                        If gbAutoCalibrationExecute Then
+                            strMSG = "自動キャリブレーション補正ロット切り替え時実行"
+                            gbAutoCalibration = True
+                        End If
+                        If (gbAutoCalibration = False) And (gbAutoCalibrationResult = False) Then ' 前回ＮＧで次の基板で継続実施する時
+                            If Integer.Parse(GetPrivateProfileString_S("SPECIALFUNCTION", "AUTO_CALIBRATION_NG_NEXT", "C:\TRIM\tky.ini", "0")) = 1 Then
+                                strMSG = "自動キャリブレーション補正再実行"
+                                gbAutoCalibration = True
+                            End If
+                        End If
+                        If gbAutoCalibration Then
+                            'V6.1.4.3①↓
+                            Dim dblGainX As Double                                          ' ｹﾞｲﾝ補正係数
+                            Dim dblGainY As Double
+                            Dim dblOffsetX As Double                                        ' ｵﾌｾｯﾄ補正係数
+                            Dim dblOffsetY As Double
+                            'V6.1.4.3①↑
+                            Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                            Form1.Z_PRINT(strMSG)
+                            gbAutoCalibrationResult = True
+                            Dim iSaveAppMode As Short = giAppMode
+                            Call BP_GET_CALIBDATA(dblGainX, dblGainY, dblOffsetX, dblOffsetY)   'V6.1.4.3①
+                            r = Form1.CmdExec_Proc(F_CAR, APP_MODE_CARIB, MSG_OPLOG_CALIBRATION_START, "")
+                            giAppMode = iSaveAppMode
+                            If r = cFRS_NORMAL And gbAutoCalibrationResult Then
+                            Else
+                                Call BP_CALIBRATION(dblGainX, dblGainY, dblOffsetX, dblOffsetY) 'V6.1.4.3①
+                                strMSG = "エラー時再設定 CalGainX=[" & dblGainX.ToString("0.0000") & "] CalGainY=[" & dblGainY.ToString("0.0000") & "] CalOffX=[" & dblOffsetX.ToString("0.0000") & "] CalOffY=[" & dblOffsetY.ToString("0.0000") & "]"
+                                Call Form1.System1.OperationLogging(gSysPrm, strMSG, "CALIBRATION")
+                                Form1.Z_PRINT(strMSG)
+                                gbAutoCalibrationResult = False     ' この結果は、処理中もFalseに更新される。
+                            End If
+                            If gbAutoCalibrationExecute Then
+                                giAutoCalibPlateCounter = 0
+                                gbAutoCalibrationExecute = False
+                            End If
+                            giAutoCalibCounter = giAutoCalibCounter + 1 ' ＮＧでもカウントする。
+                            Call ZCONRST()
+
+                            'V6.1.4.17①↓
+                            If giHostMode = cHOSTcMODEcAUTO Then
+                                '   ' シグナルタワー制御(On=自動運転中(緑点灯),Off=全ﾋﾞｯﾄ)
+                                Call Form1.System1.SetSignalTowerCtrl(Form1.System1.SIGNAL_OPERATION)
+                            End If
+                            'V6.1.4.17①↑
+
+                        End If
+                        End If
+                End If
+                gbAutoCalibration = False
+                'V6.1.4.2①↑
                 '---------------------------------------------------------------------------
                 '   トリミング前処理 (SL436R系時)
                 '    品種データ送信(STB)
@@ -4014,6 +4177,9 @@ COVER_CLOSE_RETRY:  'V4.7.0.0⑰
                     Form1.Instance.txtLog.Visible = False   'V6.0.0.0-27
 
                     ' ﾛｯﾄ毎のθ補正ありであるかﾁｪｯｸする。
+                    If gbAutoCalibrationLog Then                            'V6.1.4.2②
+                        gbThetaCorrectionLogOut = True                      'V4.7.3.2①　θ補正ログ出力有り
+                    End If                                                  'V6.1.4.2②
                     r = cFRS_NORMAL
                     If (blnRotTheta) Then                               ' ﾛｯﾄ毎のθ補正あり ?(CHIPのみ使用するフラグ)
                         ' θ補正の実行
@@ -4222,6 +4388,10 @@ COVER_CLOSE_RETRY:  'V4.7.0.0⑰
                     'stgy = typPlateInfo.dblTableOffsetYDir + gfCorrectPosY             'V1.13.0.0③
                     stgy = typPlateInfo.dblTableOffsetYDir + gfCorrectPosY + gfStgOfsY  'V1.13.0.0③
 
+                    DbgLogDsp("テーブルオフセット X=" + typPlateInfo.dblTableOffsetXDir.ToString("0.0000") + " , Y= " + typPlateInfo.dblTableOffsetYDir.ToString("0.0000"))    'V6.0.0.1②
+                    DbgLogDsp("補正量 X=" + gfCorrectPosX.ToString("0.0000") + " , Y= " + gfCorrectPosY.ToString("0.0000"))    'V6.0.0.1②
+                    DbgLogDsp("そのた X=" + gfStgOfsX.ToString("0.0000") + " , Y= " + gfStgOfsY.ToString("0.0000"))    'V6.0.0.1②
+
                     '----- V4.0.0.0-40↓ -----
                     ' SL36S時でステージYの原点位置が上の場合、ブロックサイズの1/2は加算しない
                     Sub_GetStageYPosistion(stgy)
@@ -4287,6 +4457,9 @@ COVER_CLOSE_RETRY:  'V4.7.0.0⑰
                                               typPlateInfo.dblBpOffSetXDir, typPlateInfo.dblBpOffSetYDir,
                                               typPlateInfo.dblBlockSizeXDir, typPlateInfo.dblBlockSizeYDir,
                                               digH, digL, bLoaderNG, strLogDataBuffer, bFgAutoMode)
+                    If (r <= cFRS_ERR_EMG) Then     'V6.1.4.9⑨
+                        GoTo STP_ERR_EXIT           'V6.1.4.9⑨
+                    End If                          'V6.1.4.9⑨
                     '-----  ###173 -----
                     ''V6.0.1.022↓通常の速度を転送する。 
                     '----- V2.0.0.0_29↓ -----
@@ -4322,10 +4495,14 @@ COVER_CLOSE_RETRY:  'V4.7.0.0⑰
                     End If                                              ' V2.0.0.0⑩
                     ''----- ###173↑ -----
                     'V4.3.0.0⑦タイミング変更
+
                     '----- ###142↓ -----
                     ' NG抵抗数がNG判定基準(0-100%)を超えたら、基板単位のトリミング結果にトリミングNGを設定する(SL436R用)
                     If (bLoaderNG = True) Then                          ' NG抵抗数がNG判定基準(0-100%)を超えた ?
                         m_lTrimResult = cFRS_TRIM_NG                    ' 基板単位のトリミング結果 = トリミングNG
+                        m_lTrimNgCount = m_lTrimNgCount + 1             ' 連続トリミングＮＧ枚数カウンター V6.1.4.0⑨
+                    Else                                                ' V6.1.4.0⑨
+                        m_lTrimNgCount = 0                              ' V6.1.4.0⑨
                     End If
                     '----- ###142↑ -----
 
@@ -4707,6 +4884,12 @@ STP_TRIM_ERR:
             If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then      ' SL432R系 ? 
                 ' ローダー出力(ON=トリミングＮＧ,OFF=なし)
                 Call SetLoaderIO(COM_STS_TRM_NG, &H0)                   ' ローダ出力(ON=トリミングＮＧ, OFF=なし) ###035
+                '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                If (giLotChange = 1) Then                               ' ロット切替え機能有効 ?
+                    ' ローダ出力(ON=トリミングＮＧ, OFF=なし) トリミング不良信号を連続自動運転中止通知に使用
+                    frmAutoObj.SetAutoOpeCancel()                       ' 上で同じ信号を送ってるけど???(そのまま反映) 
+                End If
+                '----- V6.1.4.0⑩↑ -----
             End If
 
             '' シグナルタワー制御(On=異常+ﾌﾞｻﾞｰ1, Off=全ﾋﾞｯﾄ) ###007
@@ -5007,7 +5190,14 @@ STP_LDR_INIT:  ' ###137
             If (gSysPrm.stTMN.gsKeimei <> MACHINE_TYPE_SL436) Then      ' SL432R系 ?
                 ' ローダー出力(ON=トリミングＮＧ,OFF=なし)(SL432R時)
                 If bLoaderNG Then
-                    Call SetLoaderIO(COM_STS_TRM_NG, &H0)               ' ローダ出力(ON=トリミングＮＧ, OFF=なし) ###035
+                    '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                    'Call SetLoaderIO(COM_STS_TRM_NG, &H0)              ' ローダ出力(ON=トリミングＮＧ, OFF=なし) ###035
+                    If (giLotChange = 1) Then                           ' ロット切替え機能有効時は送信しない
+
+                    Else
+                        Call SetLoaderIO(COM_STS_TRM_NG, &H0)           ' ローダ出力(ON=トリミングＮＧ, OFF=なし)
+                    End If
+                    '----- V6.1.4.0⑩↑ -----
                 End If
             Else
                 ' ローダー出力(ON=トリマ部停止中,OFF=なし)(SL436R時)
@@ -5095,6 +5285,199 @@ STP_ERR_EXIT:
         End Try
     End Function
 #End Region
+    '----- V6.1.4.0_35↓(KOA EW殿SL432RD対応) -----
+#Region "レーザパワーのモニタリング実行"
+    '''=========================================================================
+    ''' <summary>レーザパワーのモニタリング実行(特注)</summary>
+    ''' <param name="Gpib2Flg">(OUT)GP-IB制御(汎用)フラグ(0=制御なし, 1=制御あり)</param>
+    ''' <returns>cFRS_NORMAL    = 正常
+    '''          cFRS_ERR_RST   = RESETキー押下
+    '''          上記以外       = エラー
+    ''' </returns>
+    '''=========================================================================
+    Public Function PowerMonitorExec(ByVal digL As Integer) As Integer
+
+        Dim r As Integer = cFRS_NORMAL
+        Dim tmpiAttFix As Short = 0
+        Dim tmpiAttRot As Short = 0
+        Dim tmpfAttRate As Double = 0.0
+        Dim strMSG As String = ""
+
+        Try
+            'V6.1.4.6①↓
+            If frmAutoObj.gbFgAutoOperation432 = False Then '自動運転中以外はフルパワー測定を行わない
+                Return (cFRS_NORMAL)
+            End If
+            'V6.1.4.6①↑
+
+            ' 「モニタリングなし」又は「隠しコマンド手動でも実行」以外ならNOP
+            If (gbLaserPowerMonitoring = False) And (giLaserrPowerMonitoring <> 999) Then Return (cFRS_NORMAL)
+            ' ﾄﾘﾐﾝｸﾞﾓｰﾄﾞ = x0,x1,x5 以外ならNOP
+            If (digL >= 2) And (digL <> 5) Then Return (cFRS_NORMAL)
+
+            ' 現在のATTの状態を退避
+            tmpiAttFix = gSysPrm.stRAT.giAttFix                         ' 固定アッテネータ（０：ＯＦＦ，１：ＯＮ）
+            tmpiAttRot = gSysPrm.stRAT.giAttRot                         ' ロータリーアッテネータ出力値（０００～ＦＦＦ）ｈ
+            tmpfAttRate = gSysPrm.stRAT.gfAttRate                       ' 減衰率（０．０～１００．０）％
+
+            ' レーザパワー調整実行(レーザパワーのモニタリング(フルパワー測定のみ行う))
+            r = AutoLaserPowerADJ(MD_INI, True)                         ' レーザパワー調整実行(レーザパワーのモニタリング)
+            gbLaserPowerMonitoring = False                              ' レーザパワーのモニタリングの有/無 = モニタリング無
+            If (r = cFRS_ERR_RST) Then                                  ' Cancel(RESETｷｰ) ?
+                '' 「トリマ動作中(BIT0)」をOFFしてからでないとcmd_ZAtldGet()でローダ自動(BIT1)のままとなる V6.1.4.0_45
+                'Call SetLoaderIO(0, COM_STS_TRM_STATE)                  ' ローダ出力(ON=なし, OFF=トリマ動作中) V6.1.4.0_45
+                ' "ローダ信号が自動です", "ローダを手動に切り替えてください"
+                r = Form1.System1.Form_Reset(cGMODE_LDR_CHK, gSysPrm, giAppMode, gbInitialized, 0, 0, gLoadDTFlag)
+                If (r = cFRS_ERR_RST) Then                              ' Cancel(RESETｷｰ) ?
+                    Return (cFRS_ERR_RST)                               ' Return値 = Cancel(RESETｷｰ)
+                ElseIf (r <> cFRS_NORMAL) Then                          ' エラー ?(※エラーメッセージは表示済み) 
+                    Return (r)                                          ' Return値 = 非常停止等のエラー
+                End If
+                Return (cFRS_ERR_RST)                                   ' Return値 = Cancel(RESETｷｰ)
+            ElseIf (r <> cFRS_NORMAL) Then                              ' エラー ?(※エラーメッセージは表示済み) 
+                Return (r)                                              ' Return値 = 非常停止等のエラー
+            End If
+
+            ' アッテネータを設定する
+            Call ATTRESET()                                             ' アッテネータ原点復帰
+            ' ＱＲデータ有効の場合は
+            If (gbQRCodeReaderUse OrElse gbQRCodeReaderUseTKYNET) And typQRDATAInfo.bStatus Then         ' ＱＲコードリーダ使用でＱＲデータ有効 ?　'V6.1.4.14②gbQRCodeReaderUseTKYNETも追加
+                ' ＱＲデータの減衰率(%)からロータリーアッテネータを設定する
+                'r = ObjQRCodeReader.SetAttenuater(typQRDATAInfo.dAttenuaterValue)      'V6.1.4.0_22
+                r = ObjQRCodeReader.SetAttenuater(CDbl(typQRDATAInfo.dAttenuaterValue)) 'V6.1.4.0_22
+                If (r <> cFRS_NORMAL) Then                              ' エラー ? (メッセージは表示済み)
+                    ' "アッテネータ減衰率=[x.xx(%)]設定異常終了しました。=[xxx]"
+                    'strMSG = MSG_167 + "=[" & typQRDATAInfo.dAttenuaterValue.ToString("0.00") & "(%)]" + MSG_168 + "=[" & r.ToString & "]"         'V6.1.4.0_22
+                    strMSG = MSG_167 + "=[" & CDbl(typQRDATAInfo.dAttenuaterValue).ToString("0.00") & "(%)]" + MSG_168 + "=[" & r.ToString & "]"    'V6.1.4.0_22
+                    Call Form1.System1.TrmMsgBox(gSysPrm, strMSG, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, TITLE_4)
+                End If
+            Else
+                ' ＱＲデータ無効の場合、退避したATTの状態に設定する
+                If (gSysPrm.stRMC.giRmCtrl2 >= 2 And gSysPrm.stRAT.giOsc_Res <> OSCILLATOR_FL) Then
+                    Call LATTSET(tmpiAttFix, tmpiAttRot)
+                    Form1.LblRotAtt.Text = LBL_ATT + "  " + CDbl(tmpfAttRate).ToString("##0.0") + " %"
+                    Form1.LblRotAtt.Refresh()
+                End If
+            End If
+
+            Return (cFRS_NORMAL)
+
+            ' トラップエラー発生時
+        Catch ex As Exception
+            strMSG = "basTrimming.PowerMonitorExec() TRAP ERROR = " + ex.Message
+            MsgBox(strMSG)
+            Return (cFRS_ERR_RST)                                       ' Return値 = Cancel(RESETｷｰ) 
+        End Try
+    End Function
+#End Region
+    '----- V6.1.4.0_35↑ -----
+    '----- 'V6.1.4.14③↓(KOA EW殿SL432RD対応) -----
+#Region "減衰率チェック"
+    Public Function CheckAttenuater(ByVal digL As Integer) As Integer
+
+        Try
+            Dim iAttenuaterChecktiming As Integer
+            Dim dAttenuaterCheckLimit As Double
+            Dim atrate As Double                                        ' 減衰率
+            Dim n As Short                                              ' ロータリーアッテネータの回転量(0-FFF)
+            Dim fx As Short                                             ' 固定アッテネータ(0:OFF, 1:ON)
+            Dim bRtn As Boolean = True
+            Dim r As Short
+
+
+            If digL = TRIM_MODE_FT OrElse digL = TRIM_MODE_MEAS OrElse digL = TRIM_MODE_POSCHK OrElse digL = TRIM_MODE_STPRPT Then   'ファイナルテスト実行（判定）、測定実行、ポジションチェック、ステップ＆リピート実行のモードはチェックしない。
+                Return (cFRS_NORMAL)
+            End If
+
+            If (gSysPrm.stRMC.giRmCtrl2 < 2) Then
+                Return (cFRS_NORMAL)
+            End If
+
+            iAttenuaterChecktiming = Integer.Parse(GetPrivateProfileString_S("ROT_ATT", "ATT_RATE_CHECK_TIMING", "C:\TRIM\TKYSYS.INI", "0"))
+            dAttenuaterCheckLimit = Double.Parse(GetPrivateProfileString_S("ROT_ATT", "ATT_RATE_CHECK_LIMIT", "C:\TRIM\TKYSYS.INI", "100.0"))
+
+            If iAttenuaterChecktiming = 0 Then
+                Return (cFRS_NORMAL)
+            End If
+
+            If (iAttenuaterChecktiming = 1) And (frmAutoObj.gbFgAutoOperation432 = False) Then    ' 自動運転時のみ検出（手動モード）
+                Return (cFRS_NORMAL)
+            End If
+
+            ' システムパラメータ読み込み
+            Call gDllSysprmSysParam_definst.GetSysPrm_ROT_ATT(gSysPrm.stRAT)
+
+            '--------------------------------------------------------------------------
+            '   減衰率(%)からロータリーアッテネータの回転量n(0-FFF)を求める
+            '--------------------------------------------------------------------------
+            ' 固定アッテネータON/OFFを設定する
+            If dAttenuaterCheckLimit < gSysPrm.stRAT.gfATTFixPrm Then       ' 減衰率が50.0%未満なら固定アッテネータはOFF
+                fx = 0                                                      ' 固定アッテネータOFF
+                atrate = dAttenuaterCheckLimit                              ' 減衰率 = 減衰率
+            ElseIf dAttenuaterCheckLimit = gSysPrm.stRAT.gfATTFixPrm Then   ' 減衰率が50.0% ?
+                fx = 1                                                      ' 固定アッテネータON
+                atrate = 0.0#                                               ' 減衰率 = 0%
+            Else                                                            ' 減衰率が50～100%
+                fx = 1                                                      ' 固定アッテネータON
+                atrate = (dAttenuaterCheckLimit - gSysPrm.stRAT.gfATTFixPrm) * 1.0# / (100.0# - gSysPrm.stRAT.gfATTFixPrm) * 100.0#
+            End If
+
+            If atrate > gSysPrm.stRAT.gfPower(20) Then                  ' 最大減衰率(TKYSYS.INI)を超えるときは
+                atrate = gSysPrm.stRAT.gfPower(20)                      ' 最大減衰率とする
+            End If
+
+            ' ロータリーアッテネータの回転量n(0-FFF)を求める   ' 回転量n=0～2500パルス(0x0～0x9C4)
+            Call Form1.System1.CalcRotaryAngleByRate(gSysPrm, atrate, n)
+
+            Dim FAT As Long, RAT As Long
+            Call ATTSTATUS2(FAT, RAT)
+
+            If fx = 0 Then                                                  ' 判定減衰率固定アッテネータＯＦＦ
+                If FAT = 0 Then
+                    If RAT >= n Then
+                        bRtn = False
+                    End If
+                End If
+            Else                                                            ' 判定減衰率固定アッテネータＯN
+                If FAT = 0 Then         ' 固定ATT OFF
+                    bRtn = False
+                Else                    ' 固定ATT ON
+                    If RAT >= n Then
+                        bRtn = False
+                    End If
+                End If
+            End If
+
+            Call Form1.System1.OperationLogging(gSysPrm, "減衰率検出[" & dAttenuaterCheckLimit.ToString("0.00") & "%](ATTPLS=" & n.ToString("0") & ",ATTFIX=" & fx.ToString("0") & ") 設定値(ATTPLS=" & RAT.ToString("0") & ",ATTFIX=" & FAT.ToString("0") & ")判定=[" & bRtn.ToString & "]", "ATTCHECK")
+
+            If bRtn = False Then
+                '「減衰率設定が異常です。手動モードに切り替えて再設定してください。」
+                Dim strMSG_2 As String = MSG_230_2
+                Dim strMSG As String = "(LIMIT=" & dAttenuaterCheckLimit.ToString("0.00") & "%,ATTPLS=" & RAT.ToString("0") & ",ATTFIX=" & FAT.ToString("0") & ")"
+                If frmAutoObj.gbFgAutoOperation432 = False Then
+                    strMSG_2 = MSG_230_3
+                End If
+                Call Form1.System1.SetSignalTowerCtrl(Form1.System1.SIGNAL_ALARM)
+                r = Sub_CallFrmMsgDisp(Form1.System1, cGMODE_MSG_DSP, cFRS_ERR_START, True,
+                            MSG_230, strMSG_2, strMSG, System.Drawing.Color.Red, System.Drawing.Color.Red, System.Drawing.Color.Red)
+                If (r < cFRS_NORMAL) Then
+                    Return (r)                                          ' Return値 = 非常停止等のエラー
+                End If
+                'Call Form1.System1.TrmMsgBox(gSysPrm, strMSG, MsgBoxStyle.Exclamation Or MsgBoxStyle.OkOnly, TITLE_4)
+                Call Form1.System1.SetSignalTowerCtrl(Form1.System1.SIGNAL_ALL_OFF)   ' シグナルタワー制御初期化(全ﾋﾞｯﾄｵﾌ)
+                frmAutoObj.SetAutoOpeCancel()                       ' ローダ出力(連続自動運転中断)
+                Return (cFRS_ERR_RST)                                   ' Return値 = Cancel(RESETｷｰ)
+            End If
+
+            Return (cFRS_NORMAL)
+
+        Catch ex As Exception
+            MessageBox.Show("basTrimming.CheckAttenuater() TRAP ERROR = " + ex.Message, "FATAL ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Function
+#End Region
+    '----- 'V6.1.4.14③↑ -----
 
 #Region "トリミングデータをINtime側へ送信する"
     '''=========================================================================
@@ -5710,7 +6093,8 @@ STP_END:
                     If (gTkyKnd = KND_CHIP) Or (gTkyKnd = KND_NET) Then     ' ###139 一時停止画面からのグラフ表示の為に統計は無条件に取る(CHIP/NET時)
                         '----- ###150↓ -----
                         ' x0モード又はx1モードでロギングモード=3(INITIAL + FINAL)の場合、イニシャルテスト結果集計を行う
-                        If (digL = 0) Or ((digL = 1) And (gLogMode = 3)) Then
+                        'V6.1.4.9⑦                        If (digL = 0) Or ((digL = 1) And (gLogMode = 3)) Then
+                        If (digL = 0) Then   'V6.1.4.9⑦
                             ' イニシャルテスト結果集計
                             Call TrimLoggingGraph_RegistNumIT()
                         End If
@@ -5873,8 +6257,9 @@ STP_END:
                             Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_CVERR _
                             Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_OVERLOAD _
                             Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_ES2ERR _
+                            Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_RUDDER_BITE_NG _
                             Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_NOTDO _
-                            Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_MIDIUM_CUT_NG Then     ' 'V1.20.0.1① ' V1.13.0.0⑪
+                            Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_MIDIUM_CUT_NG Then     ' 'V1.20.0.1① ' V1.13.0.0⑪　' インデックスカット時のラダーかじり 'V6.1.4.10① TRIM_RESULT_RUDDER_BITE_NG追加
                         ' NGがある場合にはOKﾌﾗｸﾞを0に戻す。
                         stDelay2.NgAry(BlkX, BlkY).tNgCheck(intForCnt - 1).intTotalNGCnt = 1
                         stDelay2.NgAry(BlkX, BlkY).tNgCheck(intForCnt - 1).intTotalOkCnt = 0
@@ -6153,8 +6538,9 @@ ErrExit:
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_CVERR _
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_OVERLOAD _
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_ES2ERR _
+                        Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_RUDDER_BITE_NG _
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_NOTDO _
-                        Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_MIDIUM_CUT_NG Then     ' 'V1.20.0.1① ' トリミング結果がNG ? V1.13.0.0⑪ ###012  
+                        Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_MIDIUM_CUT_NG Then     ' 'V1.20.0.1① ' トリミング結果がNG ? V1.13.0.0⑪ ###012  ' インデックスカット時のラダーかじり 'V6.1.4.10① TRIM_RESULT_RUDDER_BITE_NG追加
                     gwCircuitNgCount(intGetCircuit) = gwCircuitNgCount(intGetCircuit) + 1
                     m_intNgCount = m_intNgCount + 1
                 End If
@@ -6467,6 +6853,13 @@ ErrExit:
             ' 連続NG-HIGH抵抗ﾌﾞﾛｯｸ数以上ならエラーとする
             If (iNgHiCount(intForCnt - 1) >= typPlateInfo.intContHiNgBlockCnt) Then
                 contNgCountError = CONTINUES_NG_HI                      ' 連続NG-HIGHｴﾗｰ発生
+                '----- V6.1.4.0⑲↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+                If (giLotChange = 1) Then                               ' ロット切替え機能有効 ?
+                    If (frmAutoObj.gbFgAutoOperation432 = True) Then    ' 自動運転中 ?
+                        frmAutoObj.SetAutoOpeCancel()                   ' ローダ出力(ON=トリミングＮＧ, OFF=なし)トリミング不良信号を連続自動運転中止通知に使用
+                    End If
+                End If
+                '----- V6.1.4.0⑲↑ -----
                 Exit For
             End If
         Next
@@ -6524,22 +6917,42 @@ ErrExit:
         Dim digH As Integer
         Dim digSW As Integer
         '----- V6.0.3.0_26↑ -----
+        Dim dblInitLowLimit As Double                                  'V6.1.4.9⑥ typResistorInfoArray(1).dblInitTest_LowLimitを置換
+        Dim dblInitlHighLimit As Double                                 'V6.1.4.9⑥ typResistorInfoArray(1).dblInitTest_HighLimitを置換
+
+        'V6.1.4.9⑥↓
+        If gTkyKnd = KND_CHIP Then
+            dblInitLowLimit = typResistorInfoArray(1).dblInitTest_LowLimit
+            dblInitlHighLimit = typResistorInfoArray(1).dblInitTest_HighLimit
+        Else
+            dblInitLowLimit = typResistorInfoArray(1).dblInitTest_LowLimit
+            dblInitlHighLimit = typResistorInfoArray(1).dblInitTest_HighLimit
+            For CirCuitRn As Integer = 1 To typPlateInfo.intResistCntInGroup                 'サーキット内抵抗数
+                If dblInitLowLimit < typResistorInfoArray(CirCuitRn).dblInitTest_LowLimit Then
+                    dblInitLowLimit = typResistorInfoArray(CirCuitRn).dblInitTest_LowLimit
+                End If
+                If dblInitlHighLimit > typResistorInfoArray(CirCuitRn).dblInitTest_HighLimit Then
+                    dblInitlHighLimit = typResistorInfoArray(CirCuitRn).dblInitTest_HighLimit
+                End If
+            Next
+        End If
+        'V6.1.4.9⑥↑
 
         ' ｲﾆｼｬﾙﾃｽﾄ(LOWﾘﾐｯﾄ)とｲﾆｼｬﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)の値ﾁｪｯｸを行う。
-        If ((0 >= typResistorInfoArray(1).dblInitTest_LowLimit) And (0 <= typResistorInfoArray(1).dblInitTest_HighLimit)) Then
+        If ((0 >= dblInitLowLimit) And (0 <= dblInitlHighLimit)) Then
             ' ｲﾆｼｬﾙﾃｽﾄ(LOWﾘﾐｯﾄ)が0以下でｲﾆｼｬﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)が0以上の場合
-            dblGraphDiv = (typResistorInfoArray(1).dblInitTest_HighLimit * 1.5 - typResistorInfoArray(1).dblInitTest_LowLimit * 1.5) / 10
-            dblGraphTop = typResistorInfoArray(1).dblInitTest_HighLimit * 1.5
+            dblGraphDiv = (dblInitlHighLimit * 1.5 - dblInitLowLimit * 1.5) / 10
+            dblGraphTop = dblInitlHighLimit * 1.5
 
-        ElseIf ((0 >= typResistorInfoArray(1).dblInitTest_LowLimit) And (0 > typResistorInfoArray(1).dblInitTest_HighLimit)) Then
+        ElseIf ((0 >= dblInitLowLimit) And (0 > dblInitlHighLimit)) Then
             ' ｲﾆｼｬﾙﾃｽﾄ(LOWﾘﾐｯﾄ)が0以上でｲﾆｼｬﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)が0より小さい場合
-            dblGraphDiv = (typResistorInfoArray(1).dblInitTest_HighLimit / 1.5 - typResistorInfoArray(1).dblInitTest_LowLimit * 1.5) / 10
-            dblGraphTop = typResistorInfoArray(1).dblInitTest_HighLimit / 1.5
+            dblGraphDiv = (dblInitlHighLimit / 1.5 - dblInitLowLimit * 1.5) / 10
+            dblGraphTop = dblInitlHighLimit / 1.5
 
-        ElseIf ((0 < typResistorInfoArray(1).dblInitTest_LowLimit) And (0 <= typResistorInfoArray(1).dblInitTest_HighLimit)) Then
+        ElseIf ((0 < dblInitLowLimit) And (0 <= dblInitlHighLimit)) Then
             ' ｲﾆｼｬﾙﾃｽﾄ(LOWﾘﾐｯﾄ)が0より大きくてｲﾆｼｬﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)が0以上の場合
-            dblGraphDiv = (typResistorInfoArray(1).dblInitTest_HighLimit * 1.5 - typResistorInfoArray(1).dblInitTest_LowLimit / 1.5) / 10
-            dblGraphTop = typResistorInfoArray(1).dblInitTest_HighLimit * 1.5
+            dblGraphDiv = (dblInitlHighLimit * 1.5 - dblInitLowLimit / 1.5) / 10
+            dblGraphTop = dblInitlHighLimit * 1.5
 
         Else
             ' 上記条件以外の場合
@@ -6574,6 +6987,18 @@ ErrExit:
                 '' '' ''If (gwTrimResult(intForCnt - 1) <> 0) And (gwTrimResult(intForCnt - 1) <> 11) And (gwTrimResult(intForCnt - 1) <> 13) Then
                 ' 差を算出する。　ｲﾆｼｬﾙﾃｽﾄ結果/ﾄﾘﾐﾝｸﾞ目標値*100-100
                 dblGap = (gfInitialTest(intForCnt - 1) / typResistorInfoArray(intForCnt).dblTrimTargetVal) * 100.0# - 100.0#
+                'V6.1.4.9⑥↓
+                If gTkyKnd <> KND_CHIP Then
+                    If (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_RATIO) Then
+                        ' ベース抵抗値のFT値×レシオ値
+                        dblGap = (gfInitialTest(intForCnt - 1) / typResistorInfoArray(typResistorInfoArray(intForCnt).intBaseResNo).dblTrimTargetVal) * 100.0# - 100.0#
+                    ElseIf (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_CALC) Then
+                        Dim Rn As Short
+                        Call GetRatio2Rn(typResistorInfoArray(intForCnt).intBaseResNo, Rn)
+                        dblGap = (gfInitialTest(intForCnt - 1) / typResistorInfoArray(Rn).dblTrimTargetVal) * 100.0# - 100.0#
+                    End If
+                End If
+                'V6.1.4.9⑥↑
                 If ((dblGraphTop - (dblGraphDiv * 0)) < dblGap) Then
                     ' ｸﾞﾗﾌ最上段値-(ｸﾞﾗﾌ範囲刻み位置*0)　<　差の場合
                     glRegistNumIT(0) = glRegistNumIT(0) + 1
@@ -6678,25 +7103,46 @@ ErrExit:
         Dim dblGapFT As Double                                          ' 積算誤差ﾌｧｲﾅﾙ
         Dim dblX_2FT As Double                                          ' FT標準偏差算出用ワーク
         Dim Average As Double                                           ' 平均用　###154
+        Dim dblFinalLowLimit As Double                                  'V6.1.4.9⑥ typResistorInfoArray(1).dblFinalTest_LowLimitを置換
+        Dim dblFinalHighLimit As Double                                 'V6.1.4.9⑥ typResistorInfoArray(1).dblFinalTest_HighLimitを置換
+        Dim dblTargetVal As Double                                      'V6.1.4.9⑥ 目標値
         'Dim lFTTOTAL As Integer                                        ' FT計算対象数 ###138
         dblX_2FT = 0
         'lFTTOTAL = 0                                                   ' ###138
 
+        'V6.1.4.9⑥↓
+        If gTkyKnd = KND_CHIP Then
+            dblFinalLowLimit = typResistorInfoArray(1).dblFinalTest_LowLimit
+            dblFinalHighLimit = typResistorInfoArray(1).dblFinalTest_HighLimit
+        Else
+            dblFinalLowLimit = typResistorInfoArray(1).dblFinalTest_LowLimit
+            dblFinalHighLimit = typResistorInfoArray(1).dblFinalTest_HighLimit
+            For CirCuitRn As Integer = 1 To typPlateInfo.intResistCntInGroup                 'サーキット内抵抗数
+                If dblFinalLowLimit < typResistorInfoArray(CirCuitRn).dblFinalTest_LowLimit Then
+                    dblFinalLowLimit = typResistorInfoArray(CirCuitRn).dblFinalTest_LowLimit
+                End If
+                If dblFinalHighLimit > typResistorInfoArray(CirCuitRn).dblFinalTest_HighLimit Then
+                    dblFinalHighLimit = typResistorInfoArray(CirCuitRn).dblFinalTest_HighLimit
+                End If
+            Next
+        End If
+        'V6.1.4.9⑥↑
+
         ' ﾌｧｲﾅﾙﾃｽﾄ(LOWﾘﾐｯﾄ)とﾌｧｲﾅﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)の値をﾁｪｯｸする。
-        If ((0 >= typResistorInfoArray(1).dblFinalTest_LowLimit) And (0 <= typResistorInfoArray(1).dblFinalTest_HighLimit)) Then
+        If ((0 >= dblFinalLowLimit) And (0 <= dblFinalHighLimit)) Then
             ' ﾌｧｲﾅﾙﾃｽﾄ(LOWﾘﾐｯﾄ)が0以下でﾌｧｲﾅﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)が0以上の場合
-            dblGraphDiv = (typResistorInfoArray(1).dblFinalTest_HighLimit * 1.5 - typResistorInfoArray(1).dblFinalTest_LowLimit * 1.5) / 10
-            dblGraphTop = typResistorInfoArray(1).dblFinalTest_HighLimit * 1.5
+            dblGraphDiv = (dblFinalHighLimit * 1.5 - dblFinalLowLimit * 1.5) / 10
+            dblGraphTop = dblFinalHighLimit * 1.5
 
-        ElseIf ((0 >= typResistorInfoArray(1).dblFinalTest_LowLimit) And (0 > typResistorInfoArray(1).dblFinalTest_HighLimit)) Then
+        ElseIf ((0 >= dblFinalLowLimit) And (0 > dblFinalHighLimit)) Then
             ' ﾌｧｲﾅﾙﾃｽﾄ(LOWﾘﾐｯﾄ)が0以下でﾌｧｲﾅﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)がより小さい場合
-            dblGraphDiv = (typResistorInfoArray(1).dblFinalTest_HighLimit / 1.5 - typResistorInfoArray(1).dblFinalTest_LowLimit * 1.5) / 10
-            dblGraphTop = typResistorInfoArray(1).dblFinalTest_HighLimit * 1.5
+            dblGraphDiv = (dblFinalHighLimit / 1.5 - dblFinalLowLimit * 1.5) / 10
+            dblGraphTop = dblFinalHighLimit * 1.5
 
-        ElseIf ((0 < typResistorInfoArray(1).dblFinalTest_LowLimit) And (0 <= typResistorInfoArray(1).dblFinalTest_HighLimit)) Then
+        ElseIf ((0 < dblFinalLowLimit) And (0 <= dblFinalHighLimit)) Then
             ' ﾌｧｲﾅﾙﾃｽﾄ(LOWﾘﾐｯﾄ)が0より大きくてﾌｧｲﾅﾙﾃｽﾄ(HIGHﾘﾐｯﾄ)が0以上の場合
-            dblGraphDiv = (typResistorInfoArray(1).dblFinalTest_HighLimit * 1.5 - typResistorInfoArray(1).dblFinalTest_LowLimit / 1.5) / 10
-            dblGraphTop = typResistorInfoArray(1).dblFinalTest_HighLimit * 1.5
+            dblGraphDiv = (dblFinalHighLimit * 1.5 - dblFinalLowLimit / 1.5) / 10
+            dblGraphTop = dblFinalHighLimit * 1.5
         Else
             ' 上記条件以外の場合
             dblGraphDiv = 0.3
@@ -6710,6 +7156,18 @@ ErrExit:
                 And ((gwTrimResult(intForCnt - 1) <> RSLT_OPENCHK_NG) Or (gwTrimResult(intForCnt - 1) <> RSLT_SHORTCHK_NG)) Then
                 ' 差を算出する。　ﾌｧｲﾅﾙﾃｽﾄ結果/ﾄﾘﾐﾝｸﾞ目標値*100　-　100
                 dblGap = (gfFinalTest(intForCnt - 1) / typResistorInfoArray(intForCnt).dblTrimTargetVal) * 100.0# - 100.0#
+                'V6.1.4.9⑥↓
+                If gTkyKnd <> KND_CHIP Then
+                    If (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_RATIO) Then
+                        ' ベース抵抗値のFT値×レシオ値
+                        dblGap = (gfFinalTest(intForCnt - 1) / (gfFinalTest(typResistorInfoArray(intForCnt).intBaseResNo - 1) * typResistorInfoArray(intForCnt).dblTrimTargetVal)) * 100.0# - 100.0#
+                    ElseIf (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_CALC) Then
+                        Dim Rn As Short
+                        Call GetRatio2Rn(typResistorInfoArray(intForCnt).intBaseResNo, Rn)
+                        dblGap = (gfFinalTest(intForCnt - 1) / typResistorInfoArray(Rn).dblTrimTargetVal) * 100.0# - 100.0#
+                    End If
+                End If
+                'V6.1.4.9⑥↑
 
                 If ((dblGraphTop - (dblGraphDiv * 0)) < dblGap) Then
                     ' ｸﾞﾗﾌ最上段値-(ｸﾞﾗﾌ範囲刻み位置*0)　<　差の場合
@@ -7021,8 +7479,9 @@ ErrExit:
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_CVERR _
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_OVERLOAD _
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_ES2ERR _
+                        Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_RUDDER_BITE_NG _
                         Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_NOTDO _
-                        Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_MIDIUM_CUT_NG Then     ' 'V1.20.0.1① ' V1.13.0.0⑪
+                        Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_MIDIUM_CUT_NG Then     ' 'V1.20.0.1① ' V1.13.0.0⑪　' インデックスカット時のラダーかじり 'V6.1.4.10① TRIM_RESULT_RUDDER_BITE_NG追加
                         m_lNgCount = m_lNgCount + 1                             ' NGカウント更新
                         'm_lTrimResult = cFRS_TRIM_NG                           ' 基板単位のトリミング結果(SL436R用) = トリミングNG ###142 ###089
                         m_NG_RES_Count = m_NG_RES_Count + 1                     ' NG判定(0-100%)用NG抵抗数(ブロック単位/プレート単位) ###142 
@@ -7197,6 +7656,17 @@ STP_MAKELOG:  ' ###167
                                 strLogMsg.Append("RES-NO" & separator)                                  '#4.12.2.0④
                             End If
                         Case LOGTAR.JUDGE
+                            '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                            If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                                If logType = LOGTYPE_DISP Then
+                                    strLogMsg.Append("   RESULT" & separator)
+                                Else
+                                    strLogMsg.Append("RESULT" & separator)
+                                End If
+                                Exit Select
+                            End If
+                            '----- V6.1.4.0③↑ -----
+
                             If logType = LOGTYPE_DISP Then
                                 'strLogMsg = strLogMsg & "RESULT  " & separator     '###238
                                 '#4.12.2.0④                            strLogMsg = strLogMsg & "RESULT    " & separator    '###238 10文字左詰め
@@ -7206,6 +7676,17 @@ STP_MAKELOG:  ' ###167
                                 strLogMsg.Append("RESULT  " & separator)                                '#4.12.2.0④
                             End If
                         Case LOGTAR.TARGET
+                            '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                            If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                                If logType = LOGTYPE_DISP Then
+                                    strLogMsg.Append("   TARGET       " & separator)
+                                Else
+                                    strLogMsg.Append("TARGET" & separator)
+                                End If
+                                Exit Select
+                            End If
+                            '----- V6.1.4.0③↑ -----
+
                             If logType = LOGTYPE_DISP Then
                                 'strLogMsg = strLogMsg & "TARGET" & separator & separator '###238 
                                 '#4.12.2.0④                            strLogMsg = strLogMsg & "   TARGGET      " & separator    '###238 16文字
@@ -7470,6 +7951,30 @@ ErrExit:
                     ' ﾄﾘﾐﾝｸﾞ結果が12以下であるかﾁｪｯｸする。
                     '   →2009/07/30 432HWのINTRTMでは、11以降の結果は設定されないが、
                     '   　436Kとの互換を考慮しコードとしてはそのまま
+
+                    '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                    If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                        Dim HL As String
+                        Select Case (gwTrimResult(intForCnt - 1))
+                            Case TRIM_RESULT_IT_HING, TRIM_RESULT_FT_HING  ' IT HI NG, FT HI NG
+                                HL = "H"
+                            Case TRIM_RESULT_IT_LONG, TRIM_RESULT_FT_LONG  ' IT LO NG, FT LO NG
+                                HL = "L"
+                            Case TRIM_RESULT_SKIP, TRIM_RESULT_RATIO, TRIM_RESULT_OVERRANGE, TRIM_RESULT_PATTERNNG, TRIM_RESULT_CVERR, TRIM_RESULT_OVERLOAD, TRIM_RESULT_REPROBING, TRIM_RESULT_ES2ERR, TRIM_RESULT_OPENCHK_NG, TRIM_RESULT_SHORTCHK_NG, TRIM_RESULT_MIDIUM_CUT_NG, TRIM_RESULT_RUDDER_BITE_NG          ' その他のエラー ' インデックスカット時のラダーかじり 'V6.1.4.10① TRIM_RESULT_RUDDER_BITE_NG追加
+                                HL = gstrResult(gwTrimResult(intForCnt - 1))
+                            Case Else                                       ' ＯＫの場合は付加しない
+                                HL = String.Empty
+                        End Select
+
+                        If ("," = strchKugiri) Then
+                            strLogMsg.Append(HL & strchKugiri)
+                        Else
+                            strLogMsg.Append(" " & HL)
+                        End If
+                        Exit Select
+                    End If
+                    '----- V6.1.4.0③↑ -----
+
                     '----- ###238↓ -----
                     If (strchKugiri = ",") Then
                         ' 区切り文字が","ならログファイル出力用データと判断し10文字左詰めとしない
@@ -7513,7 +8018,7 @@ ErrExit:
                         ' 区切り文字が","ならログファイル出力用データと判断し16文字左詰めとしない
                         If (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_RATIO) Then
                             strMakeMsg = "BaseR" + typResistorInfoArray(intForCnt).intBaseResNo.ToString + "*"
-                            strMakeMsg = strMakeMsg + typResistorInfoArray(intForCnt).dblTrimTargetVal.ToString("0.00")
+                            strMakeMsg = strMakeMsg + typResistorInfoArray(intForCnt).dblTrimTargetVal.ToString("0.00000") 'V6.1.4.9③"0.00"から"0.00000"に修正
                         ElseIf (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_CALC) Then
                             '----- ###123 ↓レシオ計算式の目標値 -----
                             'strMakeMsg = String.Format("{0,9}", gfTargetVal(typResistorInfoArray(intForCnt).intBaseResNo).ToString("0.00000")) ' ###003
@@ -7527,7 +8032,7 @@ ErrExit:
                         If (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_RATIO) Then
                             ' レシオ時("BaseR999*9.99")
                             strMakeMsg = "BaseR" + typResistorInfoArray(intForCnt).intBaseResNo.ToString + "*"
-                            strMakeMsg = String.Format("{0,16}", strMakeMsg + typResistorInfoArray(intForCnt).dblTrimTargetVal.ToString("0.00"))
+                            strMakeMsg = String.Format("{0,16}", strMakeMsg + typResistorInfoArray(intForCnt).dblTrimTargetVal.ToString("0.00000"))    'V6.1.4.9③"0.00"から"0.00000"に修正
                         ElseIf (typResistorInfoArray(intForCnt).intTargetValType = TARGET_TYPE_CALC) Then
                             '----- V6.0.3.0⑬↓ -----
                             ' レシオ計算式の目標値
@@ -7635,6 +8140,69 @@ ErrExit:
                     '===============================================
                     ' ファイナルテストの追加
                     '===============================================
+                    '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                    If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                        If (strchKugiri = ",") Then
+                            ' 区切り文字が","ならログファイル出力用データと判断し16文字左詰めとしない
+                            If (digL = 3) Then '測定モードでは判定していないため、無条件に出力
+                                ' ファイナル結果をフォーマット変換し文字列を構築
+                                strMakeMsg = String.Format("{0,9}", gfFinalTest(intForCnt - 1).ToString(gsEDIT_DIGITNUM))
+                                strMakeMsg = CnvFloatPointChar(strMakeMsg, strchFloatPoint)
+                                strLogMsg.Append(strMakeMsg)
+                            ElseIf ((gwTrimResult(intForCnt - 1) <> TRIM_RESULT_NOTDO _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_NG _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_LONG _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_HING _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_SKIP _
+                                    And gwTrimResult(intForCnt - 1) <> 11 _
+                                    And gwTrimResult(intForCnt - 1) <> 13) And _
+                                    ((gSysPrm.stLOG.giLoggingDataKind And cLoggingFT) Or (digL <= 2))) Then
+                                'ファイナル結果をフォーマット変換し文字列を構築(16文字左詰め)
+                                strMakeMsg = String.Format("{0,9}", gfFinalTest(intForCnt - 1).ToString(gsEDIT_DIGITNUM))
+                                strMakeMsg = CnvFloatPointChar(strMakeMsg, strchFloatPoint)
+                                strLogMsg.Append(strMakeMsg)
+                            Else
+                                'IT ERRやログデータ種別の判定=ファイナル出力なしの場合、
+                                '「0.000000」にデータを設定し判定結果をクリアする
+                                If gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_NG And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_LONG And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_HING Then
+                                    strLogMsg.Append(String.Format("{0,9}", gsEDIT_DIGITNUM))
+                                End If
+                            End If
+                        Else
+                            If (digL = 3) Then '測定モードでは判定していないため、無条件に出力
+                                'ファイナル結果をフォーマット変換し文字列を構築(16文字左詰め)
+                                strMakeMsg = String.Format("{0,16}", gfFinalTest(intForCnt - 1).ToString(gsEDIT_DIGITNUM))
+                                strMakeMsg = CnvFloatPointChar(strMakeMsg, strchFloatPoint)
+                                strLogMsg.Append(strMakeMsg)
+                            ElseIf ((gwTrimResult(intForCnt - 1) <> TRIM_RESULT_NOTDO _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_NG _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_LONG _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_IT_HING _
+                                    And gwTrimResult(intForCnt - 1) <> TRIM_RESULT_SKIP _
+                                    And gwTrimResult(intForCnt - 1) <> 11 _
+                                    And gwTrimResult(intForCnt - 1) <> 13) And _
+                                    ((gSysPrm.stLOG.giLoggingDataKind And cLoggingFT) Or (digL <= 2))) Then
+                                'ファイナル結果をフォーマット変換し文字列を構築(16文字左詰め)
+                                strMakeMsg = String.Format("{0,16}", gfFinalTest(intForCnt - 1).ToString(gsEDIT_DIGITNUM))
+                                strMakeMsg = CnvFloatPointChar(strMakeMsg, strchFloatPoint)
+                                strLogMsg.Append(strMakeMsg)
+                            Else
+                                'IT ERRやログデータ種別の判定=ファイナル出力なしの場合、
+                                '「0.000000」にデータを設定し判定結果をクリアする(16文字左詰め)
+                                If gwTrimResult(intForCnt - 1) = TRIM_RESULT_IT_NG Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_IT_LONG Or gwTrimResult(intForCnt - 1) = TRIM_RESULT_IT_HING Then
+                                    strMakeMsg = ""
+                                    strLogMsg.Append(String.Format("{0,16}", strMakeMsg))
+                                Else
+                                    strLogMsg.Append(String.Format("{0,16}", gsEDIT_DIGITNUM))
+                                End If
+                            End If
+                        End If
+
+                        strLogMsg.Append(strchKugiri)
+                        Exit Select
+                    End If
+                    '----- V6.1.4.0③↑ -----
+
                     '----- ###238↓ -----
                     If (strchKugiri = ",") Then
                         ' 区切り文字が","ならログファイル出力用データと判断し16文字左詰めとしない
@@ -8056,11 +8624,27 @@ ErrExit:
                         ' (ﾌｧｲﾅﾙﾃｽﾄの結果/ﾄﾘﾐﾝｸﾞ目標値*100-100)の値を取得する。
                         dblDiffdata = (gfFinalTest(resCnt - 1) / targetVal) * 100.0# - 100.0#
 
+                        '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                        If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                            If gwTrimResult(resCnt - 1) = TRIM_RESULT_IT_HING Or gwTrimResult(resCnt - 1) = TRIM_RESULT_IT_LONG Then
+                                ' (ｲﾆｼｬﾙﾃｽﾄの結果/ﾄﾘﾐﾝｸﾞ目標値*100-100)の値を取得する
+                                dblDiffdata = (gfInitialTest(resCnt - 1) / targetVal) * 100.0# - 100.0#
+                            End If
+                        End If
+                        '----- V6.1.4.0③↑ -----
+
                         ' 上の計算結果を表示ﾛｸﾞ用にﾌｫｰﾏｯﾄする。　" xxxxxx%(計算結果"
                         strDivMsg = strDivMsg & " " & dblDiffdata.ToString("0.000").PadLeft(3 + 4) & "%"
 
                         ' ﾌｧｲﾅﾙ測定値誤差(ﾌｧｲﾙﾛｸﾞ用)
-                        gfFTest_Par(resCnt - 1) = dblDiffdata
+                        '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                        'gfFTest_Par(resCnt - 1) = dblDiffdata
+                        If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                            'gfFTest_Par(resCnt - 1) = dblDiffdata  ' 未使用のためｺﾒﾝﾄｱｳﾄ
+                        Else
+                            gfFTest_Par(resCnt - 1) = dblDiffdata
+                        End If
+                        '----- V6.1.4.0③↑ -----
                     Else
                         '----- ###227↓-----
                         '' ﾚｼｵ目標値が0の場合には、ｽｷｯﾌﾟ用の文字列を作成する。
@@ -8080,7 +8664,14 @@ ErrExit:
                             strDivMsg = strDivMsg & " " & dblDiffdata.ToString("0.000").PadLeft(3 + 4) & "%"
 
                             ' ﾌｧｲﾅﾙ測定値誤差(ﾌｧｲﾙﾛｸﾞ用)
-                            gfFTest_Par(resCnt - 1) = dblDiffdata
+                            '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                            'gfFTest_Par(resCnt - 1) = dblDiffdata
+                            If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                                'gfFTest_Par(resCnt - 1) = dblDiffdata  ' 未使用のためｺﾒﾝﾄｱｳﾄ
+                            Else
+                                gfFTest_Par(resCnt - 1) = dblDiffdata
+                            End If
+                            '----- V6.1.4.0③↑ -----
                         Else
                             ' ﾚｼｵ目標値が0の場合には、ｽｷｯﾌﾟ用の文字列を作成する。
                             strDivMsg = strDivMsg & " " & "    ---" & "%"
@@ -8118,8 +8709,16 @@ ErrExit:
 
                         ' 取得した計算結果を表示ﾛｸﾞ用にﾌｫｰﾏｯﾄする。
                         strDivMsg = strDivMsg & " " & dblDiffdata.ToString("0.000").PadLeft(3 + 4) & "%"
+
                         ' ﾌｧｲﾅﾙ測定値誤差(ﾌｧｲﾙﾛｸﾞ用)
-                        gfFTest_Par(resCnt - 1) = dblDiffdata
+                        '----- V6.1.4.0③↓(KOA EW殿SL432RD対応)【特注ロギング機能】  -----
+                        'gfFTest_Par(resCnt - 1) = dblDiffdata
+                        If (gSysPrm.stLOG.giLoggingType2 = LogType2.Reg_KoaEw) Then
+                            'gfFTest_Par(resCnt - 1) = dblDiffdata  ' 未使用のためｺﾒﾝﾄｱｳﾄ
+                        Else
+                            gfFTest_Par(resCnt - 1) = dblDiffdata
+                        End If
+                        '----- V6.1.4.0③↑ -----
                     Else
                         ' 取得した目標値が0の場合には、ｽｷｯﾌﾟ用の文字列を作成する。
                         strDivMsg = strDivMsg & " " & "    ---" & "%"
@@ -8327,6 +8926,12 @@ ErrExit:
             'For i = 0 To (MAX_FRAM1_ARY - 1)
             '    Fram1LblAry(i).Refresh()
             'Next i
+
+            '----- V6.1.4.0⑩↓(KOA EW殿SL432RD対応)【ロット切替え機能】-----
+            If (giLotChange = 1) Then                                   ' ロット切替え機能有効 ?
+                frmAutoObj.SaveTrimLoggingData()                        ' 生産管理データログ出力
+            End If
+            '----- V6.1.4.0⑩↑ -----
 
             ' トラップエラー発生時 
         Catch ex As Exception
@@ -9069,7 +9674,7 @@ STP_END:
                 intEsRegCnt = intEsRegCnt + 1
             End If
 
-            If intEsRegCnt >= 10 Then
+            If intEsRegCnt >= 100 Then       'V6.1.4.10③１０→１００へ変更
                 ' 最大１０個取得で終了
                 Exit For
             End If
@@ -9086,13 +9691,13 @@ ErrExit:
 #Region "ES 判定結果の取得(1抵抗分)"
     '''=========================================================================
     '''<summary>ES 判定結果の取得(1抵抗分)</summary>
-    '''<remarks></remarks>
+    '''<remarks>'V6.1.4.12① INTIME側の検索方法を配列番号から抵抗番号（OOrigin）へ変更の為引数intEsRegCntは未使用</remarks>
     '''=========================================================================
     Private Function TrimLoggingResult_Es_Reg(ByRef intRegNum As Short, ByRef intEsRegCnt As Short) As Boolean
 
         Dim intCutMax As Short                              ' ｶｯﾄ数
         Dim intCutNum As Short                              ' ｶｯﾄ数ﾙｰﾌﾟｶｳﾝﾀ(ｶｯﾄ番号)
-        Dim intCutIndex As Short                            ' ｶｯﾄｲﾝﾃﾞｯｸｽ(ESｶｯﾄだけで数えて何個目か)
+        'V6.1.4.12①        Dim intCutIndex As Short                            ' ｶｯﾄｲﾝﾃﾞｯｸｽ(ESｶｯﾄだけで数えて何個目か)
         Dim intRetMeasMax(2) As UShort                      ' 測定値数　※配列番号1～2はごみ情報
         Dim intLoopMax As Short                             ' ﾙｰﾌﾟ最大値
         Dim intLoopCnt As Short                             ' ﾙｰﾌﾟｶｳﾝﾀ
@@ -9101,6 +9706,7 @@ ErrExit:
         Dim intTempMax As Short                             ' 1回で取得する測定値数の最大値
         Dim intTempCnt As Short                             ' 1回で取得する測定値数のｶｳﾝﾀ
         Dim blnINtimeSend As Boolean                        ' INtimeに送信する必要があるか判別ﾌﾗｸﾞ
+        Dim iRtn As Integer                                 ' 戻り値 'V6.1.4.10③
 
         ' ｶｯﾄ数を取得する。
         intCutMax = typResistorInfoArray(intRegNum).intCutCount
@@ -9110,7 +9716,7 @@ ErrExit:
         ReDim Preserve gtyESTestResult(intRegNum).iCutNo(intCutMax)
 
         ' 初期化
-        intCutIndex = -1
+        'V6.1.4.12①        intCutIndex = -1
 
         ' ｶｯﾄ数分ﾙｰﾌﾟ
         For intCutNum = 1 To intCutMax
@@ -9121,19 +9727,30 @@ ErrExit:
                     ' ESｶｯﾄの存在ﾌﾗｸﾞをON
                     gtyESTestResult(intRegNum).bEsExsit = True
                     ' 何個目のESか取得
-                    intCutIndex = intCutIndex + 1
+                    'V6.1.4.12①                    intCutIndex = intCutIndex + 1
                     blnINtimeSend = True                    ' ESなのでINtimeに送信
+                    'V6.1.4.10①↓
+                Case DataManager.CNS_CUTP_IX ' ' インデックスカット時のラダーかじりの時も出力
+                    'V6.1.4.13①                    If typResistorInfoArray(intRegNum).ArrCut(intCutNum).intIXConfirmCnt > 0 Then ' 確認回数が１以上の時
+                    gtyESTestResult(intRegNum).bEsExsit = True
+                    'V6.1.4.12①                        intCutIndex = intCutIndex + 1
+                    blnINtimeSend = True                    ' ESなのでINtimeに送信
+                    'V6.1.4.13①                    Else
+                    'V6.1.4.13①                        blnINtimeSend = False                    ' ESなのでINtimeに送信
+                    'V6.1.4.13①                    End If
+                    'V6.1.4.10①↑
                 Case Else
                     blnINtimeSend = False                   ' ESでないので何もしない
             End Select
 
-            If intCutIndex > 3 Then
-                blnINtimeSend = False
-            End If
+            'V6.1.4.10③ INTIMEからの応答で判断　ERR_TRIMRESULT_ESRESCUTNO	765
+            'V6.1.4.10③            If intCutIndex > 3 Then                         
+            'V6.1.4.10③            blnINtimeSend = False
+            'V6.1.4.10③            End If
 
             If blnINtimeSend = True Then
 
-                ' 測定値数を取得
+                ' 測定値数を取得範囲外の時は、　ERR_TRIMRESULT_ESRESCUTNO	765が返却される。→嘘　TRIM_RESULT　はエラーを返却する変数が用意されていないのでエラーは戻らない。
                 '            AppInfo.cmdNo = CMD_TRIM_RESULT
                 '            AppInfo.dwPara(0) = 7               '測定値数取得ｺﾏﾝﾄﾞ(ES)
                 '            AppInfo.dwPara(1) = intEsRegCnt     '抵抗番号(0～) ※ESを持つ抵抗だけで数えて何個目かを渡す
@@ -9142,59 +9759,63 @@ ErrExit:
 #If cOFFLINEcDEBUG Then
 #Else
                 ' 測定値数(ES2)の取得
-                Call TRIM_RESULT_WORD(7, intEsRegCnt, 0, intCutIndex, 0, intRetMeasMax(0))
+                'V6.1.4.12①                iRtn = TRIM_RESULT_WORD(7, intEsRegCnt, 0, intCutIndex, 0, intRetMeasMax(0))
+                iRtn = TRIM_RESULT_WORD(7, (intRegNum - 1), 0, (intCutNum - 1), 0, intRetMeasMax(0))        'V6.1.4.12①　INTIME側の検索方法を配列番号から抵抗カット番号（OOrigin）へ変更
+                'Call Form1.Z_PRINT("TRIM_RESULT　RES=[" & intEsRegCnt.ToString & "] CUT=[" & intCutIndex.ToString & "] CNT=[" & intRetMeasMax(0).ToString("0") & "]")
 #End If
+                If iRtn = cFRS_NORMAL AndAlso intRetMeasMax(0) > 0 Then                    'V6.1.4.10③
+                    ' 測定値数の個数分で配列作成
+                    ReDim Preserve gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas(intRetMeasMax(0))
 
-                ' 測定値数の個数分で配列作成
-                ReDim Preserve gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas(intRetMeasMax(0))
+                    ' 1回で取得可能な個数は128ﾊﾞｲﾄまでなので、何回取る必要があるか算出
+                    ' (取得はDouble型なので8ﾊﾞｲﾄ。但し、ごみの情報が8ﾊﾞｲﾄ必ず取れるので1回で取れる個数は15個まで)
+                    intLoopMax = intRetMeasMax(0) \ 15
 
-                ' 1回で取得可能な個数は128ﾊﾞｲﾄまでなので、何回取る必要があるか算出
-                ' (取得はDouble型なので8ﾊﾞｲﾄ。但し、ごみの情報が8ﾊﾞｲﾄ必ず取れるので1回で取れる個数は15個まで)
-                intLoopMax = intRetMeasMax(0) \ 15
-
-                ' 割り切れる？
-                If (intRetMeasMax(0) Mod 15) > 0 Then
-                    intLoopMax = intLoopMax + 1             ' 1回多くとる
-                End If
-
-                intArrayMeas = -1
-                For intLoopCnt = 1 To intLoopMax
-                    System.Array.Clear(dGetMeas, 0, dGetMeas.Length)
-                    ' 最終の場合
-                    If intLoopCnt = intLoopMax Then
-                        ' 余りを取得
-                        intTempMax = intRetMeasMax(0) Mod 15
-                        ' 余り無しの場合
-                        If intTempMax = 0 Then
-                            intTempMax = 15
-                        End If
-                    Else
-                        intTempMax = 15
+                    ' 割り切れる？
+                    If (intRetMeasMax(0) Mod 15) > 0 Then
+                        intLoopMax = intLoopMax + 1             ' 1回多くとる
                     End If
 
-                    '測定値取得
-                    '                AppInfo.cmdNo = CMD_TRIM_RESULT
-                    '                AppInfo.dwPara(0) = 8               '測定値取得ｺﾏﾝﾄﾞ(ES)
-                    '                AppInfo.dwPara(1) = intEsRegCnt     '抵抗番号(0～) ※ESを持つ抵抗だけで数えて何個目かを渡す
-                    '                AppInfo.dwPara(2) = intTempMax      '取得個数
-                    '                AppInfo.dwPara(3) = intCutIndex             'ｶｯﾄ番号(0～)   ※ESだけで数えて何個目かを渡す
-                    '                AppInfo.dwPara(4) = (intLoopCnt - 1) * 15  'ﾃﾞｰﾀ番号(0～)
-                    '
+                    intArrayMeas = -1
+                    For intLoopCnt = 1 To intLoopMax
+                        System.Array.Clear(dGetMeas, 0, dGetMeas.Length)
+                        ' 最終の場合
+                        If intLoopCnt = intLoopMax Then
+                            ' 余りを取得
+                            intTempMax = intRetMeasMax(0) Mod 15
+                            ' 余り無しの場合
+                            If intTempMax = 0 Then
+                                intTempMax = 15
+                            End If
+                        Else
+                            intTempMax = 15
+                        End If
+
+                        '測定値取得
+                        '                AppInfo.cmdNo = CMD_TRIM_RESULT
+                        '                AppInfo.dwPara(0) = 8               '測定値取得ｺﾏﾝﾄﾞ(ES)
+                        '                AppInfo.dwPara(1) = intEsRegCnt     '抵抗番号(0～) ※ESを持つ抵抗だけで数えて何個目かを渡す
+                        '                AppInfo.dwPara(2) = intTempMax      '取得個数
+                        '                AppInfo.dwPara(3) = intCutIndex             'ｶｯﾄ番号(0～)   ※ESだけで数えて何個目かを渡す
+                        '                AppInfo.dwPara(4) = (intLoopCnt - 1) * 15  'ﾃﾞｰﾀ番号(0～)
+                        '
 #If cOFFLINEcDEBUG Then
 #Else
-                    Call TRIM_RESULT_Double(8, intEsRegCnt, intTempMax, intCutIndex, (intLoopCnt - 1) * 15, dGetMeas(0))
+                        'V6.1.4.12①                        Call TRIM_RESULT_Double(8, intEsRegCnt, intTempMax, intCutIndex, (intLoopCnt - 1) * 15, dGetMeas(0))
+                        Call TRIM_RESULT_Double(8, (intRegNum - 1), intTempMax, (intCutNum - 1), (intLoopCnt - 1) * 15, dGetMeas(0))    'V6.1.4.12①　INTIME側の検索方法を配列番号から抵抗カット番号（OOrigin）へ変更
 #End If
 
-                    For intTempCnt = 1 To intTempMax
-                        ' 測定値を格納
-                        intArrayMeas = intArrayMeas + 1
-                        ReDim Preserve gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas(intArrayMeas)
-                        gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas(intArrayMeas) = dGetMeas(intTempCnt - 1)
+                        For intTempCnt = 1 To intTempMax
+                            ' 測定値を格納
+                            intArrayMeas = intArrayMeas + 1
+                            ReDim Preserve gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas(intArrayMeas)
+                            gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas(intArrayMeas) = dGetMeas(intTempCnt - 1)
 
-                    Next
+                        Next
 
-                Next  '測定値の取得分ﾙｰﾌﾟ
+                    Next  '測定値の取得分ﾙｰﾌﾟ
 
+                End If                                          'V6.1.4.10③
             End If
 
         Next  ' ｶｯﾄ数分ﾙｰﾌﾟ
@@ -9291,10 +9912,27 @@ ErrExit:
             strDATAMeas = ""
             Select Case UCase(typResistorInfoArray(intRegNum).ArrCut(intCutNum).strCutType)
 
-                Case "K", "S"                           ' ｶｯﾄ種別がエッジセンス
+                Case "K", "S", DataManager.CNS_CUTP_IX                           ' ｶｯﾄ種別がエッジセンス ' インデックスカット時のラダーかじりの時も出力'V6.1.4.10①
+                    'V6.1.4.12①下へ移動
+                    'V6.1.4.12①                    If IsNothing(gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas) = True Then      'V6.1.4.1_①
+                    'V6.1.4.12①                        Continue For                                                                    'V6.1.4.10①                                                                                                    'V6.1.4.10①
+                    'V6.1.4.12①                        'V6.1.4.10①                        Exit For                                                                        'V6.1.4.1_①
+                    'V6.1.4.12①                    End If                                                                              'V6.1.4.1_①
+                    'V6.1.4.13①                    If typResistorInfoArray(intRegNum).ArrCut(intCutNum).strCutType = DataManager.CNS_CUTP_IX AndAlso typResistorInfoArray(intRegNum).ArrCut(intCutNum).intIXConfirmCnt = 0 Then        'V6.1.4.10①
+                    'V6.1.4.13①                        Continue For                                                                                                                                                                    'V6.1.4.10①
+                    'V6.1.4.13①                    End If                                                                                                                                                                              'V6.1.4.10①
+                    'V6.1.4.12①データが０でもデータ無しとして抵抗カット番号はログに出す。
                     strDATA = strDATA & "R" & typResistorInfoArray(intRegNum).intResNo.ToString("000")
                     strDATA = strDATA & ","
                     strDATA = strDATA & "C" & intCutNum.ToString("00")
+
+                    'V6.1.4.12①↓移動
+                    If IsNothing(gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas) = True Then      'V6.1.4.1_①
+                        strDATA = strDATA & vbCrLf                                                     'V6.1.4.12①データ無し改行追加
+                        Continue For                                                                    'V6.1.4.10①                                                                                                    'V6.1.4.10①
+                        'V6.1.4.10①                        Exit For                                                                        'V6.1.4.1_①
+                    End If                                                                              'V6.1.4.1_①
+                    'V6.1.4.12①↑
 
                     'For intMeasCnt = 1 To UBound(gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas)
                     For intMeasCnt = 1 To (UBound(gtyESTestResult(intRegNum).iCutNo(intCutNum).dblMeas) + 1) ' V1.14.0.0①
@@ -9458,6 +10096,7 @@ ErrExit:
         'V1.20.0.1① ↓
         gstrResult(22) = "MID CUT NG"
         'V1.20.0.1① ↑
+        gstrResult(23) = "IX BITE NG"   ' インデックスカット時のラダーかじり 'V6.1.4.10①
 
         '特注向けログ表示選択
         If gSysPrm.stSPF.giMeasOKNG <> 0 Then
@@ -9547,7 +10186,12 @@ ErrExit:
             r = Form1.SUb_ThetaCorrection(pltInfo, gfCorrectPosX, gfCorrectPosY, strMSG, doAlign, doRough) 'V5.0.0.9⑩
             If (r <> cFRS_NORMAL) Then                                  ' ERROR ?
                 rtn = r                                                 ' Return値 ###170
-                If (r <= cFRS_VIDEO_PTN) Then                           ' パターン認識エラー ?
+                'V6.1.4.16①↓
+                If (r <= ((-1) * ERR_TIMEOUT_BASE)) Then                            ' INtime側でステージ敬エラーが発生
+                    'If (r <= cFRS_VIDEO_PTN) Then                                  ' INtime側でステージ敬エラーが発生
+                    rtn = r                                                         ' Return値 = パターン認識エラー ###170
+                    'V6.1.4.16①↑
+                ElseIf (r <= cFRS_VIDEO_PTN) Then                           ' パターン認識エラー ?
                     Call Beep()                                         ' Beep音
                     If (strMSG = "") Then                               '###038
                         ' ログ画面に文字列を表示する(マッチングエラー, パターン番号エラー)
@@ -9555,7 +10199,7 @@ ErrExit:
                     Else
                         'If (pltInfo.intRecogDispMode = 0) Then          ' 結果表示しない ?
                         If (pltInfo.intRecogDispMode = 0) AndAlso
-                            (0 = pltInfo.intRecogDispModeRgh) Then      ' 結果表示しない ? 'V5.0.0.9⑤
+                                (0 = pltInfo.intRecogDispModeRgh) Then      ' 結果表示しない ? 'V5.0.0.9⑤
                             'If (gSysPrm.stTMN.giMsgTyp = 0) Then
                             '    ' パターンマッチングエラー(閾値)
                             '    strMSG = MSG_LOADER_07 + "(閾値)"
@@ -9642,6 +10286,7 @@ ErrExit:
                 If (mode < 3) Or ((giPltCountMode = 1) And ((mode = 3) Or (mode = 5))) Then
                     '----- V6.0.3.0⑥↑ -----
                     m_lPlateCount = m_lPlateCount + 1                           ' PLATE数 += 1
+                    giAutoCalibPlateCounter = giAutoCalibPlateCounter + 1   'V6.1.4.2①
                     '----- V1.18.0.0③↓ -----
                     ' stPRT_ROHM.Tol_Sheetはm_lPlateCountを使用するため下記は削除
                     'If (gTkyKnd = KND_CHIP) Then
@@ -9858,7 +10503,6 @@ ErrExit:
         fCorrectY = 0.0
         Return (cFRS_NORMAL)   
 #Else
-
             ' パターンマッチング時のテンプレートグループ番号を設定する(毎回やると遅くなる)
             'V5.0.0.6③            If (giTempGrpNo <> stCutPos(iResistorNum).intGRP) Then  ' テンプレートグループ番号が変わった ?
             giTempGrpNo = stCutPos(iResistorNum).intGRP         ' 現在のテンプレートグループ番号を退避

@@ -47,7 +47,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+        '''  すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
         '''  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
@@ -1711,6 +1711,636 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  指定したファイルが見つかりません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_164() As String
+            Get
+                Return ResourceManager.GetString("MSG_164", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  レーザパワーモニタリング異常終了 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_165() As String
+            Get
+                Return ResourceManager.GetString("MSG_165", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ロット切り替え信号を受けましたが、次のロットはエントリーされていません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_166() As String
+            Get
+                Return ResourceManager.GetString("MSG_166", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  アッテネータ減衰率 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_167() As String
+            Get
+                Return ResourceManager.GetString("MSG_167", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  設定異常終了しました。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_168() As String
+            Get
+                Return ResourceManager.GetString("MSG_168", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  製品種類が違います に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_169() As String
+            Get
+                Return ResourceManager.GetString("MSG_169", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  タイプが違います に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_170() As String
+            Get
+                Return ResourceManager.GetString("MSG_170", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  トリミングデータ に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_171() As String
+            Get
+                Return ResourceManager.GetString("MSG_171", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  は存在しません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_172() As String
+            Get
+                Return ResourceManager.GetString("MSG_172", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  データを更新しました。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_173() As String
+            Get
+                Return ResourceManager.GetString("MSG_173", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ＱＲコードの処理が正常終了しました。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_174() As String
+            Get
+                Return ResourceManager.GetString("MSG_174", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ＱＲコードの処理が異常終了しました。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_175() As String
+            Get
+                Return ResourceManager.GetString("MSG_175", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  QRコードデータの膜厚の数値変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_176() As String
+            Get
+                Return ResourceManager.GetString("MSG_176", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  加工条件ファイル に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_177() As String
+            Get
+                Return ResourceManager.GetString("MSG_177", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ファイル に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_178() As String
+            Get
+                Return ResourceManager.GetString("MSG_178", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  の に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_179() As String
+            Get
+                Return ResourceManager.GetString("MSG_179", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ファイルオープンエラー に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_180() As String
+            Get
+                Return ResourceManager.GetString("MSG_180", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ファイルを確認してください。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_181() As String
+            Get
+                Return ResourceManager.GetString("MSG_181", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  １行目のデータ に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_182() As String
+            Get
+                Return ResourceManager.GetString("MSG_182", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  が違います。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_183() As String
+            Get
+                Return ResourceManager.GetString("MSG_183", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  膜厚の数値変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_184() As String
+            Get
+                Return ResourceManager.GetString("MSG_184", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  目標値の数値変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_185() As String
+            Get
+                Return ResourceManager.GetString("MSG_185", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  下限の数値変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_186() As String
+            Get
+                Return ResourceManager.GetString("MSG_186", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  下限の単位変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_187() As String
+            Get
+                Return ResourceManager.GetString("MSG_187", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  上限の数値変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_188() As String
+            Get
+                Return ResourceManager.GetString("MSG_188", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  上限の単位変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_189() As String
+            Get
+                Return ResourceManager.GetString("MSG_189", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  アッテネータの数値変換ができませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_190() As String
+            Get
+                Return ResourceManager.GetString("MSG_190", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  設定抵抗値 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_191() As String
+            Get
+                Return ResourceManager.GetString("MSG_191", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  設定減衰率 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_192() As String
+            Get
+                Return ResourceManager.GetString("MSG_192", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  パターン変更 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_193() As String
+            Get
+                Return ResourceManager.GetString("MSG_193", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  → に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_194() As String
+            Get
+                Return ResourceManager.GetString("MSG_194", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  に一致するパターン、膜厚、抵抗値データがありません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_195() As String
+            Get
+                Return ResourceManager.GetString("MSG_195", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  数値変換が出来ませんでした に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_196() As String
+            Get
+                Return ResourceManager.GetString("MSG_196", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  [伝票ＱＲコード情報] に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_197() As String
+            Get
+                Return ResourceManager.GetString("MSG_197", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  製品種類    = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_198() As String
+            Get
+                Return ResourceManager.GetString("MSG_198", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  タイプ      = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_199() As String
+            Get
+                Return ResourceManager.GetString("MSG_199", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  目標値      = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_200() As String
+            Get
+                Return ResourceManager.GetString("MSG_200", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  伝票Ｎｏ．  = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_201() As String
+            Get
+                Return ResourceManager.GetString("MSG_201", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  加工必要数量= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_202() As String
+            Get
+                Return ResourceManager.GetString("MSG_202", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  素材表示紙ＱＲコードのデータ数が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_203() As String
+            Get
+                Return ResourceManager.GetString("MSG_203", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  素材表示紙ＱＲコードの製品種類の文字が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_204() As String
+            Get
+                Return ResourceManager.GetString("MSG_204", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  [素材表示紙ＱＲコード情報] に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_205() As String
+            Get
+                Return ResourceManager.GetString("MSG_205", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  パターン= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_206() As String
+            Get
+                Return ResourceManager.GetString("MSG_206", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  膜厚    = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_207() As String
+            Get
+                Return ResourceManager.GetString("MSG_207", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ランク  = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_208() As String
+            Get
+                Return ResourceManager.GetString("MSG_208", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  伝票ＱＲコードのデータがＭＩＴでありません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_209() As String
+            Get
+                Return ResourceManager.GetString("MSG_209", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  伝票ＱＲコードのデータ数が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_210() As String
+            Get
+                Return ResourceManager.GetString("MSG_210", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  伝票ＱＲコードの製品種類・タイプの文字が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_211() As String
+            Get
+                Return ResourceManager.GetString("MSG_211", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  伝票ＱＲコードからタイプを検出出来ません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_212() As String
+            Get
+                Return ResourceManager.GetString("MSG_212", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  タイプ文字置換定義ファイル に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_213() As String
+            Get
+                Return ResourceManager.GetString("MSG_213", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  が存在しません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_214() As String
+            Get
+                Return ResourceManager.GetString("MSG_214", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  素材表示紙ＱＲコードのデータ数が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_215() As String
+            Get
+                Return ResourceManager.GetString("MSG_215", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  素材表示紙ＱＲコードの製品種類の文字が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_216() As String
+            Get
+                Return ResourceManager.GetString("MSG_216", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  伝票Ｎｏ．= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_217() As String
+            Get
+                Return ResourceManager.GetString("MSG_217", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  抵抗値= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_218() As String
+            Get
+                Return ResourceManager.GetString("MSG_218", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  元のファイル名でエントリします。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_219() As String
+            Get
+                Return ResourceManager.GetString("MSG_219", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  製品種類= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_220() As String
+            Get
+                Return ResourceManager.GetString("MSG_220", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  タイプ  = に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_221() As String
+            Get
+                Return ResourceManager.GetString("MSG_221", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  素材表示紙 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_222() As String
+            Get
+                Return ResourceManager.GetString("MSG_222", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  カットデータ に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_223() As String
+            Get
+                Return ResourceManager.GetString("MSG_223", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  素材表示紙データが一致しません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_224() As String
+            Get
+                Return ResourceManager.GetString("MSG_224", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  フォルダ名 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_225() As String
+            Get
+                Return ResourceManager.GetString("MSG_225", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  加工条件データの数が足りません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_226() As String
+            Get
+                Return ResourceManager.GetString("MSG_226", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  工程伝票QRコード に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_227() As String
+            Get
+                Return ResourceManager.GetString("MSG_227", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  に工程伝票QRコード に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_228() As String
+            Get
+                Return ResourceManager.GetString("MSG_228", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  倍 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_229() As String
+            Get
+                Return ResourceManager.GetString("MSG_229", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  減衰率設定が異常です。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_230() As String
+            Get
+                Return ResourceManager.GetString("MSG_230", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  手動モードに切り替えて再設定してください。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_230_2() As String
+            Get
+                Return ResourceManager.GetString("MSG_230_2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  再設定してください。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_230_3() As String
+            Get
+                Return ResourceManager.GetString("MSG_230_3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  がありません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_231() As String
+            Get
+                Return ResourceManager.GetString("MSG_231", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  動作モード（デジスイッチ）の設定を x0～x6 にしてください に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property MSG_25() As String
@@ -1725,6 +2355,96 @@ Namespace My.Resources
         Friend ReadOnly Property MSG_39() As String
             Get
                 Return ResourceManager.GetString("MSG_39", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  データファイル に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_05() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_05", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  登録済みデータファイル に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_06() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_06", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  リストの1つ上へ に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_07() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_07", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  リストの1つ下へ に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_08() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_08", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  リストから削除 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_09() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_09", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  リストをクリア に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_10() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_10", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  ↓登録↓ に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_11() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_11", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  OK に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_12() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_12", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  キャンセル に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_13() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_13", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  データ選択 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_14() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_14", resourceCulture)
             End Get
         End Property
         
@@ -1779,6 +2499,51 @@ Namespace My.Resources
         Friend ReadOnly Property MSG_AUTO_20() As String
             Get
                 Return ResourceManager.GetString("MSG_AUTO_20", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  オペレータを選択してください。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_21() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_21", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  未選択 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_22() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_22", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  オペレータエントリーリストを確認してください。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_23() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_23", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  QRコードの情報が保存されていません。 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_24() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_24", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  自動運転時トリミングデータファイルＬＯＡＤエラー に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_AUTO_25() As String
+            Get
+                Return ResourceManager.GetString("MSG_AUTO_25", resourceCulture)
             End Get
         End Property
         
@@ -3272,11 +4037,83 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  ＮＧ品が指定された枚数連続して発生 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_LOADER_54() As String
+            Get
+                Return ResourceManager.GetString("MSG_LOADER_54", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  ログファイルの書込みでエラーが発生しました に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property MSG_LOGERROR() As String
             Get
                 Return ResourceManager.GetString("MSG_LOGERROR", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  基板枚数= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL01() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL01", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  NG率= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL02() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL02", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  IT H NG率= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL03() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL03", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  IT L NG率= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL04() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL04", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  FT H NG率= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL05() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL05", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  FT L NG率= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL06() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL06", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  OVER NG率= に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property MSG_MAIN_LABEL07() As String
+            Get
+                Return ResourceManager.GetString("MSG_MAIN_LABEL07", resourceCulture)
             End Get
         End Property
         
@@ -4516,6 +5353,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  ベース抵抗番号 に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property NSG_230() As String
+            Get
+                Return ResourceManager.GetString("NSG_230", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''   タイプ　　　　　　： に類似しているローカライズされた文字列を検索します。
         '''</summary>
         Friend ReadOnly Property QR_Data_001() As String
@@ -4962,6 +5808,15 @@ Namespace My.Resources
         Friend ReadOnly Property SimpleTrimmer_043() As String
             Get
                 Return ResourceManager.GetString("SimpleTrimmer_043", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   に類似しているローカライズされた文字列を検索します。
+        '''</summary>
+        Friend ReadOnly Property String1() As String
+            Get
+                Return ResourceManager.GetString("String1", resourceCulture)
             End Get
         End Property
         

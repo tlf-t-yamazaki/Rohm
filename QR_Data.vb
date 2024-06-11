@@ -58,7 +58,7 @@ Module QR_Data
             ' 初期処理        
             ' V6.0.3.0⑤ QR_Read_Flg = 0                                ' QRｺｰﾄﾞ読込み判定(0)NG (1)OK 
             r = SerialErrorCode.rRS_OK                                  ' Return値 = 正常
-            If (gSysPrm.stCTM.giSPECIAL <> customROHM) Then Return (r) '  ローム殿特注でなければNOP
+            'If (gSysPrm.stCTM.giSPECIAL <> customROHM) Then Return (r) '  ローム殿特注でなければNOP V6.1.4.0_22
             ObjQRDataIO = New DllQRDataIO.QRDataIO
             ObjQR_PortInfo = New DllSerialIO.PortInformation            ' シリアルポート情報オブジェクト生成
 
@@ -67,6 +67,12 @@ Module QR_Data
             'ObjQR_PortInfo.PortName = "COM4"'V4.0.0.0-79               ' ポート番号
             'ObjQR_PortInfo.PortName = "COM5"                           ' ポート番号
             PortNo = GetPrivateProfileString_S("QR_CODE", "COM", SYSPARAMPATH, "COM5")
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                QR_Read_Flg = 0                                         ' QRｺｰﾄﾞ読込み判定(0)NG (1)OK
+                PortNo = GetPrivateProfileString_S("QR_CODE", "RS232C_PORT_NO", "C:\TRIM\tky.ini", "COM2")
+            End If
+            '----- V6.1.4.0_22↑ -----
             ObjQR_PortInfo.PortName = PortNo                            ' ポート番号
             '----- V6.0.3.0④↑ -----
             ObjQR_PortInfo.BaudRate = 9600                              ' Speed
@@ -144,8 +150,28 @@ Module QR_Data
             ' 初期処理
             '----- V6.0.3.0_35↓ -----
             'If (QR_Rs_Flag = 0) Then Exit Function '                    ' フラグ=0(RS232C未ｵｰﾌﾟﾝ)ならNOP
-            If (QR_Rs_Flag = 0) Then Return (cFRS_ERR_RST) '            ' RS232C未ｵｰﾌﾟﾝならcFRS_ERR_RSTを返す 
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+            'If (QR_Rs_Flag = 0) Then Return (cFRS_ERR_RST) '            ' RS232C未ｵｰﾌﾟﾝならcFRS_ERR_RSTを返す 
+            If (QR_Rs_Flag = 0) And (giQrCodeType = QrCodeType.Rome) Then
+                Return (cFRS_ERR_RST)
+            End If
+            '----- V6.1.4.0_22↑ -----
             '----- V6.0.3.0_35↑ -----
+
+            '----- V6.1.4.0_22↓(KOA EW殿SL432RD対応) -----
+            If (giQrCodeType = QrCodeType.KoaEw) Then
+                If (QR_Rs_Flag = 0) Then                                    ' シリアルポートオープンフラグ(0:未ｵｰﾌﾟﾝ, 1:ｵｰﾌﾟﾝ済)
+                    'ポートオープン(QRデータ受信用)
+                    r = QR_Rs232c_Open()
+                    If (r <> SerialErrorCode.rRS_OK) Then
+                        ' "シリアルポートＯＰＥＮエラー"
+                        strMSG = MSG_136 + "(" + "QR Code Reader " + GetPrivateProfileString_S("QR_CODE", "RS232C_PORT_NO", "C:\TRIM\tky.ini", "COM2") + ")"
+                        Call MsgBox(strMSG, vbOKOnly)
+                        'Return (ret)
+                    End If
+                End If
+            End If
+            '----- V6.1.4.0_22↑ -----
 
             ' 受信したQRデータを取得する
             r = ObjQRDataIO.GetReceiveData(receivedData)

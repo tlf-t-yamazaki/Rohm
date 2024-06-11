@@ -199,7 +199,7 @@ Module gwModule
     End Enum
 #End If
 
-    'ログタイプ定数
+    ' ログタイプ定数
     Public Const LOGTYPE_DISP As Short = 1
     Public Const LOGTYPE_FILE As Short = 2
 
@@ -408,7 +408,7 @@ Module gwModule
     Public Const RSLTTYP_ES2_MEASCOUNT As Integer = 7       ' 測定値数(ES2)
     Public Const RSLTTYP_ES2_MEAS As Integer = 8            ' 測定値  (ES2)
     '----- V1.18.0.0⑥↑ -----
-
+    Public Const RES_DATNO_DEBUGDATA As Integer = 12        '  不具合解析用データ取得  (ES2)'V4.7.3.2①
 #End Region
 
 #Region "トリミングデータ定義"
@@ -1240,7 +1240,7 @@ Module gwModule
                 ' FTﾘﾐｯﾄﾊｲ/ﾛｰ(%)
                 .fFTLimitH = CDbl(typResistorInfoArray(intRegIndex).dblFinalTest_HighLimit)
                 .fFTLimitL = CDbl(typResistorInfoArray(intRegIndex).dblFinalTest_LowLimit)
-                .wInitialOK = typResistorInfoArray(intRegIndex).intInitialOkTestDo   '初期ＯＫ判定(0:しない,1:する) V5.0.0.6⑨
+                .wInitialOK = typResistorInfoArray(intRegIndex).intInitialOkTestDo  '初期ＯＫ判定(0:しない,1:する) V5.0.0.6⑨
                 .wCutCnt = typResistorInfoArray(intRegIndex).intCutCount            ' カット数
                 '----- V1.13.0.0②↓ -----
                 .intCvMeasNum = typResistorInfoArray(intRegIndex).intCvMeasNum      ' CV 最大測定回数
@@ -2001,6 +2001,9 @@ Module gwModule
                 .measMode = typResistorInfoArray(m).ArrCut(mm).intMeasMode      ' 測定モード(0:抵抗, 1:電圧)
                 .measType = typResistorInfoArray(m).ArrCut(mm).intMeasType      ' 測定判定タイプ 0:高速, 1:高精度, 2:外部)
                 .LimitLen = typResistorInfoArray(m).ArrCut(mm).dblLimitLen      ' IXカットのリミット長 'V1.18.0.0④
+                .dblIXJudgeLevel = typResistorInfoArray(m).ArrCut(mm).dblIXJudgeLevel   ' IXカットの変化率閾値　 'V6.1.4.10①
+                .dblIXCutLength = typResistorInfoArray(m).ArrCut(mm).dblIXCutLength     ' IXカットの確認カット長 'V6.1.4.10①
+                .intIXConfirmCnt = typResistorInfoArray(m).ArrCut(mm).intIXConfirmCnt   ' IXカットの確認回数     'V6.1.4.10①
                 '----- V6.1.1.0⑥↓ (インデックスＷカット用) -----
                 .lines = typResistorInfoArray(m).ArrCut(mm).intCutCnt           ' シフト回数(1～n)               (SCANカットの本数域使用)
                 .pitch = typResistorInfoArray(m).ArrCut(mm).dblPitch            ' シフト量(±0.0001～20.0000(mm))(SCANカットのピッチ域使用)
@@ -2072,6 +2075,9 @@ Module gwModule
                 .measMode = typResistorInfoArray(m).ArrCut(mm).intMeasMode      ' 測定モード(0:抵抗, 1:電圧, 3:外部)
                 .measType = typResistorInfoArray(m).ArrCut(mm).intMeasType      ' 測定タイプ 0:高速, 1:高精度, 3:)
                 .LimitLen = typResistorInfoArray(m).ArrCut(mm).dblLimitLen      ' IXカットのリミット長 'V1.18.0.0④
+                .dblIXJudgeLevel = typResistorInfoArray(m).ArrCut(mm).dblIXJudgeLevel   ' IXカットの変化率閾値　 'V6.1.4.10①
+                .dblIXCutLength = typResistorInfoArray(m).ArrCut(mm).dblIXCutLength     ' IXカットの確認カット長 'V6.1.4.10①
+                .intIXConfirmCnt = typResistorInfoArray(m).ArrCut(mm).intIXConfirmCnt   ' IXカットの確認回数     'V6.1.4.10①
                 .angle = typResistorInfoArray(m).ArrCut(mm).intCutAngle         ' 斜めカット角度(0～359)
                 lenxy = .Length                                                 ' インデックス長を返す
                 lenxy2 = 0
@@ -2668,6 +2674,12 @@ ErrData:
                 End If
             End If
             '----- ###215↑ -----
+
+            'V6.0.4.2①↓'V6.5.1.0⑧
+            If (gSysPrm.stRMC.giRmCtrl2 >= 2) Then                                  'V5.0.0.6⑧ RMCTRL2対応 ?
+                Call ATTRESET()                                                     'V1.25.0.0⑭
+            End If                                                                  'V5.0.0.6⑧
+            'V6.0.4.2①↑'V6.5.1.0⑧
 
             Call COVERCHK_ONOFF(COVER_CHECK_ON)                         ' 固定カバーチェックあり ###088
             If (gSysPrm.stTMN.gsKeimei = MACHINE_TYPE_SL436) Then
